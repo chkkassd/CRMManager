@@ -189,7 +189,7 @@
 			children = (
 				6724CB901994B52E00E1C058 /* customerCategory */,
 				6724CB8F1994B52500E1C058 /* view */,
-				6724CB8E1994B51900E1C058 /* mode */,
+				6724CB8E1994B51900E1C058 /* model */,
 				6724CB8A1994B50200E1C058 /* controller */,
 				6724CB611994B26600E1C058 /* ZDAppDelegate.h */,
 				6724CB621994B26600E1C058 /* ZDAppDelegate.m */,
@@ -241,7 +241,7 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
-		6724CB8E1994B51900E1C058 /* mode */ = {
+		6724CB8E1994B51900E1C058 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				6724CB9A1994BB8600E1C058 /* ZDModeClient.h */,
@@ -251,6 +251,7 @@
 				18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */,
 				18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */,
 			);
+			name = model;
 			path = mode;
 			sourceTree = "<group>";
 		};
