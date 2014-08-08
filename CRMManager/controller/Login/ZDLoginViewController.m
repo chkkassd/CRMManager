@@ -7,7 +7,7 @@
 //
 
 #import "ZDLoginViewController.h"
-#import "ZDModeClient.h"
+#import "ZDModelFacade.h"
 
 @interface ZDLoginViewController ()
 
@@ -32,7 +32,7 @@
 
 - (IBAction)loginButtonPressed:(id)sender
 {
-    [[ZDModeClient sharedModeClient] loginWithUserName:self.nameTextField.text password:self.passwordTextField.text completionHandler:^(NSError *error) {
+    [[ZDModelFacade sharedModeClient] loginWithUserName:self.nameTextField.text password:self.passwordTextField.text completionHandler:^(NSError *error) {
         if (!error) {
             NSLog(@"success to login");
         } else {

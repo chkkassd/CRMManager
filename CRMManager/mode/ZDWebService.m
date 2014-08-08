@@ -11,7 +11,8 @@
 
 @implementation ZDWebService
 
-//登录接口
+
+// 登录接口
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *obj,NSError *error))handler
 {
     password = [NSString md5:password];
@@ -19,6 +20,16 @@
     NSString *jsonString = [self translateToJsonStringWithDictionary:dic];
     
     NSURL *url = [NSURL URLWithString: [self URLForLogin]];
+    [self fetchByWebService:url jsonString:jsonString handler:handler];
+}
+
+// 根据用户id得到所有的customers
+
+#pragma mark - Webservice access method
+
+// 相对稳定的接口，不太会变化
+- (void)fetchByWebService:(NSURL *)url jsonString:(NSString *)jsonString handler:(void (^)(NSString *, NSError *))handler
+{
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
     
@@ -49,8 +60,6 @@
         }
     }];
 }
-
-//根据用户id得到所有的customers
 
 #pragma mark - translateToJsonString
 
