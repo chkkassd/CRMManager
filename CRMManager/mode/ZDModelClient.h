@@ -11,11 +11,11 @@
 
 
 // 这个类，貌似也不应该过于庞大，回家想想
-@interface ZDModeClient : NSObject
+@interface ZDModelClient : NSObject
 
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler;
 
-+ (ZDModeClient *)sharedModeClient;
++ (ZDModelClient *)sharedModeClient;
 
 @end
