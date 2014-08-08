@@ -29,7 +29,7 @@
 		6724CB771994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
-		6724CB9C1994BB8600E1C058 /* ZDModelClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9B1994BB8600E1C058 /* ZDModelClient.m */; };
+		6724CB9C1994BB8600E1C058 /* ZDModelFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9B1994BB8600E1C058 /* ZDModelFacade.m */; };
 		6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9E1994BC2F00E1C058 /* ZDWebService.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
 /* End PBXBuildFile section */
@@ -79,8 +79,8 @@
 		6724CB7C1994B26600E1C058 /* CRMManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRMManagerTests-Info.plist"; sourceTree = "<group>"; };
 		6724CB7E1994B26600E1C058 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6724CB801994B26600E1C058 /* CRMManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRMManagerTests.m; sourceTree = "<group>"; };
-		6724CB9A1994BB8600E1C058 /* ZDModelClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModelClient.h; sourceTree = "<group>"; };
-		6724CB9B1994BB8600E1C058 /* ZDModelClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModelClient.m; sourceTree = "<group>"; };
+		6724CB9A1994BB8600E1C058 /* ZDModelFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModelFacade.h; sourceTree = "<group>"; };
+		6724CB9B1994BB8600E1C058 /* ZDModelFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModelFacade.m; sourceTree = "<group>"; };
 		6724CB9D1994BC2F00E1C058 /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
 		6724CB9E1994BC2F00E1C058 /* ZDWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDWebService.m; sourceTree = "<group>"; };
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
@@ -244,8 +244,8 @@
 		6724CB8E1994B51900E1C058 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				6724CB9A1994BB8600E1C058 /* ZDModelClient.h */,
-				6724CB9B1994BB8600E1C058 /* ZDModelClient.m */,
+				6724CB9A1994BB8600E1C058 /* ZDModelFacade.h */,
+				6724CB9B1994BB8600E1C058 /* ZDModelFacade.m */,
 				6724CB9D1994BC2F00E1C058 /* ZDWebService.h */,
 				6724CB9E1994BC2F00E1C058 /* ZDWebService.m */,
 				18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */,
@@ -382,7 +382,7 @@
 				6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
-				6724CB9C1994BB8600E1C058 /* ZDModelClient.m in Sources */,
+				6724CB9C1994BB8600E1C058 /* ZDModelFacade.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

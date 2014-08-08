@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 peter. All rights reserved.
 //
 
-#import "ZDModelClient.h"
+#import "ZDModelFacade.h"
 
-@implementation ZDModelClient
+@implementation ZDModelFacade
 
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler
@@ -25,10 +25,10 @@
 
 #pragma mark - sharedInstance
 
-+ (ZDModelClient *)sharedModeClient
++ (ZDModelFacade *)sharedModeClient
 {
     static dispatch_once_t once;
-    static ZDModelClient *sharedclient;
+    static ZDModelFacade *sharedclient;
     dispatch_once(&once, ^{
         sharedclient = [[self alloc] init];
     });

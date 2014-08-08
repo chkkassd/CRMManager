@@ -11,11 +11,12 @@
 
 
 // 这个类，貌似也不应该过于庞大，回家想想
-@interface ZDModelClient : NSObject
+// 最佳命名应该是 Facade，符合Facade模式
+@interface ZDModelFacade : NSObject
 
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler;
 
-+ (ZDModelClient *)sharedModeClient;
++ (ZDModelFacade *)sharedModeClient;
 
 @end
