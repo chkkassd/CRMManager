@@ -1,5 +1,5 @@
 //
-//  ZDViewController.h
+//  ZDLoginViewController.h
 //  CRMManager
 //
 //  Created by peter on 14-8-8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDViewController : UIViewController
+@interface ZDLoginViewController : UIViewController
 
 @end
