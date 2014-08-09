@@ -26,6 +26,7 @@
                                        forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBackgroundImage:gradientImage32
                                        forBarMetrics:UIBarMetricsLandscapePhone];
+
     // Customize the title text for *all* UINavigationBars
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -39,6 +40,8 @@
       [UIFont fontWithName:@"Arial-Bold" size:0.0],
       UITextAttributeFont,
       nil]];
+#pragma warning 研究新的API
+    // 这里的写法 iOS7.0 之后也有所改变
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

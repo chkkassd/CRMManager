@@ -8,6 +8,8 @@
 
 #import "ZDTabBarViewController.h"
 
+// 这个类是总的Main控制器类
+
 @interface ZDTabBarViewController ()
 
 @end
