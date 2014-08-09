@@ -31,7 +31,8 @@
     for (UITabBarItem *item in self.tabBar.items) {
         switch (item.tag) {
             case 50:
-                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_chance_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_chance"]];
+                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_chance_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_chance"]];    // 这个代码是看 登峰 的一起学。。iOS7以后好像就不能调用了。。要研究下新的API
+#pragma warning 研究新的API
                 break;
             case 51:
                 [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_client_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_client"]];
@@ -46,7 +47,6 @@
                 break;
         }
     }
-    
     
 }
 
