@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */; };
 		6724CB531994B26600E1C058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB521994B26600E1C058 /* Foundation.framework */; };
 		6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB541994B26600E1C058 /* CoreGraphics.framework */; };
 		6724CB571994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
+		18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
 		6724CB4F1994B26600E1C058 /* CRMManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRMManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6724CB521994B26600E1C058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6724CB541994B26600E1C058 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,6 +196,8 @@
 				6724CB9B1994BB8600E1C058 /* ZDModeClient.m */,
 				6724CB9D1994BC2F00E1C058 /* ZDWebService.h */,
 				6724CB9E1994BC2F00E1C058 /* ZDWebService.m */,
+				18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */,
+				18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			files = (
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				6724CB961994B9E000E1C058 /* ZDGesturePasswordViewController.m in Sources */,
+				18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
 				6724CB931994B97C00E1C058 /* ZDLoginViewController.m in Sources */,
 				6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */,

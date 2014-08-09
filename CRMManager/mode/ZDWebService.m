@@ -7,8 +7,7 @@
 //
 
 #import "ZDWebService.h"
-#define API_LoginURL @"https://api.ezendai.com/hera/manageraccount/login"   //login
-#define API_GetAllCustomersURL @"https://api.ezendai.com/hera/manageraccount/getCustomers" //getAllCustomers
+#import "ZDWebService+URL.h"
 
 @implementation ZDWebService
 
@@ -19,7 +18,7 @@
     NSDictionary *dic = @{@"userName":userName,@"password":password};
     NSString *jsonString = [self translateToJsonStringWithDictionary:dic];
     
-    NSURL *url = [NSURL URLWithString: API_LoginURL];
+    NSURL *url = [NSURL URLWithString: [self URLForLogin]];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
     
@@ -73,7 +72,7 @@
 
 #pragma mark - sharedInstance
 
-+(ZDWebService *)sharedWebViewService
++ (ZDWebService *)sharedWebViewService
 {
     static dispatch_once_t once;
     static ZDWebService *sharedWebService;
