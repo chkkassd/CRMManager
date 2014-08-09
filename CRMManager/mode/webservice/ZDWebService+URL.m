@@ -17,8 +17,13 @@
     return [NSString stringWithFormat:@"%@%@", API_Base, @"login"];
 }
 
-- (NSString *)URLForGetCustomers
+- (NSString *)URLForGetCustomersCount
 {
-    return [NSString stringWithFormat:@"%@%@", API_Base, @"getCustomers"];
+    return [NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerCount"];
+}
+
+- (NSString *)URLForGetAllCustomers
+{
+    return [NSString stringWithFormat:@"%@%@",API_Base,@"getCustomers"];
 }
 @end

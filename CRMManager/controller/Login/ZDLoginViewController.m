@@ -25,7 +25,6 @@
     [super viewDidLoad];
     self.nameTextField.text = @"crm";
     self.passwordTextField.text = @"wozhengdebuzhidao";
-    // 你这里的写法跟cc一模一样啊。。呵呵！
 }
 
 #pragma mark - Action
@@ -41,4 +40,10 @@
     }];
 }
 
+- (IBAction)test:(id)sender
+{
+    [[ZDWebService sharedWebViewService] fetchCustomersCountWithManagerUserId:@"20000267" completionHandler:^(NSString *state, NSError *error, NSString *count) {
+        NSLog(@"count = %@",count);
+    }];
+}
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
 		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
 		18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */; };
@@ -29,9 +28,17 @@
 		6724CB771994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
-		6724CB9C1994BB8600E1C058 /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9B1994BB8600E1C058 /* ZDModeClient.m */; };
-		6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9E1994BC2F00E1C058 /* ZDWebService.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
+		FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */; };
+		FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8F199604BC0062B71C /* ZDWebService.m */; };
+		FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A92199604BC0062B71C /* ZDModeClient.m */; };
+		FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A961996051F0062B71C /* ZDModel.xcdatamodeld */; };
+		FF8F1A9B199611B40062B71C /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A9A199611B40062B71C /* Product.m */; };
+		FF8F1A9E199611B50062B71C /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A9D199611B50062B71C /* Customer.m */; };
+		FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA0199611B50062B71C /* ManagerUser.m */; };
+		FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA3199611B50062B71C /* ProductDetail.m */; };
+		FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA61996121D0062B71C /* ZDLocalDB.m */; };
+		FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
-		18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
 		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
 		18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordViewController.m; sourceTree = "<group>"; };
 		18E9F9931995B6F000E6DC8F /* ZDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLoginViewController.h; sourceTree = "<group>"; };
@@ -79,13 +84,28 @@
 		6724CB7C1994B26600E1C058 /* CRMManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRMManagerTests-Info.plist"; sourceTree = "<group>"; };
 		6724CB7E1994B26600E1C058 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6724CB801994B26600E1C058 /* CRMManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRMManagerTests.m; sourceTree = "<group>"; };
-		6724CB9A1994BB8600E1C058 /* ZDModeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModeClient.h; sourceTree = "<group>"; };
-		6724CB9B1994BB8600E1C058 /* ZDModeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModeClient.m; sourceTree = "<group>"; };
-		6724CB9D1994BC2F00E1C058 /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
-		6724CB9E1994BC2F00E1C058 /* ZDWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDWebService.m; sourceTree = "<group>"; };
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
 		6724CBA11994BD6A00E1C058 /* NSString+Tony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tony.m"; sourceTree = "<group>"; };
 		6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCustomerCategoryHeaders.h; sourceTree = "<group>"; };
+		FF8F1A8C199604BC0062B71C /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
+		FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
+		FF8F1A8E199604BC0062B71C /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
+		FF8F1A8F199604BC0062B71C /* ZDWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDWebService.m; sourceTree = "<group>"; };
+		FF8F1A91199604BC0062B71C /* ZDModeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModeClient.h; sourceTree = "<group>"; };
+		FF8F1A92199604BC0062B71C /* ZDModeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModeClient.m; sourceTree = "<group>"; };
+		FF8F1A971996051F0062B71C /* ZDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZDModel.xcdatamodel; sourceTree = "<group>"; };
+		FF8F1A99199611B40062B71C /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		FF8F1A9A199611B40062B71C /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		FF8F1A9C199611B50062B71C /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		FF8F1A9D199611B50062B71C /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
+		FF8F1A9F199611B50062B71C /* ManagerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUser.h; sourceTree = "<group>"; };
+		FF8F1AA0199611B50062B71C /* ManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUser.m; sourceTree = "<group>"; };
+		FF8F1AA2199611B50062B71C /* ProductDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetail.h; sourceTree = "<group>"; };
+		FF8F1AA3199611B50062B71C /* ProductDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetail.m; sourceTree = "<group>"; };
+		FF8F1AA51996121D0062B71C /* ZDLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLocalDB.h; sourceTree = "<group>"; };
+		FF8F1AA61996121D0062B71C /* ZDLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLocalDB.m; sourceTree = "<group>"; };
+		FF8F1AA8199618850062B71C /* ZDCachePathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCachePathUtility.h; sourceTree = "<group>"; };
+		FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCachePathUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,12 +264,9 @@
 		6724CB8E1994B51900E1C058 /* mode */ = {
 			isa = PBXGroup;
 			children = (
-				6724CB9A1994BB8600E1C058 /* ZDModeClient.h */,
-				6724CB9B1994BB8600E1C058 /* ZDModeClient.m */,
-				6724CB9D1994BC2F00E1C058 /* ZDWebService.h */,
-				6724CB9E1994BC2F00E1C058 /* ZDWebService.m */,
-				18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */,
-				18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */,
+				FF8F1A90199604BC0062B71C /* ZDCommonMode */,
+				FF8F1A8A199604BC0062B71C /* localDB */,
+				FF8F1A8B199604BC0062B71C /* webservice */,
 			);
 			path = mode;
 			sourceTree = "<group>";
@@ -269,6 +286,46 @@
 				6724CBA11994BD6A00E1C058 /* NSString+Tony.m */,
 			);
 			path = customerCategory;
+			sourceTree = "<group>";
+		};
+		FF8F1A8A199604BC0062B71C /* localDB */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F1AA51996121D0062B71C /* ZDLocalDB.h */,
+				FF8F1AA61996121D0062B71C /* ZDLocalDB.m */,
+				FF8F1A961996051F0062B71C /* ZDModel.xcdatamodeld */,
+				FF8F1AA2199611B50062B71C /* ProductDetail.h */,
+				FF8F1AA3199611B50062B71C /* ProductDetail.m */,
+				FF8F1A9F199611B50062B71C /* ManagerUser.h */,
+				FF8F1AA0199611B50062B71C /* ManagerUser.m */,
+				FF8F1A9C199611B50062B71C /* Customer.h */,
+				FF8F1A9D199611B50062B71C /* Customer.m */,
+				FF8F1A99199611B40062B71C /* Product.h */,
+				FF8F1A9A199611B40062B71C /* Product.m */,
+			);
+			path = localDB;
+			sourceTree = "<group>";
+		};
+		FF8F1A8B199604BC0062B71C /* webservice */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F1A8C199604BC0062B71C /* ZDWebService+URL.h */,
+				FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */,
+				FF8F1A8E199604BC0062B71C /* ZDWebService.h */,
+				FF8F1A8F199604BC0062B71C /* ZDWebService.m */,
+			);
+			path = webservice;
+			sourceTree = "<group>";
+		};
+		FF8F1A90199604BC0062B71C /* ZDCommonMode */ = {
+			isa = PBXGroup;
+			children = (
+				FF8F1A91199604BC0062B71C /* ZDModeClient.h */,
+				FF8F1A92199604BC0062B71C /* ZDModeClient.m */,
+				FF8F1AA8199618850062B71C /* ZDCachePathUtility.h */,
+				FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */,
+			);
+			path = ZDCommonMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,16 +429,23 @@
 			files = (
 				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
+				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */,
-				18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */,
+				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
+				FF8F1A9B199611B40062B71C /* Product.m in Sources */,
+				FF8F1A9E199611B50062B71C /* Customer.m in Sources */,
+				FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */,
+				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
+				FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */,
+				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
 				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
+				FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
-				6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
-				6724CB9C1994BB8600E1C058 /* ZDModeClient.m in Sources */,
+				FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -611,6 +675,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FF8F1A961996051F0062B71C /* ZDModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FF8F1A971996051F0062B71C /* ZDModel.xcdatamodel */,
+			);
+			currentVersion = FF8F1A971996051F0062B71C /* ZDModel.xcdatamodel */;
+			path = ZDModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6724CB471994B26600E1C058 /* Project object */;
 }
