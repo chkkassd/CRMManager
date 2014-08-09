@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ZDWebService.h"
 
+
+// 这个类，貌似也不应该过于庞大，回家想想
 @interface ZDModeClient : NSObject
 
 //login
