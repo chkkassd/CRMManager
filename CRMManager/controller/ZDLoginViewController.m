@@ -25,6 +25,7 @@
     [super viewDidLoad];
     self.nameTextField.text = @"crm";
     self.passwordTextField.text = @"wozhengdebuzhidao";
+    // 你这里的写法跟cc一模一样啊。。呵呵！
 }
 
 #pragma mark - Action
