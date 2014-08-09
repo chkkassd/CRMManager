@@ -13,10 +13,13 @@
 @interface ZDWebService : NSObject
 
 //登陆接口
-- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *obj,NSError *error))handler;
+- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *obj,NSError *error, NSString *count))handler;
 
 //根据用户id得到所有的customers的总数量
 - (void)fetchCustomersCountWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler;
+
+//根据用户id得到所有的customers
+- (void)fetchCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler;
 
 //单例
 +(ZDWebService *)sharedWebViewService;

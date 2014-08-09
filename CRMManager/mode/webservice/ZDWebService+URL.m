@@ -12,18 +12,19 @@
 
 @implementation ZDWebService (URL)
 
-- (NSString *)URLForLogin
+- (NSURL *)URLForLogin
 {
-    return [NSString stringWithFormat:@"%@%@", API_Base, @"login"];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_Base, @"login"]];
 }
 
-- (NSString *)URLForGetCustomersCount
+- (NSURL *)URLForGetCustomersCount
 {
-    return [NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerCount"];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerCount"]];
 }
 
-- (NSString *)URLForGetAllCustomers
+- (NSURL *)URLForGetAllCustomers
 {
-    return [NSString stringWithFormat:@"%@%@",API_Base,@"getCustomers"];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomers"]];
 }
+
 @end

@@ -11,9 +11,8 @@
 
 @interface ZDWebService (URL)
 
-- (NSString *)URLForLogin;
-- (NSString *)URLForGetAllCustomers;
-//根据用户id得到所有的customers
-- (NSString *)URLForGetCustomersCount;
+- (NSURL *)URLForLogin;
+- (NSURL *)URLForGetAllCustomers;
+- (NSURL *)URLForGetCustomersCount;
 
 @end

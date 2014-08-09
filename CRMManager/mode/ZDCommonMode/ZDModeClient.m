@@ -13,7 +13,7 @@
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler
 {
-    [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSString *obj, NSError *error) {
+    [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSString *obj, NSError *error, NSString *count) {
         if (!error && [obj isEqualToString:@"0"]) {
             handler(nil);
         } else {

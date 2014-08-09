@@ -12,95 +12,44 @@
 @implementation ZDWebService
 
 //登录接口
-- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *obj,NSError *error))handler
+- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *state,NSError *error, NSString *count))handler
 {
     password = [NSString md5:password];
-    NSDictionary *dic = @{@"userName":userName,@"password":password};
-    NSString *jsonString = [self translateToJsonStringWithDictionary:dic];
-    
-    NSURL *url = [NSURL URLWithString: [self URLForLogin]];
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
-    NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
-    
-    [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
-    [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
-    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
-    [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
-    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
-    [req setHTTPMethod:@"POST"];
-    [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    //ios5之后新增异步发送接口，无需再调用connectiondelegate
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (!connectionError) {
-            //http code
-            NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-            NSLog(@"Http code %ld",(long)responseCode);
-            //解析得到的json数据
-            NSError *error = nil;
-            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-            NSLog(@"%@",responseDic);
-            if (responseDic) {
-                handler(responseDic[@"status"],nil);
-            } else {
-                handler(@"-1",nil);
-            }
-        } else {
-            NSLog(@"Http error:%@", connectionError.localizedDescription);
-            handler(@"-1",connectionError);
-        }
-    }];
+    NSDictionary *dict = @{
+                           @"userName":userName,
+                           @"password":password
+                           };
+    NSURL *url = [self URLForLogin];
+    [self fetchByWebservice:url dict:dict handler:handler];
 }
 
 //根据用户id得到所有的customers的总数量
 - (void)fetchCustomersCountWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler
 {
-    NSDictionary *dic = @{@"id":userid};
-    NSString *jsonString = [self translateToJsonStringWithDictionary:dic];
-    
-    NSURL *url = [NSURL URLWithString:[self URLForGetCustomersCount]];
-    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
-    NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
-    
-    [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
-    [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
-    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
-    [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
-    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
-    [req setHTTPMethod:@"POST"];
-    [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    //ios5之后新增异步发送接口，无需再调用connectiondelegate
-    NSOperationQueue *queue = [NSOperationQueue mainQueue];
-    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        if (!connectionError) {
-            //解析得到的json数据
-            NSError *error = nil;
-            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-            NSLog(@"%@",responseDic);
-            if (responseDic) {
-                handler(responseDic[@"status"],nil,responseDic[@"count"]);
-            } else {
-                handler(@"-1",nil,@"0");
-            }
-        } else {
-            NSLog(@"Http error:%@", connectionError.localizedDescription);
-            handler(@"-1",connectionError,@"0");
-        }
-    }];
-    
+    NSDictionary *dict = @{
+                           @"id":userid
+                           };
+    NSURL *url = [self URLForGetCustomersCount];
+    [self fetchByWebservice:url dict:dict handler:handler];
 }
 
 //根据用户id得到所有的customers
 - (void)fetchCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler
 {
-    NSDictionary *dic = @{@"pageNo":@"1",@"pageSize":@"100",@"id":userid};
-    NSString *jsonString = [self translateToJsonStringWithDictionary:dic];
-    
-    NSURL *url = [NSURL URLWithString:[self URLForGetAllCustomers]];
+    NSDictionary *dic = @{
+                          @"pageNo":@"1",
+                          @"pageSize":@"100",
+                          @"id":userid
+                          };
+    NSURL *url = [self URLForGetAllCustomers];
+    [self fetchByWebservice:url dict:dic handler:handler];
+}
+
+
+// 稳定的网络访问webservice的接口
+- (void)fetchByWebservice:(NSURL *)url dict:(NSDictionary *)dict handler:(void (^)(NSString *, NSError *, NSString *))handler
+{
+    NSString *jsonString = [self translateToJsonStringWithDictionary:dict];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
     
@@ -131,8 +80,8 @@
             handler(@"-1",connectionError,@"0");
         }
     }];
-    
 }
+
 
 #pragma mark - translateToJsonString
 
