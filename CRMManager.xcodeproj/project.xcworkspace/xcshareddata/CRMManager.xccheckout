@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8405EAC5-E05E-41E6-975B-731F09410A4D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CRMManager</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CA6683B4-7332-48C8-A865-5A2BB455527E</key>
+		<string>https://github.com/chkkassd/CRMManager.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CRMManager.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CA6683B4-7332-48C8-A865-5A2BB455527E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/chkkassd/CRMManager.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CA6683B4-7332-48C8-A865-5A2BB455527E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CA6683B4-7332-48C8-A865-5A2BB455527E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CRMManager</string>
+		</dict>
+	</array>
+</dict>
+</plist>
