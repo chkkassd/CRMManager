@@ -13,6 +13,7 @@
 
 - (NSString *)URLForLogin;
 - (NSString *)URLForGetAllCustomers;
+//根据用户id得到所有的customers
 - (NSString *)URLForGetCustomersCount;
 
 @end

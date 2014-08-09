@@ -18,9 +18,6 @@
 //根据用户id得到所有的customers的总数量
 - (void)fetchCustomersCountWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler;
 
-//根据用户id得到所有的customers
-- (NSString *)URLForGetAllCustomers;
-
 //单例
 +(ZDWebService *)sharedWebViewService;
 
