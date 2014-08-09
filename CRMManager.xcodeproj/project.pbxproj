@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */; };
+		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
+		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
+		18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */; };
+		18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */; };
+		18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */; };
+		18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */; };
+		18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */; };
 		6724CB531994B26600E1C058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB521994B26600E1C058 /* Foundation.framework */; };
 		6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB541994B26600E1C058 /* CoreGraphics.framework */; };
 		6724CB571994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
@@ -22,9 +29,6 @@
 		6724CB771994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
-		6724CB931994B97C00E1C058 /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB921994B97C00E1C058 /* ZDLoginViewController.m */; };
-		6724CB961994B9E000E1C058 /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB951994B9E000E1C058 /* ZDGesturePasswordViewController.m */; };
-		6724CB991994BB2E00E1C058 /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB981994BB2E00E1C058 /* ZDTabBarViewController.m */; };
 		6724CB9C1994BB8600E1C058 /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9B1994BB8600E1C058 /* ZDModeClient.m */; };
 		6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB9E1994BC2F00E1C058 /* ZDWebService.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
@@ -43,6 +47,20 @@
 /* Begin PBXFileReference section */
 		18E9F97F1995A62B00E6DC8F /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
 		18E9F9801995A62B00E6DC8F /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
+		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
+		18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordViewController.m; sourceTree = "<group>"; };
+		18E9F9931995B6F000E6DC8F /* ZDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLoginViewController.h; sourceTree = "<group>"; };
+		18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLoginViewController.m; sourceTree = "<group>"; };
+		18E9F9961995B6F000E6DC8F /* ZDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarViewController.h; sourceTree = "<group>"; };
+		18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarViewController.m; sourceTree = "<group>"; };
+		18E9F9991995B6F000E6DC8F /* ZDProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductDetailViewController.h; sourceTree = "<group>"; };
+		18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductDetailViewController.m; sourceTree = "<group>"; };
+		18E9F99B1995B6F000E6DC8F /* ZDProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductsListViewController.h; sourceTree = "<group>"; };
+		18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductsListViewController.m; sourceTree = "<group>"; };
+		18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDQAViewController.h; sourceTree = "<group>"; };
+		18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDQAViewController.m; sourceTree = "<group>"; };
+		18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSettingViewController.h; sourceTree = "<group>"; };
+		18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSettingViewController.m; sourceTree = "<group>"; };
 		6724CB4F1994B26600E1C058 /* CRMManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRMManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6724CB521994B26600E1C058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6724CB541994B26600E1C058 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,12 +79,6 @@
 		6724CB7C1994B26600E1C058 /* CRMManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRMManagerTests-Info.plist"; sourceTree = "<group>"; };
 		6724CB7E1994B26600E1C058 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6724CB801994B26600E1C058 /* CRMManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRMManagerTests.m; sourceTree = "<group>"; };
-		6724CB911994B97C00E1C058 /* ZDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLoginViewController.h; sourceTree = "<group>"; };
-		6724CB921994B97C00E1C058 /* ZDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLoginViewController.m; sourceTree = "<group>"; };
-		6724CB941994B9E000E1C058 /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
-		6724CB951994B9E000E1C058 /* ZDGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordViewController.m; sourceTree = "<group>"; };
-		6724CB971994BB2E00E1C058 /* ZDTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarViewController.h; sourceTree = "<group>"; };
-		6724CB981994BB2E00E1C058 /* ZDTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarViewController.m; sourceTree = "<group>"; };
 		6724CB9A1994BB8600E1C058 /* ZDModeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModeClient.h; sourceTree = "<group>"; };
 		6724CB9B1994BB8600E1C058 /* ZDModeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModeClient.m; sourceTree = "<group>"; };
 		6724CB9D1994BC2F00E1C058 /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
@@ -100,6 +112,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18E9F9901995B6F000E6DC8F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */,
+				18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */,
+				18E9F9931995B6F000E6DC8F /* ZDLoginViewController.h */,
+				18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18E9F9951995B6F000E6DC8F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18E9F9961995B6F000E6DC8F /* ZDTabBarViewController.h */,
+				18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18E9F9981995B6F000E6DC8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18E9F9991995B6F000E6DC8F /* ZDProductDetailViewController.h */,
+				18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */,
+				18E9F99B1995B6F000E6DC8F /* ZDProductsListViewController.h */,
+				18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		18E9F99D1995B6F000E6DC8F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */,
+				18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */,
+				18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */,
+				18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		6724CB461994B26600E1C058 = {
 			isa = PBXGroup;
 			children = (
@@ -179,12 +233,10 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				6724CB911994B97C00E1C058 /* ZDLoginViewController.h */,
-				6724CB921994B97C00E1C058 /* ZDLoginViewController.m */,
-				6724CB941994B9E000E1C058 /* ZDGesturePasswordViewController.h */,
-				6724CB951994B9E000E1C058 /* ZDGesturePasswordViewController.m */,
-				6724CB971994BB2E00E1C058 /* ZDTabBarViewController.h */,
-				6724CB981994BB2E00E1C058 /* ZDTabBarViewController.m */,
+				18E9F9901995B6F000E6DC8F /* Login */,
+				18E9F9951995B6F000E6DC8F /* Main */,
+				18E9F9981995B6F000E6DC8F /* Products */,
+				18E9F99D1995B6F000E6DC8F /* Settings */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -318,13 +370,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
-				6724CB961994B9E000E1C058 /* ZDGesturePasswordViewController.m in Sources */,
+				18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */,
 				18E9F9811995A62B00E6DC8F /* ZDWebService+URL.m in Sources */,
+				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
+				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
+				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
-				6724CB931994B97C00E1C058 /* ZDLoginViewController.m in Sources */,
 				6724CB9F1994BC2F00E1C058 /* ZDWebService.m in Sources */,
-				6724CB991994BB2E00E1C058 /* ZDTabBarViewController.m in Sources */,
+				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
+				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
 				6724CB9C1994BB8600E1C058 /* ZDModeClient.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,
 			);
@@ -464,6 +520,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -477,6 +534,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

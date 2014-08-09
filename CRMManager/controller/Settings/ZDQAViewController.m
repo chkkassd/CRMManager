@@ -1,18 +1,20 @@
 //
-//  ZDTabBarViewController.m
-//  CRMManager
+//  ZDQAViewController.m
+//  CrmApp
 //
-//  Created by peter on 14-8-8.
-//  Copyright (c) 2014年 peter. All rights reserved.
+//  Created by apple on 14-7-30.
+//  Copyright (c) 2014年 com.zendai. All rights reserved.
 //
 
-#import "ZDTabBarViewController.h"
+#import "ZDQAViewController.h"
 
-@interface ZDTabBarViewController ()
+@interface ZDQAViewController ()
+
+@property (nonatomic, weak) IBOutlet UITextView* textView;
 
 @end
 
-@implementation ZDTabBarViewController
+@implementation ZDQAViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.textView becomeFirstResponder];
+    
 }
 
 - (void)didReceiveMemoryWarning
