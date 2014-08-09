@@ -13,7 +13,7 @@
 
 //登陆接口
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *obj,NSError *error))handler;
-//单利
+//单例
 +(ZDWebService *)sharedWebViewService;
 
 @end
