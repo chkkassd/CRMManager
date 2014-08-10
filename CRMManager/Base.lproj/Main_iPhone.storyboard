@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -91,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="-652" y="640"/>
         </scene>
-        <!--机会-->
+        <!--View Controller - 机会-->
         <scene sceneID="cbF-gE-o2g">
             <objects>
                 <viewController id="gZt-Wc-d9V" sceneMemberID="viewController">
@@ -131,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="-203" y="640"/>
         </scene>
-        <!--客户-->
+        <!--View Controller - 客户-->
         <scene sceneID="Fi6-XJ-Sfo">
             <objects>
                 <viewController id="sBx-Oc-AFy" sceneMemberID="viewController">
@@ -150,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="965" y="324"/>
         </scene>
-        <!--机会-->
+        <!--Navigation Controller - 机会-->
         <scene sceneID="5ZK-Bf-xJM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WGM-OG-6aH" sceneMemberID="viewController">
@@ -169,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="439" y="-329"/>
         </scene>
-        <!--客户-->
+        <!--Navigation Controller - 客户-->
         <scene sceneID="YHh-ZU-gWX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3G-th-KrS" sceneMemberID="viewController">
@@ -188,7 +189,7 @@
             </objects>
             <point key="canvasLocation" x="439" y="324"/>
         </scene>
-        <!--产品-->
+        <!--Navigation Controller - 产品-->
         <scene sceneID="wfF-bu-cfO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37u-Nd-QJm" sceneMemberID="viewController">
@@ -207,7 +208,7 @@
             </objects>
             <point key="canvasLocation" x="439" y="1042"/>
         </scene>
-        <!--设置-->
+        <!--Navigation Controller - 设置-->
         <scene sceneID="5yg-ER-5s1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bY0-Ej-Gu0" sceneMemberID="viewController">
@@ -226,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="439" y="1723"/>
         </scene>
-        <!--设置-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="eSg-z6-iUU">
             <objects>
                 <tableViewController id="orw-34-dL9" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -360,7 +361,7 @@
             </objects>
             <point key="canvasLocation" x="974" y="1723"/>
         </scene>
-        <!--常见问题-->
+        <!--View Controller - 常见问题-->
         <scene sceneID="lVH-hY-WaC">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="3pM-dz-Y9u" sceneMemberID="viewController">
@@ -397,7 +398,7 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
             </objects>
             <point key="canvasLocation" x="1501" y="2495"/>
         </scene>
-        <!--意见反馈-->
+        <!--View Controller - 意见反馈-->
         <scene sceneID="1w3-t8-tMB">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="dVy-Fh-7ff" customClass="ZDQAViewController" sceneMemberID="viewController">
@@ -410,7 +411,7 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="请输入您的意见。。。" translatesAutoresizingMaskIntoConstraints="NO" id="0GE-nR-Zmr">
-                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -429,7 +430,7 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
             </objects>
             <point key="canvasLocation" x="1501" y="1723"/>
         </scene>
-        <!--产品-->
+        <!--Products List View Controller - 产品-->
         <scene sceneID="Erv-SZ-4Zb">
             <objects>
                 <viewController id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -534,7 +535,7 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
             </objects>
             <point key="canvasLocation" x="974" y="1042"/>
         </scene>
-        <!--证大岁悦-->
+        <!--View Controller - 证大岁悦-->
         <scene sceneID="VOw-sJ-8jd">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BuH-HC-ubf" sceneMemberID="viewController">
@@ -578,10 +579,7 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Ehx-VS-OQs"/>

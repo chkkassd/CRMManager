@@ -27,4 +27,14 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomers"]];
 }
 
+- (NSURL *)URLForGetAllProductsWithCustomer
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerProducts"]];
+}
+
+- (NSURL *)URLForGetProductDetailWithProduct
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerProductDetail"]];
+}
+
 @end

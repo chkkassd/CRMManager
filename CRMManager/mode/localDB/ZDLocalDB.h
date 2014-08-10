@@ -9,10 +9,24 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "ZDCachePathUtility.h"
+#import "ZDModeClient.h"
+#import "ManagerUser.h"
+#import "Customer.h"
+#import "Product.h"
+#import "ProductDetail.h"
+#import "ZDManagerUser.h"
+#import "ZDCustomer.h"
 
 @interface ZDLocalDB : NSObject
 
+//query
+- (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid;
+- (Customer *)queryCustomerWithCustomerId:(NSString *)customerid;
+//modify and save
+- (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;
+- (BOOL)saveMuchCustomersWith:(NSArray *)customers error:(NSError **)error;
+- (BOOL)saveCustomerWith:(ZDCustomer *)zdCustomer error:(NSError **)error;
+//单例
 + (ZDLocalDB *)sharedLocalDB;
 
 @end

@@ -42,8 +42,9 @@
 
 - (IBAction)test:(id)sender
 {
-    [[ZDWebService sharedWebViewService] fetchCustomersCountWithManagerUserId:@"20000267" completionHandler:^(NSString *state, NSError *error, NSString *count) {
-        NSLog(@"count = %@",count);
+    [[ZDWebService sharedWebViewService] fetchProductsWithCustomerId:@"1000248706" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        NSLog(@"resultDic = %@",resultDic);
     }];
+     
 }
 @end

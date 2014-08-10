@@ -9,7 +9,14 @@
 
 #import <Foundation/Foundation.h>
 #import "ZDWebService.h"
+#import "ZDLocalDB.h"
 #import "ZDCachePathUtility.h"
+#import "ZDManagerUser.h"
+#import "ZDCustomer.h"
+#import "ZDProduct.h"
+#import "ZDProductDetail.h"
+
+#define DefaultCurrentUserId    @"DefaultCurrentUserId"
 
 @interface ZDModeClient : NSObject
 

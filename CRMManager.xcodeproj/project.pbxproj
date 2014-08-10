@@ -39,6 +39,10 @@
 		FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA3199611B50062B71C /* ProductDetail.m */; };
 		FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA61996121D0062B71C /* ZDLocalDB.m */; };
 		FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */; };
+		FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AAC199755520062B71C /* ZDManagerUser.m */; };
+		FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AAF199755A10062B71C /* ZDCustomer.m */; };
+		FF8F1AB3199755D10062B71C /* ZDProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AB2199755D10062B71C /* ZDProduct.m */; };
+		FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AB5199756320062B71C /* ZDProductDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,14 @@
 		FF8F1AA61996121D0062B71C /* ZDLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLocalDB.m; sourceTree = "<group>"; };
 		FF8F1AA8199618850062B71C /* ZDCachePathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCachePathUtility.h; sourceTree = "<group>"; };
 		FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCachePathUtility.m; sourceTree = "<group>"; };
+		FF8F1AAB199755520062B71C /* ZDManagerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDManagerUser.h; sourceTree = "<group>"; };
+		FF8F1AAC199755520062B71C /* ZDManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDManagerUser.m; sourceTree = "<group>"; };
+		FF8F1AAE199755A10062B71C /* ZDCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomer.h; sourceTree = "<group>"; };
+		FF8F1AAF199755A10062B71C /* ZDCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomer.m; sourceTree = "<group>"; };
+		FF8F1AB1199755D10062B71C /* ZDProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProduct.h; sourceTree = "<group>"; };
+		FF8F1AB2199755D10062B71C /* ZDProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProduct.m; sourceTree = "<group>"; };
+		FF8F1AB4199756320062B71C /* ZDProductDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductDetail.h; sourceTree = "<group>"; };
+		FF8F1AB5199756320062B71C /* ZDProductDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +336,14 @@
 				FF8F1A92199604BC0062B71C /* ZDModeClient.m */,
 				FF8F1AA8199618850062B71C /* ZDCachePathUtility.h */,
 				FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */,
+				FF8F1AAB199755520062B71C /* ZDManagerUser.h */,
+				FF8F1AAC199755520062B71C /* ZDManagerUser.m */,
+				FF8F1AAE199755A10062B71C /* ZDCustomer.h */,
+				FF8F1AAF199755A10062B71C /* ZDCustomer.m */,
+				FF8F1AB1199755D10062B71C /* ZDProduct.h */,
+				FF8F1AB2199755D10062B71C /* ZDProduct.m */,
+				FF8F1AB4199756320062B71C /* ZDProductDetail.h */,
+				FF8F1AB5199756320062B71C /* ZDProductDetail.m */,
 			);
 			path = ZDCommonMode;
 			sourceTree = "<group>";
@@ -428,9 +448,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
+				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
+				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */,
+				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
@@ -444,6 +467,7 @@
 				FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
+				FF8F1AB3199755D10062B71C /* ZDProduct.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
 				FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,

@@ -1,17 +1,14 @@
 //
-//  ProductDetail.h
+//  ZDProductDetail.h
 //  CRMManager
 //
-//  Created by 施赛峰 on 14-8-9.
+//  Created by 施赛峰 on 14-8-10.
 //  Copyright (c) 2014年 peter. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@class Product;
-
-@interface ProductDetail : NSManagedObject
+@interface ZDProductDetail : NSObject
 
 @property (nonatomic, retain) NSString * privateLongcustomerid;
 @property (nonatomic, retain) NSString * privateDatefeRepaymentDate;
@@ -51,6 +48,5 @@
 @property (nonatomic, retain) NSString * privateDoublefeInterestRate;
 @property (nonatomic, retain) NSString * privateIntegerfeTerm;
 @property (nonatomic, retain) NSString * privateDoublefeMonthRepay;
-@property (nonatomic, retain) Product * belongProduct;
 
 @end

@@ -11,30 +11,32 @@
 
 @implementation ZDWebService
 
-//登录接口
-- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSString *state,NSError *error, NSString *count))handler
+#pragma mark - 所有webservice接口
+
+//登录接口   对外暴露的error，若为nil则取到数据，若不为nil，链接失败
+- (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
 {
     password = [NSString md5:password];
-    NSDictionary *dict = @{
+    NSDictionary *dic = @{
                            @"userName":userName,
                            @"password":password
                            };
     NSURL *url = [self URLForLogin];
-    [self fetchByWebservice:url dict:dict handler:handler];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
 //根据用户id得到所有的customers的总数量
-- (void)fetchCustomersCountWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler
+- (void)fetchCustomersCountWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
 {
-    NSDictionary *dict = @{
+    NSDictionary *dic = @{
                            @"id":userid
                            };
     NSURL *url = [self URLForGetCustomersCount];
-    [self fetchByWebservice:url dict:dict handler:handler];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
 //根据用户id得到所有的customers
-- (void)fetchCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSString *state,NSError *error,NSString *count))handler
+- (void)fetchCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
 {
     NSDictionary *dic = @{
                           @"pageNo":@"1",
@@ -42,12 +44,27 @@
                           @"id":userid
                           };
     NSURL *url = [self URLForGetAllCustomers];
-    [self fetchByWebservice:url dict:dic handler:handler];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+//根据cusmomerid得到其所有的产品
+- (void)fetchProductsWithCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary *dic = @{@"id":customerid};
+    NSURL *url = [self URLForGetAllProductsWithCustomer];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
 
-// 稳定的网络访问webservice的接口
-- (void)fetchByWebservice:(NSURL *)url dict:(NSDictionary *)dict handler:(void (^)(NSString *, NSError *, NSString *))handler
+//根据productid得到产品详情
+- (void)fetchProductDetailWithProductId:(NSString *)productid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary *dic = @{@"id":productid};
+    NSURL *url = [self URLForGetProductDetailWithProduct];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+// webservice的接口请求设置
+- (void)fetchByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
 {
     NSString *jsonString = [self translateToJsonStringWithDictionary:dict];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
@@ -70,14 +87,15 @@
             NSError *error = nil;
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
             NSLog(@"%@",responseDic);
-            if (responseDic) {
-                handler(responseDic[@"status"],nil,responseDic[@"count"]);
+            if ([responseDic[@"status"] isEqualToString:@"0"]) {
+                handler(nil, responseDic);
             } else {
-                handler(@"-1",nil,@"0");
+                NSError *error = [[NSError alloc] init];
+                handler(error, nil);
             }
         } else {
             NSLog(@"Http error:%@", connectionError.localizedDescription);
-            handler(@"-1",connectionError,@"0");
+            handler(connectionError, nil);
         }
     }];
 }

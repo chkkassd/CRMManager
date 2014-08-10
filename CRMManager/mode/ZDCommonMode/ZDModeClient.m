@@ -10,14 +10,72 @@
 
 @implementation ZDModeClient
 
-//login
+#pragma mark - login and fetch data
+
+//login and save all data
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler
 {
-    [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSString *obj, NSError *error, NSString *count) {
-        if (!error && [obj isEqualToString:@"0"]) {
+    ZDManagerUser * managerUser = [[ZDManagerUser alloc] init];
+    
+    [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            //1.保存当前登录账号的userid
+            [[NSUserDefaults standardUserDefaults] setObject:resultDic[@"id"] forKey:DefaultCurrentUserId];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            //2.保存当前用户(managerUser)信息
+            managerUser.userid = resultDic[@"id"];
+            managerUser.password = password;
+            if ([[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:managerUser error:NULL]) {
+                //3.获取并保存客户信息
+                [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
+                    if (!error) {
+                        handler(nil);
+                    } else {
+                        NSError * error = [[NSError alloc] init];
+                        handler(error);
+                    }
+                }];
+            } else {
+                NSError * error = [[NSError alloc] init];
+                handler(error);
+            }
             handler(nil);
         } else {
-            error = error ? error : [[NSError alloc] init];
+            handler(error);
+        }
+    }];
+}
+
+//get and save all customers. if error is nil,save successfully,otherwise fail to save or fail to get data
+- (void)fetchAndSaveCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error))handler
+{
+    [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            NSArray * customers = resultDic[@"infos"];
+            NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
+            int count = [resultDic[@"count"] intValue];
+            for (int i = 0;i < count;i++) {
+                NSDictionary *dic = customers[i];
+                ZDCustomer *customer = [[ZDCustomer alloc] init];
+                customer.customerId = dic[@"customerId"];
+                customer.customerName = dic[@"customerName"];
+                customer.idNum = dic[@"idNum"];
+                customer.mobile = dic[@"mobile"];
+                customer.cdHope = dic[@"cdHope"];
+                customer.date = dic[@"dt"];
+                customer.customerType = dic[@"customerType"];
+                [savedCustomers addObject:customer];
+            }
+            
+            if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:savedCustomers error:NULL]) {
+                //save success
+                handler(nil);//未完整，待续。。
+            } else {
+                //save fail
+                NSError * error = [[NSError alloc] init];
+                handler(error);
+            }
+        } else {
             handler(error);
         }
     }];

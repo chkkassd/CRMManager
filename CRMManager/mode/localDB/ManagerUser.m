@@ -15,7 +15,6 @@
 @dynamic userid;
 @dynamic password;
 @dynamic gesturePassword;
-@dynamic customersCount;
 @dynamic area;
 @dynamic director;
 @dynamic allCustomers;

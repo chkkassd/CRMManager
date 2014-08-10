@@ -13,7 +13,6 @@
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="customersCount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="director" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gesturePassword" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
@@ -70,8 +69,8 @@
         <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="148"/>
         <element name="Customer" positionX="-243" positionY="-666" width="128" height="178"/>
+        <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="133"/>
         <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
         <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
     </elements>
