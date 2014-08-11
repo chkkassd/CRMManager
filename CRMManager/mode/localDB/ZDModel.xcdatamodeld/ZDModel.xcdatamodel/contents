@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Business" representedClassName="Business" syncable="YES">
+        <attribute name="accountTotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="applyDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recoverableAmount" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES">
         <attribute name="cdHope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerId" optional="YES" attributeType="String" syncable="YES"/>
@@ -69,9 +77,10 @@
         <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Customer" positionX="-243" positionY="-666" width="128" height="178"/>
+        <element name="Customer" positionX="-243" positionY="-709" width="128" height="178"/>
         <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="133"/>
         <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
         <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
+        <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
     </elements>
 </model>

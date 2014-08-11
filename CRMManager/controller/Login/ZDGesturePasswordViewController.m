@@ -31,7 +31,7 @@
 {
     SSFPasswordGestureView * passwordGestureView = [SSFPasswordGestureView instancePasswordView];
     passwordGestureView.delegate = self;
-    passwordGestureView.gesturePassword = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentGesturePasswordKey];
+    passwordGestureView.gesturePassword = self.zdManagerUser.gesturePassword ? self.zdManagerUser.gesturePassword : [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentGesturePasswordKey];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentGesturePasswordKey] && !self.zdManagerUser.gesturePassword.length) {
         passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
         self.alertLabel.text = @"请设置手势密码";
@@ -82,7 +82,6 @@
 
 - (void)passwordGestureViewFinishCheckPassword:(SSFPasswordGestureView *)passwordView
 {
-//    NSString *pd = self.zdManagerUser.gesturePassword;
     [self presentToMainController];
 }
 

@@ -24,6 +24,7 @@
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid;
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid;
 //modify and save
+- (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;
 - (BOOL)saveMuchCustomersWith:(NSArray *)customers error:(NSError **)error;
 - (BOOL)saveCustomerWith:(ZDCustomer *)zdCustomer error:(NSError **)error;

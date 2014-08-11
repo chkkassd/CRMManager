@@ -74,6 +74,33 @@
     return customer;
 }
 
+#pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
+
+//save managerUser for login
+- (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error
+{
+    if (!zdManager) return NO;
+    
+    ManagerUser *managerUser = [self queryManagerUserWithUserId:zdManager.userid];
+    if (managerUser) {
+        //存在，修改并保存
+        [self loginModifyManagerUser:managerUser from:zdManager];
+    } else {
+        managerUser = [NSEntityDescription insertNewObjectForEntityForName:@"ManagerUser" inManagedObjectContext:self.managedObjectContext];
+        [self loginModifyManagerUser:managerUser from:zdManager];
+    }
+    return [self.managedObjectContext save:error];
+}
+
+//translate zdManagerUser to managerUser for login
+- (void)loginModifyManagerUser:(ManagerUser *)managerUser from:(ZDManagerUser *)zdManagerUser
+{
+    managerUser.userid = zdManagerUser.userid;
+    managerUser.password = zdManagerUser.password;
+    managerUser.director = zdManagerUser.director;
+    managerUser.area = zdManagerUser.area;
+}
+
 #pragma mark - modify and save
 
 //save managerUser

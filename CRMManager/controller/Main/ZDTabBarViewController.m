@@ -16,57 +16,36 @@
 
 @implementation ZDTabBarViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    for (UITabBarItem *item in self.tabBar.items) {
-        switch (item.tag) {
-            case 50:
-                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_chance_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_chance"]];    // 这个代码是看 登峰 的一起学。。iOS7以后好像就不能调用了。。要研究下新的API
-#pragma warning 研究新的API
+    for (int i = 0; i < self.tabBar.items.count; i++) {
+        switch (i) {
+            case 0:{
+                UITabBarItem * barItem = self.tabBar.items[i];
+                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_chance_pressed"];
+                 break;
+            }
+            case 1:{
+                UITabBarItem * barItem = self.tabBar.items[i];
+                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_client_pressed"];
                 break;
-            case 51:
-                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_client_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_client"]];
+            }
+            case 2:{
+                UITabBarItem * barItem = self.tabBar.items[i];
+                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_product_pressed"];
                 break;
-            case 52:
-                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_product_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_product"]];
+            }
+            case 3:{
+                UITabBarItem * barItem = self.tabBar.items[i];
+                barItem.selectedImage = [UIImage imageNamed:@"maini_ico_footer_setting_pressed"];
                 break;
-            case 53:
-                [item setFinishedSelectedImage:[UIImage imageNamed:@"ico_footer_setting_pressed"] withFinishedUnselectedImage:[UIImage imageNamed:@"ico_footer_setting"]];
-                break;
+            }
             default:
                 break;
         }
     }
-    
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -25,7 +25,7 @@
             //2.保存当前用户(managerUser)信息
             managerUser.userid = resultDic[@"id"];
             managerUser.password = password;
-            if ([[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:managerUser error:NULL]) {
+            if ([[ZDLocalDB sharedLocalDB] loginSaveManagerUserWithZDManagerUser:managerUser error:NULL]) {
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
