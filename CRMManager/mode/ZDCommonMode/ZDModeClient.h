@@ -17,12 +17,20 @@
 #import "ZDProductDetail.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
+#define DefaultCurrentGesturePasswordKey   @"DefaultCurrentGesturePassword"
 
 @interface ZDModeClient : NSObject
 
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler;
 
+//modify and save
+- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
+
+//common propertise
+@property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
+
+//单例
 + (ZDModeClient *)sharedModeClient;
 
 @end

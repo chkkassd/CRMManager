@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDModeClient.h"
+#import "AllCustomerCategoryHeaders.h"
 
 @interface ZDGesturePasswordViewController : UIViewController
 

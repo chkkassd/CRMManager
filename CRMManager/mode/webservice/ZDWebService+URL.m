@@ -37,4 +37,11 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerProductDetail"]];
 }
 
+- (NSURL *)URLForGetAllBusinessWithCustomer
+{
+    return [NSURL URLWithString:@"https://api.ezendai.com/hera/credit/queryBusiness"];
+    //https://172.16.230.190:8443/hera/
+    //https://api.ezendai.com/hera/
+}
+
 @end

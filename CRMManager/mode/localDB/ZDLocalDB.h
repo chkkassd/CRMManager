@@ -20,6 +20,7 @@
 @interface ZDLocalDB : NSObject
 
 //query
+- (ZDManagerUser *)queryCurrentZDmanagerUser;
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid;
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid;
 //modify and save

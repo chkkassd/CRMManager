@@ -27,6 +27,9 @@
 //根据productid得到产品详情
 - (void)fetchProductDetailWithProductId:(NSString *)productid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler;
 
+//根据customer的mobile查询其业务
+- (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
 //单例
 +(ZDWebService *)sharedWebViewService;
 

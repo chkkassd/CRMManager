@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -77,7 +77,7 @@
         <!--Gesture Password View Controller-->
         <scene sceneID="w0D-RK-29D">
             <objects>
-                <viewController id="pca-E9-4b1" customClass="ZDGesturePasswordViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZDGesturePasswordViewController" id="pca-E9-4b1" customClass="ZDGesturePasswordViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UKC-zD-brW"/>
                         <viewControllerLayoutGuide type="bottom" id="SUq-Ik-hua"/>
@@ -85,8 +85,52 @@
                     <view key="view" contentMode="scaleToFill" id="0iU-4g-eRD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gO7-pf-R5v">
+                                <rect key="frame" x="120" y="20" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2FC-2L-XvJ"/>
+                                    <constraint firstAttribute="width" constant="80" id="aqG-jk-bQp"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rm1-xg-eyl">
+                                <rect key="frame" x="50" y="108" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bSP-Px-0cC"/>
+                                    <constraint firstAttribute="width" constant="220" id="jz4-IC-QYC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFb-o2-2OC">
+                                <rect key="frame" x="50" y="137" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="D1l-3t-GVd"/>
+                                    <constraint firstAttribute="height" constant="21" id="b6v-mt-uIM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gO7-pf-R5v" firstAttribute="top" secondItem="UKC-zD-brW" secondAttribute="bottom" id="0Sn-6Y-iof"/>
+                            <constraint firstAttribute="centerX" secondItem="gO7-pf-R5v" secondAttribute="centerX" id="A5H-zN-8TT"/>
+                            <constraint firstItem="rm1-xg-eyl" firstAttribute="top" secondItem="gO7-pf-R5v" secondAttribute="bottom" constant="8" id="OTA-lt-0Tq"/>
+                            <constraint firstItem="JFb-o2-2OC" firstAttribute="top" secondItem="rm1-xg-eyl" secondAttribute="bottom" constant="8" id="WtS-aG-SOE"/>
+                            <constraint firstAttribute="centerX" secondItem="rm1-xg-eyl" secondAttribute="centerX" id="Zwp-Re-5ZG"/>
+                            <constraint firstAttribute="centerX" secondItem="JFb-o2-2OC" secondAttribute="centerX" id="aQO-2O-fxm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="alertLabel" destination="JFb-o2-2OC" id="LYX-aM-2wl"/>
+                        <outlet property="nameLabel" destination="rm1-xg-eyl" id="a9H-To-XEo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JB-WD-7bq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +158,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="lTs-FL-2fc">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="Lka-LT-7q6" customClass="ZDTabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ZDTabBarViewController" definesPresentationContext="YES" id="Lka-LT-7q6" customClass="ZDTabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="0Wg-Kr-Nut">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>

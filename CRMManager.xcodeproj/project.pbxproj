@@ -29,6 +29,9 @@
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
+		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
+		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
+		67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */; };
 		FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */; };
 		FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8F199604BC0062B71C /* ZDWebService.m */; };
 		FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A92199604BC0062B71C /* ZDModeClient.m */; };
@@ -91,6 +94,11 @@
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
 		6724CBA11994BD6A00E1C058 /* NSString+Tony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tony.m"; sourceTree = "<group>"; };
 		6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCustomerCategoryHeaders.h; sourceTree = "<group>"; };
+		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
+		67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPasswordGestureView.m; sourceTree = "<group>"; };
+		67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFPasswordGestureView.xib; sourceTree = "<group>"; };
+		67C39A5F19985FBA00D796EA /* SSFPathLineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPathLineLayer.h; sourceTree = "<group>"; };
+		67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPathLineLayer.m; sourceTree = "<group>"; };
 		FF8F1A8C199604BC0062B71C /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
 		FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
 		FF8F1A8E199604BC0062B71C /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
@@ -293,11 +301,24 @@
 		6724CB901994B52E00E1C058 /* customerCategory */ = {
 			isa = PBXGroup;
 			children = (
+				67C39A5B19985FBA00D796EA /* SSFGesturePassword */,
 				6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */,
 				6724CBA01994BD6A00E1C058 /* NSString+Tony.h */,
 				6724CBA11994BD6A00E1C058 /* NSString+Tony.m */,
 			);
 			path = customerCategory;
+			sourceTree = "<group>";
+		};
+		67C39A5B19985FBA00D796EA /* SSFGesturePassword */ = {
+			isa = PBXGroup;
+			children = (
+				67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */,
+				67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */,
+				67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */,
+				67C39A5F19985FBA00D796EA /* SSFPathLineLayer.h */,
+				67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */,
+			);
+			path = SSFGesturePassword;
 			sourceTree = "<group>";
 		};
 		FF8F1A8A199604BC0062B71C /* localDB */ = {
@@ -427,6 +448,7 @@
 			files = (
 				6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */,
 				6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */,
+				67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */,
 				6724CB661994B26600E1C058 /* Main_iPhone.storyboard in Resources */,
 				6724CB5D1994B26600E1C058 /* InfoPlist.strings in Resources */,
 			);
@@ -450,7 +472,9 @@
 				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
 				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
+				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
+				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,

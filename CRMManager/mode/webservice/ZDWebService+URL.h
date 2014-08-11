@@ -16,5 +16,6 @@
 - (NSURL *)URLForGetCustomersCount;
 - (NSURL *)URLForGetAllProductsWithCustomer;
 - (NSURL *)URLForGetProductDetailWithProduct;
+- (NSURL *)URLForGetAllBusinessWithCustomer;
 
 @end

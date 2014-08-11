@@ -10,5 +10,6 @@
 #define CRMManager_AllCustomerCategoryHeaders_h
 
 #import "NSString+Tony.h"
+#import "SSFPasswordGestureView.h"
 
 #endif

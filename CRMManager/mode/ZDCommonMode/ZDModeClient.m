@@ -29,7 +29,7 @@
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
-                        handler(nil);
+                        handler(nil);//未完整，待续。。
                     } else {
                         NSError * error = [[NSError alloc] init];
                         handler(error);
@@ -69,7 +69,7 @@
             
             if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:savedCustomers error:NULL]) {
                 //save success
-                handler(nil);//未完整，待续。。
+                handler(nil);
             } else {
                 //save fail
                 NSError * error = [[NSError alloc] init];
@@ -79,6 +79,23 @@
             handler(error);
         }
     }];
+}
+
+#pragma mark - 修改数据后保存
+
+- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser
+{
+    return [[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:zdManageruser error:NULL];
+}
+
+#pragma mark - properties
+
+- (ZDManagerUser *)zdManagerUser
+{
+    if (!_zdManagerUser) {
+        _zdManagerUser = [[ZDLocalDB sharedLocalDB] queryCurrentZDmanagerUser];
+    }
+    return _zdManagerUser;
 }
 
 #pragma mark - sharedInstance

@@ -37,6 +37,27 @@
     return managerUser;
 }
 
+- (ZDManagerUser *)queryCurrentZDmanagerUser
+{
+    if (!self.defaultCurrentUserId.length) return NO;
+    
+    ManagerUser *managerUser = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
+    if (managerUser) {
+        ZDManagerUser * zdManagerUser = [[ZDManagerUser alloc] init];
+        [self modifyZDManagerUser:zdManagerUser from:managerUser];
+        return zdManagerUser;
+    } else return nil;
+}
+
+- (void)modifyZDManagerUser:(ZDManagerUser *)zdManager from:(ManagerUser *)managerUser
+{
+    zdManager.userid = managerUser.userid;
+    zdManager.password = managerUser.password;
+    zdManager.gesturePassword = managerUser.gesturePassword;
+    zdManager.director = managerUser.director;
+    zdManager.area = managerUser.area;
+}
+
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid
 {
     Customer *customer = nil;

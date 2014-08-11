@@ -8,6 +8,7 @@
 
 #import "ZDLoginViewController.h"
 #import "ZDModeClient.h"
+#import "ZDGesturePasswordViewController.h"
 
 @interface ZDLoginViewController ()
 
@@ -33,7 +34,8 @@
 {
     [[ZDModeClient sharedModeClient] loginWithUserName:self.nameTextField.text password:self.passwordTextField.text completionHandler:^(NSError *error) {
         if (!error) {
-            NSLog(@"success to login");
+            ZDGesturePasswordViewController * gesturePasswordViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDGesturePasswordViewController"];
+            [self presentViewController:gesturePasswordViewController animated:YES completion:NULL];
         } else {
             NSLog(@"fail to login");
         }
@@ -42,9 +44,14 @@
 
 - (IBAction)test:(id)sender
 {
-    [[ZDWebService sharedWebViewService] fetchProductsWithCustomerId:@"1000248706" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//    [[ZDWebService sharedWebViewService] fetchProductsWithCustomerId:@"1000248706" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//        NSLog(@"resultDic = %@",resultDic);
+//    }];
+    
+    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"18616689317" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
         NSLog(@"resultDic = %@",resultDic);
     }];
-     
+//    Customer * customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000248706"];
+//    NSLog(@"name = %@",customer.customerName);
 }
 @end
