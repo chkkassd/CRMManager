@@ -29,6 +29,7 @@
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
+		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
 		67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */; };
@@ -95,6 +96,8 @@
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
 		6724CBA11994BD6A00E1C058 /* NSString+Tony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tony.m"; sourceTree = "<group>"; };
 		6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCustomerCategoryHeaders.h; sourceTree = "<group>"; };
+		67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordSettingViewController.h; sourceTree = "<group>"; };
+		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
 		67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPasswordGestureView.m; sourceTree = "<group>"; };
 		67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFPasswordGestureView.xib; sourceTree = "<group>"; };
@@ -189,10 +192,12 @@
 		18E9F99D1995B6F000E6DC8F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */,
-				18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */,
 				18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */,
 				18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */,
+				18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */,
+				18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */,
+				67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */,
+				67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
+				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,

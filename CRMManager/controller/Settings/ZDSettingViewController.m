@@ -16,12 +16,7 @@
 
 @implementation ZDSettingViewController
 
-- (IBAction)logout:(id)sender
-{
-    UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"注销" message:@"确定要注销码？" delegate:self cancelButtonTitle:@"不要" otherButtonTitles:@"是的", nil];
-    [alert show];
-    
-}
+
 
 #pragma mark - UIAlertViewDelegate
 
