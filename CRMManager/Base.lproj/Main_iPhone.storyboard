@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JB-WD-7bq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-652" y="640"/>
+            <point key="canvasLocation" x="-604" y="640"/>
         </scene>
         <!--View Controller - 机会-->
         <scene sceneID="cbF-gE-o2g">
@@ -331,6 +331,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTI-hG-7dx">
                                                     <rect key="frame" x="251" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="gesturePasswordSwitchPressed:" destination="orw-34-dL9" eventType="valueChanged" id="8Q4-jl-zxC"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -371,6 +374,9 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="loginOut:" destination="orw-34-dL9" eventType="touchUpInside" id="pr0-qw-prZ"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -385,9 +391,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="fgv-lQ-c8Z"/>
                     <connections>
-                        <segue destination="3pM-dz-Y9u" kind="push" identifier="QAView Display" id="wS1-Hd-Hz2"/>
-                        <segue destination="dVy-Fh-7ff" kind="push" identifier="SugestionView Display" id="uy7-ws-bXL"/>
-                        <segue destination="Stb-zg-pkS" kind="push" identifier="GesturePasswordView Display" id="5WE-xl-ZlU"/>
+                        <outlet property="gesturePasswordSwitch" destination="kTI-hG-7dx" id="h08-Fm-aPL"/>
+                        <segue destination="dVy-Fh-7ff" kind="push" identifier="SugestionView Display" id="hZk-gm-HtY"/>
+                        <segue destination="Stb-zg-pkS" kind="push" identifier="GesturePasswordSettingView Display" id="wNB-Qn-HrS"/>
+                        <segue destination="3pM-dz-Y9u" kind="push" identifier="QAView Display" id="RGl-0b-fjg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z2-kn-Oyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -463,10 +470,10 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
             </objects>
             <point key="canvasLocation" x="1501" y="1723"/>
         </scene>
-        <!--View Controller - 手势密码设置-->
+        <!--Gesture Password Setting View Controller - 手势密码设置-->
         <scene sceneID="M2x-54-AbC">
             <objects>
-                <viewController id="Stb-zg-pkS" sceneMemberID="viewController">
+                <viewController id="Stb-zg-pkS" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jRS-dG-u5e"/>
                         <viewControllerLayoutGuide type="bottom" id="E5e-2H-KIr"/>
@@ -493,6 +500,9 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="手势密码设置" id="MR6-BV-2Yf"/>
+                    <connections>
+                        <outlet property="alertLabel" destination="Q8o-T6-ccf" id="nkw-Ex-fNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eb5-Yp-3Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

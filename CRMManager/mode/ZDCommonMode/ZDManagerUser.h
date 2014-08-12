@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSString * userid;
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * gesturePassword;
+@property (nonatomic) BOOL gesturePasswordSwitch;
 @property (nonatomic, retain) NSString * area;
 @property (nonatomic, retain) NSString * director;
 

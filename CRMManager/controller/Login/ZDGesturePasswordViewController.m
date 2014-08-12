@@ -7,9 +7,6 @@
 //
 
 #import "ZDGesturePasswordViewController.h"
-#import "ZDTabBarViewController.h"
-
-#define DefaultCurrentGesturePasswordKey   @"DefaultCurrentGesturePassword"
 
 @interface ZDGesturePasswordViewController ()<SSFPasswordGestureViewDelegate>
 
@@ -31,8 +28,8 @@
 {
     SSFPasswordGestureView * passwordGestureView = [SSFPasswordGestureView instancePasswordView];
     passwordGestureView.delegate = self;
-    passwordGestureView.gesturePassword = self.zdManagerUser.gesturePassword ? self.zdManagerUser.gesturePassword : [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentGesturePasswordKey];
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentGesturePasswordKey] && !self.zdManagerUser.gesturePassword.length) {
+    passwordGestureView.gesturePassword = self.zdManagerUser.gesturePassword;
+    if (!self.zdManagerUser.gesturePassword.length) {
         passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
         self.alertLabel.text = @"请设置手势密码";
     } else {
@@ -65,14 +62,9 @@
 {
     self.alertLabel.text = @"手势密码设置成功";
     self.zdManagerUser.gesturePassword = password;
+    self.zdManagerUser.gesturePasswordSwitch = YES;
     [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
-    [self performSelector:@selector(presentToMainController) withObject:nil afterDelay:1.0];
-}
-
-- (void)presentToMainController
-{
-    ZDTabBarViewController * tabBarViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDTabBarViewController"];
-    [self presentViewController:tabBarViewController animated:YES completion:NULL];
+    [self.delegate gesturePasswordViewControllerDidFinish:self];
 }
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
@@ -82,7 +74,7 @@
 
 - (void)passwordGestureViewFinishCheckPassword:(SSFPasswordGestureView *)passwordView
 {
-    [self presentToMainController];
+    [self.delegate gesturePasswordViewControllerDidFinish:self];
 }
 
 - (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView

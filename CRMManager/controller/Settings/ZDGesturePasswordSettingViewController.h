@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDSettingViewController.h"
+#import "AllCustomerCategoryHeaders.h"
+#import "ZDModeClient.h"
 
-@interface ZDGesturePasswordSettingViewController : UIViewController
+@interface ZDGesturePasswordSettingViewController : UIViewController<UIAlertViewDelegate>
 
 @end

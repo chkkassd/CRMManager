@@ -17,7 +17,6 @@
 #import "ZDProductDetail.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
-#define DefaultCurrentGesturePasswordKey   @"DefaultCurrentGesturePassword"
 
 @interface ZDModeClient : NSObject
 

@@ -10,6 +10,16 @@
 #import "ZDModeClient.h"
 #import "AllCustomerCategoryHeaders.h"
 
+@protocol ZDGesturePasswordViewControllerDelegate;
+
 @interface ZDGesturePasswordViewController : UIViewController
+
+@property (weak, nonatomic) id <ZDGesturePasswordViewControllerDelegate> delegate;
+
+@end
+
+@protocol ZDGesturePasswordViewControllerDelegate <NSObject>
+
+- (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller;
 
 @end

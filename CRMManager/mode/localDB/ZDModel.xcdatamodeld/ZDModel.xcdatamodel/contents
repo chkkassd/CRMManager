@@ -23,6 +23,7 @@
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="director" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gesturePassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gesturePasswordSwitch" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allCustomers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Customer" inverseName="belongManager" inverseEntity="Customer" syncable="YES"/>
@@ -77,10 +78,10 @@
         <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
         <element name="Customer" positionX="-243" positionY="-709" width="128" height="178"/>
-        <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="133"/>
+        <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="148"/>
         <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
         <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
-        <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
     </elements>
 </model>

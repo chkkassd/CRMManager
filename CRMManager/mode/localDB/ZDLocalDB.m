@@ -54,6 +54,7 @@
     zdManager.userid = managerUser.userid;
     zdManager.password = managerUser.password;
     zdManager.gesturePassword = managerUser.gesturePassword;
+    zdManager.gesturePasswordSwitch = managerUser.gesturePasswordSwitch;
     zdManager.director = managerUser.director;
     zdManager.area = managerUser.area;
 }
@@ -125,6 +126,7 @@
     managerUser.userid = zdManagerUser.userid;
     managerUser.password = zdManagerUser.password;
     managerUser.gesturePassword = zdManagerUser.gesturePassword;
+    managerUser.gesturePasswordSwitch = zdManagerUser.gesturePasswordSwitch;
     managerUser.director = zdManagerUser.director;
     managerUser.area = zdManagerUser.area;
 }

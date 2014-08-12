@@ -120,11 +120,10 @@
             {
                 //完成第二次手绘密码,并与第一次密码相同
                 NSString * gpd = [[NSUserDefaults standardUserDefaults] objectForKey:SSFSecondUserGesturePasswordKey];
-                [[NSUserDefaults standardUserDefaults] setObject:gpd forKey:DefaultCurrentGesturePasswordKey];
-                [[NSUserDefaults standardUserDefaults] synchronize];
-                
-                if ([self.delegate respondsToSelector:@selector(passwordGestureViewFinishSecondTimePassword:andPassword:)]) {
-                    [self.delegate passwordGestureViewFinishSecondTimePassword:self andPassword:gpd];
+                if (gpd.length) {
+                    if ([self.delegate respondsToSelector:@selector(passwordGestureViewFinishSecondTimePassword:andPassword:)]) {
+                        [self.delegate passwordGestureViewFinishSecondTimePassword:self andPassword:gpd];
+                    }
                 }
                 break;
             }
@@ -136,10 +135,6 @@
                 break;
             case SSFPasswordGestureViewStateCheck:
             {
-//                NSString *gpd = [[NSUserDefaults standardUserDefaults] objectForKey:SSFUserGesturePasswordKey];
-//                [[NSUserDefaults standardUserDefaults] setObject:gpd forKey:DefaultCurrentGesturePasswordKey];
-//                [[NSUserDefaults standardUserDefaults] synchronize];
-                
                 //check手势密码成功
                 if ([self.delegate respondsToSelector:@selector(passwordGestureViewFinishCheckPassword:)]) {
                     [self.delegate passwordGestureViewFinishCheckPassword:self];

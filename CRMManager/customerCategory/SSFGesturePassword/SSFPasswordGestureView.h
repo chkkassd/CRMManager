@@ -10,7 +10,6 @@
 #define SSFFirstUserGesturePasswordKey  @"firstUserGesturePassword"//未设置手势密码的第一次密码
 #define SSFSecondUserGesturePasswordKey  @"secondUserGesturePassword"//未设置手势密码的第二次密码
 #define SSFUserGesturePasswordKey  @"UserGesturePassword"//已设置手势密码的检查密码
-#define DefaultCurrentGesturePasswordKey   @"DefaultCurrentGesturePassword"//本地保存的手势密码
 
 typedef enum {
     SSFPasswordGestureViewStateWillFirstDraw,//将要执行第一次绘制,如从来没有设置过手势密码，state传此
@@ -38,6 +37,7 @@ typedef enum {
 
 @protocol SSFPasswordGestureViewDelegate <NSObject>
 
+@optional
 - (void)passwordGestureViewFinishFirstTimePassword:(SSFPasswordGestureView *)passwordView;
 - (void)passwordGestureViewFinishSecondTimePassword:(SSFPasswordGestureView *)passwordView andPassword:(NSString *)password;
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView;

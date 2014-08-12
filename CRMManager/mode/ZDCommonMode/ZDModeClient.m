@@ -39,7 +39,6 @@
                 NSError * error = [[NSError alloc] init];
                 handler(error);
             }
-            handler(nil);
         } else {
             handler(error);
         }
