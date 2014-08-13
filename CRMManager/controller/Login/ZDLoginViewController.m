@@ -93,5 +93,8 @@
 //    }];
 //    Customer * customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000248706"];
 //    NSLog(@"name = %@",customer.customerName);
+    [[ZDWebService sharedWebViewService] fetchAllChanceCustomersWithManagerUserId:@"507305" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+
+    }];
 }
 @end

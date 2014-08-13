@@ -40,7 +40,7 @@
 {
     NSDictionary *dic = @{
                           @"pageNo":@"1",
-                          @"pageSize":@"100",
+                          @"pageSize":@"20",
                           @"id":userid
                           };
     NSURL *url = [self URLForGetAllCustomers];
@@ -71,6 +71,20 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+//获取储备客户列表，用于机会页面
+- (void)fetchAllChanceCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": userid,
+                           @"pageNum": @"1",
+                           @"pageSize": @"20"
+                           };
+    NSURL * url = [self URLForGetAllChanceCustomers];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+////获取客户联系纪录列表
+//- (void)fetch
 // webservice的接口请求设置
 - (void)fetchByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
 {
@@ -80,10 +94,10 @@
     
     [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
-    [req addValue:@"12345678" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
-    [req addValue:@"1234" forHTTPHeaderField:@"version"];//手机端应用版本号
-    [req addValue:@"12" forHTTPHeaderField:@"token"];//ios提交
-    [req addValue:@"iPhone OS 7.0" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
+    [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
+    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
+    [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
+    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
     [req setHTTPMethod:@"POST"];
     [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     

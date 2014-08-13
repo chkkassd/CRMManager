@@ -9,7 +9,7 @@
 #import "ZDWebService+URL.h"
 
 #define API_Base @"https://api.ezendai.com/hera/manageraccount/"
-#define API_Chance @"http://172.16.6.108:8060/hera/"
+#define API_Chance @"http://172.16.6.108:8060/hera/manageraccount/"
 
 @implementation ZDWebService (URL)
 
@@ -43,6 +43,11 @@
     return [NSURL URLWithString:@"https://api.ezendai.com/hera/credit/queryBusiness"];
     //https://172.16.230.190:8443/hera/
     //https://api.ezendai.com/hera/
+}
+
+- (NSURL *)URLForGetAllChanceCustomers
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"querryCustomerList"]];
 }
 
 @end

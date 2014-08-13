@@ -30,6 +30,9 @@
 //根据customer的mobile查询其业务
 - (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
+//获取储备客户列表，用于机会页面
+- (void)fetchAllChanceCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
 //单例
 +(ZDWebService *)sharedWebViewService;
 
