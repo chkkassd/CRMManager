@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * customerType;
 @property (nonatomic, retain) NSManagedObject *belongManager;
 @property (nonatomic, retain) NSSet *allProducts;
+@property (nonatomic, retain) NSSet *allContactRecords;
 @end
 
 @interface Customer (CoreDataGeneratedAccessors)

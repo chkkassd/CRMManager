@@ -21,5 +21,6 @@
 @dynamic customerType;
 @dynamic belongManager;
 @dynamic allProducts;
+@dynamic allContactRecords;
 
 @end

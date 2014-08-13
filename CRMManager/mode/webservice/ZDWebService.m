@@ -259,8 +259,6 @@
             //解析得到的json数据
             NSError *error = nil;
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-            NSString *st = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-
             NSLog(@"%@",responseDic);
             if ([responseDic[@"status"] isEqualToString:@"0"]) {
                 handler(nil, responseDic);

@@ -8,6 +8,19 @@
         <attribute name="productType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recoverableAmount" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="ContactRecord" representedClassName="ContactRecord" syncable="YES">
+        <attribute name="contactNum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contactTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contactType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hope" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inputId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="managerId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="recordBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allContactRecords" inverseEntity="Customer" syncable="YES"/>
+    </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES">
         <attribute name="cdHope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerId" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,6 +29,7 @@
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
         <relationship name="allProducts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="belongCustomer" inverseEntity="Product" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
     </entity>
@@ -79,9 +93,10 @@
     </entity>
     <elements>
         <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
-        <element name="Customer" positionX="-243" positionY="-709" width="128" height="178"/>
+        <element name="Customer" positionX="-243" positionY="-709" width="128" height="193"/>
         <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="148"/>
         <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
         <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
+        <element name="ContactRecord" positionX="7" positionY="-693" width="128" height="208"/>
     </elements>
 </model>

@@ -97,8 +97,13 @@
 //        [[ZDWebService sharedWebViewService] addPotentialCustomer:@"chenjian" sex:@"1" managerId:@"507305" mobile:@"13564442916" memo:@"beizhu" hope:@"3" source:@"13" completionHandler:NULL];
     
 //    [[ZDWebService sharedWebViewService] deletePotentialCustomer:@"1000541601" completionHandler:NULL];
-    [[ZDWebService sharedWebViewService] updateContactRecord:@"507305" customerId:@"1000541602" contactType:@"1" contactNum:@"123" content:@"iloveyou" hope:@"3" contactTime:@"2012-07-12 12:12:12" inputDate:@"2012-07-12 12:12:12" inputId:@"987" memo:@"789" recordId:@"1000541850" handler:NULL];
+//    [[ZDWebService sharedWebViewService] updateContactRecord:@"507305" customerId:@"1000541602" contactType:@"1" contactNum:@"123" content:@"iloveyou" hope:@"3" contactTime:@"2012-07-12 12:12:12" inputDate:@"2012-07-12 12:12:12" inputId:@"987" memo:@"789" recordId:@"1000541850" handler:NULL];
     
 //    [[ZDWebService sharedWebViewService] deleteContactRecord:@"1000541602" recordId:@"1000541850" completionHandler:NULL];
+    
+    [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:@"1026" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        
+    }];
+    
 }
 @end

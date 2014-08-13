@@ -7,6 +7,8 @@
 //
 
 #import "ZDLocalDB.h"
+#import "ContactRecord.h"
+#import "ZDContactRecord.h"
 
 @interface ZDLocalDB()
 
@@ -20,6 +22,33 @@
 @implementation ZDLocalDB
 
 #pragma mark - query
+
+- (ContactRecord *)queryContactRecordWithRecordId:(NSString *)recordId
+{
+    ContactRecord* contactRecord = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ContactRecord"];
+    request.predicate = [NSPredicate predicateWithFormat:@"recordId == %@", recordId];
+    
+    NSError *error = nil;
+    NSArray *fetchResult = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (fetchResult.count) {
+        contactRecord = fetchResult[0];
+    } else {
+        NSLog(@"fail to fetch managerUser from db:%@",error.localizedDescription);
+    }
+    return contactRecord;
+}
+
+- (ZDContactRecord *)queryZDContactRecordWithRecordId:(NSString *)recordId
+{
+    ContactRecord* contactRecord = [self queryContactRecordWithRecordId:recordId];
+    if (contactRecord) {
+        ZDContactRecord* zdContactRecord = [[ZDContactRecord alloc]init];
+        [self modifyZDContactRecord:zdContactRecord from:contactRecord];
+        return zdContactRecord;
+    }
+    return nil;
+}
 
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid
 {
@@ -46,7 +75,22 @@
         ZDManagerUser * zdManagerUser = [[ZDManagerUser alloc] init];
         [self modifyZDManagerUser:zdManagerUser from:managerUser];
         return zdManagerUser;
-    } else return nil;
+    }
+    return nil;
+}
+
+- (void)modifyZDContactRecord:(ZDContactRecord *)zdContactRecord from:(ContactRecord *)contactRecord
+{
+    zdContactRecord.recordId = contactRecord.recordId;
+    zdContactRecord.contactType = contactRecord.contactType;
+    zdContactRecord.contactNum = contactRecord.contactNum;
+    zdContactRecord.content = contactRecord.content;
+    zdContactRecord.hope = contactRecord.hope;
+    zdContactRecord.contactTime = contactRecord.contactTime;
+    zdContactRecord.managerId = contactRecord.managerId;
+    zdContactRecord.customerId = contactRecord.customerId;
+    zdContactRecord.inputId = contactRecord.inputId;
+    zdContactRecord.memo = contactRecord.memo;
 }
 
 - (void)modifyZDManagerUser:(ZDManagerUser *)zdManager from:(ManagerUser *)managerUser
