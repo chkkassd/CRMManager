@@ -8,6 +8,7 @@
 
 #import "ZDTabBarViewController.h"
 #import "ZDGesturePasswordViewController.h"
+#import "UIImage+Tab.h"
 
 #define DefaultEnterBackgroundTime  3.0
 
@@ -21,6 +22,7 @@
 
 @implementation ZDTabBarViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,30 +31,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground) name:UIApplicationWillEnterForegroundNotification object:[UIApplication sharedApplication]];
     for (int i = 0; i < self.tabBar.items.count; i++)
     {
-        switch (i) {
-            case 0:{
-                UITabBarItem * barItem = self.tabBar.items[i];
-                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_chance_pressed"];
-                 break;
-            }
-            case 1:{
-                UITabBarItem * barItem = self.tabBar.items[i];
-                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_client_pressed"];
-                break;
-            }
-            case 2:{
-                UITabBarItem * barItem = self.tabBar.items[i];
-                barItem.selectedImage = [UIImage imageNamed:@"main_ico_footer_product_pressed"];
-                break;
-            }
-            case 3:{
-                UITabBarItem * barItem = self.tabBar.items[i];
-                barItem.selectedImage = [UIImage imageNamed:@"maini_ico_footer_setting_pressed"];
-                break;
-            }
-            default:
-                break;
-        }
+        UITabBarItem * barItem = self.tabBar.items[i];
+        barItem.selectedImage = [UIImage imageWithIndex:i];
     }
 }
 
