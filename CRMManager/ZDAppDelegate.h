@@ -11,7 +11,5 @@
 @interface ZDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) NSDate * enterBackgroundDate;
-@property (strong, nonatomic) NSDate * enterForegroundDate;
 
 @end
