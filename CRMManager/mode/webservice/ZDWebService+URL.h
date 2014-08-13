@@ -18,5 +18,12 @@
 - (NSURL *)URLForGetProductDetailWithProduct;
 - (NSURL *)URLForGetAllBusinessWithCustomer;
 - (NSURL *)URLForGetAllChanceCustomers;
+- (NSURL *)URLForGetCustomerContactLists;
+- (NSURL *)URLForAddPotentialCustomer;
+- (NSURL *)URLForUpdatePotentialCustomer;
+- (NSURL *)URLForDeletePotentialCustomer;
+- (NSURL *)URLForAddContact;
+- (NSURL *)URLForUpdateContact;
+- (NSURL *)URLForDeleteContact;
 
 @end

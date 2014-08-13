@@ -50,4 +50,45 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"querryCustomerList"]];
 }
 
+- (NSURL *)URLForGetCustomerContactLists
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"querryContactRecordList"]];
+}
+
+// 新增储备客户的URL
+- (NSURL *)URLForAddPotentialCustomer
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"addReservesCustomer"]];
+}
+
+// 修改储备客户的URL
+- (NSURL *)URLForUpdatePotentialCustomer
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"updateReservesCustomer"]];
+}
+
+// 删除储备客户的URL
+- (NSURL *)URLForDeletePotentialCustomer
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"deleteReservesCustomer"]];
+}
+
+// 新增客户联系记录
+- (NSURL *)URLForAddContact
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"addContactRecord"]];
+}
+
+// 修改客户联系记录
+- (NSURL *)URLForUpdateContact
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"updateContactRecord"]];
+}
+
+// 删除客户联系记录
+- (NSURL *)URLForDeleteContact
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"deleteContactRecord"]];
+}
+
 @end

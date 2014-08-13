@@ -71,6 +71,8 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+#pragma mark - 储备客户相关
+
 //获取储备客户列表，用于机会页面
 - (void)fetchAllChanceCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
 {
@@ -83,8 +85,157 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
-////获取客户联系纪录列表
-//- (void)fetch
+// 新增储备客户
+- (void)addPotentialCustomer:(NSString *)customerName
+                         sex:(NSString *)sex
+                   managerId:(NSString *)managerId
+                      mobile:(NSString *)mobile
+                        memo:(NSString *)memo
+                        hope:(NSString *)hope
+                      source:(NSString *)source
+           completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": managerId,
+                           @"customerName": customerName,
+                           @"sex": sex,
+                           @"mobile": mobile,
+                           @"memo": memo,
+                           @"hope": hope,
+                           @"source": source,
+                           
+                           };
+    NSURL * url = [self URLForAddPotentialCustomer];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+// 更改储备客户
+// 1000541601
+- (void)updatePotentialCustomer:(NSString *)customerName
+                         sex:(NSString *)sex
+                   managerId:(NSString *)managerId
+                      mobile:(NSString *)mobile
+                        memo:(NSString *)memo
+                        hope:(NSString *)hope
+                      source:(NSString *)source
+               andCustomerId:(NSString *)customerId
+           completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": managerId,
+                           @"customerName": customerName,
+                           @"sex": sex,
+                           @"mobile": mobile,
+                           @"memo": memo,
+                           @"hope": hope,
+                           @"source": source,
+                           @"customerId": customerId
+                           };
+    NSURL * url = [self URLForUpdatePotentialCustomer];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+
+// 删除储备客户
+- (void)deletePotentialCustomer:(NSString *)customerId
+              completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"customerId": customerId
+                           };
+    NSURL * url = [self URLForDeletePotentialCustomer];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+#pragma mark - 联系记录
+
+//获取客户联系纪录列表
+- (void)fetchCustomerContactListWithManagerUserId:(NSString *)userid andCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": userid,
+                           @"customerid": customerid
+                           };
+    NSURL * url = [self URLForGetCustomerContactLists];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+// 新增客户联系记录
+- (void)addContactRecord:(NSString *)managerId
+              customerId:(NSString *)customerId
+             contactType:(NSString *)contactType
+              contactNum:(NSString *)contactNum
+                 content:(NSString *)content
+                    hope:(NSString *)hope
+             contactTime:(NSString *)contactTime
+               inputDate:(NSString *)inputDate
+                 inputId:(NSString *)inputId
+                    memo:(NSString *)memo
+                 handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": managerId,
+                           @"customerId": customerId,
+                           @"contactType": contactType,
+                           @"contactNum": contactNum,
+                           @"memo": memo,
+                           @"hope": hope,
+                           @"content": content,
+                           @"contactTime": contactTime,
+                           @"inputDate": inputDate,
+                           @"inputId": inputId,
+
+                           };
+    NSURL * url = [self URLForAddContact];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+// 修改客户联系记录
+- (void)updateContactRecord:(NSString *)managerId
+              customerId:(NSString *)customerId
+             contactType:(NSString *)contactType
+              contactNum:(NSString *)contactNum
+                 content:(NSString *)content
+                    hope:(NSString *)hope
+             contactTime:(NSString *)contactTime
+               inputDate:(NSString *)inputDate
+                 inputId:(NSString *)inputId
+                    memo:(NSString *)memo
+                   recordId:(NSString *)recordId
+                 handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"managerId": managerId,
+                           @"customerId": customerId,
+                           @"contactType": contactType,
+                           @"contactNum": contactNum,
+                           @"memo": memo,
+                           @"hope": hope,
+                           @"content": content,
+                           @"contactTime": contactTime,
+                           @"inputDate": inputDate,
+                           @"inputId": inputId,
+                           @"recordId": recordId
+                           };
+    NSURL * url = [self URLForUpdateContact];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+// 删除储备客户
+- (void)deleteContactRecord:(NSString *)customerId
+                   recordId:(NSString *)recordId
+              completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{
+                           @"customerId": customerId,
+                           @"recordId": recordId
+                           };
+    NSURL * url = [self URLForDeleteContact];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+#pragma mark - 共用请求方法
+
 // webservice的接口请求设置
 - (void)fetchByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
 {
@@ -108,6 +259,8 @@
             //解析得到的json数据
             NSError *error = nil;
             NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSString *st = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+
             NSLog(@"%@",responseDic);
             if ([responseDic[@"status"] isEqualToString:@"0"]) {
                 handler(nil, responseDic);
@@ -121,7 +274,6 @@
         }
     }];
 }
-
 
 #pragma mark - translateToJsonString
 
