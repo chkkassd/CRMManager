@@ -176,25 +176,6 @@
             </objects>
             <point key="canvasLocation" x="-203" y="640"/>
         </scene>
-        <!--View Controller - 客户-->
-        <scene sceneID="Fi6-XJ-Sfo">
-            <objects>
-                <viewController id="sBx-Oc-AFy" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vk0-Zc-wbg"/>
-                        <viewControllerLayoutGuide type="bottom" id="fyy-z7-dry"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="n2v-lG-r3m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="客户" id="jxc-JT-t6U"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1SO-uI-glK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="965" y="324"/>
-        </scene>
         <!--Navigation Controller - 机会-->
         <scene sceneID="5ZK-Bf-xJM">
             <objects>
@@ -226,12 +207,49 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="sBx-Oc-AFy" kind="relationship" relationship="rootViewController" id="DlZ-Uo-wcB"/>
+                        <segue destination="BcE-NZ-12n" kind="relationship" relationship="rootViewController" id="EB3-wt-qiX"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LT-Em-qGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="439" y="324"/>
+        </scene>
+        <!--Table View Controller - 客户-->
+        <scene sceneID="nYh-X3-ASc">
+            <objects>
+                <tableViewController id="BcE-NZ-12n" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hI5-du-ZEh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" placeholder="搜索" id="mnZ-w0-RBb">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CFN-by-r2C">
+                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CFN-by-r2C" id="H4F-k7-RyF">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BcE-NZ-12n" id="2Dp-7q-lzG"/>
+                            <outlet property="delegate" destination="BcE-NZ-12n" id="Zl1-UL-3Ux"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="客户" id="hrR-QG-5ed">
+                        <barButtonItem key="leftBarButtonItem" image="customer_navigationbar_scan" id="2iD-1G-JSl"/>
+                        <barButtonItem key="rightBarButtonItem" image="customer_navigationbar_add" id="dBg-BN-Ss1"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFo-Hv-ktE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="324"/>
         </scene>
         <!--Navigation Controller - 产品-->
         <scene sceneID="wfF-bu-cfO">
@@ -648,6 +666,8 @@ A:通过，该产品的理财收益一般为每月还款日发放，到期可选
         </scene>
     </scenes>
     <resources>
+        <image name="customer_navigationbar_add" width="32" height="32"/>
+        <image name="customer_navigationbar_scan" width="25" height="25"/>
         <image name="main_ico_footer_chance" width="25" height="25"/>
         <image name="main_ico_footer_client" width="25" height="25"/>
         <image name="main_ico_footer_product" width="25" height="25"/>

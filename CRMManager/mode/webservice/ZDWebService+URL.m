@@ -9,6 +9,7 @@
 #import "ZDWebService+URL.h"
 
 #define API_Base @"https://api.ezendai.com/hera/manageraccount/"
+#define API_Chance @"http://172.16.6.108:8060/hera/"
 
 @implementation ZDWebService (URL)
 
