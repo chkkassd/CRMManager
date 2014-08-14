@@ -26,9 +26,6 @@
     [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //登陆成功
-            handler(nil);
-            
-            
             
             //1.保存当前登录账号的userid
             [[NSUserDefaults standardUserDefaults] setObject:resultDic[@"id"] forKey:DefaultCurrentUserId];
@@ -37,6 +34,9 @@
             managerUser.userid = resultDic[@"id"];
             managerUser.password = password;
             if ([[ZDLocalDB sharedLocalDB] loginSaveManagerUserWithZDManagerUser:managerUser error:NULL]) {
+                //保存完managerUser进入下一界面
+                handler(nil);
+                
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {

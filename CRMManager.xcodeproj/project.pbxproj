@@ -37,6 +37,9 @@
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
 		67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */; };
 		67C39A661998A89E00D796EA /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A651998A89E00D796EA /* Business.m */; };
+		FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */; };
+		FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */; };
+		FF598232199CFE950031D575 /* ZDChanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF598231199CFE950031D575 /* ZDChanceTableViewController.m */; };
 		FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */; };
 		FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8F199604BC0062B71C /* ZDWebService.m */; };
 		FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A92199604BC0062B71C /* ZDModeClient.m */; };
@@ -114,6 +117,11 @@
 		67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPathLineLayer.m; sourceTree = "<group>"; };
 		67C39A641998A89E00D796EA /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		67C39A651998A89E00D796EA /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
+		FF598229199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFLeftRightSwipeTableViewCell.h; sourceTree = "<group>"; };
+		FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFLeftRightSwipeTableViewCell.m; sourceTree = "<group>"; };
+		FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFLeftRightSwipeTableViewCell.xib; sourceTree = "<group>"; };
+		FF598230199CFE950031D575 /* ZDChanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceTableViewController.h; sourceTree = "<group>"; };
+		FF598231199CFE950031D575 /* ZDChanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceTableViewController.m; sourceTree = "<group>"; };
 		FF8F1A8C199604BC0062B71C /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
 		FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
 		FF8F1A8E199604BC0062B71C /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
@@ -290,6 +298,8 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				FF59822E199CFE760031D575 /* chance */,
+				FF59822F199CFE760031D575 /* customer */,
 				18E9F9901995B6F000E6DC8F /* Login */,
 				18E9F9951995B6F000E6DC8F /* Main */,
 				18E9F9981995B6F000E6DC8F /* Products */,
@@ -318,8 +328,9 @@
 		6724CB901994B52E00E1C058 /* customerCategory */ = {
 			isa = PBXGroup;
 			children = (
-				67C39A5B19985FBA00D796EA /* SSFGesturePassword */,
 				6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */,
+				FF598228199CFC360031D575 /* SSFLeftRightSwipeCell */,
+				67C39A5B19985FBA00D796EA /* SSFGesturePassword */,
 				6724CBA01994BD6A00E1C058 /* NSString+Tony.h */,
 				6724CBA11994BD6A00E1C058 /* NSString+Tony.m */,
 				18861911199C0B09007635FC /* UIImage+Tab.h */,
@@ -338,6 +349,32 @@
 				67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */,
 			);
 			path = SSFGesturePassword;
+			sourceTree = "<group>";
+		};
+		FF598228199CFC360031D575 /* SSFLeftRightSwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				FF598229199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.h */,
+				FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */,
+				FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */,
+			);
+			path = SSFLeftRightSwipeCell;
+			sourceTree = "<group>";
+		};
+		FF59822E199CFE760031D575 /* chance */ = {
+			isa = PBXGroup;
+			children = (
+				FF598230199CFE950031D575 /* ZDChanceTableViewController.h */,
+				FF598231199CFE950031D575 /* ZDChanceTableViewController.m */,
+			);
+			path = chance;
+			sourceTree = "<group>";
+		};
+		FF59822F199CFE760031D575 /* customer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = customer;
 			sourceTree = "<group>";
 		};
 		FF8F1A8A199604BC0062B71C /* localDB */ = {
@@ -443,7 +480,7 @@
 				ORGANIZATIONNAME = peter;
 				TargetAttributes = {
 					6724CB4E1994B26600E1C058 = {
-						DevelopmentTeam = 742CSLGJ92;
+						DevelopmentTeam = S87R43P796;
 					};
 					6724CB721994B26600E1C058 = {
 						TestTargetID = 6724CB4E1994B26600E1C058;
@@ -477,6 +514,7 @@
 				6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */,
 				6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */,
 				67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */,
+				FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */,
 				6724CB661994B26600E1C058 /* Main_iPhone.storyboard in Resources */,
 				6724CB5D1994B26600E1C058 /* InfoPlist.strings in Resources */,
 			);
@@ -519,8 +557,10 @@
 				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
 				67C39A661998A89E00D796EA /* Business.m in Sources */,
 				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
+				FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */,
 				67B7013E199B607F0061C345 /* ContactRecord.m in Sources */,
 				FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */,
+				FF598232199CFE950031D575 /* ZDChanceTableViewController.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
 				18861913199C0B09007635FC /* UIImage+Tab.m in Sources */,
@@ -662,14 +702,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jice gao (4KV59KTQ4K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jice gao (4KV59KTQ4K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: HAIHUI TAN (Y6S4RS5F3H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HAIHUI TAN (Y6S4RS5F3H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e1786ec-024a-4a99-b6b8-97836d57a6e4";
+				PROVISIONING_PROFILE = "345E9698-B911-4F28-9CA0-7B1646B2A4B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -679,14 +719,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jice gao (4KV59KTQ4K)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jice gao (4KV59KTQ4K)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: HAIHUI TAN (Y6S4RS5F3H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: HAIHUI TAN (Y6S4RS5F3H)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e1786ec-024a-4a99-b6b8-97836d57a6e4";
+				PROVISIONING_PROFILE = "345E9698-B911-4F28-9CA0-7B1646B2A4B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
