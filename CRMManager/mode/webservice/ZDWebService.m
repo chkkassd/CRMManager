@@ -150,7 +150,9 @@
 #pragma mark - 联系记录
 
 //获取客户联系纪录列表
-- (void)fetchCustomerContactListWithManagerUserId:(NSString *)userid andCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+- (void)fetchCustomerContactListWithManagerUserId:(NSString *)userid
+                                    andCustomerId:(NSString *)customerid
+                                completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
 {
     NSDictionary * dic = @{
                            @"managerId": userid,

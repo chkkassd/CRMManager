@@ -8,6 +8,12 @@
 
 #import "ZDModeClient.h"
 
+@interface ZDModeClient()
+
+@property (nonatomic) int defaultCount;
+
+@end
+
 @implementation ZDModeClient
 
 #pragma mark - login and fetch data
@@ -35,6 +41,7 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
+                        self.defaultCount = 0;
                         [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                     } else {
                         NSLog(@"保存customers失败");
@@ -59,8 +66,9 @@
 {
     [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
-            if (resultDic.count) {
-                NSArray * customers = resultDic[@"infos"];
+            NSArray * customers = resultDic[@"infos"];
+            if (customers.count) {
+                
                 NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
                 int count = [resultDic[@"count"] intValue];
                 for (int i = 0;i < count;i++) {
@@ -103,8 +111,8 @@
 {
     [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:userid andCustomerId:customerid completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
-            if (resultDic.count) {
-                NSArray * contactRecords = resultDic[@"infos"];
+            NSArray * contactRecords = resultDic[@"infos"];
+            if (contactRecords.count) {
                 NSMutableArray *savedContactRecords = [[NSMutableArray alloc] init];
                 NSUInteger count = contactRecords.count;
                 for (int i = 0; i < count; i++) {
@@ -144,12 +152,14 @@
 
 - (void)fetchAndSaveAllContractRecordsWithAllCustomers:(NSArray *)customers
 {
-    for (Customer * customer in customers) {
-        [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid CustomerId:customer.customerId completionHandler:^(NSError *error) {
+    if (self.defaultCount < customers.count) {
+        [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid CustomerId:[customers[self.defaultCount] customerId] completionHandler:^(NSError *error) {
             if (!error) {
-                NSLog(@"保存customer:%@成功",customer.customerId);
+                NSLog(@"保存 customer:%@的record成功",[customers[self.defaultCount] customerId]);
+                self.defaultCount++;
+                [self fetchAndSaveAllContractRecordsWithAllCustomers:customers];
             } else {
-                NSLog(@"保存customer:%@失败",customer.customerId);
+                NSLog(@"保存 customer:%@的record失败",[customers[self.defaultCount] customerId]);
             }
         }];
     }

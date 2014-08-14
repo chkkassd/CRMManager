@@ -149,7 +149,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="机会" id="WAN-EJ-i9G"/>
+                    <navigationItem key="navigationItem" title="机会" id="WAN-EJ-i9G">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="98v-lw-iD3"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZP-tj-OPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
