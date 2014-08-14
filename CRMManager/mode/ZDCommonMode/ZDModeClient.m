@@ -41,6 +41,7 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
+                         NSArray * arr = [ZDModeClient sharedModeClient].allZDCustomers;
                         self.defaultCount = 0;
                         [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                     } else {
