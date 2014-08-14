@@ -35,6 +35,7 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
+                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                     } else {
                         NSLog(@"保存customers失败");
                     }
@@ -95,7 +96,7 @@
     }];
 }
 
-//get and save all contactrecord.
+//get and save contactrecord of one customer.
 - (void)fetchAndSaveAllContactRecordWithManagerUserId:(NSString *)userid
                                            CustomerId:(NSString *)customerid
                                     completionHandler:(void(^)(NSError * error))handler
@@ -105,7 +106,7 @@
             if (resultDic.count) {
                 NSArray * contactRecords = resultDic[@"infos"];
                 NSMutableArray *savedContactRecords = [[NSMutableArray alloc] init];
-                int count = contactRecords.count;
+                NSUInteger count = contactRecords.count;
                 for (int i = 0; i < count; i++) {
                     NSDictionary * record = contactRecords[i];
                     ZDContactRecord * zdContactRecord = [[ZDContactRecord alloc] init];
@@ -141,6 +142,19 @@
     }];
 }
 
+- (void)fetchAndSaveAllContractRecordsWithAllCustomers:(NSArray *)customers
+{
+    for (Customer * customer in customers) {
+        [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid CustomerId:customer.customerId completionHandler:^(NSError *error) {
+            if (!error) {
+                NSLog(@"保存customer:%@成功",customer.customerId);
+            } else {
+                NSLog(@"保存customer:%@失败",customer.customerId);
+            }
+        }];
+    }
+}
+
 #pragma mark - 修改数据后保存
 
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser
@@ -156,6 +170,14 @@
         _zdManagerUser = [[ZDLocalDB sharedLocalDB] queryCurrentZDmanagerUser];
     }
     return _zdManagerUser;
+}
+
+- (NSArray *)allZDCustomers
+{
+    if (!_allZDCustomers) {
+        _allZDCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDCustomersOfCurrentManager];
+    }
+    return _allZDCustomers;
 }
 
 #pragma mark - sharedInstance

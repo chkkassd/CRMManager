@@ -110,8 +110,12 @@
 //    [[ZDWebService sharedWebViewService] commitFeedbackWithManagerId:@"1026" Context:@"ahhahahahahahahaha" OperDate:@"2014-05-23 12:34:45" AppType:@"iphone" AppVersion:@"1.0" System:@"ios" SystemVersion:@"7.1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
 //        NSLog(@"hahahah");
 //    }];
-    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000160250" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-        
+//    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//        
+//    }];
+    [[ZDModeClient sharedModeClient] fetchAndSaveAllContactRecordWithManagerUserId:@"507305" CustomerId:@"1000539807" completionHandler:^(NSError *error) {
+        Customer *customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000539807"];
+        NSArray * arr = [customer.allContactRecords allObjects];
     }];
 }
 @end

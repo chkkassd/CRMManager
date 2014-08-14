@@ -101,6 +101,17 @@
     zdManager.area = managerUser.area;
 }
 
+- (void)modifyZDCustomer:(ZDCustomer *)zdCustomer from:(Customer *)customer
+{
+    zdCustomer.customerId = customer.customerId;
+    zdCustomer.customerName = customer.customerName;
+    zdCustomer.idNum = customer.idNum;
+    zdCustomer.mobile = customer.mobile;
+    zdCustomer.cdHope = customer.cdHope;
+    zdCustomer.date = customer.date;
+    zdCustomer.customerType = customer.customerType;
+}
+
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid
 {
     Customer *customer = nil;
@@ -115,6 +126,31 @@
         NSLog(@"fail to fetch customer from db:%@",error.localizedDescription);
     }
     return customer;
+}
+
+//查找当前用户所有的customers
+- (NSArray *)queryAllCustomersOfCurrentManager
+{
+    ManagerUser * managerUser = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
+    if (managerUser) {
+        return [managerUser.allCustomers allObjects];
+    }
+    return nil;
+}
+
+- (NSArray *)queryAllZDCustomersOfCurrentManager
+{
+    NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];
+    if (allCustomers.count) {
+        NSMutableArray * allZDCustomers = [[NSMutableArray alloc] init];
+        for (Customer * customer in allCustomers) {
+            ZDCustomer * zdCustomer = [[ZDCustomer alloc] init];
+            [self modifyZDCustomer:zdCustomer from:customer];
+            [allZDCustomers addObject:zdCustomer];
+        }
+        return allZDCustomers;
+    }
+    return nil;
 }
 
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储

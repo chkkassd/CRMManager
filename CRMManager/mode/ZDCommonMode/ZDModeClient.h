@@ -28,8 +28,12 @@
 
 //common propertise
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
+@property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
 
 //单例
 + (ZDModeClient *)sharedModeClient;
 
+- (void)fetchAndSaveAllContactRecordWithManagerUserId:(NSString *)userid
+                                           CustomerId:(NSString *)customerid
+                                    completionHandler:(void(^)(NSError * error))handler;
 @end
