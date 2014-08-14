@@ -25,5 +25,6 @@
 - (NSURL *)URLForAddContact;
 - (NSURL *)URLForUpdateContact;
 - (NSURL *)URLForDeleteContact;
+- (NSURL *)URLForCommitFeedback;
 
 @end

@@ -37,7 +37,7 @@
 - (void)fetchCustomerContactListWithManagerUserId:(NSString *)userid andCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 // 新增储备客户
-- (void)addPotentialCustomer:(NSString *)customerName
+- (void)addPotentialCustomerWithCustomerName:(NSString *)customerName
                          sex:(NSString *)sex
                    managerId:(NSString *)managerId
                       mobile:(NSString *)mobile
@@ -47,7 +47,7 @@
            completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 // 更改储备客户
-- (void)updatePotentialCustomer:(NSString *)customerName
+- (void)updatePotentialCustomerWithCustomerName:(NSString *)customerName
                          sex:(NSString *)sex
                    managerId:(NSString *)managerId
                       mobile:(NSString *)mobile
@@ -58,11 +58,11 @@
            completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 // 删除储备客户
-- (void)deletePotentialCustomer:(NSString *)customerId
+- (void)deletePotentialCustomerWithCustomerId:(NSString *)customerId
               completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 // 新增客户联系记录
-- (void)addContactRecord:(NSString *)managerId
+- (void)addContactRecordWithManagerId:(NSString *)managerId
               customerId:(NSString *)customerId
              contactType:(NSString *)contactType
               contactNum:(NSString *)contactNum
@@ -75,7 +75,7 @@
                  handler:(void (^)(NSError *error, NSDictionary *resultDic))handler;
 
 // 修改客户联系记录
-- (void)updateContactRecord:(NSString *)managerId
+- (void)updateContactRecordWithManagerId:(NSString *)managerId
                  customerId:(NSString *)customerId
                 contactType:(NSString *)contactType
                  contactNum:(NSString *)contactNum
@@ -88,10 +88,20 @@
                    recordId:(NSString *)recordId
                     handler:(void (^)(NSError *error, NSDictionary *resultDic))handler;
 
-// 删除储备客户
-- (void)deleteContactRecord:(NSString *)customerId
+// 删除客户联系记录
+- (void)deleteContactRecordWithCustomerId:(NSString *)customerId
                    recordId:(NSString *)recordId
           completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
+//意见反馈
+- (void)commitFeedbackWithManagerId:(NSString *)managerId
+                            Context:(NSString *)context
+                           OperDate:(NSString *)operDate
+                            AppType:(NSString *)appType
+                         AppVersion:(NSString *)appVersion
+                             System:(NSString *)system
+                      SystemVersion:(NSString *)systemVersion
+                  completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 //单例
 +(ZDWebService *)sharedWebViewService;

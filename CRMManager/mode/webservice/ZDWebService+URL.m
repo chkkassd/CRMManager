@@ -15,32 +15,32 @@
 
 - (NSURL *)URLForLogin
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_Base, @"login"]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", API_Chance, @"login"]];
 }
 
 - (NSURL *)URLForGetCustomersCount
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerCount"]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getCustomerCount"]];
 }
 
 - (NSURL *)URLForGetAllCustomers
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomers"]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getCustomers"]];
 }
 
 - (NSURL *)URLForGetAllProductsWithCustomer
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerProducts"]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getCustomerProducts"]];
 }
 
 - (NSURL *)URLForGetProductDetailWithProduct
 {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Base,@"getCustomerProductDetail"]];
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getCustomerProductDetail"]];
 }
 
 - (NSURL *)URLForGetAllBusinessWithCustomer
 {
-    return [NSURL URLWithString:@"https://api.ezendai.com/hera/credit/queryBusiness"];
+    return [NSURL URLWithString:@"http://172.16.6.108:8060/hera/credit/queryBusiness"];
     //https://172.16.230.190:8443/hera/
     //https://api.ezendai.com/hera/
 }
@@ -89,6 +89,12 @@
 - (NSURL *)URLForDeleteContact
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"deleteContactRecord"]];
+}
+
+//提交意见反馈
+- (NSURL *)URLForCommitFeedback
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"commitFeedback"]];
 }
 
 @end

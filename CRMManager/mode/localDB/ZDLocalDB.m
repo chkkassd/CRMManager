@@ -7,8 +7,6 @@
 //
 
 #import "ZDLocalDB.h"
-#import "ContactRecord.h"
-#import "ZDContactRecord.h"
 
 @interface ZDLocalDB()
 
@@ -25,7 +23,7 @@
 
 - (ContactRecord *)queryContactRecordWithRecordId:(NSString *)recordId
 {
-    ContactRecord* contactRecord = nil;
+    ContactRecord * contactRecord = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ContactRecord"];
     request.predicate = [NSPredicate predicateWithFormat:@"recordId == %@", recordId];
     
@@ -41,7 +39,7 @@
 
 - (ZDContactRecord *)queryZDContactRecordWithRecordId:(NSString *)recordId
 {
-    ContactRecord* contactRecord = [self queryContactRecordWithRecordId:recordId];
+    ContactRecord * contactRecord = [self queryContactRecordWithRecordId:recordId];
     if (contactRecord) {
         ZDContactRecord* zdContactRecord = [[ZDContactRecord alloc]init];
         [self modifyZDContactRecord:zdContactRecord from:contactRecord];
@@ -215,6 +213,51 @@
     customer.date = zdCustomer.date;
     customer.customerType = zdCustomer.customerType;
     customer.belongManager = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
+}
+
+//save much contractrecords
+- (BOOL)saveMuchContractRecordsWith:(NSArray *)contractRecords error:(NSError *__autoreleasing *)error
+{
+    if (!contractRecords.count) return NO;
+    
+    for (ZDContactRecord * zdContractRecord in contractRecords) {
+        if (![self saveContactRecordWith:zdContractRecord error:error]) return NO;
+    }
+    return YES;
+}
+
+//save one contactrecord
+- (BOOL)saveContactRecordWith:(ZDContactRecord *)zdContactRecord error:(NSError *__autoreleasing *)error
+{
+    if (!zdContactRecord) return NO;
+    
+    ContactRecord * contactRecord = [self queryContactRecordWithRecordId:zdContactRecord.recordId];
+    if (contactRecord) {
+        //存在，修改并保存
+        [self modifyContactRecord:contactRecord from:zdContactRecord];
+    } else {
+        //不存在，插入一条
+        contactRecord = [NSEntityDescription insertNewObjectForEntityForName:@"ContractRecord" inManagedObjectContext:self.managedObjectContext];
+        [self modifyContactRecord:contactRecord from:zdContactRecord];
+    }
+    
+    return [self.managedObjectContext save:error];
+}
+
+//translate zdContractReocrd to contractRecord
+- (void)modifyContactRecord:(ContactRecord *)contractRecord from:(ZDContactRecord *)zdContractRecord
+{
+    contractRecord.recordId = zdContractRecord.recordId;
+    contractRecord.contactType = zdContractRecord.contactType;
+    contractRecord.contactNum = zdContractRecord.contactNum;
+    contractRecord.content = zdContractRecord.content;
+    contractRecord.hope = zdContractRecord.hope;
+    contractRecord.contactTime = zdContractRecord.contactTime;
+    contractRecord.managerId = zdContractRecord.managerId;
+    contractRecord.customerId = zdContractRecord.customerId;
+    contractRecord.inputId = zdContractRecord.inputId;
+    contractRecord.memo = zdContractRecord.memo;
+    contractRecord.recordBelongCustomer = [self queryCustomerWithCustomerId:zdContractRecord.customerId];
 }
 
 #pragma mark - coreData properties

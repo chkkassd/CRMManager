@@ -19,6 +19,11 @@
     
     [[ZDWebService sharedWebViewService] loginWithUserName:userName password:password completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
+            //登陆成功
+            handler(nil);
+            
+            
+            
             //1.保存当前登录账号的userid
             [[NSUserDefaults standardUserDefaults] setObject:resultDic[@"id"] forKey:DefaultCurrentUserId];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -29,17 +34,20 @@
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
-                        handler(nil);//未完整，待续。。
+                        //4.获取并保存所有客户的联系记录
                     } else {
-                        NSError * error = [[NSError alloc] init];
-                        handler(error);
+                        NSLog(@"保存customers失败");
                     }
                 }];
             } else {
-                NSError * error = [[NSError alloc] init];
-                handler(error);
+                NSLog(@"保存managerUser失败");
             }
+            
+            
+            
+            
         } else {
+            //登陆失败
             handler(error);
         }
     }];
@@ -50,31 +58,84 @@
 {
     [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
-            NSArray * customers = resultDic[@"infos"];
-            NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
-            int count = [resultDic[@"count"] intValue];
-            for (int i = 0;i < count;i++) {
-                NSDictionary *dic = customers[i];
-                ZDCustomer *customer = [[ZDCustomer alloc] init];
-                customer.customerId = dic[@"customerId"];
-                customer.customerName = dic[@"customerName"];
-                customer.idNum = dic[@"idNum"];
-                customer.mobile = dic[@"mobile"];
-                customer.cdHope = dic[@"cdHope"];
-                customer.date = dic[@"dt"];
-                customer.customerType = dic[@"customerType"];
-                [savedCustomers addObject:customer];
-            }
-            
-            if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:savedCustomers error:NULL]) {
-                //save success
-                handler(nil);
+            if (resultDic.count) {
+                NSArray * customers = resultDic[@"infos"];
+                NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
+                int count = [resultDic[@"count"] intValue];
+                for (int i = 0;i < count;i++) {
+                    NSDictionary *dic = customers[i];
+                    ZDCustomer *customer = [[ZDCustomer alloc] init];
+                    customer.customerId = dic[@"customerId"];
+                    customer.customerName = dic[@"customerName"];
+                    customer.idNum = dic[@"idNum"];
+                    customer.mobile = dic[@"mobile"];
+                    customer.cdHope = dic[@"cdHope"];
+                    customer.date = dic[@"dt"];
+                    customer.customerType = dic[@"customerType"];
+                    [savedCustomers addObject:customer];
+                }
+                
+                if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:savedCustomers error:NULL]) {
+                    //保存成功
+                    handler(nil);
+                } else {
+                    //保存失败
+                    NSError * error = [[NSError alloc] init];
+                    handler(error);
+                }
+
             } else {
-                //save fail
-                NSError * error = [[NSError alloc] init];
-                handler(error);
+                //返回数据为空
+                handler(nil);
             }
         } else {
+            //请求数据失败
+            handler(error);
+        }
+    }];
+}
+
+//get and save all contactrecord.
+- (void)fetchAndSaveAllContactRecordWithManagerUserId:(NSString *)userid
+                                           CustomerId:(NSString *)customerid
+                                    completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:userid andCustomerId:customerid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            if (resultDic.count) {
+                NSArray * contactRecords = resultDic[@"infos"];
+                NSMutableArray *savedContactRecords = [[NSMutableArray alloc] init];
+                int count = contactRecords.count;
+                for (int i = 0; i < count; i++) {
+                    NSDictionary * record = contactRecords[i];
+                    ZDContactRecord * zdContactRecord = [[ZDContactRecord alloc] init];
+                    zdContactRecord.recordId = record[@"recordId"];
+                    zdContactRecord.contactType = record[@"contactType"];
+                    zdContactRecord.contactNum = record[@"contactNum"];
+                    zdContactRecord.content = record[@"content"];
+                    zdContactRecord.hope = record[@"hope"];
+                    zdContactRecord.contactTime = record[@"contactTime"];
+                    zdContactRecord.managerId = record[@"managerId"];
+                    zdContactRecord.customerId = record[@"customerId"];
+                    zdContactRecord.inputId = record[@"inputId"];
+                    zdContactRecord.memo = record[@"memo"];
+                    [savedContactRecords addObject:zdContactRecord];
+                }
+                
+                if ([[ZDLocalDB sharedLocalDB] saveMuchContractRecordsWith:savedContactRecords error:NULL]) {
+                    //保存成功
+                    handler(nil);
+                } else {
+                    //保存失败
+                    NSError * error = [[NSError alloc] init];
+                    handler(error);
+                }
+            } else {
+                //返回数据为空
+                handler(nil);
+            }
+        } else {
+            //请求数据失败
             handler(error);
         }
     }];

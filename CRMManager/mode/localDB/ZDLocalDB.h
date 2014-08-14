@@ -16,18 +16,24 @@
 #import "ProductDetail.h"
 #import "ZDManagerUser.h"
 #import "ZDCustomer.h"
+#import "ContactRecord.h"
+#import "ZDContactRecord.h"
 
 @interface ZDLocalDB : NSObject
 
 //query
 - (ZDManagerUser *)queryCurrentZDmanagerUser;
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid;
+- (ContactRecord *)queryContactRecordWithRecordId:(NSString *)recordId;
+- (ZDContactRecord *)queryZDContactRecordWithRecordId:(NSString *)recordId;
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid;
 //modify and save
 - (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;
 - (BOOL)saveMuchCustomersWith:(NSArray *)customers error:(NSError **)error;
 - (BOOL)saveCustomerWith:(ZDCustomer *)zdCustomer error:(NSError **)error;
+- (BOOL)saveMuchContractRecordsWith:(NSArray *)contractRecords error:(NSError *__autoreleasing *)error;
+- (BOOL)saveContactRecordWith:(ZDContactRecord *)zdContactRecord error:(NSError *__autoreleasing *)error;
 //单例
 + (ZDLocalDB *)sharedLocalDB;
 
