@@ -117,6 +117,5 @@
 //        Customer *customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000539807"];
 //        NSArray * arr = [customer.allContactRecords allObjects];
 //    }];
-    NSArray * arr = [ZDModeClient sharedModeClient].allZDCustomers;
 }
 @end
