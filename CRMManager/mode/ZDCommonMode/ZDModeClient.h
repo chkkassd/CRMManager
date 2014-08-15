@@ -30,6 +30,7 @@
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
 @property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
 
+- (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;//得到一个客户的所有联系记录
 //单例
 + (ZDModeClient *)sharedModeClient;
 

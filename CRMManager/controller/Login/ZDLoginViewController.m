@@ -113,9 +113,6 @@
 //    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
 //        
 //    }];
-//    [[ZDModeClient sharedModeClient] fetchAndSaveAllContactRecordWithManagerUserId:@"507305" CustomerId:@"1000539807" completionHandler:^(NSError *error) {
-//        Customer *customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000539807"];
-//        NSArray * arr = [customer.allContactRecords allObjects];
-//    }];
+
 }
 @end

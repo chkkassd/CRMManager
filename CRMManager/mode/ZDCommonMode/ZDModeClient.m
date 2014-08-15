@@ -172,6 +172,12 @@
     return [[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:zdManageruser error:NULL];
 }
 
+#pragma mark - 客户所有联系记录
+- (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid
+{
+    return [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
+}
+
 #pragma mark - properties
 
 - (ZDManagerUser *)zdManagerUser

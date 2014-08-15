@@ -48,6 +48,31 @@
     return nil;
 }
 
+//查询某一个客户的所有联系记录,contactRecords
+- (NSArray *)queryContactRecordsWithCustomerId:(NSString *)customerid
+{
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        return [customer.allContactRecords allObjects];
+    }
+    return nil;
+}
+
+- (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid
+{
+    NSArray * contactRecords = [self queryContactRecordsWithCustomerId:customerid];
+    if (contactRecords) {
+        NSMutableArray * zdContactRecords = [[NSMutableArray alloc] init];
+        for (ContactRecord * contactRecord in contactRecords) {
+            ZDContactRecord * zdContactRecord = [[ZDContactRecord alloc] init];
+            [self modifyZDContactRecord:zdContactRecord from:contactRecord];
+            [zdContactRecords addObject:zdContactRecord];
+        }
+        return zdContactRecords;
+    }
+    return nil;
+}
+
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid
 {
     ManagerUser *managerUser = nil;
@@ -273,7 +298,7 @@
         [self modifyContactRecord:contactRecord from:zdContactRecord];
     } else {
         //不存在，插入一条
-        contactRecord = [NSEntityDescription insertNewObjectForEntityForName:@"ContractRecord" inManagedObjectContext:self.managedObjectContext];
+        contactRecord = [NSEntityDescription insertNewObjectForEntityForName:@"ContactRecord" inManagedObjectContext:self.managedObjectContext];
         [self modifyContactRecord:contactRecord from:zdContactRecord];
     }
     
