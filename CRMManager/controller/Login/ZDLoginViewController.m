@@ -26,8 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameTextField.text = @"zdcrm_system";
-    self.passwordTextField.text = @"123456";
+//    self.nameTextField.text = @"zdcrm_system";
+//    self.passwordTextField.text = @"123456";
+
+    self.nameTextField.text = @"crm";
+    self.passwordTextField.text = @"wozhengdebuzhidao";
 }
 
 #pragma mark - Action
