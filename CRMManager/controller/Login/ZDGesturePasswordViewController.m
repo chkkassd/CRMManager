@@ -10,10 +10,12 @@
 
 @interface ZDGesturePasswordViewController ()<SSFPasswordGestureViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView * gestureContainView;
+@property (weak, nonatomic) IBOutlet UIImageView * headImageView;
 @property (weak, nonatomic) IBOutlet UILabel * nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel * alertLabel;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
-
+@property (strong, nonatomic) SSFPasswordGestureView * passwordGestureView;
 @end
 
 @implementation ZDGesturePasswordViewController
@@ -21,24 +23,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureGesturePasswordView];
+    [self creatSSFPasswordGestureView];
 }
 
-- (void)configureGesturePasswordView
+- (void)viewDidLayoutSubviews
 {
-    SSFPasswordGestureView * passwordGestureView = [SSFPasswordGestureView instancePasswordView];
-    passwordGestureView.delegate = self;
-    passwordGestureView.gesturePassword = self.zdManagerUser.gesturePassword;
+    [super viewDidLayoutSubviews];
+    [self positonSSFPasswordView];
+}
+
+- (void)creatSSFPasswordGestureView
+{
+    self.passwordGestureView.delegate = self;
+    self.passwordGestureView.gesturePassword = self.zdManagerUser.gesturePassword;
     if (!self.zdManagerUser.gesturePassword.length) {
-        passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
+        self.passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
         self.alertLabel.text = @"请设置手势密码";
     } else {
-        passwordGestureView.state = SSFPasswordGestureViewStateCheck;
+        self.passwordGestureView.state = SSFPasswordGestureViewStateCheck;
         self.alertLabel.text = @"请输入手势密码";
     }
-    passwordGestureView.center = CGPointMake(self.view.center.x, self.view.center.y + 100);
-    [self.view addSubview:passwordGestureView];
-    
+    [self.gestureContainView addSubview:self.passwordGestureView];
+}
+
+- (void)positonSSFPasswordView
+{
+    //兼容大小屏幕
+    if (self.gestureContainView.frame.size.width >= self.gestureContainView.frame.size.height) {
+        self.passwordGestureView.frame = CGRectMake(0, 0, self.gestureContainView.frame.size.height, self.gestureContainView.frame.size.height);
+    } else {
+        self.passwordGestureView.frame = CGRectMake(0, 0, self.gestureContainView.frame.size.width, self.gestureContainView.frame.size.width);
+    }
+    self.passwordGestureView.center = CGPointMake(self.gestureContainView.frame.size.width/2, self.gestureContainView.frame.size.height/2);
 }
 
 #pragma mark - properties
@@ -51,16 +67,27 @@
     return _zdManagerUser;
 }
 
+- (SSFPasswordGestureView *)passwordGestureView
+{
+    if (!_passwordGestureView) {
+        _passwordGestureView = [SSFPasswordGestureView instancePasswordView];
+    }
+    return _passwordGestureView;
+}
+
 #pragma mark - SSFPasswordGestureViewDelegate
 
 - (void)passwordGestureViewFinishFirstTimePassword:(SSFPasswordGestureView *)passwordView
 {
     self.alertLabel.text = @"请再次输入手势密码";
+    self.alertLabel.textColor = [UIColor colorWithRed:197/255.0 green:237/255.0 blue:255/255.0 alpha:1.0];
 }
 
 - (void)passwordGestureViewFinishSecondTimePassword:(SSFPasswordGestureView *)passwordView andPassword:(NSString *)password
 {
     self.alertLabel.text = @"手势密码设置成功";
+    self.alertLabel.textColor = [UIColor colorWithRed:197/255.0 green:237/255.0 blue:255/255.0 alpha:1.0];
+    
     self.zdManagerUser.gesturePassword = password;
     self.zdManagerUser.gesturePasswordSwitch = YES;
     [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
@@ -69,7 +96,8 @@
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
 {
-    self.alertLabel.text = @"两次密码不相同,请输入第二次手势密码";
+    self.alertLabel.text = @"两次密码不同,请重设第二次密码";
+    self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
 }
 
 - (void)passwordGestureViewFinishCheckPassword:(SSFPasswordGestureView *)passwordView
@@ -80,6 +108,7 @@
 - (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView
 {
     self.alertLabel.text = @"手势密码错误,请重试";
+    self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
 }
 
 @end

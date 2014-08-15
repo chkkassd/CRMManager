@@ -13,7 +13,6 @@
 		18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */; };
 		18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */; };
 		18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */; };
-		18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */; };
 		18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */; };
 		6724CB531994B26600E1C058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB521994B26600E1C058 /* Foundation.framework */; };
 		6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB541994B26600E1C058 /* CoreGraphics.framework */; };
@@ -33,6 +32,7 @@
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
+		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
 		67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */; };
@@ -79,8 +79,6 @@
 		18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductDetailViewController.m; sourceTree = "<group>"; };
 		18E9F99B1995B6F000E6DC8F /* ZDProductsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductsListViewController.h; sourceTree = "<group>"; };
 		18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductsListViewController.m; sourceTree = "<group>"; };
-		18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDQAViewController.h; sourceTree = "<group>"; };
-		18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDQAViewController.m; sourceTree = "<group>"; };
 		18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSettingViewController.h; sourceTree = "<group>"; };
 		18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSettingViewController.m; sourceTree = "<group>"; };
 		6724CB4F1994B26600E1C058 /* CRMManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRMManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +108,8 @@
 		67B70140199B61970061C345 /* ZDContactRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContactRecord.m; sourceTree = "<group>"; };
 		67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordSettingViewController.h; sourceTree = "<group>"; };
 		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
+		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
+		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
 		67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPasswordGestureView.m; sourceTree = "<group>"; };
 		67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFPasswordGestureView.xib; sourceTree = "<group>"; };
@@ -211,10 +211,10 @@
 			children = (
 				18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */,
 				18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */,
-				18E9F99E1995B6F000E6DC8F /* ZDQAViewController.h */,
-				18E9F99F1995B6F000E6DC8F /* ZDQAViewController.m */,
 				67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */,
 				67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */,
+				67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */,
+				67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -544,8 +544,8 @@
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
-				18E9F9A71995B6F000E6DC8F /* ZDQAViewController.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
+				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
 				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
@@ -709,7 +709,7 @@
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e1786ec-024a-4a99-b6b8-97836d57a6e4";
+				PROVISIONING_PROFILE = "5a0b1a25-651d-41ce-81d6-b4a5998390f2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -726,7 +726,7 @@
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3e1786ec-024a-4a99-b6b8-97836d57a6e4";
+				PROVISIONING_PROFILE = "5a0b1a25-651d-41ce-81d6-b4a5998390f2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

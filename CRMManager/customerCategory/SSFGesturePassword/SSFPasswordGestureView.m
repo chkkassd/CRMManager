@@ -10,7 +10,7 @@
 #import "SSFPathLineLayer.h"
 #import <math.h>
 
-#define SSFPointRaious 30
+#define SSFPointRaious 32
 
 @interface SSFPasswordGestureView()
 
@@ -39,7 +39,8 @@
 - (IBAction)firstPointButtonPressed:(UIButton *)sender
 {
     UIButton *startPointButton = (UIButton *)[self viewWithTag:sender.tag];
-    startPointButton.backgroundColor = [UIColor redColor];
+//    startPointButton.backgroundColor = [UIColor redColor];
+    startPointButton.selected = YES;
     self.startPoint = startPointButton.center;
     self.endPoint = self.startPoint;
 }
@@ -79,9 +80,10 @@
         }
         
         
-        //所有button变回最初颜色
+        //所有button变回最初状态
         for (UIButton *button in self.pointButtons) {
-            button.backgroundColor = [UIColor blackColor];
+//            button.backgroundColor = [UIColor blackColor];
+            button.selected = NO;
         }
         
         //属性初始化
@@ -169,7 +171,7 @@
         CGFloat distance = sqrtf(powf(fabsf(point.x - buttonPoint.x) , 2) + powf(fabsf(point.y - buttonPoint.y) , 2));
         if (distance <= SSFPointRaious) {
             button.selected = YES;
-            button.backgroundColor = [UIColor redColor];
+//            button.backgroundColor = [UIColor redColor];
             [self.unselectedButtons removeObject:button];
             [self.selectedButtons addObject:button];//完成一次绘制后要清空
             break;

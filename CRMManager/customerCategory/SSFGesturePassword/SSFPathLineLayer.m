@@ -20,7 +20,7 @@
     CGContextSetLineWidth(ctx,5.0);
     
     //设置颜色
-    CGContextSetRGBStrokeColor(ctx,0.314, 0.486, 0.23, 1.0);
+    CGContextSetRGBStrokeColor(ctx,45/255.0, 99/255.0, 137/255.0, 0.5);
     
     //设置连接线拐角
     CGContextSetLineJoin(ctx, kCGLineJoinRound);
