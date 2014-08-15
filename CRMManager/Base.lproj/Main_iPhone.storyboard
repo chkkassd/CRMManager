@@ -177,30 +177,24 @@
             </objects>
             <point key="canvasLocation" x="439" y="-329"/>
         </scene>
-        <!--Chance Table View Controller - 储备客户-->
+        <!--Chance Table View Controller-->
         <scene sceneID="HuS-su-Ww3">
             <objects>
                 <tableViewController id="Dxl-gj-mAk" customClass="ZDChanceTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="weA-kg-pga">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="weA-kg-pga">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <segmentedControl key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="dWL-wX-p8j">
-                            <rect key="frame" x="0.0" y="64" width="320" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="一般"/>
-                                <segment title="感兴趣"/>
-                                <segment title="强烈"/>
-                                <segment title="待归类"/>
-                            </segments>
-                            <color key="tintColor" red="0.34509803919999998" green="0.70980392160000005" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </segmentedControl>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Gdc-32-JkD">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fJa-d1-Wy5">
-                                <rect key="frame" x="0.0" y="116" width="320" height="69"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="WHa-rH-VRl">
+                                <rect key="frame" x="0.0" y="130" width="320" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fJa-d1-Wy5" id="ara-Mc-Xa3">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WHa-rH-VRl" id="21p-Ra-bSd">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -211,8 +205,20 @@
                             <outlet property="delegate" destination="Dxl-gj-mAk" id="ZWz-pD-jco"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="储备客户" id="dtH-I6-Vc8">
+                    <navigationItem key="navigationItem" id="dtH-I6-Vc8">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="ico_header_search" id="dXo-Jj-4Nw"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="dWL-wX-p8j">
+                            <rect key="frame" x="65" y="7" width="190" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="一般"/>
+                                <segment title="感兴趣"/>
+                                <segment title="强烈"/>
+                                <segment title="待归类"/>
+                            </segments>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="customer_navigationbar_add" id="6ex-UD-wca"/>
                     </navigationItem>
                 </tableViewController>
