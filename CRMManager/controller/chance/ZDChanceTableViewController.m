@@ -7,8 +7,11 @@
 //
 
 #import "ZDChanceTableViewController.h"
+#import "SSFSegmentControl.h"
 
-@interface ZDChanceTableViewController ()<SSFLeftRightSwipeTableViewCellDelegate>
+@interface ZDChanceTableViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
+
+@property (strong, nonatomic) SSFSegmentControl * segmentedControl;
 
 @end
 
@@ -18,7 +21,17 @@
 {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
-    
+}
+
+#pragma mark - properties
+
+- (SSFSegmentControl *)segmentedControl
+{
+    if (!_segmentedControl) {
+        _segmentedControl = [SSFSegmentControl SSFSegmentedControlInstance];
+        _segmentedControl.delegate = self;
+    }
+    return _segmentedControl;
 }
 
 #pragma mark - Table view data source
@@ -34,6 +47,16 @@
     cell.delegate = self;
     cell.label.text = @"hahaha";
     return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return self.segmentedControl;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return self.segmentedControl.frame.size.height;
 }
 
 #pragma mark - UITableView delegate
@@ -64,5 +87,28 @@
 
 - (void)leftRightSwipeTableViewCellEditeButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {}
+
+#pragma mark - SSFSegmentControlDelegate
+
+- (void)SSFSegmentControlDidPressed:(UIView *)view selectedIndex:(NSInteger)selectedIndex
+{
+    switch (selectedIndex) {
+        case 0:
+            NSLog(@"it is %ld",(long)selectedIndex);
+            break;
+        case 1:
+            NSLog(@"it is %ld",(long)selectedIndex);
+            break;
+        case 2:
+            NSLog(@"it is %ld",(long)selectedIndex);
+            break;
+        case 3:
+            NSLog(@"it is %ld",(long)selectedIndex);
+            break;
+            
+        default:
+            break;
+    }
+}
 
 @end

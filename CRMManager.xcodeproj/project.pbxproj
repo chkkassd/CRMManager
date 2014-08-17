@@ -40,6 +40,8 @@
 		FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */; };
 		FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */; };
 		FF598232199CFE950031D575 /* ZDChanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF598231199CFE950031D575 /* ZDChanceTableViewController.m */; };
+		FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59828819A10FC50031D575 /* SSFSegmentControl.m */; };
+		FF59828B19A10FC50031D575 /* SSFSegmentControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59828919A10FC50031D575 /* SSFSegmentControl.xib */; };
 		FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */; };
 		FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8F199604BC0062B71C /* ZDWebService.m */; };
 		FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A92199604BC0062B71C /* ZDModeClient.m */; };
@@ -122,6 +124,9 @@
 		FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFLeftRightSwipeTableViewCell.xib; sourceTree = "<group>"; };
 		FF598230199CFE950031D575 /* ZDChanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceTableViewController.h; sourceTree = "<group>"; };
 		FF598231199CFE950031D575 /* ZDChanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceTableViewController.m; sourceTree = "<group>"; };
+		FF59828719A10FC50031D575 /* SSFSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFSegmentControl.h; sourceTree = "<group>"; };
+		FF59828819A10FC50031D575 /* SSFSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFSegmentControl.m; sourceTree = "<group>"; };
+		FF59828919A10FC50031D575 /* SSFSegmentControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFSegmentControl.xib; sourceTree = "<group>"; };
 		FF8F1A8C199604BC0062B71C /* ZDWebService+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZDWebService+URL.h"; sourceTree = "<group>"; };
 		FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ZDWebService+URL.m"; sourceTree = "<group>"; };
 		FF8F1A8E199604BC0062B71C /* ZDWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDWebService.h; sourceTree = "<group>"; };
@@ -329,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */,
+				FF59828619A10FC50031D575 /* SSFSegmentedControl */,
 				FF598228199CFC360031D575 /* SSFLeftRightSwipeCell */,
 				67C39A5B19985FBA00D796EA /* SSFGesturePassword */,
 				6724CBA01994BD6A00E1C058 /* NSString+Tony.h */,
@@ -375,6 +381,16 @@
 			children = (
 			);
 			path = customer;
+			sourceTree = "<group>";
+		};
+		FF59828619A10FC50031D575 /* SSFSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				FF59828719A10FC50031D575 /* SSFSegmentControl.h */,
+				FF59828819A10FC50031D575 /* SSFSegmentControl.m */,
+				FF59828919A10FC50031D575 /* SSFSegmentControl.xib */,
+			);
+			path = SSFSegmentedControl;
 			sourceTree = "<group>";
 		};
 		FF8F1A8A199604BC0062B71C /* localDB */ = {
@@ -511,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF59828B19A10FC50031D575 /* SSFSegmentControl.xib in Resources */,
 				6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */,
 				6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */,
 				67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */,
@@ -541,6 +558,7 @@
 				67B70141199B61970061C345 /* ZDContactRecord.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
+				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,

@@ -12,5 +12,6 @@
 #import "NSString+Tony.h"
 #import "SSFPasswordGestureView.h"
 #import "SSFLeftRightSwipeTableViewCell.h"
+#import "SSFSegmentControl.h"
 
 #endif
