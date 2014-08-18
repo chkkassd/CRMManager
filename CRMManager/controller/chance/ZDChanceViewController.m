@@ -7,6 +7,7 @@
 //
 
 #import "ZDChanceViewController.h"
+#import "ZDChanceCustomerDetailViewController.h"
 
 @interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
 
@@ -14,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
 @property (strong, nonatomic) NSArray * allChanceCustomers;
+@property (strong, nonatomic) ZDCustomer * selectedZDCustomer;
 
 @end
 
@@ -92,6 +94,18 @@
     SSFLeftRightSwipeTableViewCell * cell = (SSFLeftRightSwipeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if (!cell.isEditMode) {
         //到下一界面
+        self.selectedZDCustomer = self.allChanceCustomers[indexPath.row];
+        [self performSegueWithIdentifier:@"ChanceCustomerDetail Display" sender:self];
+    }
+}
+
+#pragma mark - segure
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ChanceCustomerDetail Display"]) {
+        ZDChanceCustomerDetailViewController * chanceCustomerDetailViewController = segue.destinationViewController;
+        chanceCustomerDetailViewController.zdCustomer = self.selectedZDCustomer;
     }
 }
 

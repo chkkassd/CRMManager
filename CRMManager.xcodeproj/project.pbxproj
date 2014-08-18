@@ -33,6 +33,7 @@
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
 		67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */; };
+		67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
@@ -112,6 +113,8 @@
 		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
 		67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceViewController.h; sourceTree = "<group>"; };
 		67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
+		67BBE06F19A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceCustomerDetailViewController.h; sourceTree = "<group>"; };
+		67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceCustomerDetailViewController.m; sourceTree = "<group>"; };
 		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
 		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */,
 				67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */,
+				67BBE06F19A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.h */,
+				67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */,
 			);
 			path = chance;
 			sourceTree = "<group>";
@@ -561,6 +566,7 @@
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
+				67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
