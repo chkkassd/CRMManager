@@ -206,7 +206,7 @@
         <!--Chance View Controller - 机会-->
         <scene sceneID="0f7-Lx-xGd">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="grb-8r-dgj" customClass="ZDChanceViewController" sceneMemberID="viewController">
+                <viewController id="grb-8r-dgj" customClass="ZDChanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5k-q6-7kl"/>
                         <viewControllerLayoutGuide type="bottom" id="66C-eV-Zpt"/>

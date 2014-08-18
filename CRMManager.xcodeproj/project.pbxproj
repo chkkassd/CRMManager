@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18861913199C0B09007635FC /* UIImage+Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 18861912199C0B09007635FC /* UIImage+Tab.m */; };
+		1886191719A2A824007635FC /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886191619A2A824007635FC /* ZDChanceViewController.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
 		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
 		18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */; };
@@ -32,7 +33,6 @@
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
-		67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
@@ -71,6 +71,8 @@
 /* Begin PBXFileReference section */
 		18861911199C0B09007635FC /* UIImage+Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tab.h"; sourceTree = "<group>"; };
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
+		1886191519A2A824007635FC /* ZDChanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceViewController.h; sourceTree = "<group>"; };
+		1886191619A2A824007635FC /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
 		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
 		18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordViewController.m; sourceTree = "<group>"; };
 		18E9F9931995B6F000E6DC8F /* ZDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLoginViewController.h; sourceTree = "<group>"; };
@@ -110,8 +112,6 @@
 		67B70140199B61970061C345 /* ZDContactRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContactRecord.m; sourceTree = "<group>"; };
 		67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordSettingViewController.h; sourceTree = "<group>"; };
 		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
-		67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceViewController.h; sourceTree = "<group>"; };
-		67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
 		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
 		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
@@ -180,6 +180,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1886191419A2A824007635FC /* chance */ = {
+			isa = PBXGroup;
+			children = (
+				1886191519A2A824007635FC /* ZDChanceViewController.h */,
+				1886191619A2A824007635FC /* ZDChanceViewController.m */,
+			);
+			path = chance;
+			sourceTree = "<group>";
+		};
 		18E9F9901995B6F000E6DC8F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,7 +312,7 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				FF59822E199CFE760031D575 /* chance */,
+				1886191419A2A824007635FC /* chance */,
 				FF59822F199CFE760031D575 /* customer */,
 				18E9F9901995B6F000E6DC8F /* Login */,
 				18E9F9951995B6F000E6DC8F /* Main */,
@@ -365,15 +374,6 @@
 				FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */,
 			);
 			path = SSFLeftRightSwipeCell;
-			sourceTree = "<group>";
-		};
-		FF59822E199CFE760031D575 /* chance */ = {
-			isa = PBXGroup;
-			children = (
-				67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */,
-				67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */,
-			);
-			path = chance;
 			sourceTree = "<group>";
 		};
 		FF59822F199CFE760031D575 /* customer */ = {
@@ -556,11 +556,11 @@
 				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				67B70141199B61970061C345 /* ZDContactRecord.m in Sources */,
+				1886191719A2A824007635FC /* ZDChanceViewController.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
-				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
