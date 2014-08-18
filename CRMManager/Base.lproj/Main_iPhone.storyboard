@@ -215,7 +215,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-x4-AIP">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-x4-AIP">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -227,7 +227,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-hl-9aQ">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="108" width="320" height="410"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -242,7 +242,7 @@
                             <constraint firstItem="nO9-x4-AIP" firstAttribute="top" secondItem="g5k-q6-7kl" secondAttribute="bottom" id="3di-Xr-lb8"/>
                             <constraint firstAttribute="trailing" secondItem="QCB-hl-9aQ" secondAttribute="trailing" id="7af-cA-jXy"/>
                             <constraint firstAttribute="trailing" secondItem="nO9-x4-AIP" secondAttribute="trailing" id="QKV-TZ-S7o"/>
-                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" id="Qvw-Ah-vxx"/>
+                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" constant="50" id="Qvw-Ah-vxx"/>
                             <constraint firstItem="QCB-hl-9aQ" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="iqp-YJ-AvL"/>
                             <constraint firstItem="nO9-x4-AIP" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="iyI-aE-LEq"/>
                         </constraints>
