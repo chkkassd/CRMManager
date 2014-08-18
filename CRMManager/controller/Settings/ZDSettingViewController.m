@@ -36,6 +36,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
     if (indexPath.section == 0) {
         switch (indexPath.row) {
             case 0:

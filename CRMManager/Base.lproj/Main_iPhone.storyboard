@@ -218,6 +218,7 @@
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-x4-AIP">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="vxP-5i-ayK"/>
                                 </constraints>
@@ -229,10 +230,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYe-K6-0H0">
                                 <rect key="frame" x="0.0" y="108" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-hl-9aQ">
-                                <rect key="frame" x="0.0" y="188" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="188" width="320" height="336"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -248,7 +249,7 @@
                             <constraint firstItem="BYe-K6-0H0" firstAttribute="top" secondItem="nO9-x4-AIP" secondAttribute="bottom" id="4Al-zP-PXm"/>
                             <constraint firstAttribute="trailing" secondItem="QCB-hl-9aQ" secondAttribute="trailing" id="7af-cA-jXy"/>
                             <constraint firstAttribute="trailing" secondItem="nO9-x4-AIP" secondAttribute="trailing" id="QKV-TZ-S7o"/>
-                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" constant="-80" id="Qvw-Ah-vxx"/>
+                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" constant="44" id="Qvw-Ah-vxx"/>
                             <constraint firstItem="QCB-hl-9aQ" firstAttribute="top" secondItem="BYe-K6-0H0" secondAttribute="bottom" id="h9f-B1-K8e"/>
                             <constraint firstAttribute="trailing" secondItem="BYe-K6-0H0" secondAttribute="trailing" id="iCf-sK-BTh"/>
                             <constraint firstItem="QCB-hl-9aQ" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="iqp-YJ-AvL"/>
@@ -412,7 +413,7 @@
         <scene sceneID="eSg-z6-iUU">
             <objects>
                 <tableViewController id="orw-34-dL9" customClass="ZDSettingViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="839-tE-wve">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="839-tE-wve">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,7 +536,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Iu-I3-uqK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.46337525360255605" blue="0.56987515737684125" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>

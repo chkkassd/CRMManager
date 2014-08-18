@@ -232,7 +232,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-2q-GBK">
-                                <rect key="frame" x="0.0" y="188" width="768" height="916"/>
+                                <rect key="frame" x="0.0" y="188" width="768" height="792"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -251,7 +251,7 @@
                             <constraint firstItem="eDb-3b-bgM" firstAttribute="top" secondItem="idr-U6-W2N" secondAttribute="bottom" id="ZW2-5P-di7"/>
                             <constraint firstAttribute="trailing" secondItem="eFx-2q-GBK" secondAttribute="trailing" id="k3K-nF-TkC"/>
                             <constraint firstAttribute="trailing" secondItem="eDb-3b-bgM" secondAttribute="trailing" id="leT-nm-oRl"/>
-                            <constraint firstAttribute="bottom" secondItem="eFx-2q-GBK" secondAttribute="bottom" constant="-80" id="orF-SH-fQj"/>
+                            <constraint firstAttribute="bottom" secondItem="eFx-2q-GBK" secondAttribute="bottom" constant="44" id="orF-SH-fQj"/>
                             <constraint firstItem="eFx-2q-GBK" firstAttribute="top" secondItem="eDb-3b-bgM" secondAttribute="bottom" id="rh8-TV-MmS"/>
                             <constraint firstItem="idr-U6-W2N" firstAttribute="top" secondItem="lOK-vs-doW" secondAttribute="bottom" id="vU2-Sd-Qw8"/>
                         </constraints>
