@@ -226,8 +226,13 @@
                                     <outlet property="delegate" destination="oVR-Ce-2Ok" id="hRN-yS-3PP"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDb-3b-bgM">
+                                <rect key="frame" x="0.0" y="108" width="768" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-2q-GBK">
-                                <rect key="frame" x="0.0" y="108" width="768" height="916"/>
+                                <rect key="frame" x="0.0" y="188" width="768" height="916"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -240,10 +245,14 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="idr-U6-W2N" secondAttribute="trailing" id="A2Q-Gh-ocM"/>
                             <constraint firstItem="eFx-2q-GBK" firstAttribute="leading" secondItem="fWx-Jc-eh8" secondAttribute="leading" id="Cz7-bl-eWA"/>
-                            <constraint firstItem="eFx-2q-GBK" firstAttribute="top" secondItem="idr-U6-W2N" secondAttribute="bottom" id="RJV-cc-X2F"/>
+                            <constraint firstItem="eFx-2q-GBK" firstAttribute="top" secondItem="idr-U6-W2N" secondAttribute="bottom" constant="80" id="RJV-cc-X2F"/>
                             <constraint firstItem="idr-U6-W2N" firstAttribute="leading" secondItem="fWx-Jc-eh8" secondAttribute="leading" id="TlG-4P-5ey"/>
+                            <constraint firstItem="eDb-3b-bgM" firstAttribute="leading" secondItem="fWx-Jc-eh8" secondAttribute="leading" id="Ya3-gX-znI"/>
+                            <constraint firstItem="eDb-3b-bgM" firstAttribute="top" secondItem="idr-U6-W2N" secondAttribute="bottom" id="ZW2-5P-di7"/>
                             <constraint firstAttribute="trailing" secondItem="eFx-2q-GBK" secondAttribute="trailing" id="k3K-nF-TkC"/>
-                            <constraint firstAttribute="bottom" secondItem="eFx-2q-GBK" secondAttribute="bottom" id="orF-SH-fQj"/>
+                            <constraint firstAttribute="trailing" secondItem="eDb-3b-bgM" secondAttribute="trailing" id="leT-nm-oRl"/>
+                            <constraint firstAttribute="bottom" secondItem="eFx-2q-GBK" secondAttribute="bottom" constant="-80" id="orF-SH-fQj"/>
+                            <constraint firstItem="eFx-2q-GBK" firstAttribute="top" secondItem="eDb-3b-bgM" secondAttribute="bottom" id="rh8-TV-MmS"/>
                             <constraint firstItem="idr-U6-W2N" firstAttribute="top" secondItem="lOK-vs-doW" secondAttribute="bottom" id="vU2-Sd-Qw8"/>
                         </constraints>
                     </view>
@@ -253,6 +262,7 @@
                     <connections>
                         <outlet property="searchBar" destination="idr-U6-W2N" id="DB6-ha-m0R"/>
                         <outlet property="searchDisplayController" destination="VFd-gF-CNr" id="g76-VK-N3o"/>
+                        <outlet property="segmentView" destination="eDb-3b-bgM" id="b4H-kR-J22"/>
                         <outlet property="tableView" destination="eFx-2q-GBK" id="Qeu-7k-CFm"/>
                         <segue destination="Kub-UO-SCQ" kind="push" identifier="ChanceCustomerDetail Display" id="0Rn-Ju-QXs"/>
                     </connections>

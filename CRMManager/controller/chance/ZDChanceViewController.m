@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) SSFSegmentControl * segmentedControl;
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
+@property (weak, nonatomic) IBOutlet UIView* segmentView;
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
 @property (strong, nonatomic) NSArray * allChanceCustomers;
 
@@ -23,6 +24,8 @@
 {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
+    
+    [self.segmentView addSubview:self.segmentedControl];
     
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
@@ -74,15 +77,15 @@
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    return self.segmentedControl;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    return self.segmentedControl;
+//}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return self.segmentedControl.frame.size.height;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+//{
+//    return self.segmentedControl.frame.size.height;
+//}
 
 #pragma mark - UITableView delegate
 

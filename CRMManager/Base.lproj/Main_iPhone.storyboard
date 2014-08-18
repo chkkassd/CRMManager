@@ -226,8 +226,13 @@
                                     <outlet property="delegate" destination="grb-8r-dgj" id="zQM-0N-8nQ"/>
                                 </connections>
                             </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BYe-K6-0H0">
+                                <rect key="frame" x="0.0" y="108" width="320" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QCB-hl-9aQ">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="188" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -238,13 +243,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QCB-hl-9aQ" firstAttribute="top" secondItem="nO9-x4-AIP" secondAttribute="bottom" id="1kh-s0-zWi"/>
+                            <constraint firstItem="QCB-hl-9aQ" firstAttribute="top" secondItem="nO9-x4-AIP" secondAttribute="bottom" constant="80" id="1kh-s0-zWi"/>
                             <constraint firstItem="nO9-x4-AIP" firstAttribute="top" secondItem="g5k-q6-7kl" secondAttribute="bottom" id="3di-Xr-lb8"/>
+                            <constraint firstItem="BYe-K6-0H0" firstAttribute="top" secondItem="nO9-x4-AIP" secondAttribute="bottom" id="4Al-zP-PXm"/>
                             <constraint firstAttribute="trailing" secondItem="QCB-hl-9aQ" secondAttribute="trailing" id="7af-cA-jXy"/>
                             <constraint firstAttribute="trailing" secondItem="nO9-x4-AIP" secondAttribute="trailing" id="QKV-TZ-S7o"/>
-                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" id="Qvw-Ah-vxx"/>
+                            <constraint firstAttribute="bottom" secondItem="QCB-hl-9aQ" secondAttribute="bottom" constant="-80" id="Qvw-Ah-vxx"/>
+                            <constraint firstItem="QCB-hl-9aQ" firstAttribute="top" secondItem="BYe-K6-0H0" secondAttribute="bottom" id="h9f-B1-K8e"/>
+                            <constraint firstAttribute="trailing" secondItem="BYe-K6-0H0" secondAttribute="trailing" id="iCf-sK-BTh"/>
                             <constraint firstItem="QCB-hl-9aQ" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="iqp-YJ-AvL"/>
                             <constraint firstItem="nO9-x4-AIP" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="iyI-aE-LEq"/>
+                            <constraint firstItem="BYe-K6-0H0" firstAttribute="leading" secondItem="9Fu-w1-UnF" secondAttribute="leading" id="nsw-0G-yaW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="机会" id="2yv-Gq-wl9">
@@ -253,6 +262,7 @@
                     <connections>
                         <outlet property="searchBar" destination="nO9-x4-AIP" id="DvZ-PS-mT5"/>
                         <outlet property="searchDisplayController" destination="YHq-fj-Gr0" id="Kax-lg-POc"/>
+                        <outlet property="segmentView" destination="BYe-K6-0H0" id="gWA-JA-4po"/>
                         <outlet property="tableView" destination="QCB-hl-9aQ" id="EsT-sL-8qj"/>
                         <segue destination="Rvq-Ky-hlk" kind="push" identifier="ChanceCustomerDetail Display" id="4uJ-Nm-WGM"/>
                     </connections>
