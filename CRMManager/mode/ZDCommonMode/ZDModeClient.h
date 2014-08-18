@@ -17,6 +17,9 @@
 #import "ZDProductDetail.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
+#define ZDUpdateManagerUserNotification  @"UpdateManagerUserNotification"
+#define ZDUpdateCustomersNotification  @"UpdateCustomersNotification"
+#define ZDUpdateContactRecordsNotification  @"UpdateContactRecordsNotification"
 
 @interface ZDModeClient : NSObject
 
@@ -29,6 +32,7 @@
 //common propertise
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
 @property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
+@property (strong, nonatomic) NSArray * allZDChanceCustomers;//当前manager的所有chanceCustomers
 
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;//得到一个客户的所有联系记录
 //单例

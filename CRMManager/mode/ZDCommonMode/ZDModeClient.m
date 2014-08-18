@@ -34,12 +34,16 @@
             managerUser.userid = resultDic[@"id"];
             managerUser.password = password;
             if ([[ZDLocalDB sharedLocalDB] loginSaveManagerUserWithZDManagerUser:managerUser error:NULL]) {
+                //发送更新manageruser的通知
+                [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateManagerUserNotification object:self];
                 //保存完managerUser进入下一界面
                 handler(nil);
                 
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
+                        //发送更新customers的通知
+                        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
                         //4.获取并保存所有客户的联系记录
                         self.defaultCount = 0;
                         [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
@@ -162,6 +166,9 @@
                 NSLog(@"保存 customer:%@的record失败",[customers[self.defaultCount] customerId]);
             }
         }];
+    } else {
+        //获取并保存完所有records后，发送更新records的通知
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
     }
 }
 
@@ -194,6 +201,14 @@
         _allZDCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDCustomersOfCurrentManager];
     }
     return _allZDCustomers;
+}
+
+- (NSArray *)allZDChanceCustomers
+{
+    if (!_allZDChanceCustomers) {
+        _allZDChanceCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDChanceCustomersOfCurrentManager];
+    }
+    return _allZDChanceCustomers;
 }
 
 #pragma mark - sharedInstance

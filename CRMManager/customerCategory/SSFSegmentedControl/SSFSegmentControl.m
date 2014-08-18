@@ -9,8 +9,8 @@
 #import "SSFSegmentControl.h"
 @interface SSFSegmentControl()
 
-@property (weak, nonatomic) IBOutlet UIImageView * tipMovingView;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray * items;
+
 @end
 
 @implementation SSFSegmentControl
@@ -66,14 +66,6 @@
         button.selected = NO;
     }
     button.selected = YES;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        self.tipMovingView.frame = CGRectMake(80 * index, self.tipMovingView.frame.origin.y, self.tipMovingView.frame.size.width, self.tipMovingView.frame.size.height);
-    } completion:^(BOOL finished) {
-        if (finished) {
-
-        }
-    }];
 }
 
 #pragma mark - Instance

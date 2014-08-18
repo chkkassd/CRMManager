@@ -1,26 +1,43 @@
 //
-//  ZDChanceTableViewController.m
+//  ZDChanceViewController.m
 //  CRMManager
 //
-//  Created by 施赛峰 on 14-8-14.
+//  Created by peter on 14-8-18.
 //  Copyright (c) 2014年 peter. All rights reserved.
 //
 
-#import "ZDChanceTableViewController.h"
-#import "SSFSegmentControl.h"
+#import "ZDChanceViewController.h"
 
-@interface ZDChanceTableViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
+@interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
 
 @property (strong, nonatomic) SSFSegmentControl * segmentedControl;
+@property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
+@property (weak, nonatomic) IBOutlet UITableView * tableView;
+@property (strong, nonatomic) NSArray * allChanceCustomers;
 
 @end
 
-@implementation ZDChanceTableViewController
+@implementation ZDChanceViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
+    
+    //notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
+}
+
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - methods
+
+- (void)updateChanceCustomers:(NSNotification *)noti
+{
+    self.allChanceCustomers = [ZDModeClient sharedModeClient].allZDChanceCustomers;
 }
 
 #pragma mark - properties
@@ -34,18 +51,25 @@
     return _segmentedControl;
 }
 
+- (void)setAllChanceCustomers:(NSArray *)allChanceCustomers
+{
+    _allChanceCustomers = allChanceCustomers;
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 16;
+    return self.allChanceCustomers.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SSFLeftRightSwipeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SSFLeftRightSwipeTableViewCell" forIndexPath:indexPath];
     cell.delegate = self;
-    cell.label.text = @"hahaha";
+    cell.label.text = [self.allChanceCustomers[indexPath.row] customerName];
+    cell.interestLabel.text = @"一般";//[self.allChanceCustomers[indexPath.row] cdHope];
     return cell;
 }
 
@@ -69,16 +93,6 @@
         //到下一界面
     }
 }
-
-//#pragma mark - UIGestureRecognizerDelegate
-//
-//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-//{
-//    if ([gestureRecognizer.view isKindOfClass:[UITableView class]]) {
-//        return YES;
-//    }
-//    return NO;
-//}
 
 #pragma mark - SSFLeftRightSwipeTableViewCellDelegate
 
@@ -110,5 +124,4 @@
             break;
     }
 }
-
 @end

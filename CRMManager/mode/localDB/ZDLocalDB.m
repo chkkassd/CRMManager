@@ -163,6 +163,34 @@
     return nil;
 }
 
+//查找当前用户所有的ChanceCustomers
+- (NSArray *)queryAllChanceCustomersOfCurrentManager
+{
+    NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];
+    if (allCustomers) {
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerType == %@",@"1"];
+        NSArray * allChanceCustomers = [allCustomers filteredArrayUsingPredicate:predicate];
+        return allChanceCustomers;
+    }
+    return nil;
+}
+
+- (NSArray *)queryAllZDChanceCustomersOfCurrentManager
+{
+    NSArray * allChanceCustomers = [self queryAllChanceCustomersOfCurrentManager];
+    if (allChanceCustomers.count) {
+        NSMutableArray * allZDChanceCustomers = [[NSMutableArray alloc] init];
+        for (Customer * customer in allChanceCustomers) {
+            ZDCustomer * zdCustomer = [[ZDCustomer alloc] init];
+            [self modifyZDCustomer:zdCustomer from:customer];
+            [allZDChanceCustomers addObject:zdCustomer];
+        }
+        return allZDChanceCustomers;
+    }
+    return nil;
+
+}
+
 - (NSArray *)queryAllZDCustomersOfCurrentManager
 {
     NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];

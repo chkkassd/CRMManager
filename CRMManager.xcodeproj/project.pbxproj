@@ -32,6 +32,7 @@
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
+		67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
@@ -39,7 +40,6 @@
 		67C39A661998A89E00D796EA /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A651998A89E00D796EA /* Business.m */; };
 		FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */; };
 		FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */; };
-		FF598232199CFE950031D575 /* ZDChanceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF598231199CFE950031D575 /* ZDChanceTableViewController.m */; };
 		FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59828819A10FC50031D575 /* SSFSegmentControl.m */; };
 		FF59828B19A10FC50031D575 /* SSFSegmentControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59828919A10FC50031D575 /* SSFSegmentControl.xib */; };
 		FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8D199604BC0062B71C /* ZDWebService+URL.m */; };
@@ -110,6 +110,8 @@
 		67B70140199B61970061C345 /* ZDContactRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContactRecord.m; sourceTree = "<group>"; };
 		67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordSettingViewController.h; sourceTree = "<group>"; };
 		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
+		67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceViewController.h; sourceTree = "<group>"; };
+		67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
 		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
 		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
@@ -122,8 +124,6 @@
 		FF598229199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFLeftRightSwipeTableViewCell.h; sourceTree = "<group>"; };
 		FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFLeftRightSwipeTableViewCell.m; sourceTree = "<group>"; };
 		FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFLeftRightSwipeTableViewCell.xib; sourceTree = "<group>"; };
-		FF598230199CFE950031D575 /* ZDChanceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceTableViewController.h; sourceTree = "<group>"; };
-		FF598231199CFE950031D575 /* ZDChanceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceTableViewController.m; sourceTree = "<group>"; };
 		FF59828719A10FC50031D575 /* SSFSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFSegmentControl.h; sourceTree = "<group>"; };
 		FF59828819A10FC50031D575 /* SSFSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFSegmentControl.m; sourceTree = "<group>"; };
 		FF59828919A10FC50031D575 /* SSFSegmentControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFSegmentControl.xib; sourceTree = "<group>"; };
@@ -370,8 +370,8 @@
 		FF59822E199CFE760031D575 /* chance */ = {
 			isa = PBXGroup;
 			children = (
-				FF598230199CFE950031D575 /* ZDChanceTableViewController.h */,
-				FF598231199CFE950031D575 /* ZDChanceTableViewController.m */,
+				67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */,
+				67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */,
 			);
 			path = chance;
 			sourceTree = "<group>";
@@ -560,6 +560,7 @@
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
+				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
@@ -578,7 +579,6 @@
 				FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */,
 				67B7013E199B607F0061C345 /* ContactRecord.m in Sources */,
 				FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */,
-				FF598232199CFE950031D575 /* ZDChanceTableViewController.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
 				18861913199C0B09007635FC /* UIImage+Tab.m in Sources */,

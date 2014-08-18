@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *editeButton;
 @property (weak, nonatomic) IBOutlet UIView *realContentView;
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel * interestLabel;
 @property (nonatomic) BOOL isEditMode;
 @property (weak, nonatomic) id <SSFLeftRightSwipeTableViewCellDelegate> delegate;
 
