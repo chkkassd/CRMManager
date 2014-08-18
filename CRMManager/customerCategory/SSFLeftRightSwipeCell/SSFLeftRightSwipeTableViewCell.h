@@ -10,7 +10,7 @@
 
 @protocol SSFLeftRightSwipeTableViewCellDelegate;
 
-@interface SSFLeftRightSwipeTableViewCell : UITableViewCell
+@interface SSFLeftRightSwipeTableViewCell : UITableViewCell<UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *editeButton;

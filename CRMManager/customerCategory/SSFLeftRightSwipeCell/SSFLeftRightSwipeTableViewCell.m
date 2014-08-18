@@ -21,6 +21,7 @@
 {
     self.isEditMode = NO;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    pan.delegate = self;
     [self.realContentView addGestureRecognizer:pan];
 }
 
@@ -98,6 +99,20 @@
     if ([self.delegate respondsToSelector:@selector(leftRightSwipeTableViewCellEditeButtonPressed:)]) {
         [self.delegate leftRightSwipeTableViewCellEditeButtonPressed:self];
     }
+}
+
+#pragma mark - UIGestureRecorgnizeDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+        UIPanGestureRecognizer * panGR = (UIPanGestureRecognizer *)gestureRecognizer;
+        CGPoint point = [panGR translationInView:self];
+        if (fabs(point.x) > fabs(point.y)) {
+            return YES;
+        } else return NO;
+    }
+    return YES;
 }
 
 #pragma mark - sharedInstance

@@ -26,6 +26,7 @@
     
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
+    self.tableView.delaysContentTouches = NO;
 }
 
 -(void)dealloc
