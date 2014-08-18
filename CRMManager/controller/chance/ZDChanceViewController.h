@@ -10,6 +10,6 @@
 #import "ZDModeClient.h"
 #import "AllCustomerCategoryHeaders.h"
 
-@interface ZDChanceViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ZDChanceViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 
 @end

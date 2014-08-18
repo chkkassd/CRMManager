@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
 @property (strong, nonatomic) NSArray * allChanceCustomers;
+@property (strong, nonatomic) NSArray * filteredChanceCustomers;
 @property (strong, nonatomic) ZDCustomer * selectedZDCustomer;
 
 @end
@@ -25,10 +26,16 @@
 {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
+    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
     
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
-    self.tableView.delaysContentTouches = NO;
+    
+//    ZDCustomer * c1 = [[ZDCustomer alloc] init];
+//    c1.customerName = @"peter";
+//    ZDCustomer * c2 = [[ZDCustomer alloc] init];
+//    c2.customerName = @"jack";
+//    self.allChanceCustomers = @[c1,c2];
 }
 
 -(void)dealloc
@@ -64,26 +71,42 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.allChanceCustomers.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.filteredChanceCustomers.count;
+    } else {
+       return self.allChanceCustomers.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SSFLeftRightSwipeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SSFLeftRightSwipeTableViewCell" forIndexPath:indexPath];
     cell.delegate = self;
-    cell.label.text = [self.allChanceCustomers[indexPath.row] customerName];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        cell.label.text = [self.filteredChanceCustomers[indexPath.row] customerName];
+    } else {
+       cell.label.text = [self.allChanceCustomers[indexPath.row] customerName];
+    }
+    
     cell.interestLabel.text = @"一般";//[self.allChanceCustomers[indexPath.row] cdHope];
     return cell;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    return self.segmentedControl;
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return self.segmentedControl;
+    }
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return self.segmentedControl.frame.size.height;
+    if (tableView != self.searchDisplayController.searchResultsTableView) {
+        return self.segmentedControl.frame.size.height;
+    }
+    return 0;
 }
 
 #pragma mark - UITableView delegate
@@ -94,10 +117,23 @@
     SSFLeftRightSwipeTableViewCell * cell = (SSFLeftRightSwipeTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     if (!cell.isEditMode) {
         //到下一界面
-        self.selectedZDCustomer = self.allChanceCustomers[indexPath.row];
+        if (tableView == self.searchDisplayController.searchResultsTableView) {
+            self.selectedZDCustomer = self.filteredChanceCustomers[indexPath.row];
+//            [self searchDisplayPushToCustomerDetailView];
+        } else {
+           self.selectedZDCustomer = self.allChanceCustomers[indexPath.row];
+        }
         [self performSegueWithIdentifier:@"ChanceCustomerDetail Display" sender:self];
     }
 }
+
+//- (void)searchDisplayPushToCustomerDetailView
+//{
+//    ZDChanceCustomerDetailViewController * chanceCustomerDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDChanceCustomerDetailViewController"];
+//    chanceCustomerDetailViewController.zdCustomer = self.selectedZDCustomer;
+//
+//    [self.searchDisplayController.searchContentsController.navigationController pushViewController:chanceCustomerDetailViewController animated:YES];
+//}
 
 #pragma mark - segure
 
@@ -139,4 +175,14 @@
             break;
     }
 }
+
+#pragma mark - search display controller delegate
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
+    self.filteredChanceCustomers = [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
+    return YES;
+}
+
 @end
