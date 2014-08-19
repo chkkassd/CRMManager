@@ -7,6 +7,7 @@
 //
 
 #import "ZDChanceCustomerDetailViewController.h"
+#import "ZDRecordAddOrEditViewController.h"
 
 @interface ZDChanceCustomerDetailViewController ()
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray * allRecords;
+@property (strong, nonatomic) ZDContactRecord * selectedRecord;
 
 @end
 
@@ -78,10 +80,34 @@
     }
 }
 
+#pragma mark - table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedRecord = self.allRecords[indexPath.row];
+    [self performSegueWithIdentifier:@"recordAddOrEdit Display" sender:self];
+}
+
 #pragma mark - Action
 
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)addButtonPressed:(id)sender
+{
+    self.selectedRecord = nil;
+    [self performSegueWithIdentifier:@"recordAddOrEdit Display" sender:self];
+}
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"recordAddOrEdit Display"]) {
+        ZDRecordAddOrEditViewController * recordAddOrEditViewController = segue.destinationViewController;
+        recordAddOrEditViewController.editedReocrd = self.selectedRecord;
+    }
 }
 
 @end

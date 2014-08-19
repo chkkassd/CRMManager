@@ -13,5 +13,6 @@
 #import "SSFPasswordGestureView.h"
 #import "SSFLeftRightSwipeTableViewCell.h"
 #import "SSFSegmentControl.h"
+#import "MBProgressHUD.h"
 
 #endif

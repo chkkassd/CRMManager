@@ -8,6 +8,7 @@
 
 #import "ZDChanceViewController.h"
 #import "ZDChanceCustomerDetailViewController.h"
+#import "ZDAddAndEditeViewController.h"
 
 @interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
 
@@ -26,16 +27,11 @@
 {
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
+    
     [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:@"SSFLeftRightSwipeTableViewCell" bundle:nil] forCellReuseIdentifier:@"SSFLeftRightSwipeTableViewCell"];
     
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
-    
-//    ZDCustomer * c1 = [[ZDCustomer alloc] init];
-//    c1.customerName = @"peter";
-//    ZDCustomer * c2 = [[ZDCustomer alloc] init];
-//    c2.customerName = @"jack";
-//    self.allChanceCustomers = @[c1,c2];
 }
 
 -(void)dealloc
@@ -48,6 +44,27 @@
 - (void)updateChanceCustomers:(NSNotification *)noti
 {
     self.allChanceCustomers = [ZDModeClient sharedModeClient].allZDChanceCustomers;
+}
+
+#pragma mark - Action
+
+- (IBAction)addButtonPressed:(id)sender
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"新增客户" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"添加",@"从通讯录导入", nil];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+#pragma mark - action sheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString * buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if ([buttonTitle isEqualToString:@"添加"]) {
+        self.selectedZDCustomer = nil;
+        [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
+    } else if ([buttonTitle isEqualToString:@"从通讯录导入"]) {
+        //做通讯录导入操作
+    }
 }
 
 #pragma mark - properties
@@ -64,6 +81,14 @@
 - (void)setAllChanceCustomers:(NSArray *)allChanceCustomers
 {
     _allChanceCustomers = allChanceCustomers;
+//    switch (self.segmentedControl.selectedIndex) {
+//        case 0:
+//            
+//            break;
+//            
+//        default:
+//            break;
+//    }
     [self.tableView reloadData];
 }
 
@@ -119,7 +144,6 @@
         //到下一界面
         if (tableView == self.searchDisplayController.searchResultsTableView) {
             self.selectedZDCustomer = self.filteredChanceCustomers[indexPath.row];
-//            [self searchDisplayPushToCustomerDetailView];
         } else {
            self.selectedZDCustomer = self.allChanceCustomers[indexPath.row];
         }
@@ -127,21 +151,23 @@
     }
 }
 
-//- (void)searchDisplayPushToCustomerDetailView
-//{
-//    ZDChanceCustomerDetailViewController * chanceCustomerDetailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDChanceCustomerDetailViewController"];
-//    chanceCustomerDetailViewController.zdCustomer = self.selectedZDCustomer;
-//
-//    [self.searchDisplayController.searchContentsController.navigationController pushViewController:chanceCustomerDetailViewController animated:YES];
-//}
-
-#pragma mark - segure
+#pragma mark - segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"ChanceCustomerDetail Display"]) {
         ZDChanceCustomerDetailViewController * chanceCustomerDetailViewController = segue.destinationViewController;
         chanceCustomerDetailViewController.zdCustomer = self.selectedZDCustomer;
+    } else if ([segue.identifier isEqualToString:@"addAndEdit Display"]) {
+        ZDAddAndEditeViewController * addAndEditeViewController = segue.destinationViewController;
+        if (self.selectedZDCustomer) {
+            //编辑客户
+            addAndEditeViewController.mode = ZDAddAndEditeViewControllerModeEdit;
+            addAndEditeViewController.editedCustomer = self.selectedZDCustomer;
+        } else {
+            //新增客户
+            addAndEditeViewController.mode = ZDAddAndEditeViewControllerModeAdd;
+        }
     }
 }
 
@@ -151,7 +177,11 @@
 {}
 
 - (void)leftRightSwipeTableViewCellEditeButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
-{}
+{
+    NSIndexPath * index = [self.tableView indexPathForCell:cell];
+    self.selectedZDCustomer = self.allChanceCustomers[index.row];
+    [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
+}
 
 #pragma mark - SSFSegmentControlDelegate
 

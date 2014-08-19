@@ -26,19 +26,24 @@
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler;
 
-//modify and save
-- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
-
 //common propertise
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
 @property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
 @property (strong, nonatomic) NSArray * allZDChanceCustomers;//当前manager的所有chanceCustomers
 
-- (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;//得到一个客户的所有联系记录
+//保存manageruser
+- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
+//得到一个客户的所有联系记录
+- (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;
+//新增机会客户
+- (void)addChanceCustomerWithCustomerInfoDictionary:(NSDictionary *)infoDictionary
+                                  completionHandler:(void(^)(NSError * error))handler;
+//更新储备客户
+- (void)updateChanceCustomerWithCustomerInfoDictionary:(NSDictionary *)infoDictionary
+                                            customerId:(NSString *)customerid
+                                     completionHandler:(void(^)(NSError * error))handler;
+
 //单例
 + (ZDModeClient *)sharedModeClient;
 
-- (void)fetchAndSaveAllContactRecordWithManagerUserId:(NSString *)userid
-                                           CustomerId:(NSString *)customerid
-                                    completionHandler:(void(^)(NSError * error))handler;
 @end

@@ -76,14 +76,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="customer_call" translatesAutoresizingMaskIntoConstraints="NO" id="1Sv-ty-l46">
-                                <rect key="frame" x="273" y="18" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="EhN-QL-3q4"/>
-                                    <constraint firstAttribute="height" constant="32" id="gg3-ms-S2w"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-ZF-H9d" userLabel="hope label">
                                 <rect key="frame" x="230" y="15" width="42" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,16 +87,27 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLU-Mq-aTS">
+                                <rect key="frame" x="276" y="12" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="eK2-I1-PXh"/>
+                                    <constraint firstAttribute="height" constant="44" id="qPz-HQ-CbS"/>
+                                </constraints>
+                                <state key="normal" image="customer_call">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="nLU-Mq-aTS" secondAttribute="centerY" id="8dP-so-ZWV"/>
                             <constraint firstItem="exB-ZF-H9d" firstAttribute="leading" secondItem="lt6-vJ-xdo" secondAttribute="trailing" constant="1" id="CDt-nr-P4J"/>
                             <constraint firstAttribute="centerY" secondItem="lt6-vJ-xdo" secondAttribute="centerY" id="Egt-R5-ic0"/>
                             <constraint firstAttribute="centerY" secondItem="Qfv-qG-bdQ" secondAttribute="centerY" id="F2I-tG-eQU"/>
+                            <constraint firstAttribute="trailing" secondItem="nLU-Mq-aTS" secondAttribute="trailing" id="GXr-Xy-UJp"/>
                             <constraint firstItem="pnm-MS-e1E" firstAttribute="leading" secondItem="1PO-BD-OV8" secondAttribute="leading" constant="15" id="Mth-2C-RTA"/>
                             <constraint firstItem="Qfv-qG-bdQ" firstAttribute="leading" secondItem="pnm-MS-e1E" secondAttribute="trailing" constant="8" id="TdU-WG-RDB"/>
-                            <constraint firstAttribute="centerY" secondItem="1Sv-ty-l46" secondAttribute="centerY" id="aKr-Eg-bQ3"/>
-                            <constraint firstAttribute="trailing" secondItem="1Sv-ty-l46" secondAttribute="trailing" constant="15" id="imN-M1-Lxb"/>
                             <constraint firstAttribute="centerY" secondItem="exB-ZF-H9d" secondAttribute="centerY" id="lMq-Xg-kJx"/>
                             <constraint firstItem="lt6-vJ-xdo" firstAttribute="leading" secondItem="Qfv-qG-bdQ" secondAttribute="trailing" constant="8" id="pca-Cf-dTL"/>
                             <constraint firstAttribute="centerY" secondItem="pnm-MS-e1E" secondAttribute="centerY" id="rD5-vu-p9v"/>

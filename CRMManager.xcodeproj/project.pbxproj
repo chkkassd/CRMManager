@@ -32,6 +32,9 @@
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
+		67BAA92119A2E650005671A8 /* ZDAddAndEditeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BAA92019A2E650005671A8 /* ZDAddAndEditeViewController.m */; };
+		67BAA92419A321DF005671A8 /* ZDRecordAddOrEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BAA92319A321DF005671A8 /* ZDRecordAddOrEditViewController.m */; };
+		67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BAA92A19A34059005671A8 /* MBProgressHUD.m */; };
 		67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */; };
 		67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
@@ -111,6 +114,12 @@
 		67B70140199B61970061C345 /* ZDContactRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDContactRecord.m; sourceTree = "<group>"; };
 		67B96CAF1999B03300CBF5AF /* ZDGesturePasswordSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordSettingViewController.h; sourceTree = "<group>"; };
 		67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordSettingViewController.m; sourceTree = "<group>"; };
+		67BAA91F19A2E650005671A8 /* ZDAddAndEditeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAddAndEditeViewController.h; sourceTree = "<group>"; };
+		67BAA92019A2E650005671A8 /* ZDAddAndEditeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAddAndEditeViewController.m; sourceTree = "<group>"; };
+		67BAA92219A321DF005671A8 /* ZDRecordAddOrEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDRecordAddOrEditViewController.h; sourceTree = "<group>"; };
+		67BAA92319A321DF005671A8 /* ZDRecordAddOrEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDRecordAddOrEditViewController.m; sourceTree = "<group>"; };
+		67BAA92919A34059005671A8 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		67BAA92A19A34059005671A8 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		67BBE06C19A19D11006BE12C /* ZDChanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceViewController.h; sourceTree = "<group>"; };
 		67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
 		67BBE06F19A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceCustomerDetailViewController.h; sourceTree = "<group>"; };
@@ -337,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */,
+				67BAA92519A33EAF005671A8 /* MBProgressHUD */,
 				FF59828619A10FC50031D575 /* SSFSegmentedControl */,
 				FF598228199CFC360031D575 /* SSFLeftRightSwipeCell */,
 				67C39A5B19985FBA00D796EA /* SSFGesturePassword */,
@@ -346,6 +356,15 @@
 				18861912199C0B09007635FC /* UIImage+Tab.m */,
 			);
 			path = customerCategory;
+			sourceTree = "<group>";
+		};
+		67BAA92519A33EAF005671A8 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				67BAA92919A34059005671A8 /* MBProgressHUD.h */,
+				67BAA92A19A34059005671A8 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		67C39A5B19985FBA00D796EA /* SSFGesturePassword */ = {
@@ -377,6 +396,10 @@
 				67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */,
 				67BBE06F19A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.h */,
 				67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */,
+				67BAA91F19A2E650005671A8 /* ZDAddAndEditeViewController.h */,
+				67BAA92019A2E650005671A8 /* ZDAddAndEditeViewController.m */,
+				67BAA92219A321DF005671A8 /* ZDRecordAddOrEditViewController.h */,
+				67BAA92319A321DF005671A8 /* ZDRecordAddOrEditViewController.m */,
 			);
 			path = chance;
 			sourceTree = "<group>";
@@ -557,12 +580,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BAA92119A2E650005671A8 /* ZDAddAndEditeViewController.m in Sources */,
 				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
 				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				67B70141199B61970061C345 /* ZDContactRecord.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
+				67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
@@ -580,6 +605,7 @@
 				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
 				FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */,
 				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
+				67BAA92419A321DF005671A8 /* ZDRecordAddOrEditViewController.m in Sources */,
 				67C39A661998A89E00D796EA /* Business.m in Sources */,
 				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
 				FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */,
