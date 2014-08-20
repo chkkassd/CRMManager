@@ -7,131 +7,118 @@
 //
 
 #import "ZDAboutUsTableViewController.h"
+#import "UIView+CCPlus.h"
+#import "MBProgressHUD.h"
+
+#define VERSION_URL @"http://api.ezendai.com:8888/ios/manager_version.txt"
+#define INSTALL_URL @"itms-services://?action=download-manifest&url=https://api.ezendai.com:8899/ios/manager.plist"
 
 @interface ZDAboutUsTableViewController ()
+
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *seperatorLines;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
 @implementation ZDAboutUsTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.versionLabel.text = [NSString stringWithFormat:@"V %@", [self currentAppVersion]];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [UIView configureSeparatorLinesFromOutletCollections:self.seperatorLines
+                                         withBorderWidth:0.25
+                                         withBorderColor:[UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:0.5]];
 }
 
-- (void)didReceiveMemoryWarning
+- (NSString *)currentAppVersion
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    return info[@"CFBundleShortVersionString"];
 }
 
-#pragma mark - Table view data source
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+- (void)haveNewVersion
 {
-//    if (section == 0 || section == 1) {
-//        return 0;
-//    } else {
-//    }
-    return 0;
+    [[UIApplication sharedApplication]
+     openURL:[NSURL URLWithString:INSTALL_URL]];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+- (void)noHaveNewVersion
 {
-//    if (section == 0 || section == 1) {
-//        return 0;
-//    } else {
-//    }
-    return 0;
+    [[[UIAlertView alloc] initWithTitle:@""
+                                message:@"已是最新版本"
+                               delegate:nil
+                      cancelButtonTitle:@"确定"
+                      otherButtonTitles:nil] show];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)compareCurrentAppVersion:(NSString *)currentAppVersion appStoreAppVersion:(NSString *)appStoreAppVersion
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    int currentAppVersion1 = 0;
+    int currentAppVersion2 = 0;
+    int currentAppVersion3 = 0;
+    int appStoreAppVersion1 = 0;
+    int appStoreAppVersion2 = 0;
+    int appStoreAppVersion3 = 0;
     
-    // Configure the cell...
+    NSArray *components = [currentAppVersion componentsSeparatedByString:@"."];
+    if ([components count] > 0) currentAppVersion1 = [components[0] intValue];
+    if ([components count] > 1) currentAppVersion2 = [components[1] intValue];
+    if ([components count] > 2) currentAppVersion3 = [components[2] intValue];
     
-    return cell;
+    components = [appStoreAppVersion componentsSeparatedByString:@"."];
+    if ([components count] > 0) appStoreAppVersion1 = [components[0] intValue];
+    if ([components count] > 1) appStoreAppVersion2 = [components[1] intValue];
+    if ([components count] > 2) appStoreAppVersion3 = [components[2] intValue];
+    
+    if (appStoreAppVersion1 > currentAppVersion1) {
+        [self haveNewVersion];
+    } else if (appStoreAppVersion1 == currentAppVersion1) {
+        if (appStoreAppVersion2 > currentAppVersion2) {
+            [self haveNewVersion];
+        } else if (appStoreAppVersion2 == currentAppVersion2) {
+            if (appStoreAppVersion3 > currentAppVersion3) {
+                [self haveNewVersion];
+            } else {
+                [self noHaveNewVersion];
+            }
+        } else {
+            [self noHaveNewVersion];
+        }
+    } else {
+        [self noHaveNewVersion];
+    }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSLog(@"%d", indexPath.section);
+    NSLog(@"%d", indexPath.row);
+    if (indexPath.section == 1 && indexPath.row == 3) {
+        [self checkUpdatePressed];
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Action
+
+- (void)checkUpdatePressed
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:VERSION_URL]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            NSString *appStoreAppVersion = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSString *currentAppVersion = [self currentAppVersion];
+            
+            [self compareCurrentAppVersion:currentAppVersion appStoreAppVersion:appStoreAppVersion];
+        });
+    });
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

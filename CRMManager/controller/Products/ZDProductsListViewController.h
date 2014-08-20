@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZDProductsListViewController : UIViewController
+@interface ZDProductsListViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @end
