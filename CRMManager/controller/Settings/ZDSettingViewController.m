@@ -32,26 +32,44 @@
     [[ZDModeClient sharedModeClient] saveZDManagerUser:zdManagerUser];
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UITableViewDatasource
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (indexPath.section == 0) {
-        switch (indexPath.row) {
-            case 0:
-                [self performSegueWithIdentifier:@"QAView Display" sender:self];
-                break;
-            case 1:
-                [self performSegueWithIdentifier:@"SugestionView Display" sender:self];
-                break;
-            case 3:
-                [self performSegueWithIdentifier:@"GesturePasswordSettingView Display" sender:self];
-                break;
-            default:
-                break;
-        }
+    if (section == 0) {
+        return 15;
+    } else if (section == 3) {
+        return 40;
+    } else {
+        return 20;
     }
 }
+
+#pragma mark - UITableViewDelegate
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (indexPath.section == 0) {
+//        switch (indexPath.row) {
+//            case 1:
+//                [self performSegueWithIdentifier:@"GesturePasswordSettingView Display" sender:self];
+//                break;
+//            default:
+//                break;
+//        }
+//    } else if (indexPath.section == 1) {
+//        switch (indexPath.row) {
+//            case 0:
+//                [self performSegueWithIdentifier:@"QAView Display" sender:self];
+//                break;
+//            case 1:
+//                [self performSegueWithIdentifier:@"SugestionView Display" sender:self];
+//                break;
+//            default:
+//                break;
+//        }
+//    }
+//}
 
 #pragma mark - UIAlertViewDelegate
 
