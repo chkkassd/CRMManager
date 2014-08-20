@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray * allRecords;
+@property (strong, nonatomic) NSMutableArray * allRecords;
 @property (strong, nonatomic) ZDContactRecord * selectedRecord;
 
 @end
@@ -51,19 +51,19 @@
 {
     self.nameLabel.text = self.zdCustomer.customerName;
     self.mobileLabel.text = self.zdCustomer.mobile ? self.zdCustomer.mobile : @"未设置";
-    self.allRecords = [[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId];
+    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
 }
 
 #pragma mark - methods
 
 - (void)upadteContactRecords:(NSNotification *)noti
 {
-    self.allRecords = [[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId];
+    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
 }
 
 #pragma mark - properties
 
-- (void)setAllRecords:(NSArray *)allRecords
+- (void)setAllRecords:(NSMutableArray *)allRecords
 {
     _allRecords = allRecords;
     [self.tableView reloadData];
@@ -92,17 +92,37 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在删除,请稍后";
+    ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
+    [self.allRecords removeObjectAtIndex:indexPath.row];
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //调接口删除网上数据，并删除数据库数据
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+        [[ZDModeClient sharedModeClient] deleteContactRecordWithCustomerId:self.zdCustomer.customerId recordId:zdContactRecord.recordId completionHandler:^(NSError * error) {
+            if (!error) {
+                //删除成功
+                hud.labelText = @"删除成功";
+                [hud hide:YES afterDelay:1];
+            } else {
+                //删除失败
+                hud.labelText = @"删除失败";
+                [hud hide:YES afterDelay:1];
+            }
+        }];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
 }
 
 #pragma mark - table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.selectedRecord = self.allRecords[indexPath.row];
     [self performSegueWithIdentifier:@"recordAddOrEdit Display" sender:self];
 }

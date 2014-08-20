@@ -203,7 +203,6 @@
                 handler(nil);
             }
         } else {
-            NSError * error = [[NSError alloc] init];
             handler(error);
         }
     }];
@@ -244,7 +243,6 @@
                 handler(nil);
             }
         } else {
-            NSError * error = [[NSError alloc] init];
             handler(error);
         }
     }];
@@ -264,7 +262,6 @@
                 handler(nil);
             }
         } else {
-            NSError * error = [[NSError alloc] init];
             handler(error);
         }
     }];
@@ -293,7 +290,6 @@
                                                                            handler(nil);
                                                                        }
                                                                    } else {
-                                                                       NSError * error = [[NSError alloc] init];
                                                                        handler(error);
                                                                    }
                                                             }];
@@ -341,11 +337,29 @@
                                                                               handler(nil);
                                                                           }
                                                                       } else {
-                                                                          NSError * error = [[NSError alloc] init];
                                                                           handler(error);
                                                                       }
      }];
 
+}
+
+//删除联系记录
+- (void)deleteContactRecordWithCustomerId:(NSString *)customerId
+                                 recordId:(NSString *)recordId
+                        completionHandler:(void (^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] deleteContactRecordWithCustomerId:customerId
+                                                                  recordId:recordId completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                                      if (!error) {
+                                                                          //从数据库中删除
+                                                                          if([[ZDLocalDB sharedLocalDB] deleteOneContactRecordWithReocrdId:recordId error:NULL]) {
+                                                                              [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
+                                                                              handler(nil);
+                                                                          }
+                                                                      } else {
+                                                                          handler(error);
+                                                                      }
+                                                                  }];
 }
 
 #pragma mark - 客户所有联系记录

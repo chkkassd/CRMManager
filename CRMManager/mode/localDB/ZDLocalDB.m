@@ -364,6 +364,17 @@
     return NO;
 }
 
+//delete one record
+- (BOOL)deleteOneContactRecordWithReocrdId:(NSString *)recordid error:(NSError **)error
+{
+    ContactRecord * contactRecord = [self queryContactRecordWithRecordId:recordid];
+    if (contactRecord) {
+        [self.managedObjectContext deleteObject:contactRecord];
+        return [self.managedObjectContext save:error];
+    }
+    return NO;
+}
+
 #pragma mark - coreData properties
 
 - (NSString *)defaultCurrentUserId

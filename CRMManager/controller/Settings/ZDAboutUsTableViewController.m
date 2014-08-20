@@ -96,8 +96,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%d", indexPath.section);
-    NSLog(@"%d", indexPath.row);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section == 1 && indexPath.row == 3) {
         [self checkUpdatePressed];
     }

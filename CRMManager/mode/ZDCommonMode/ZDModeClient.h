@@ -52,6 +52,10 @@
 - (void)updateContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary
                                      recordId:(NSString *)recordid
                             completionHandler:(void(^)(NSError * error))handler;
+//删除联系记录
+- (void)deleteContactRecordWithCustomerId:(NSString *)customerId
+                                 recordId:(NSString *)recordId
+                        completionHandler:(void (^)(NSError * error))handler;
 //单例
 + (ZDModeClient *)sharedModeClient;
 

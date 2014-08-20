@@ -539,7 +539,7 @@
 				ORGANIZATIONNAME = peter;
 				TargetAttributes = {
 					6724CB4E1994B26600E1C058 = {
-						DevelopmentTeam = 742CSLGJ92;
+						DevelopmentTeam = S87R43P796;
 					};
 					6724CB721994B26600E1C058 = {
 						TestTargetID = 6724CB4E1994B26600E1C058;
@@ -770,14 +770,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HAIHUI TAN (S87R43P796)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HAIHUI TAN (S87R43P796)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "345E9698-B911-4F28-9CA0-7B1646B2A4B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -787,14 +787,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: HAIHUI TAN (S87R43P796)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: HAIHUI TAN (S87R43P796)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRMManager/CRMManager-Prefix.pch";
 				INFOPLIST_FILE = "CRMManager/CRMManager-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "345E9698-B911-4F28-9CA0-7B1646B2A4B5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
