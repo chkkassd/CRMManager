@@ -1237,6 +1237,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="关于" id="e1Q-d2-Xod"/>
                     <connections>
+                        <outlet property="versionLabel" destination="alf-V0-h6z" id="ZOH-wL-Knm"/>
                         <outletCollection property="seperatorLines" destination="SFb-yv-vBo" id="Kdk-MF-ViP"/>
                         <outletCollection property="seperatorLines" destination="ugv-TK-5BP" id="JAD-dQ-JNu"/>
                         <outletCollection property="seperatorLines" destination="Pgn-oK-JfM" id="ysT-Wa-88d"/>
