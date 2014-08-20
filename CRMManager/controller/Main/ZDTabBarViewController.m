@@ -10,7 +10,7 @@
 #import "ZDGesturePasswordViewController.h"
 #import "UIImage+Tab.h"
 
-#define DefaultEnterBackgroundTime  3.0
+#define DefaultEnterBackgroundTime  5.0
 
 @interface ZDTabBarViewController ()<ZDGesturePasswordViewControllerDelegate>
 
