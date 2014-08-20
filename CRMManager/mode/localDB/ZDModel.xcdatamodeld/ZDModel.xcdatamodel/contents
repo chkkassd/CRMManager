@@ -26,9 +26,9 @@
         <attribute name="customerId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
         <relationship name="allProducts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="belongCustomer" inverseEntity="Product" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
@@ -93,10 +93,10 @@
     </entity>
     <elements>
         <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
+        <element name="ContactRecord" positionX="7" positionY="-693" width="128" height="208"/>
         <element name="Customer" positionX="-243" positionY="-709" width="128" height="193"/>
         <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="148"/>
         <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
         <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
-        <element name="ContactRecord" positionX="7" positionY="-693" width="128" height="208"/>
     </elements>
 </model>

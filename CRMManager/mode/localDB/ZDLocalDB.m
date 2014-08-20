@@ -133,7 +133,7 @@
     zdCustomer.idNum = customer.idNum;
     zdCustomer.mobile = customer.mobile;
     zdCustomer.cdHope = customer.cdHope;
-    zdCustomer.date = customer.date;
+    zdCustomer.sex = customer.sex;
     zdCustomer.customerType = customer.customerType;
 }
 
@@ -299,7 +299,7 @@
     customer.idNum = zdCustomer.idNum;
     customer.mobile = zdCustomer.mobile;
     customer.cdHope = zdCustomer.cdHope;
-    customer.date = zdCustomer.date;
+    customer.sex = zdCustomer.sex;
     customer.customerType = zdCustomer.customerType;
     customer.belongManager = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
 }

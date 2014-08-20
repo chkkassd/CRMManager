@@ -31,8 +31,9 @@
 - (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 //新接口
-//获取储备客户列表，用于机会页面
-- (void)fetchAllChanceCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+//获取所有客户列表，用于机会页面
+- (void)fetchAllCustomersWithManagerUserId:(NSString *)userid
+                               completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 //获取客户联系纪录列表
 - (void)fetchCustomerContactListWithManagerUserId:(NSString *)userid andCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;

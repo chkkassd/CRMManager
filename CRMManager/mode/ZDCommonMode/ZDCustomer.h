@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSString * idNum;
 @property (nonatomic, retain) NSString * mobile;
 @property (nonatomic, retain) NSString * cdHope;
-@property (nonatomic, retain) NSString * date;
+@property (nonatomic, retain) NSString * sex;
 @property (nonatomic, retain) NSString * customerType;
 
 @end

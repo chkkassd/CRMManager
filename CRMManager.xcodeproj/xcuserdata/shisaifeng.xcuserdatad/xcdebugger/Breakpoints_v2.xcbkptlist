@@ -9,75 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/webservice/ZDWebService.m"
-            timestampString = "430126898.351805"
+            filePath = "CRMManager/controller/chance/ZDChanceViewController.m"
+            timestampString = "430195694.701977"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ZDWebService fetchByWebserviceURL:dictionary:handler:]"
-                  moduleName = "CRMManager"
-                  urlString = "file://localhost/Users/shisaifeng/Desktop/CRMManager/CRMManager/mode/webservice/ZDWebService.m"
-                  timestampString = "430126898.361335"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "282"
-                  endingLineNumber = "282"
-                  offsetFromSymbolStart = "782">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__56-[ZDWebService fetchByWebserviceURL:dictionary:handler:]_block_invoke"
-                  moduleName = "CRMManager"
-                  urlString = "file://localhost/Users/shisaifeng/Desktop/CRMManager/CRMManager/mode/webservice/ZDWebService.m"
-                  timestampString = "430126898.361557"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "282"
-                  endingLineNumber = "282"
-                  offsetFromSymbolStart = "74">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/webservice/ZDWebService.m"
-            timestampString = "430127035.423075"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "430131397.319307"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
-            landmarkName = "-deleteChanceCustomerWithCustomerId:completionHandler:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-updateChanceCustomers:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

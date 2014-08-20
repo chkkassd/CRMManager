@@ -17,8 +17,8 @@
 @dynamic idNum;
 @dynamic mobile;
 @dynamic cdHope;
-@dynamic date;
 @dynamic customerType;
+@dynamic sex;
 @dynamic belongManager;
 @dynamic allProducts;
 @dynamic allContactRecords;

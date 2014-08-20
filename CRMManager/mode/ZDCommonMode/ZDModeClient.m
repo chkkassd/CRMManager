@@ -57,7 +57,6 @@
             
             
             
-            
         } else {
             //登陆失败
             handler(error);
@@ -68,13 +67,13 @@
 //get and save all customers. if error is nil,save successfully,otherwise fail to save or fail to get data
 - (void)fetchAndSaveCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error))handler
 {
-    [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] fetchAllCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             NSArray * customers = resultDic[@"infos"];
             if (customers.count) {
                 
                 NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
-                int count = [resultDic[@"count"] intValue];
+                int count = customers.count;
                 for (int i = 0;i < count;i++) {
                     NSDictionary *dic = customers[i];
                     ZDCustomer *customer = [[ZDCustomer alloc] init];
@@ -82,8 +81,8 @@
                     customer.customerName = dic[@"customerName"];
                     customer.idNum = dic[@"idNum"];
                     customer.mobile = dic[@"mobile"];
-                    customer.cdHope = dic[@"cdHope"];
-                    customer.date = dic[@"dt"];
+                    customer.cdHope = dic[@"hope"];
+                    customer.sex = dic[@"sex"];
                     customer.customerType = dic[@"customerType"];
                     [savedCustomers addObject:customer];
                 }
@@ -154,6 +153,7 @@
     }];
 }
 
+//get and save all records
 - (void)fetchAndSaveAllContractRecordsWithAllCustomers:(NSArray *)customers
 {
     if (self.defaultCount < customers.count) {
@@ -186,7 +186,8 @@
     [[ZDWebService sharedWebViewService] addPotentialCustomerWithCustomerName:infoDictionary[@"customerName"] sex:infoDictionary[@"sex"] managerId:infoDictionary[@"managerId"] mobile:infoDictionary[@"mobile"] memo:infoDictionary[@"memo"] hope:infoDictionary[@"hope"] source:infoDictionary[@"source"] completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //添加成功,存入coredata
-            ZDCustomer * zdCustomer = [self manageZDCustomerFromInfoDictionary:infoDictionary andCustomerId:resultDic[@"customerId"]];
+            NSDictionary * dic = resultDic[@"infos"];
+            ZDCustomer * zdCustomer = [self manageZDCustomerFromInfoDictionary:infoDictionary andCustomerId:dic[@"customerId"]];
             if ([[ZDLocalDB sharedLocalDB] saveCustomerWith:zdCustomer error:NULL]) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
                 handler(nil);
@@ -207,6 +208,7 @@
     zdCustomer.mobile = infoDic[@"mobile"];
     zdCustomer.cdHope = infoDic[@"hope"];
     zdCustomer.customerType = @"1";
+    zdCustomer.sex = infoDic[@"sex"];
     return zdCustomer;
 }
 

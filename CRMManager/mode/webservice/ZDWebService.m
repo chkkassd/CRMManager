@@ -35,7 +35,7 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
-//根据用户id得到所有的customers
+//根据用户id得到所有的customers,废弃
 - (void)fetchCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
 {
     NSDictionary *dic = @{
@@ -73,13 +73,15 @@
 
 #pragma mark - 储备客户相关
 
-//获取储备客户列表，用于机会页面
-- (void)fetchAllChanceCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+//获取所有客户列表，用于机会页面,type:0-all、1-储备客户、2-客户、3-老客户
+- (void)fetchAllCustomersWithManagerUserId:(NSString *)userid
+                               completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
 {
     NSDictionary * dic = @{
                            @"managerId": userid,
                            @"pageNum": @"1",
-                           @"pageSize": @"20"
+                           @"pageSize": @"50",
+                           @"type": @"0"
                            };
     NSURL * url = [self URLForGetAllChanceCustomers];
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
@@ -162,7 +164,7 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
-// 新增客户联系记录
+// 新增客户联系记录,contactType: 联系方式（1-电话、2-邮件、3-QQ、4-传真）hope: 客户意愿(3-一般，2-感兴趣，1-强烈)
 - (void)addContactRecordWithManagerId:(NSString *)managerId
               customerId:(NSString *)customerId
              contactType:(NSString *)contactType
