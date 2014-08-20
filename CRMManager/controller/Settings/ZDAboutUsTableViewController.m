@@ -7,8 +7,11 @@
 //
 
 #import "ZDAboutUsTableViewController.h"
+#import "UIView+CCPlus.h"
 
 @interface ZDAboutUsTableViewController ()
+
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *seperatorLines;
 
 @end
 
@@ -32,6 +35,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [UIView configureSeparatorLinesFromOutletCollections:self.seperatorLines
+                                         withBorderWidth:0.25
+                                         withBorderColor:[UIColor colorWithRed:100 / 255.0 green:100 / 255.0 blue:100 / 255.0 alpha:0.5]];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578619A51F5600A76AE2 /* UIView+CCPlus.m */; };
 		18861913199C0B09007635FC /* UIImage+Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 18861912199C0B09007635FC /* UIImage+Tab.m */; };
 		18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
@@ -74,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1805578519A51F5600A76AE2 /* UIView+CCPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CCPlus.h"; sourceTree = "<group>"; };
+		1805578619A51F5600A76AE2 /* UIView+CCPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CCPlus.m"; sourceTree = "<group>"; };
 		18861911199C0B09007635FC /* UIImage+Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tab.h"; sourceTree = "<group>"; };
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
 		18BFEECF19A50A5700644953 /* ZDAboutUsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutUsTableViewController.h; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				6724CBA11994BD6A00E1C058 /* NSString+Tony.m */,
 				18861911199C0B09007635FC /* UIImage+Tab.h */,
 				18861912199C0B09007635FC /* UIImage+Tab.m */,
+				1805578519A51F5600A76AE2 /* UIView+CCPlus.h */,
+				1805578619A51F5600A76AE2 /* UIView+CCPlus.m */,
 			);
 			path = customerCategory;
 			sourceTree = "<group>";
@@ -601,6 +606,7 @@
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
+				1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */,
 				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
