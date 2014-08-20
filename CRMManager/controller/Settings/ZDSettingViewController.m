@@ -37,7 +37,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 15;
+        return 0;
     } else if (section == 3) {
         return 40;
     } else {
@@ -47,29 +47,10 @@
 
 #pragma mark - UITableViewDelegate
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (indexPath.section == 0) {
-//        switch (indexPath.row) {
-//            case 1:
-//                [self performSegueWithIdentifier:@"GesturePasswordSettingView Display" sender:self];
-//                break;
-//            default:
-//                break;
-//        }
-//    } else if (indexPath.section == 1) {
-//        switch (indexPath.row) {
-//            case 0:
-//                [self performSegueWithIdentifier:@"QAView Display" sender:self];
-//                break;
-//            case 1:
-//                [self performSegueWithIdentifier:@"SugestionView Display" sender:self];
-//                break;
-//            default:
-//                break;
-//        }
-//    }
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
 
 #pragma mark - UIAlertViewDelegate
 
