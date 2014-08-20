@@ -37,6 +37,8 @@
 - (BOOL)saveCustomerWith:(ZDCustomer *)zdCustomer error:(NSError **)error;
 - (BOOL)saveMuchContractRecordsWith:(NSArray *)contractRecords error:(NSError *__autoreleasing *)error;
 - (BOOL)saveContactRecordWith:(ZDContactRecord *)zdContactRecord error:(NSError *__autoreleasing *)error;
+//delete
+- (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error;
 //单例
 + (ZDLocalDB *)sharedLocalDB;
 

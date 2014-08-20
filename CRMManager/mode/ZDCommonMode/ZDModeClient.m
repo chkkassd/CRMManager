@@ -67,7 +67,9 @@
 //get and save all customers. if error is nil,save successfully,otherwise fail to save or fail to get data
 - (void)fetchAndSaveCustomersWithManagerUserId:(NSString *)userid completionHandler:(void(^)(NSError *error))handler
 {
-    [[ZDWebService sharedWebViewService] fetchAllCustomersWithManagerUserId:userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] fetchAllCustomersWithManagerUserId:userid
+                                                                       type:@"0"
+                                                          completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             NSArray * customers = resultDic[@"infos"];
             if (customers.count) {
@@ -157,7 +159,9 @@
 - (void)fetchAndSaveAllContractRecordsWithAllCustomers:(NSArray *)customers
 {
     if (self.defaultCount < customers.count) {
-        [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid CustomerId:[customers[self.defaultCount] customerId] completionHandler:^(NSError *error) {
+        [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid
+                                                 CustomerId:[customers[self.defaultCount] customerId]
+                                          completionHandler:^(NSError *error) {
             if (!error) {
                 NSLog(@"保存 customer:%@的record成功",[customers[self.defaultCount] customerId]);
                 self.defaultCount++;
@@ -183,11 +187,17 @@
 - (void)addChanceCustomerWithCustomerInfoDictionary:(NSDictionary *)infoDictionary
                                   completionHandler:(void(^)(NSError * error))handler
 {
-    [[ZDWebService sharedWebViewService] addPotentialCustomerWithCustomerName:infoDictionary[@"customerName"] sex:infoDictionary[@"sex"] managerId:infoDictionary[@"managerId"] mobile:infoDictionary[@"mobile"] memo:infoDictionary[@"memo"] hope:infoDictionary[@"hope"] source:infoDictionary[@"source"] completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] addPotentialCustomerWithCustomerName:infoDictionary[@"customerName"]
+                                                                          sex:infoDictionary[@"sex"]
+                                                                    managerId:infoDictionary[@"managerId"]
+                                                                       mobile:infoDictionary[@"mobile"]
+                                                                         memo:infoDictionary[@"memo"]
+                                                                         hope:infoDictionary[@"hope"]
+                                                                       source:infoDictionary[@"source"]
+                                                            completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //添加成功,存入coredata
-            NSDictionary * dic = resultDic[@"infos"];
-            ZDCustomer * zdCustomer = [self manageZDCustomerFromInfoDictionary:infoDictionary andCustomerId:dic[@"customerId"]];
+            ZDCustomer * zdCustomer = [self manageZDCustomerFromInfoDictionary:infoDictionary andCustomerId:resultDic[@"customerId"]];
             if ([[ZDLocalDB sharedLocalDB] saveCustomerWith:zdCustomer error:NULL]) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
                 handler(nil);
@@ -217,7 +227,15 @@
                                             customerId:(NSString *)customerid
                                      completionHandler:(void(^)(NSError * error))handler
 {
-    [[ZDWebService sharedWebViewService] updatePotentialCustomerWithCustomerName:infoDictionary[@"customerName"] sex:infoDictionary[@"sex"] managerId:infoDictionary[@"managerId"] mobile:infoDictionary[@"mobile"] memo:infoDictionary[@"memo"] hope:infoDictionary[@"hope"] source:infoDictionary[@"source"] andCustomerId:customerid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] updatePotentialCustomerWithCustomerName:infoDictionary[@"customerName"]
+                                                                             sex:infoDictionary[@"sex"]
+                                                                       managerId:infoDictionary[@"managerId"]
+                                                                          mobile:infoDictionary[@"mobile"]
+                                                                            memo:infoDictionary[@"memo"]
+                                                                            hope:infoDictionary[@"hope"]
+                                                                          source:infoDictionary[@"source"]
+                                                                   andCustomerId:customerid
+                                                               completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //修改成功,存入coredata
             ZDCustomer * zdCustomer = [self manageZDCustomerFromInfoDictionary:infoDictionary andCustomerId:customerid];
@@ -236,14 +254,97 @@
 - (void)deleteChanceCustomerWithCustomerId:(NSString *)customerid
                          completionHandler:(void(^)(NSError * error))handler
 {
-    [[ZDWebService sharedWebViewService] deletePotentialCustomerWithCustomerId:customerid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] deletePotentialCustomerWithCustomerId:customerid
+                                                             completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //从数据库删除
+            if ([[ZDLocalDB sharedLocalDB] deleteOneCustomerWithCustomerId:customerid error:NULL]) {
+                //数据库删除成功，发通知
+                [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
+                handler(nil);
+            }
         } else {
             NSError * error = [[NSError alloc] init];
             handler(error);
         }
     }];
+}
+
+//新增联系记录
+- (void)addContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary
+                         completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] addContactRecordWithManagerId:infoDictionary[@"managerId"]
+                                                            customerId:infoDictionary[@"customerId"]
+                                                           contactType:infoDictionary[@"contactType"]
+                                                            contactNum:infoDictionary[@"contactNum"]
+                                                               content:infoDictionary[@"content"]
+                                                                  hope:infoDictionary[@"hope"]
+                                                           contactTime:infoDictionary[@"contactTime"]
+                                                             inputDate:infoDictionary[@"inputDate"]
+                                                               inputId:infoDictionary[@"inputId"]
+                                                                  memo:infoDictionary[@"memo"]
+                                                               handler:^(NSError *error, NSDictionary *resultDic) {
+                                                                   if (!error) {
+                                                                       //保存到coredata
+                                                                       ZDContactRecord * zdContactRecord = [self manageZDContactRecordWithInfoDictionary:infoDictionary andRecordId:resultDic[@"recordId"]];
+                                                                       if ([[ZDLocalDB sharedLocalDB] saveContactRecordWith:zdContactRecord error:NULL]) {
+                                                                           [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
+                                                                           handler(nil);
+                                                                       }
+                                                                   } else {
+                                                                       NSError * error = [[NSError alloc] init];
+                                                                       handler(error);
+                                                                   }
+                                                            }];
+}
+
+- (ZDContactRecord *)manageZDContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary andRecordId:(NSString *)recordid
+{
+    ZDContactRecord * zdContactRecord = [[ZDContactRecord alloc] init];
+    zdContactRecord.recordId = recordid;
+    zdContactRecord.contactType = infoDictionary[@"contactType"];
+    zdContactRecord.contactNum = infoDictionary[@"contactNum"];
+    zdContactRecord.content = infoDictionary[@"content"];
+    zdContactRecord.hope = infoDictionary[@"hope"];
+    zdContactRecord.contactTime = infoDictionary[@"contactTime"];
+    zdContactRecord.managerId = infoDictionary[@"managerId"];
+    zdContactRecord.customerId = infoDictionary[@"customerId"];
+    zdContactRecord.inputId = infoDictionary[@"inputId"];
+    zdContactRecord.memo = infoDictionary[@"memo"];
+    return zdContactRecord;
+}
+
+//修改联系记录
+- (void)updateContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary
+                                             recordId:(NSString *)recordid
+                                 completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] updateContactRecordWithManagerId:infoDictionary[@"managerId"]
+                                                               customerId:infoDictionary[@"customerId"]
+                                                              contactType:infoDictionary[@"contactType"]
+                                                               contactNum:infoDictionary[@"contactNum"]
+                                                                  content:infoDictionary[@"content"]
+                                                                     hope:infoDictionary[@"hope"]
+                                                              contactTime:infoDictionary[@"contactTime"]
+                                                                inputDate:infoDictionary[@"inputDate"]
+                                                                  inputId:infoDictionary[@"inputId"]
+                                                                     memo:infoDictionary[@"memo"]
+                                                                 recordId:recordid
+                                                                  handler:^(NSError *error, NSDictionary *resultDic) {
+                                                                      if (!error) {
+                                                                          //保存到数据库
+                                                                          ZDContactRecord * zdContactRecord = [self manageZDContactRecordWithInfoDictionary:infoDictionary andRecordId:recordid];
+                                                                          if ([[ZDLocalDB sharedLocalDB] saveContactRecordWith:zdContactRecord error:NULL]) {
+                                                                              [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
+                                                                              handler(nil);
+                                                                          }
+                                                                      } else {
+                                                                          NSError * error = [[NSError alloc] init];
+                                                                          handler(error);
+                                                                      }
+     }];
+
 }
 
 #pragma mark - 客户所有联系记录
@@ -256,25 +357,20 @@
 
 - (ZDManagerUser *)zdManagerUser
 {
-    if (!_zdManagerUser) {
-        _zdManagerUser = [[ZDLocalDB sharedLocalDB] queryCurrentZDmanagerUser];
-    }
+    _zdManagerUser = [[ZDLocalDB sharedLocalDB] queryCurrentZDmanagerUser];
     return _zdManagerUser;
 }
 
 - (NSArray *)allZDCustomers
 {
-    if (!_allZDCustomers) {
-        _allZDCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDCustomersOfCurrentManager];
-    }
+    _allZDCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDCustomersOfCurrentManager];
     return _allZDCustomers;
 }
 
 - (NSArray *)allZDChanceCustomers
 {
-    if (!_allZDChanceCustomers) {
-        _allZDChanceCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDChanceCustomersOfCurrentManager];
-    }
+    _allZDChanceCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDChanceCustomersOfCurrentManager];
+    
     return _allZDChanceCustomers;
 }
 

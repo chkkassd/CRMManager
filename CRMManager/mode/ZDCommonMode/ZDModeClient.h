@@ -42,7 +42,16 @@
 - (void)updateChanceCustomerWithCustomerInfoDictionary:(NSDictionary *)infoDictionary
                                             customerId:(NSString *)customerid
                                      completionHandler:(void(^)(NSError * error))handler;
-
+//删除储备客户
+- (void)deleteChanceCustomerWithCustomerId:(NSString *)customerid
+                         completionHandler:(void(^)(NSError * error))handler;
+//新增联系记录
+- (void)addContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary
+                         completionHandler:(void(^)(NSError * error))handler;
+//修改联系记录
+- (void)updateContactRecordWithInfoDictionary:(NSDictionary *)infoDictionary
+                                     recordId:(NSString *)recordid
+                            completionHandler:(void(^)(NSError * error))handler;
 //单例
 + (ZDModeClient *)sharedModeClient;
 

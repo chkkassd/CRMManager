@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -448,7 +448,7 @@
         <!--Chance Customer Detail View Controller-->
         <scene sceneID="pbM-kG-k3Q">
             <objects>
-                <viewController storyboardIdentifier="ZDChanceCustomerDetailViewController" id="Rvq-Ky-hlk" customClass="ZDChanceCustomerDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZDChanceCustomerDetailViewController" hidesBottomBarWhenPushed="YES" id="Rvq-Ky-hlk" customClass="ZDChanceCustomerDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="069-4V-h79"/>
                         <viewControllerLayoutGuide type="bottom" id="M1H-tp-IM2"/>
@@ -591,15 +591,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tsc-do-aUF" firstAttribute="top" secondItem="yPb-8h-Ra1" secondAttribute="top" id="22Z-rm-MK8"/>
-                            <constraint firstAttribute="bottom" secondItem="YAs-8d-FPd" secondAttribute="bottom" id="2WN-yF-82G"/>
+                            <constraint firstAttribute="bottom" secondItem="YAs-8d-FPd" secondAttribute="bottom" id="5ju-hd-pGo"/>
                             <constraint firstItem="tsc-do-aUF" firstAttribute="leading" secondItem="yPb-8h-Ra1" secondAttribute="leading" id="6m2-B9-D0k"/>
+                            <constraint firstItem="YAs-8d-FPd" firstAttribute="leading" secondItem="yPb-8h-Ra1" secondAttribute="leading" id="9vu-QE-moX"/>
                             <constraint firstItem="2bE-aw-LYn" firstAttribute="top" secondItem="069-4V-h79" secondAttribute="bottom" id="Byn-jX-gHm"/>
                             <constraint firstAttribute="trailing" secondItem="tsc-do-aUF" secondAttribute="trailing" id="Cg0-bv-ano"/>
                             <constraint firstAttribute="trailing" secondItem="Lba-2s-79E" secondAttribute="trailing" id="MEe-kA-zuX"/>
-                            <constraint firstAttribute="trailing" secondItem="YAs-8d-FPd" secondAttribute="trailing" id="Mbu-5Y-gI9"/>
+                            <constraint firstItem="YAs-8d-FPd" firstAttribute="top" secondItem="tsc-do-aUF" secondAttribute="bottom" id="Rcz-lp-9Gn"/>
                             <constraint firstItem="2bE-aw-LYn" firstAttribute="leading" secondItem="yPb-8h-Ra1" secondAttribute="leading" id="WgZ-iK-OZX"/>
-                            <constraint firstItem="YAs-8d-FPd" firstAttribute="top" secondItem="tsc-do-aUF" secondAttribute="bottom" id="lwW-fb-jMG"/>
-                            <constraint firstItem="YAs-8d-FPd" firstAttribute="leading" secondItem="yPb-8h-Ra1" secondAttribute="leading" id="pCf-DG-QLq"/>
+                            <constraint firstAttribute="trailing" secondItem="YAs-8d-FPd" secondAttribute="trailing" id="w14-kv-jn3"/>
                             <constraint firstItem="Lba-2s-79E" firstAttribute="top" secondItem="069-4V-h79" secondAttribute="bottom" id="wgi-Vg-0TP"/>
                         </constraints>
                     </view>

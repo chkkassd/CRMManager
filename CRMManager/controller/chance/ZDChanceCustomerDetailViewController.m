@@ -9,7 +9,7 @@
 #import "ZDChanceCustomerDetailViewController.h"
 #import "ZDRecordAddOrEditViewController.h"
 
-@interface ZDChanceCustomerDetailViewController ()
+@interface ZDChanceCustomerDetailViewController ()<ZDRecordAddOrEditViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -26,6 +26,8 @@
 {
     [super viewDidLoad];
     [self configureView];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upadteContactRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -40,6 +42,11 @@
     [self.navigationController setNavigationBarHidden:NO];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)configureView
 {
     self.nameLabel.text = self.zdCustomer.customerName;
@@ -47,8 +54,20 @@
     self.allRecords = [[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId];
 }
 
+#pragma mark - methods
+
+- (void)upadteContactRecords:(NSNotification *)noti
+{
+    self.allRecords = [[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId];
+}
+
 #pragma mark - properties
 
+- (void)setAllRecords:(NSArray *)allRecords
+{
+    _allRecords = allRecords;
+    [self.tableView reloadData];
+}
 
 #pragma mark - table view datasource
 
@@ -106,8 +125,30 @@
 {
     if ([segue.identifier isEqualToString:@"recordAddOrEdit Display"]) {
         ZDRecordAddOrEditViewController * recordAddOrEditViewController = segue.destinationViewController;
+        recordAddOrEditViewController.delegate = self;
         recordAddOrEditViewController.editedReocrd = self.selectedRecord;
+        recordAddOrEditViewController.selectedCustomer = self.zdCustomer;
     }
+}
+
+#pragma mark - ZDRecordAddOrEditViewControllerDelegate
+
+- (void)recordAddOrEditViewControllerDidFinishAddRecord:(ZDRecordAddOrEditViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"添加记录成功";
+    [hud hide:YES afterDelay:1];
+}
+
+- (void)recordAddOrEditViewControllerDidfinishEditRecord:(ZDRecordAddOrEditViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"修改记录成功";
+    [hud hide:YES afterDelay:1];
 }
 
 @end

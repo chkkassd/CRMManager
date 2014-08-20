@@ -33,6 +33,7 @@
 //新接口
 //获取所有客户列表，用于机会页面
 - (void)fetchAllCustomersWithManagerUserId:(NSString *)userid
+                                      type:(NSString *)type
                                completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 //获取客户联系纪录列表

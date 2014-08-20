@@ -113,8 +113,6 @@
 //    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
 //        
 //    }];
-    [[ZDWebService sharedWebViewService] fetchAllCustomersWithManagerUserId:@"20109601" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-        
-    }];
+    
 }
 @end

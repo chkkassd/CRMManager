@@ -75,13 +75,14 @@
 
 //获取所有客户列表，用于机会页面,type:0-all、1-储备客户、2-客户、3-老客户
 - (void)fetchAllCustomersWithManagerUserId:(NSString *)userid
+                                      type:(NSString *)type
                                completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
 {
     NSDictionary * dic = @{
                            @"managerId": userid,
                            @"pageNum": @"1",
-                           @"pageSize": @"50",
-                           @"type": @"0"
+                           @"pageSize": @"70",
+                           @"type": type
                            };
     NSURL * url = [self URLForGetAllChanceCustomers];
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];

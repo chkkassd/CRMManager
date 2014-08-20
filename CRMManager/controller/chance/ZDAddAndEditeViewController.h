@@ -14,9 +14,19 @@ typedef enum {
     ZDAddAndEditeViewControllerModeEdit
 }addAndEditeViewControllerMode;
 
+@protocol ZDAddAndEditeViewControllerDelegate;
+
 @interface ZDAddAndEditeViewController : UIViewController<UIActionSheetDelegate>
 
 @property (nonatomic) addAndEditeViewControllerMode mode;
 @property (strong, nonatomic) ZDCustomer * editedCustomer;
+@property (weak, nonatomic) id <ZDAddAndEditeViewControllerDelegate> delegate;
+
+@end
+
+@protocol ZDAddAndEditeViewControllerDelegate <NSObject>
+
+- (void)addAndEditeViewControllerDidFinishAdd:(ZDAddAndEditeViewController *)controller;
+- (void)addAndEditeViewControllerDidFinishEdit:(ZDAddAndEditeViewController *)controller;
 
 @end

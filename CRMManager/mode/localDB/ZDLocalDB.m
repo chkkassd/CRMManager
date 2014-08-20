@@ -175,6 +175,7 @@
     return nil;
 }
 
+//查找Zdcustomer类型的所有机会客户
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager
 {
     NSArray * allChanceCustomers = [self queryAllChanceCustomersOfCurrentManager];
@@ -191,6 +192,7 @@
 
 }
 
+//查找Zdcustomer类型的所有客户
 - (NSArray *)queryAllZDCustomersOfCurrentManager
 {
     NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];
@@ -347,6 +349,19 @@
     contractRecord.inputId = zdContractRecord.inputId;
     contractRecord.memo = zdContractRecord.memo;
     contractRecord.recordBelongCustomer = [self queryCustomerWithCustomerId:zdContractRecord.customerId];
+}
+
+#pragma mark - delete
+
+//delete one customer
+- (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error
+{
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        [self.managedObjectContext deleteObject:customer];
+        return [self.managedObjectContext save:error];
+    }
+    return NO;
 }
 
 #pragma mark - coreData properties

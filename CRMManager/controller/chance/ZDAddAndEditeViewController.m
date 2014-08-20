@@ -36,10 +36,34 @@
         self.title = self.editedCustomer.customerName;
         self.mobileTextField.text = self.editedCustomer.mobile;
         self.nameTextField.text = self.editedCustomer.customerName;
-        [self.sexButton setTitle:@"男" forState:UIControlStateNormal];
-        [self.hopeButton setTitle:self.editedCustomer.cdHope forState:UIControlStateNormal];
+        
+        if ([self.editedCustomer.sex isEqualToString:@"1"]) {
+            self.sexNum = 1;
+            [self.sexButton setTitle:@"男" forState:UIControlStateNormal];
+        } else if ([self.editedCustomer.sex isEqualToString:@"0"]) {
+            self.sexNum = 0;
+            [self.sexButton setTitle:@"女" forState:UIControlStateNormal];
+        } else {
+            [self.sexButton setTitle:@"未设置" forState:UIControlStateNormal];
+        }
+        
+        if ([self.editedCustomer.cdHope isEqualToString:@"1"]) {
+            self.hopeNum = 1;
+            [self.hopeButton setTitle:@"强烈" forState:UIControlStateNormal];
+        } else if ([self.editedCustomer.cdHope isEqualToString:@"2"]) {
+            self.hopeNum = 2;
+            [self.hopeButton setTitle:@"感兴趣" forState:UIControlStateNormal];
+        } else if ([self.editedCustomer.cdHope isEqualToString:@"3"]) {
+            self.hopeNum = 3;
+            [self.hopeButton setTitle:@"一般" forState:UIControlStateNormal];
+        } else {
+            [self.hopeButton setTitle:@"未设置" forState:UIControlStateNormal];
+        }
+        
     } else {
         self.title = @"新增客户";
+        self.sexNum = 1;
+        self.hopeNum = 2;
     }
 }
 
@@ -48,24 +72,6 @@
     [super viewDidLayoutSubviews];
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 200);
 //    NSLog(@"%f,%f",self.scrollView.contentSize.width,self.scrollView.contentSize.height);
-}
-
-#pragma mark - properties
-
-- (NSInteger)sexNum
-{
-    if (!_sexNum) {
-        _sexNum = 1;//默认男
-    }
-    return _sexNum;
-}
-
-- (NSInteger)hopeNum
-{
-    if (!_hopeNum) {
-        _hopeNum = 3;//默认一般
-    }
-    return _hopeNum;
 }
 
 #pragma mark - Action
@@ -79,7 +85,7 @@
     }
     
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
     NSDictionary * infoDictionary = @{
                                       @"customerName": self.nameTextField.text,
                                       @"sex": [NSString stringWithFormat:@"%d",self.sexNum],
@@ -87,15 +93,15 @@
                                       @"mobile": self.mobileTextField.text,
                                       @"memo": self.textView.text,
                                       @"hope": [NSString stringWithFormat:@"%d",self.hopeNum],
-                                      @"source": @"ios"
+                                      @"source": @"13"//13代表ios
                                       };
     
     if (self.mode == ZDAddAndEditeViewControllerModeEdit && self.editedCustomer) {
         //编辑机会客户
         [[ZDModeClient sharedModeClient] updateChanceCustomerWithCustomerInfoDictionary:infoDictionary customerId:self.editedCustomer.customerId completionHandler:^(NSError *error) {
             if (!error) {
-                hud.labelText = @"修改成功";
-                [hud hide:YES afterDelay:1];
+                [hud hide:YES];
+                [self.delegate addAndEditeViewControllerDidFinishEdit:self];
             } else {
                 hud.labelText = @"修改失败";
                 [hud hide:YES afterDelay:1];
@@ -105,8 +111,8 @@
         //添加机会客户
         [[ZDModeClient sharedModeClient] addChanceCustomerWithCustomerInfoDictionary:infoDictionary completionHandler:^(NSError *error) {
             if (!error) {
-                hud.labelText = @"添加成功";
-                [hud hide:YES afterDelay:1];
+                [hud hide:YES];
+                [self.delegate addAndEditeViewControllerDidFinishAdd:self];
             } else {
                 hud.labelText = @"添加失败";
                 [hud hide:YES afterDelay:1];

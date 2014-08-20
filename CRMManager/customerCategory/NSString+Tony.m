@@ -122,6 +122,54 @@ static char base64EncodingTable[64] = {
     return result;
 }
 
+
++ (NSString *)timeStringForTime:(NSUInteger)time
+{
+    NSString *timeString;
+    
+    if (time < 60) {
+        if (time < 10) {
+            timeString = [NSString stringWithFormat:@"00 : 0%d", time];
+        } else {
+            timeString = [NSString stringWithFormat:@"00 : %d", time];
+        }
+    } else if (time >= 60) {
+        int minute = time / 60;
+        int second = time % 60;
+        NSString *minuteString;
+        NSString *secondString;
+        if (minute < 10) {
+            minuteString = [NSString stringWithFormat:@"0%d", minute];
+        } else {
+            minuteString = [NSString stringWithFormat:@"%d", minute];
+        }
+        if (second < 10) {
+            secondString = [NSString stringWithFormat:@"0%d", second];
+        } else {
+            secondString = [NSString stringWithFormat:@"%d", second];
+        }
+        timeString = [NSString stringWithFormat:@"%@ : %@", minuteString, secondString];
+    }
+    
+    return timeString;
+}
+
++ (NSString *)stringTranslatedFromDate:(NSDate *)date
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *strDate = [dateFormatter stringFromDate:date];
+    return strDate;
+}
+
++(NSDate*) convertDateFromString:(NSString*)uiDate
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date=[formatter dateFromString:uiDate];
+    return date;
+}
+
 /*
 + (NSData *) base64DataFromString:(NSString *)string
 {

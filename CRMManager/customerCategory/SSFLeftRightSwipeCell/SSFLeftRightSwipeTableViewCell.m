@@ -80,6 +80,8 @@
             } completion:^(BOOL finished) {
                 if (finished) {
                     self.isEditMode = NO;
+                    self.deleteButton.hidden = YES;
+                    self.editeButton.hidden = YES;
                 }
             }];
         }
@@ -89,6 +91,7 @@
 #pragma mark - action
 - (IBAction)deleteButtonPressed:(id)sender
 {
+    [self setSelected:YES animated:YES];
     if ([self.delegate respondsToSelector:@selector(leftRightSwipeTableViewCellDeleteButtonPressed:)]) {
         [self.delegate leftRightSwipeTableViewCellDeleteButtonPressed:self];
     }

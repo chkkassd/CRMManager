@@ -10,7 +10,7 @@
 #import "ZDChanceCustomerDetailViewController.h"
 #import "ZDAddAndEditeViewController.h"
 
-@interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate>
+@interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate,ZDAddAndEditeViewControllerDelegate>
 
 @property (strong, nonatomic) SSFSegmentControl * segmentedControl;
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
@@ -32,6 +32,8 @@
     
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateChanceCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
+    
+    self.allChanceCustomers = [ZDModeClient sharedModeClient].allZDChanceCustomers;
 }
 
 -(void)dealloc
@@ -160,6 +162,7 @@
         chanceCustomerDetailViewController.zdCustomer = self.selectedZDCustomer;
     } else if ([segue.identifier isEqualToString:@"addAndEdit Display"]) {
         ZDAddAndEditeViewController * addAndEditeViewController = segue.destinationViewController;
+        addAndEditeViewController.delegate = self;
         if (self.selectedZDCustomer) {
             //编辑客户
             addAndEditeViewController.mode = ZDAddAndEditeViewControllerModeEdit;
@@ -174,7 +177,22 @@
 #pragma mark - SSFLeftRightSwipeTableViewCellDelegate
 
 - (void)leftRightSwipeTableViewCellDeleteButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
-{}
+{
+    NSIndexPath * index = [self.tableView indexPathForCell:cell];
+    ZDCustomer * zdCustomer = self.allChanceCustomers[index.row];
+    
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在删除,请稍后";
+    [[ZDModeClient sharedModeClient] deleteChanceCustomerWithCustomerId:zdCustomer.customerId completionHandler:^(NSError *error) {
+        if (!error) {
+            hud.labelText = @"删除成功";
+            [hud hide:YES afterDelay:1];
+        } else {
+            hud.labelText = @"删除失败";
+            [hud hide:YES afterDelay:1];
+        }
+    }];
+}
 
 - (void)leftRightSwipeTableViewCellEditeButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {
@@ -213,6 +231,26 @@
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
     self.filteredChanceCustomers = [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
     return YES;
+}
+
+#pragma mark addAndEditView delegate
+
+- (void)addAndEditeViewControllerDidFinishAdd:(ZDAddAndEditeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"添加成功";
+    [hud hide:YES afterDelay:1];
+}
+
+- (void)addAndEditeViewControllerDidFinishEdit:(ZDAddAndEditeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"编辑成功";
+    [hud hide:YES afterDelay:1];
 }
 
 @end
