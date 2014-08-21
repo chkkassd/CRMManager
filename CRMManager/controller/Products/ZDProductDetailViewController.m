@@ -15,6 +15,15 @@
 
 @implementation ZDProductDetailViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(back:)];
+    [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipe];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
