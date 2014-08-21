@@ -34,7 +34,7 @@
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
 		67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */; };
 		67B457D819A5E30000C89859 /* GSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D519A5E30000C89859 /* GSReachability.m */; };
-		67B457D919A5E30000C89859 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D719A5E30000C89859 /* Reachability.m */; };
+		67B457D919A5E30000C89859 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D719A5E30000C89859 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
