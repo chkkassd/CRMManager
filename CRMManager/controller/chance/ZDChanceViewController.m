@@ -111,12 +111,17 @@
     cell.delegate = self;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        cell.label.text = [self.filteredChanceCustomers[indexPath.row] customerName];
+        ZDCustomer * zdFilterCustomer = self.filteredChanceCustomers[indexPath.row];
+        cell.label.text = [zdFilterCustomer customerName];
+        cell.headImageView.image = [UIImage headImageForZDCustomer:zdFilterCustomer andIsBig:NO];
     } else {
-       cell.label.text = [self.allChanceCustomers[indexPath.row] customerName];
+        ZDCustomer * zdCustomer = self.allChanceCustomers[indexPath.row];
+       cell.label.text = [zdCustomer customerName];
+        cell.headImageView.image = [UIImage headImageForZDCustomer:zdCustomer andIsBig:NO];
     }
     
     cell.interestLabel.text = @"一般";//[self.allChanceCustomers[indexPath.row] cdHope];
+    
     return cell;
 }
 

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDModeClient.h"
 
+@class ZDCustomer;
 @interface UIImage (Tab)
 
 + (UIImage *)imageWithIndex:(int)index;
-
++ (UIImage *)headImageForZDCustomer:(ZDCustomer *)zdCustomer
+                           andIsBig:(BOOL)isBig;
 @end

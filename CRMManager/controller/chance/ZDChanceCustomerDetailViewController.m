@@ -69,6 +69,12 @@
     [self.tableView reloadData];
 }
 
+- (void)setHeadImageView:(UIImageView *)headImageView
+{
+    _headImageView = headImageView;
+    _headImageView.image = [UIImage headImageForZDCustomer:self.zdCustomer andIsBig:YES];
+}
+
 #pragma mark - table view datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

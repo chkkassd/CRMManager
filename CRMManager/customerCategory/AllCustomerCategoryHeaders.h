@@ -14,5 +14,6 @@
 #import "SSFLeftRightSwipeTableViewCell.h"
 #import "SSFSegmentControl.h"
 #import "MBProgressHUD.h"
+#import "UIImage+Tab.h"
 
 #endif

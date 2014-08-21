@@ -130,6 +130,7 @@
             <connections>
                 <outlet property="deleteButton" destination="nyW-b5-fkn" id="SGs-vk-WdV"/>
                 <outlet property="editeButton" destination="qx2-Ls-4IV" id="yf8-jn-sRM"/>
+                <outlet property="headImageView" destination="pnm-MS-e1E" id="jOY-68-5wD"/>
                 <outlet property="interestLabel" destination="exB-ZF-H9d" id="U9b-dw-lag"/>
                 <outlet property="label" destination="Qfv-qG-bdQ" id="qcr-y5-GSm"/>
                 <outlet property="realContentView" destination="1PO-BD-OV8" id="mtX-17-TKA"/>

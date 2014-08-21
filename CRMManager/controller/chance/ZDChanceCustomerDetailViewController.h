@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZDModeClient.h"
+#import "AllCustomerCategoryHeaders.h"
 
 @interface ZDChanceCustomerDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
