@@ -32,6 +32,9 @@
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
+		67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */; };
+		67B457D819A5E30000C89859 /* GSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D519A5E30000C89859 /* GSReachability.m */; };
+		67B457D919A5E30000C89859 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D719A5E30000C89859 /* Reachability.m */; };
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
 		67B70141199B61970061C345 /* ZDContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B70140199B61970061C345 /* ZDContactRecord.m */; };
 		67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B96CB01999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m */; };
@@ -117,6 +120,12 @@
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
 		6724CBA11994BD6A00E1C058 /* NSString+Tony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tony.m"; sourceTree = "<group>"; };
 		6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCustomerCategoryHeaders.h; sourceTree = "<group>"; };
+		67B457D019A58F8400C89859 /* ZDCustomerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerTableViewController.h; sourceTree = SOURCE_ROOT; };
+		67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerTableViewController.m; sourceTree = SOURCE_ROOT; };
+		67B457D419A5E30000C89859 /* GSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSReachability.h; sourceTree = "<group>"; };
+		67B457D519A5E30000C89859 /* GSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSReachability.m; sourceTree = "<group>"; };
+		67B457D619A5E30000C89859 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		67B457D719A5E30000C89859 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		67B7013C199B607F0061C345 /* ContactRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRecord.h; sourceTree = "<group>"; };
 		67B7013D199B607F0061C345 /* ContactRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRecord.m; sourceTree = "<group>"; };
 		67B7013F199B61970061C345 /* ZDContactRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDContactRecord.h; sourceTree = "<group>"; };
@@ -359,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */,
+				67B457D319A5E30000C89859 /* Reachability */,
 				67BAA92519A33EAF005671A8 /* MBProgressHUD */,
 				FF59828619A10FC50031D575 /* SSFSegmentedControl */,
 				FF598228199CFC360031D575 /* SSFLeftRightSwipeCell */,
@@ -371,6 +381,17 @@
 				1805578619A51F5600A76AE2 /* UIView+CCPlus.m */,
 			);
 			path = customerCategory;
+			sourceTree = "<group>";
+		};
+		67B457D319A5E30000C89859 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				67B457D419A5E30000C89859 /* GSReachability.h */,
+				67B457D519A5E30000C89859 /* GSReachability.m */,
+				67B457D619A5E30000C89859 /* Reachability.h */,
+				67B457D719A5E30000C89859 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		67BAA92519A33EAF005671A8 /* MBProgressHUD */ = {
@@ -422,6 +443,8 @@
 		FF59822F199CFE760031D575 /* customer */ = {
 			isa = PBXGroup;
 			children = (
+				67B457D019A58F8400C89859 /* ZDCustomerTableViewController.h */,
+				67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -442,18 +465,18 @@
 				FF8F1AA51996121D0062B71C /* ZDLocalDB.h */,
 				FF8F1AA61996121D0062B71C /* ZDLocalDB.m */,
 				FF8F1A961996051F0062B71C /* ZDModel.xcdatamodeld */,
-				67C39A641998A89E00D796EA /* Business.h */,
-				67C39A651998A89E00D796EA /* Business.m */,
-				FF8F1AA2199611B50062B71C /* ProductDetail.h */,
-				FF8F1AA3199611B50062B71C /* ProductDetail.m */,
 				FF8F1A9F199611B50062B71C /* ManagerUser.h */,
 				FF8F1AA0199611B50062B71C /* ManagerUser.m */,
 				FF8F1A9C199611B50062B71C /* Customer.h */,
 				FF8F1A9D199611B50062B71C /* Customer.m */,
-				FF8F1A99199611B40062B71C /* Product.h */,
-				FF8F1A9A199611B40062B71C /* Product.m */,
 				67B7013C199B607F0061C345 /* ContactRecord.h */,
 				67B7013D199B607F0061C345 /* ContactRecord.m */,
+				67C39A641998A89E00D796EA /* Business.h */,
+				67C39A651998A89E00D796EA /* Business.m */,
+				FF8F1A99199611B40062B71C /* Product.h */,
+				FF8F1A9A199611B40062B71C /* Product.m */,
+				FF8F1AA2199611B50062B71C /* ProductDetail.h */,
+				FF8F1AA3199611B50062B71C /* ProductDetail.m */,
 			);
 			path = localDB;
 			sourceTree = "<group>";
@@ -609,6 +632,7 @@
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
 				67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
+				67B457D919A5E30000C89859 /* Reachability.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
@@ -619,11 +643,13 @@
 				FF8F1A9B199611B40062B71C /* Product.m in Sources */,
 				FF8F1A9E199611B50062B71C /* Customer.m in Sources */,
 				FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */,
+				67B457D819A5E30000C89859 /* GSReachability.m in Sources */,
 				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
 				FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */,
 				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
 				67BAA92419A321DF005671A8 /* ZDRecordAddOrEditViewController.m in Sources */,
 				67C39A661998A89E00D796EA /* Business.m in Sources */,
+				67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */,
 				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
 				FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */,
 				67B7013E199B607F0061C345 /* ContactRecord.m in Sources */,

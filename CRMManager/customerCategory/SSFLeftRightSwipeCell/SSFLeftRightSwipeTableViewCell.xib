@@ -66,21 +66,21 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意愿" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt6-vJ-xdo">
-                                <rect key="frame" x="151" y="15" width="78" height="37"/>
+                                <rect key="frame" x="151" y="15" width="46" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="64F-uq-2H4"/>
-                                    <constraint firstAttribute="width" constant="78" id="EEA-4e-kb7"/>
+                                    <constraint firstAttribute="width" constant="46" id="EEA-4e-kb7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-ZF-H9d" userLabel="hope label">
-                                <rect key="frame" x="230" y="15" width="42" height="37"/>
+                                <rect key="frame" x="205" y="15" width="67" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="cYU-ZT-DUw"/>
+                                    <constraint firstAttribute="width" constant="67" id="cYU-ZT-DUw"/>
                                     <constraint firstAttribute="height" constant="37" id="yT7-So-mLb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -102,7 +102,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="nLU-Mq-aTS" secondAttribute="centerY" id="8dP-so-ZWV"/>
-                            <constraint firstItem="exB-ZF-H9d" firstAttribute="leading" secondItem="lt6-vJ-xdo" secondAttribute="trailing" constant="1" id="CDt-nr-P4J"/>
+                            <constraint firstItem="exB-ZF-H9d" firstAttribute="leading" secondItem="lt6-vJ-xdo" secondAttribute="trailing" constant="8" id="CDt-nr-P4J"/>
                             <constraint firstAttribute="centerY" secondItem="lt6-vJ-xdo" secondAttribute="centerY" id="Egt-R5-ic0"/>
                             <constraint firstAttribute="centerY" secondItem="Qfv-qG-bdQ" secondAttribute="centerY" id="F2I-tG-eQU"/>
                             <constraint firstAttribute="trailing" secondItem="nLU-Mq-aTS" secondAttribute="trailing" id="GXr-Xy-UJp"/>

@@ -17,5 +17,6 @@
 @dynamic productType;
 @dynamic accountTotal;
 @dynamic recoverableAmount;
+@dynamic businessBelongCustomer;
 
 @end

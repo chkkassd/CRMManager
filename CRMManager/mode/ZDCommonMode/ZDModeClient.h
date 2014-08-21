@@ -15,6 +15,7 @@
 #import "ZDCustomer.h"
 #import "ZDProduct.h"
 #import "ZDProductDetail.h"
+#import "AllCustomerCategoryHeaders.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
 #define ZDUpdateManagerUserNotification  @"UpdateManagerUserNotification"
@@ -56,6 +57,11 @@
 - (void)deleteContactRecordWithCustomerId:(NSString *)customerId
                                  recordId:(NSString *)recordId
                         completionHandler:(void (^)(NSError * error))handler;
+//意见反馈
+- (void)commitFeedbackWithContext:(NSString *)context
+                completionHandler:(void(^)(NSError * error))handler;
+//刷新customer数据
+- (void)refreshCustomersCompletionHandler:(void(^)(NSError * error))handler;
 //单例
 + (ZDModeClient *)sharedModeClient;
 

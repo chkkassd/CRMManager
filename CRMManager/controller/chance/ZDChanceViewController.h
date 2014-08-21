@@ -12,6 +12,6 @@
 
 @interface ZDChanceViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,
                                                     UISearchBarDelegate,UISearchDisplayDelegate,
-                                                    UIActionSheetDelegate>
+                                                    UIActionSheetDelegate,UIScrollViewAccessibilityDelegate>
 
 @end

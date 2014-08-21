@@ -21,16 +21,16 @@
 @property (nonatomic, retain) NSString * customerType;//1-储备客户、2-客户、3-老客户
 @property (nonatomic, retain) NSString * sex;//1-男、0-女
 
-@property (nonatomic, retain) NSManagedObject *belongManager;
-@property (nonatomic, retain) NSSet *allProducts;
-@property (nonatomic, retain) NSSet *allContactRecords;
+@property (nonatomic, retain) NSManagedObject * belongManager;
+@property (nonatomic, retain) NSSet * allContactRecords;
+@property (nonatomic, retain) NSSet * allBusiness;
 @end
 
 @interface Customer (CoreDataGeneratedAccessors)
 
-- (void)addAllProductsObject:(Product *)value;
-- (void)removeAllProductsObject:(Product *)value;
-- (void)addAllProducts:(NSSet *)values;
-- (void)removeAllProducts:(NSSet *)values;
+//- (void)addAllProductsObject:(Product *)value;
+//- (void)removeAllProductsObject:(Product *)value;
+//- (void)addAllProducts:(NSSet *)values;
+//- (void)removeAllProducts:(NSSet *)values;
 
 @end

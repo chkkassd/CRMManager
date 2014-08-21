@@ -42,8 +42,6 @@
                 //3.获取并保存客户信息
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
-                        //发送更新customers的通知
-                        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
                         //4.获取并保存所有客户的联系记录
                         self.defaultCount = 0;
                         [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
@@ -90,6 +88,8 @@
                 }
                 
                 if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:savedCustomers error:NULL]) {
+                    //发送更新customers的通知
+                    [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateCustomersNotification object:self];
                     //保存成功
                     handler(nil);
                 } else {
@@ -174,6 +174,18 @@
         //获取并保存完所有records后，发送更新records的通知
         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
     }
+}
+
+//刷新customer数据
+- (void)refreshCustomersCompletionHandler:(void(^)(NSError * error))handler
+{
+    [self fetchAndSaveCustomersWithManagerUserId:self.zdManagerUser.userid completionHandler:^(NSError *error) {
+        if (!error) {
+            handler(nil);
+        } else {
+            handler(error);
+        }
+    }];
 }
 
 #pragma mark - 修改数据后保存
@@ -360,6 +372,25 @@
                                                                           handler(error);
                                                                       }
                                                                   }];
+}
+
+//意见反馈
+- (void)commitFeedbackWithContext:(NSString *)context
+                       completionHandler:(void(^)(NSError * error))handler
+{
+    NSDictionary* info = [[NSBundle mainBundle] infoDictionary];
+    NSString * appVersion = info[@"CFBundleShortVersionString"];
+    NSString * systemVersion = [[UIDevice currentDevice] systemVersion];
+    
+    [[ZDWebService sharedWebViewService] commitFeedbackWithManagerId:self.zdManagerUser.userid Context:context OperDate:[NSString stringTranslatedFromDate:[NSDate date]] AppType:@"iphone" AppVersion:appVersion System:@"ios" SystemVersion:systemVersion completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            //成功
+            handler(nil);
+        } else {
+            //失败
+            handler(error);
+        }
+    }];
 }
 
 #pragma mark - 客户所有联系记录

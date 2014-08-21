@@ -12,7 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView * gestureContainView;
 @property (weak, nonatomic) IBOutlet UIImageView * headImageView;
-@property (weak, nonatomic) IBOutlet UILabel * nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel * alertLabel;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
 @property (strong, nonatomic) SSFPasswordGestureView * passwordGestureView;

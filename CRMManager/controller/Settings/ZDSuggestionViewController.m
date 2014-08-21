@@ -26,7 +26,23 @@
 
 - (IBAction)commitButtonPressed:(id)sender
 {
+    [self.view endEditing:YES];
+    if (!self.textView.text.length) {
+        [[[UIAlertView alloc] initWithTitle:nil message:@"请输入意见" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+        return;
+    }
     
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在提交,请稍后";
+    [[ZDModeClient sharedModeClient] commitFeedbackWithContext:self.textView.text completionHandler:^(NSError *error) {
+        if (!error) {
+            hud.labelText = @"提交成功";
+            [hud hide:YES afterDelay:1];
+        } else {
+            hud.labelText = @"提交失败,请稍后再试";
+            [hud hide:YES afterDelay:1];
+        }
+    }];
 }
 
 #pragma mark - properties

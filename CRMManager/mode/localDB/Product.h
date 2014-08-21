@@ -16,7 +16,6 @@
 @property (nonatomic, retain) NSString * productName;
 @property (nonatomic, retain) NSString * manageFee;
 @property (nonatomic, retain) NSString * contractNumber;
-@property (nonatomic, retain) NSManagedObject *belongCustomer;
 @property (nonatomic, retain) NSManagedObject *theDetail;
 
 @end

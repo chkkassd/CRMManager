@@ -21,8 +21,6 @@
 {
     [super viewDidLoad];
     [self configureView];
-    [self shouldHideLabel];
-    [self.textView becomeFirstResponder];
 }
 
 - (void)configureView
@@ -33,12 +31,22 @@
     } else {
         self.title = @"新增记录";
     }
+    [self shouldHideLabel];
+}
+
+#pragma mark - properties
+
+- (void)setTextView:(UITextView *)textView
+{
+    _textView = textView;
+    [_textView becomeFirstResponder];
 }
 
 #pragma mark - Action
 
 - (IBAction)finishButtonPressed:(id)sender
 {
+    [self.view endEditing:YES];
     NSDictionary * infoDic = @{
                            @"managerId": [ZDModeClient sharedModeClient].zdManagerUser.userid,
                            @"customerId": self.selectedCustomer.customerId,

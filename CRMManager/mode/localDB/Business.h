@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-
+@class Customer;
 @interface Business : NSManagedObject
 
 @property (nonatomic, retain) NSString * incomeTotal;
@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * productType;
 @property (nonatomic, retain) NSString * accountTotal;
 @property (nonatomic, retain) NSString * recoverableAmount;
+@property (nonatomic, retain) Customer * businessBelongCustomer;
 
 @end

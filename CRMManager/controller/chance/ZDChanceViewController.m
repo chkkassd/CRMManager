@@ -15,7 +15,10 @@
 @property (strong, nonatomic) SSFSegmentControl * segmentedControl;
 @property (weak, nonatomic) IBOutlet UISearchBar * searchBar;
 @property (weak, nonatomic) IBOutlet UITableView * tableView;
+@property (weak, nonatomic) IBOutlet UIView * indicatorView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView * indicator;
 @property (strong, nonatomic) NSArray * allChanceCustomers;
+@property (strong, nonatomic) NSArray * sortedChanceCustomers;
 @property (strong, nonatomic) NSArray * filteredChanceCustomers;
 @property (strong, nonatomic) ZDCustomer * selectedZDCustomer;
 
@@ -56,6 +59,39 @@
     [sheet showFromTabBar:self.tabBarController.tabBar];
 }
 
+- (NSArray *)sortedByHope:(int)hope
+{
+    switch (hope) {
+        case 0:
+        {
+            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope == %@",@"3"];
+            return [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
+            break;
+        }
+        case 1:
+        {
+            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope == %@",@"1"];
+            return [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
+            break;
+        }
+        case 2:
+        {
+            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope == %@",@"2"];
+            return [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
+            break;
+        }
+        case 3:
+        {
+            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope.length == %d",0];
+            return [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
+            break;
+        }
+        default:
+            break;
+    }
+    return nil;
+}
+
 #pragma mark - action sheet delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -83,14 +119,13 @@
 - (void)setAllChanceCustomers:(NSArray *)allChanceCustomers
 {
     _allChanceCustomers = allChanceCustomers;
-//    switch (self.segmentedControl.selectedIndex) {
-//        case 0:
-//            
-//            break;
-//            
-//        default:
-//            break;
-//    }
+  
+    self.sortedChanceCustomers = [self sortedByHope:self.segmentedControl.selectedIndex];
+}
+
+- (void)setSortedChanceCustomers:(NSArray *)sortedChanceCustomers
+{
+    _sortedChanceCustomers = sortedChanceCustomers;
     [self.tableView reloadData];
 }
 
@@ -101,7 +136,7 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         return self.filteredChanceCustomers.count;
     } else {
-       return self.allChanceCustomers.count;
+       return self.sortedChanceCustomers.count;
     }
 }
 
@@ -115,12 +150,27 @@
         cell.label.text = [zdFilterCustomer customerName];
         cell.headImageView.image = [UIImage headImageForZDCustomer:zdFilterCustomer andIsBig:NO];
     } else {
-        ZDCustomer * zdCustomer = self.allChanceCustomers[indexPath.row];
+        ZDCustomer * zdCustomer = self.sortedChanceCustomers[indexPath.row];
        cell.label.text = [zdCustomer customerName];
         cell.headImageView.image = [UIImage headImageForZDCustomer:zdCustomer andIsBig:NO];
     }
     
-    cell.interestLabel.text = @"一般";//[self.allChanceCustomers[indexPath.row] cdHope];
+    switch (self.segmentedControl.selectedIndex) {
+        case 0:
+            cell.interestLabel.text = @"一般";
+            break;
+        case 1:
+            cell.interestLabel.text = @"强烈";
+            break;
+        case 2:
+            cell.interestLabel.text = @"感兴趣";
+            break;
+        case 3:
+            cell.interestLabel.text = @"待归类";
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }
@@ -152,7 +202,7 @@
         if (tableView == self.searchDisplayController.searchResultsTableView) {
             self.selectedZDCustomer = self.filteredChanceCustomers[indexPath.row];
         } else {
-           self.selectedZDCustomer = self.allChanceCustomers[indexPath.row];
+           self.selectedZDCustomer = self.sortedChanceCustomers[indexPath.row];
         }
         [self performSegueWithIdentifier:@"ChanceCustomerDetail Display" sender:self];
     }
@@ -184,7 +234,7 @@
 - (void)leftRightSwipeTableViewCellDeleteButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {
     NSIndexPath * index = [self.tableView indexPathForCell:cell];
-    ZDCustomer * zdCustomer = self.allChanceCustomers[index.row];
+    ZDCustomer * zdCustomer = self.sortedChanceCustomers[index.row];
     
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在删除,请稍后";
@@ -202,7 +252,7 @@
 - (void)leftRightSwipeTableViewCellEditeButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {
     NSIndexPath * index = [self.tableView indexPathForCell:cell];
-    self.selectedZDCustomer = self.allChanceCustomers[index.row];
+    self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
     [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
 }
 
@@ -210,23 +260,7 @@
 
 - (void)SSFSegmentControlDidPressed:(UIView *)view selectedIndex:(NSInteger)selectedIndex
 {
-    switch (selectedIndex) {
-        case 0:
-            NSLog(@"it is %ld",(long)selectedIndex);
-            break;
-        case 1:
-            NSLog(@"it is %ld",(long)selectedIndex);
-            break;
-        case 2:
-            NSLog(@"it is %ld",(long)selectedIndex);
-            break;
-        case 3:
-            NSLog(@"it is %ld",(long)selectedIndex);
-            break;
-            
-        default:
-            break;
-    }
+    self.allChanceCustomers = [ZDModeClient sharedModeClient].allZDChanceCustomers;
 }
 
 #pragma mark - search display controller delegate
@@ -236,6 +270,44 @@
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
     self.filteredChanceCustomers = [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
     return YES;
+}
+
+#pragma mark - scrollView delegate
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset
+{
+    if (scrollView.contentOffset.y <= -30) {
+        self.indicatorView.hidden = NO;
+        [UIView animateWithDuration:0.2 animations:^{
+            scrollView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+        } completion:^(BOOL finished) {
+            if (finished) {
+                [self.indicator startAnimating];
+                [[ZDModeClient sharedModeClient] refreshCustomersCompletionHandler:^(NSError *error) {
+                   
+                    [UIView animateWithDuration:0.2 animations:^{
+                        scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+                    } completion:^(BOOL finished) {
+                        if (finished) {
+                            [self.indicator stopAnimating];
+                            self.indicatorView.hidden = YES;
+                        }
+                    }];
+                    
+                    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                    hud.mode = MBProgressHUDModeText;
+                    if (!error) {
+                        hud.labelText = @"刷新成功";
+                        [hud hide:YES afterDelay:1];
+                    } else {
+                        hud.labelText = @"刷新失败";
+                        [hud hide:YES afterDelay:1];
+                    }
+                }];
+            }
+        }];
+        
+    }
 }
 
 #pragma mark addAndEditView delegate

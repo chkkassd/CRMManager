@@ -20,7 +20,7 @@
 @dynamic customerType;
 @dynamic sex;
 @dynamic belongManager;
-@dynamic allProducts;
 @dynamic allContactRecords;
+@dynamic allBusiness;
 
 @end

@@ -15,7 +15,6 @@
 @dynamic productName;
 @dynamic manageFee;
 @dynamic contractNumber;
-@dynamic belongCustomer;
 @dynamic theDetail;
 
 @end

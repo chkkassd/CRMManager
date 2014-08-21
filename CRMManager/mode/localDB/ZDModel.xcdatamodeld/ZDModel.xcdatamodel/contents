@@ -7,6 +7,7 @@
         <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recoverableAmount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="businessBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allBusiness" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="ContactRecord" representedClassName="ContactRecord" syncable="YES">
         <attribute name="contactNum" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,8 +30,8 @@
         <attribute name="idNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allBusiness" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
-        <relationship name="allProducts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Product" inverseName="belongCustomer" inverseEntity="Product" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
@@ -47,7 +48,6 @@
         <attribute name="manageFee" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="belongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allProducts" inverseEntity="Customer" syncable="YES"/>
         <relationship name="theDetail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ProductDetail" inverseName="belongProduct" inverseEntity="ProductDetail" syncable="YES"/>
     </entity>
     <entity name="ProductDetail" representedClassName="ProductDetail" syncable="YES">
@@ -92,11 +92,11 @@
         <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Business" positionX="-27" positionY="-441" width="128" height="133"/>
-        <element name="ContactRecord" positionX="7" positionY="-693" width="128" height="208"/>
-        <element name="Customer" positionX="-243" positionY="-709" width="128" height="193"/>
-        <element name="ManagerUser" positionX="-585" positionY="-585" width="128" height="148"/>
-        <element name="Product" positionX="-263" positionY="-396" width="128" height="133"/>
-        <element name="ProductDetail" positionX="-558" positionY="-369" width="128" height="628"/>
+        <element name="Business" positionX="-513" positionY="-468" width="128" height="148"/>
+        <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
+        <element name="Customer" positionX="-531" positionY="-718" width="128" height="193"/>
+        <element name="ManagerUser" positionX="-722" positionY="-711" width="128" height="148"/>
+        <element name="Product" positionX="-684" positionY="89" width="128" height="118"/>
+        <element name="ProductDetail" positionX="-864" positionY="-423" width="128" height="628"/>
     </elements>
 </model>
