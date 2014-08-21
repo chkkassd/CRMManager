@@ -8,7 +8,7 @@
 
 #import "ZDTabBarViewController.h"
 #import "ZDGesturePasswordViewController.h"
-#import "UIImage+Tab.h"
+#import "AllCustomerCategoryHeaders.h"
 
 #define DefaultEnterBackgroundTime  5.0
 
@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSDate * enterBackgroundDate;
 @property (strong, nonatomic) NSDate * enterForegroundDate;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
+@property (strong, nonatomic) Reachability * reachability;
 
 @end
 
@@ -29,16 +30,19 @@
     //notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackground) name:UIApplicationDidEnterBackgroundNotification object:[UIApplication sharedApplication]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground) name:UIApplicationWillEnterForegroundNotification object:[UIApplication sharedApplication]];
+    
     for (int i = 0; i < self.tabBar.items.count; i++)
     {
         UITabBarItem * barItem = self.tabBar.items[i];
         barItem.selectedImage = [UIImage imageWithIndex:i];
     }
+    [self startReachabilityNotification];
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self cancelReachabilityNotification];
 }
 
 #pragma mark - properties
@@ -49,6 +53,14 @@
         _zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
     }
     return _zdManagerUser;
+}
+
+- (Reachability *)reachability
+{
+    if (!_reachability) {
+        _reachability = [Reachability reachabilityForInternetConnection];
+    }
+    return _reachability;
 }
 
 #pragma mark - methods
@@ -83,6 +95,44 @@
 - (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller
 {
     [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - reachability 网络实时监测
+
+- (void)reachabilityChanged:(NSNotification *)noti
+{
+    Reachability* curReach = [noti object];
+    NSParameterAssert([curReach isKindOfClass: [Reachability class]]);
+    NetworkStatus status = [curReach currentReachabilityStatus];
+    
+    switch (status) {
+        case NotReachable: {
+            
+        } break;
+        case ReachableViaWiFi: {
+            
+        } break;
+        case ReachableViaWWAN: {
+            
+        } break;
+        default: break;
+    }
+}
+
+- (void)startReachabilityNotification
+{
+    //为防止出错，先关闭
+    [self cancelReachabilityNotification];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name: kReachabilityChangedNotification
+                                               object: nil];
+    [self.reachability performSelector:@selector(startNotifier)];
+}
+
+- (void)cancelReachabilityNotification {
+    [self.reachability performSelector:@selector(stopNotifier)];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kReachabilityChangedNotification object:nil];
 }
 
 @end

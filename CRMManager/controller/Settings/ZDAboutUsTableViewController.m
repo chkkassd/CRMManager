@@ -8,7 +8,7 @@
 
 #import "ZDAboutUsTableViewController.h"
 #import "UIView+CCPlus.h"
-#import "MBProgressHUD.h"
+#import "AllCustomerCategoryHeaders.h"
 
 #define VERSION_URL @"http://api.ezendai.com:8888/ios/manager_version.txt"
 #define INSTALL_URL @"itms-services://?action=download-manifest&url=https://api.ezendai.com:8899/ios/manager.plist"
