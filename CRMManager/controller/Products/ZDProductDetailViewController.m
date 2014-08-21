@@ -9,6 +9,7 @@
 #import "ZDProductDetailViewController.h"
 
 @interface ZDProductDetailViewController ()
+- (IBAction)swipeToReturn:(id)sender;
 
 @end
 
@@ -31,4 +32,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)swipeToReturn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="VvK-Oq-mbO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="VvK-Oq-mbO">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -89,7 +88,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_unlock_man" translatesAutoresizingMaskIntoConstraints="NO" id="eNm-C3-tAk">
                                 <rect key="frame" x="127" y="30" width="67" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="67" id="ANA-Fj-gag"/>
                                     <constraint firstAttribute="height" constant="67" id="hhQ-x2-4GR"/>
@@ -97,7 +95,6 @@
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="哈哈哈哈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWZ-nh-uPx">
                                 <rect key="frame" x="50" y="105" width="220" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="A09-Na-Id9"/>
                                     <constraint firstAttribute="width" constant="220" id="eII-2M-8JZ"/>
@@ -108,7 +105,6 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yYK-2O-rQk">
                                 <rect key="frame" x="0.0" y="135" width="320" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="8WB-q4-XmX"/>
                                 </constraints>
@@ -118,12 +114,10 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xj5-BK-UwQ" userLabel="gesture contain view">
                                 <rect key="frame" x="0.0" y="163" width="320" height="353"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-4Q-bcK">
                                 <rect key="frame" x="198" y="518" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SLc-a3-Kmd"/>
                                     <constraint firstAttribute="width" constant="102" id="V4x-rr-VBA"/>
@@ -151,7 +145,10 @@
                             <constraint firstItem="yYK-2O-rQk" firstAttribute="top" secondItem="vWZ-nh-uPx" secondAttribute="bottom" constant="8" id="pNl-Oc-uRS"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
                     <connections>
                         <outlet property="alertLabel" destination="yYK-2O-rQk" id="UGW-86-u19"/>
                         <outlet property="gestureContainView" destination="Xj5-BK-UwQ" id="8Ja-7Q-Gje"/>
@@ -184,7 +181,7 @@
             </objects>
             <point key="canvasLocation" x="229" y="640"/>
         </scene>
-        <!--Navigation Controller - 机会-->
+        <!--机会-->
         <scene sceneID="4mU-J6-WSR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mji-iu-0BL" sceneMemberID="viewController">
@@ -203,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="-824"/>
         </scene>
-        <!--Chance View Controller - 机会-->
+        <!--机会-->
         <scene sceneID="BZt-bh-TnI">
             <objects>
                 <viewController id="oVR-Ce-2Ok" customClass="ZDChanceViewController" sceneMemberID="viewController">
@@ -217,7 +214,6 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="搜索" translatesAutoresizingMaskIntoConstraints="NO" id="idr-U6-W2N">
                                 <rect key="frame" x="0.0" y="64" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="20H-Bw-ZKg"/>
                                 </constraints>
@@ -228,7 +224,6 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eFx-2q-GBK">
                                 <rect key="frame" x="0.0" y="108" width="768" height="916"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="oVR-Ce-2Ok" id="3Vz-4W-pvM"/>
@@ -289,7 +284,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="-816"/>
         </scene>
-        <!--Navigation Controller - 客户-->
+        <!--客户-->
         <scene sceneID="DAI-ka-iaJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AP8-oA-2Il" sceneMemberID="viewController">
@@ -308,7 +303,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="640"/>
         </scene>
-        <!--Table View Controller - 客户-->
+        <!--客户-->
         <scene sceneID="d4t-3L-as7">
             <objects>
                 <tableViewController id="6b8-Yb-2QR" sceneMemberID="viewController">
@@ -360,7 +355,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="640"/>
         </scene>
-        <!--Navigation Controller - 产品-->
+        <!--产品-->
         <scene sceneID="X84-9D-kjX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GuL-pV-57E" sceneMemberID="viewController">
@@ -379,7 +374,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="2002"/>
         </scene>
-        <!--Navigation Controller - 设置-->
+        <!--设置-->
         <scene sceneID="Jwd-aB-dAz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7lg-KT-Of6" sceneMemberID="viewController">
@@ -398,7 +393,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="3323"/>
         </scene>
-        <!--Setting View Controller - 设置-->
+        <!--设置-->
         <scene sceneID="dtj-kn-dhq">
             <objects>
                 <tableViewController id="0xG-xQ-UaL" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -418,7 +413,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常见问题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcS-Sv-DTa">
                                                     <rect key="frame" x="20" y="12" width="247" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="247" id="Cmt-LP-Wlc"/>
                                                         <constraint firstAttribute="height" constant="43" id="kMR-FK-HXM"/>
@@ -443,7 +437,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="意见反馈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojn-bP-X0f">
                                                     <rect key="frame" x="20" y="12" width="247" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="POX-ay-NwB"/>
                                                         <constraint firstAttribute="width" constant="247" id="XvG-KJ-WZ0"/>
@@ -467,7 +460,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手势密码启用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDu-nY-C5s">
                                                     <rect key="frame" x="20" y="12" width="144" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="144" id="EXo-lZ-kPa"/>
                                                         <constraint firstAttribute="height" constant="43" id="l4k-Ry-RDO"/>
@@ -477,7 +469,6 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BLV-zc-D7y">
                                                     <rect key="frame" x="251" y="18" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="gesturePasswordSwitchPressed:" destination="0xG-xQ-UaL" eventType="valueChanged" id="DSY-tN-oBz"/>
                                                     </connections>
@@ -498,7 +489,6 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手势密码修改" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2l-rW-xvJ">
                                                     <rect key="frame" x="20" y="12" width="247" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="ZuJ-aV-h5e"/>
                                                         <constraint firstAttribute="width" constant="247" id="fhi-qu-Jb1"/>
@@ -526,7 +516,6 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HH7-PZ-VO7">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="1" green="0.46337525359999998" blue="0.56987515740000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <state key="normal" title="安全退出">
@@ -560,7 +549,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="3323"/>
         </scene>
-        <!--Suggestion View Controller - 意见反馈-->
+        <!--意见反馈-->
         <scene sceneID="k8V-kS-JgY">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="3ub-xI-xQA" customClass="ZDSuggestionViewController" sceneMemberID="viewController">
@@ -574,7 +563,6 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KS1-KL-Ds7">
                                 <rect key="frame" x="0.0" y="64" width="768" height="960"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -584,7 +572,6 @@
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="你想反馈的意见。。。" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pey-Wq-8Nl">
                                 <rect key="frame" x="20" y="64" width="728" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="41" id="nbY-B7-NwE"/>
                                 </constraints>
@@ -620,7 +607,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="3323"/>
         </scene>
-        <!--Table View Controller - 常见问题-->
+        <!--常见问题-->
         <scene sceneID="r3l-eb-xcQ">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="6kY-oG-l4t" sceneMemberID="viewController">
@@ -640,14 +627,12 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q:如何查询我的客户信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-SC-nQ3">
                                                     <rect key="frame" x="20" y="20" width="280" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="1TJ-cr-bIu">
                                                     <rect key="frame" x="20" y="59" width="280" height="52"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -664,14 +649,12 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q:如何查询我的客户信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zv-BS-jCG">
                                                     <rect key="frame" x="20" y="20" width="280" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-GZ-M4i">
                                                     <rect key="frame" x="20" y="59" width="280" height="52"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -688,14 +671,12 @@
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Q:如何查询我的客户信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEa-7A-Smq">
                                                     <rect key="frame" x="20" y="20" width="280" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="4Mn-QE-JNL">
                                                     <rect key="frame" x="20" y="59" width="280" height="52"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -717,7 +698,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="4599"/>
         </scene>
-        <!--Gesture Password Setting View Controller - 手势密码设置-->
+        <!--手势密码设置-->
         <scene sceneID="59y-SJ-wob">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="wbK-7z-Yfv" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
@@ -731,7 +712,6 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="alert label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z01-NX-zze">
                                 <rect key="frame" x="0.0" y="84" width="768" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="GIX-Yw-Hvf"/>
                                 </constraints>
@@ -756,7 +736,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="4599"/>
         </scene>
-        <!--Products List View Controller - 产品-->
+        <!--产品-->
         <scene sceneID="ROP-Q6-jo0">
             <objects>
                 <viewController id="s0p-ud-H9d" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -861,7 +841,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="2002"/>
         </scene>
-        <!--View Controller - 证大岁悦-->
+        <!--证大岁悦-->
         <scene sceneID="08L-9U-ZhV">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="khR-o4-31p" sceneMemberID="viewController">
@@ -908,7 +888,10 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="768" height="1024"/>
+            <size key="landscapeSize" width="1024" height="768"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="WNk-2W-Kdt"/>
