@@ -21,6 +21,8 @@
 {
     [super viewDidLoad];
     [self configureView];
+    [self shouldHideLabel];
+    [self.textView becomeFirstResponder];
 }
 
 - (void)configureView
@@ -82,11 +84,12 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    if (textView.text.length) {
-        self.placeholderLabel.hidden = YES;
-    } else {
-        self.placeholderLabel.hidden = NO;
-    }
+    [self shouldHideLabel];
+}
+
+- (void)shouldHideLabel
+{
+    self.placeholderLabel.hidden = self.textView.text.length > 0;
 }
 
 @end
