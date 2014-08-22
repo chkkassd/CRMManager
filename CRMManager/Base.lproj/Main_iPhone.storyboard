@@ -197,7 +197,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-63-glM" userLabel="contain view">
@@ -335,7 +335,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="965" y="-1000"/>
+            <point key="canvasLocation" x="1858" y="-1060"/>
         </scene>
         <!--Chance View Controller - 机会-->
         <scene sceneID="0f7-Lx-xGd">
@@ -444,12 +444,16 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_client" translatesAutoresizingMaskIntoConstraints="NO" id="9iE-Tp-asT">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="265"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_man_big" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-7o-Jdb">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_man_big" translatesAutoresizingMaskIntoConstraints="NO" id="XB4-7o-Jdb">
                                         <rect key="frame" x="114" y="69" width="93" height="93"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="93" id="rcJ-nW-j6I"/>
                                             <constraint firstAttribute="width" constant="93" id="x4P-Nx-C0a"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="xcj-yn-zpw" appends="YES" id="apT-5K-smh"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFq-Nh-4Zo">
                                         <rect key="frame" x="20" y="178" width="280" height="27"/>
@@ -478,6 +482,9 @@
                                         <state key="normal" image="customer_call">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="telephoneButtonPressed:" destination="Rvq-Ky-hlk" eventType="touchUpInside" id="kl5-ca-fhb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -587,6 +594,7 @@
                         <outlet property="nameLabel" destination="HFq-Nh-4Zo" id="XQk-bl-XEz"/>
                         <outlet property="tableView" destination="YAs-8d-FPd" id="EPD-Wp-x3T"/>
                         <segue destination="5Ga-o4-m5V" kind="push" identifier="recordAddOrEdit Display" id="Qyt-3H-7eu"/>
+                        <segue destination="hLd-Sm-0zS" kind="push" identifier="edit Display" id="OnM-he-V73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Yb-nR-MKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -595,6 +603,11 @@
                         <action selector="swipeBack:" destination="Rvq-Ky-hlk" id="GGA-1d-YhD"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="xcj-yn-zpw">
+                    <connections>
+                        <action selector="tapHeadImageView:" destination="Rvq-Ky-hlk" id="6Pl-JR-HMJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1388" y="-336"/>
         </scene>
@@ -1711,4 +1724,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="OnM-he-V73"/>
+    </inferredMetricsTieBreakers>
 </document>

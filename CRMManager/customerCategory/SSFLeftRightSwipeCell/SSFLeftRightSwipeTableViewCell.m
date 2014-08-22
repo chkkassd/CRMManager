@@ -104,6 +104,13 @@
     }
 }
 
+- (IBAction)telephoneButtonPressed:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(leftRightSwipeTableViewCellTelephoneButtonPressed:)]) {
+        [self.delegate leftRightSwipeTableViewCellTelephoneButtonPressed:self];
+    }
+}
+
 #pragma mark - UIGestureRecorgnizeDelegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer

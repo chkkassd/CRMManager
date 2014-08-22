@@ -26,6 +26,7 @@ typedef enum {
 
 @protocol ZDAddAndEditeViewControllerDelegate <NSObject>
 
+@optional
 - (void)addAndEditeViewControllerDidFinishAdd:(ZDAddAndEditeViewController *)controller;
 - (void)addAndEditeViewControllerDidFinishEdit:(ZDAddAndEditeViewController *)controller;
 

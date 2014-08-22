@@ -27,6 +27,7 @@
 - (ContactRecord *)queryContactRecordWithRecordId:(NSString *)recordId;
 - (ZDContactRecord *)queryZDContactRecordWithRecordId:(NSString *)recordId;
 - (Customer *)queryCustomerWithCustomerId:(NSString *)customerid;
+- (ZDCustomer *)queryZDCustomerWithCustomerId:(NSString *)customerid;
 - (NSArray *)queryAllZDCustomersOfCurrentManager;
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager;
 - (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid;

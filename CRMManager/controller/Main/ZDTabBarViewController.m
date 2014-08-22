@@ -7,6 +7,7 @@
 // 这个类是总的Main控制器类
 
 #import "ZDTabBarViewController.h"
+#import "ZDChanceViewController.h"
 #import "ZDGesturePasswordViewController.h"
 #import "AllCustomerCategoryHeaders.h"
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) NSDate * enterForegroundDate;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
 @property (strong, nonatomic) Reachability * reachability;
+@property (strong, nonatomic) ZDChanceViewController * chanceViewController;
 
 @end
 
@@ -61,6 +63,15 @@
         _reachability = [Reachability reachabilityForInternetConnection];
     }
     return _reachability;
+}
+
+- (ZDChanceViewController *)chanceViewController
+{
+    if (!_chanceViewController) {
+        UINavigationController * nav = self.viewControllers[0];
+        _chanceViewController = (ZDChanceViewController *)[nav.viewControllers firstObject];
+    }
+    return _chanceViewController;
 }
 
 #pragma mark - methods
@@ -107,13 +118,13 @@
     
     switch (status) {
         case NotReachable: {
-            
+            [self.chanceViewController checkNetAndShow:NO];
         } break;
         case ReachableViaWiFi: {
-            
+            [self.chanceViewController checkNetAndShow:YES];
         } break;
         case ReachableViaWWAN: {
-            
+            [self.chanceViewController checkNetAndShow:YES];
         } break;
         default: break;
     }

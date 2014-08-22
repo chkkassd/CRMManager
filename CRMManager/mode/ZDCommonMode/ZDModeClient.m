@@ -399,6 +399,11 @@
     return [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
 }
 
+- (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid
+{
+    return [[ZDLocalDB sharedLocalDB] queryZDCustomerWithCustomerId:customerid];
+}
+
 #pragma mark - properties
 
 - (ZDManagerUser *)zdManagerUser

@@ -51,6 +51,15 @@
     self.allChanceCustomers = [ZDModeClient sharedModeClient].allZDChanceCustomers;
 }
 
+- (void)checkNetAndShow:(BOOL)havenet
+{
+    if (!havenet) {
+        self.title = @"机会(未连接)";
+    } else {
+        self.title = @"机会";
+    }
+}
+
 #pragma mark - Action
 
 - (IBAction)addButtonPressed:(id)sender
@@ -96,12 +105,20 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    NSString * buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    if ([buttonTitle isEqualToString:@"添加"]) {
-        self.selectedZDCustomer = nil;
-        [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
-    } else if ([buttonTitle isEqualToString:@"从通讯录导入"]) {
-        //做通讯录导入操作
+    if ([actionSheet.title isEqualToString:@"新增客户"]) {
+        NSString * buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+        if ([buttonTitle isEqualToString:@"添加"]) {
+            self.selectedZDCustomer = nil;
+            [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
+        } else if ([buttonTitle isEqualToString:@"从通讯录导入"]) {
+            //做通讯录导入操作
+        }
+    } else if ([actionSheet.title isEqualToString:@"拨号"]) {
+        if (buttonIndex != actionSheet.cancelButtonIndex) {
+            if (self.selectedZDCustomer.mobile.length) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.selectedZDCustomer.mobile]]];
+            }
+        }
     }
 }
 
@@ -254,6 +271,14 @@
     NSIndexPath * index = [self.tableView indexPathForCell:cell];
     self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
     [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
+}
+
+- (void)leftRightSwipeTableViewCellTelephoneButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
+{
+    NSIndexPath * index = [self.tableView indexPathForCell:cell];
+    self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"拨号" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"电话呼叫", nil];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
 }
 
 #pragma mark - SSFSegmentControlDelegate

@@ -8,8 +8,9 @@
 
 #import "ZDChanceCustomerDetailViewController.h"
 #import "ZDRecordAddOrEditViewController.h"
+#import "ZDAddAndEditeViewController.h"
 
-@interface ZDChanceCustomerDetailViewController ()<ZDRecordAddOrEditViewControllerDelegate>
+@interface ZDChanceCustomerDetailViewController ()<ZDRecordAddOrEditViewControllerDelegate,ZDAddAndEditeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -149,6 +150,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)telephoneButtonPressed:(id)sender
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"拨号" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"电话呼叫", nil];
+    [sheet showFromTabBar:self.tabBarController.tabBar];
+}
+
+- (IBAction)tapHeadImageView:(id)sender
+{
+    [self performSegueWithIdentifier:@"edit Display" sender:self];
+}
+
 #pragma mark - segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -158,6 +170,11 @@
         recordAddOrEditViewController.delegate = self;
         recordAddOrEditViewController.editedReocrd = self.selectedRecord;
         recordAddOrEditViewController.selectedCustomer = self.zdCustomer;
+    } else if ([segue.identifier isEqualToString:@"edit Display"]) {
+        ZDAddAndEditeViewController * addAndEditeViewController = segue.destinationViewController;
+        addAndEditeViewController.delegate = self;
+        addAndEditeViewController.editedCustomer = self.zdCustomer;
+        addAndEditeViewController.mode = ZDAddAndEditeViewControllerModeEdit;
     }
 }
 
@@ -179,6 +196,32 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"修改记录成功";
     [hud hide:YES afterDelay:1];
+}
+
+#pragma mkar - ZDAddAndEditController delegate
+
+- (void)addAndEditeViewControllerDidFinishEdit:(ZDAddAndEditeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"编辑成功";
+    [hud hide:YES afterDelay:1];
+    self.zdCustomer = [[ZDModeClient sharedModeClient] zdCustomerWithCustomerId:self.zdCustomer.customerId];
+    [self configureView];
+}
+
+#pragma mark - action sheet delegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([actionSheet.title isEqualToString:@"拨号"]) {
+        if (buttonIndex != actionSheet.cancelButtonIndex) {
+            if (self.zdCustomer.mobile.length) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",self.zdCustomer.mobile]]];
+            }
+        }
+    }
 }
 
 @end

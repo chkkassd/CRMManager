@@ -13,5 +13,5 @@
 @interface ZDChanceViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,
                                                     UISearchBarDelegate,UISearchDisplayDelegate,
                                                     UIActionSheetDelegate,UIScrollViewAccessibilityDelegate>
-
+- (void)checkNetAndShow:(BOOL)havenet;
 @end

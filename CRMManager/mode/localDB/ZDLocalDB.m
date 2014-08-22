@@ -32,7 +32,7 @@
     if (fetchResult.count) {
         contactRecord = fetchResult[0];
     } else {
-        NSLog(@"fail to fetch managerUser from db:%@",error.localizedDescription);
+        NSLog(@"fail to fetch record from db:%@",error.localizedDescription);
     }
     return contactRecord;
 }
@@ -151,6 +151,17 @@
         NSLog(@"fail to fetch customer from db:%@",error.localizedDescription);
     }
     return customer;
+}
+
+- (ZDCustomer *)queryZDCustomerWithCustomerId:(NSString *)customerid
+{
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        ZDCustomer * zdCustomer = [[ZDCustomer alloc] init];
+        [self modifyZDCustomer:zdCustomer from:customer];
+        return zdCustomer;
+    }
+    return nil;
 }
 
 //查找当前用户所有的customers

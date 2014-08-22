@@ -32,10 +32,14 @@
 @property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
 @property (strong, nonatomic) NSArray * allZDChanceCustomers;//当前manager的所有chanceCustomers
 
-//保存manageruser
-- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
+//查找得到一个zdcustomer
+- (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid;
 //得到一个客户的所有联系记录
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;
+
+
+//保存manageruser
+- (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
 //新增机会客户
 - (void)addChanceCustomerWithCustomerInfoDictionary:(NSDictionary *)infoDictionary
                                   completionHandler:(void(^)(NSError * error))handler;

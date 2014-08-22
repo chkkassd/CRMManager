@@ -10,7 +10,7 @@
 #import "ZDModeClient.h"
 #import "AllCustomerCategoryHeaders.h"
 
-@interface ZDChanceCustomerDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ZDChanceCustomerDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate>
 
 @property (strong, nonatomic) ZDCustomer * zdCustomer;
 
