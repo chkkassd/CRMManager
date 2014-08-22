@@ -9,20 +9,10 @@
 #import "ZDProductDetailViewController.h"
 
 @interface ZDProductDetailViewController ()
-- (IBAction)swipeToReturn:(id)sender;
 
 @end
 
 @implementation ZDProductDetailViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(back:)];
-    [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipe];
-}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -41,7 +31,4 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)swipeToReturn:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 @end

@@ -1679,6 +1679,9 @@
                             <constraint firstItem="6LS-on-Ovk" firstAttribute="leading" secondItem="FQl-DV-zdW" secondAttribute="leading" id="wVL-yb-e2F"/>
                             <constraint firstAttribute="bottom" secondItem="oyj-Hd-IFK" secondAttribute="bottom" constant="152" id="xjv-ED-jYb"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="odT-bs-NSs" appends="YES" id="JN2-de-ecE"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="证大岁悦" id="XKM-HL-ojz"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -1697,6 +1700,11 @@
                         </subviews>
                     </tableViewCellContentView>
                 </tableViewCell>
+                <swipeGestureRecognizer direction="right" id="odT-bs-NSs">
+                    <connections>
+                        <action selector="back:" destination="BuH-HC-ubf" id="g9p-Jf-hFV"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1507" y="1082"/>
         </scene>
