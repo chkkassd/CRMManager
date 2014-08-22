@@ -27,10 +27,6 @@
     [super viewDidLoad];
     [self configureView];
     
-    UISwipeGestureRecognizer* swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(backAction:)];
-    [swipe setDirection:UISwipeGestureRecognizerDirectionRight];
-    [self.view addGestureRecognizer:swipe];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upadteContactRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
 }
 
@@ -147,6 +143,10 @@
 {
     self.selectedRecord = nil;
     [self performSegueWithIdentifier:@"recordAddOrEdit Display" sender:self];
+}
+
+- (IBAction)swipeBack:(UISwipeGestureRecognizer *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - segue

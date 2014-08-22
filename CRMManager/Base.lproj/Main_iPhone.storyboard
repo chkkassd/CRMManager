@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -133,10 +134,7 @@
                             <constraint firstItem="2oc-OH-Qyb" firstAttribute="top" secondItem="JFb-o2-2OC" secondAttribute="bottom" constant="8" id="zr3-Rk-XyZ"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="alertLabel" destination="JFb-o2-2OC" id="LYX-aM-2wl"/>
                         <outlet property="gestureContainView" destination="2oc-OH-Qyb" id="BOU-eI-xSw"/>
@@ -168,7 +166,7 @@
             </objects>
             <point key="canvasLocation" x="-203" y="640"/>
         </scene>
-        <!--机会-->
+        <!--Navigation Controller - 机会-->
         <scene sceneID="5ZK-Bf-xJM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WGM-OG-6aH" sceneMemberID="viewController">
@@ -199,7 +197,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-63-glM" userLabel="contain view">
@@ -339,7 +337,7 @@
             </objects>
             <point key="canvasLocation" x="965" y="-1000"/>
         </scene>
-        <!--机会-->
+        <!--Chance View Controller - 机会-->
         <scene sceneID="0f7-Lx-xGd">
             <objects>
                 <viewController storyboardIdentifier="ZDChanceViewController" id="grb-8r-dgj" customClass="ZDChanceViewController" sceneMemberID="viewController">
@@ -563,6 +561,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tsc-do-aUF" firstAttribute="top" secondItem="yPb-8h-Ra1" secondAttribute="top" id="22Z-rm-MK8"/>
                             <constraint firstAttribute="bottom" secondItem="YAs-8d-FPd" secondAttribute="bottom" id="5ju-hd-pGo"/>
@@ -576,6 +575,9 @@
                             <constraint firstAttribute="trailing" secondItem="YAs-8d-FPd" secondAttribute="trailing" id="w14-kv-jn3"/>
                             <constraint firstItem="Lba-2s-79E" firstAttribute="top" secondItem="069-4V-h79" secondAttribute="bottom" id="wgi-Vg-0TP"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="y0u-0w-nbu" appends="YES" id="DpE-YT-s4A"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="x7r-wo-TLc"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -588,6 +590,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Yb-nR-MKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="y0u-0w-nbu">
+                    <connections>
+                        <action selector="swipeBack:" destination="Rvq-Ky-hlk" id="GGA-1d-YhD"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1388" y="-336"/>
         </scene>
@@ -651,7 +658,7 @@
             </objects>
             <point key="canvasLocation" x="1858" y="-337"/>
         </scene>
-        <!--客户-->
+        <!--Navigation Controller - 客户-->
         <scene sceneID="YHh-ZU-gWX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3G-th-KrS" sceneMemberID="viewController">
@@ -670,7 +677,7 @@
             </objects>
             <point key="canvasLocation" x="439" y="324"/>
         </scene>
-        <!--客户-->
+        <!--Customer Table View Controller - 客户-->
         <scene sceneID="nYh-X3-ASc">
             <objects>
                 <tableViewController id="BcE-NZ-12n" customClass="ZDCustomerTableViewController" sceneMemberID="viewController">
@@ -712,7 +719,7 @@
             </objects>
             <point key="canvasLocation" x="965" y="324"/>
         </scene>
-        <!--产品-->
+        <!--Navigation Controller - 产品-->
         <scene sceneID="wfF-bu-cfO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37u-Nd-QJm" sceneMemberID="viewController">
@@ -731,7 +738,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="1082"/>
         </scene>
-        <!--设置-->
+        <!--Navigation Controller - 设置-->
         <scene sceneID="5yg-ER-5s1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bY0-Ej-Gu0" sceneMemberID="viewController">
@@ -750,7 +757,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="1763"/>
         </scene>
-        <!--设置-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="eSg-z6-iUU">
             <objects>
                 <tableViewController id="orw-34-dL9" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -951,7 +958,7 @@
             </objects>
             <point key="canvasLocation" x="980" y="1763"/>
         </scene>
-        <!--关于-->
+        <!--About Us Table View Controller - 关于-->
         <scene sceneID="GWF-kW-82r">
             <objects>
                 <tableViewController id="dlL-SE-RGw" customClass="ZDAboutUsTableViewController" sceneMemberID="viewController">
@@ -1202,7 +1209,7 @@
             </objects>
             <point key="canvasLocation" x="1514" y="1763"/>
         </scene>
-        <!--意见反馈-->
+        <!--Suggestion View Controller - 意见反馈-->
         <scene sceneID="1w3-t8-tMB">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dVy-Fh-7ff" customClass="ZDSuggestionViewController" sceneMemberID="viewController">
@@ -1261,7 +1268,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="2516"/>
         </scene>
-        <!--常见问题-->
+        <!--Table View Controller - 常见问题-->
         <scene sceneID="4kr-eo-mh9">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="dK2-ch-ggH" sceneMemberID="viewController">
@@ -1352,7 +1359,7 @@
             </objects>
             <point key="canvasLocation" x="986" y="2516"/>
         </scene>
-        <!--手势密码设置-->
+        <!--Gesture Password Setting View Controller - 手势密码设置-->
         <scene sceneID="M2x-54-AbC">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Stb-zg-pkS" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
@@ -1390,7 +1397,7 @@
             </objects>
             <point key="canvasLocation" x="1514" y="2516"/>
         </scene>
-        <!--产品-->
+        <!--Products List View Controller - 产品-->
         <scene sceneID="Erv-SZ-4Zb">
             <objects>
                 <viewController id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -1461,7 +1468,7 @@
             </objects>
             <point key="canvasLocation" x="980" y="1082"/>
         </scene>
-        <!--证大岁悦-->
+        <!--Product Detail View Controller - 证大岁悦-->
         <scene sceneID="VOw-sJ-8jd">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BuH-HC-ubf" customClass="ZDProductDetailViewController" sceneMemberID="viewController">
@@ -1495,7 +1502,6 @@
                                         </state>
                                         <connections>
                                             <action selector="back:" destination="BuH-HC-ubf" eventType="touchUpInside" id="xZa-Uq-VjH"/>
-                                            <action selector="backAction:" destination="Rvq-Ky-hlk" eventType="touchUpInside" id="Igc-Oh-GSq"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_product_income" translatesAutoresizingMaskIntoConstraints="NO" id="YQJ-Ek-maM">
@@ -1669,6 +1675,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ODx-n1-r6P" id="wxf-f4-LkM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-xm-tUK">
@@ -1702,9 +1709,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
