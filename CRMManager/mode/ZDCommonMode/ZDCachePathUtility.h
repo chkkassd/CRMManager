@@ -12,6 +12,7 @@
 @interface ZDCachePathUtility : NSObject
 
 - (NSString *)pathForSqlite;
+- (NSString *)pathForLogFile;
 + (ZDCachePathUtility *)sharedCachePathUtility;
 
 @end

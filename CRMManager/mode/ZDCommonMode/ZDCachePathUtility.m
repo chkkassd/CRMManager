@@ -29,6 +29,11 @@
     return [[self pathForCacheDirectory] stringByAppendingPathComponent:@"MySqlite.sqlite"];
 }
 
+- (NSString *)pathForLogFile
+{
+    return [[self pathForCacheDirectory] stringByAppendingPathComponent:@"Log"];
+}
+
 #pragma mark - sharedInstance
 
 + (ZDCachePathUtility *)sharedCachePathUtility
