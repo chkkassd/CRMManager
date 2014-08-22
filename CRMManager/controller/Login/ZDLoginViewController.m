@@ -15,6 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIView * nameView;
+@property (weak, nonatomic) IBOutlet UIView * passwordView;
+@property (weak, nonatomic) IBOutlet UIButton * loginButton;
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;
 
 @end
@@ -28,6 +31,26 @@
     [super viewDidLoad];
     self.nameTextField.text = @"zdcrm_system";
     self.passwordTextField.text = @"123456";
+}
+
+#pragma mark - properties
+
+- (void)setNameView:(UIView *)nameView
+{
+    _nameView = nameView;
+    _nameView.layer.borderColor = [UIColor colorWithWhite:229/255.0 alpha:1.0].CGColor;
+}
+
+- (void)setPasswordView:(UIView *)passwordView
+{
+    _passwordView = passwordView;
+    _passwordView.layer.borderColor = [UIColor colorWithWhite:229/255.0 alpha:1.0].CGColor;
+}
+
+- (void)setLoginButton:(UIButton *)loginButton
+{
+    _loginButton = loginButton;
+    _loginButton.layer.cornerRadius = 4.0;
 }
 
 #pragma mark - Action

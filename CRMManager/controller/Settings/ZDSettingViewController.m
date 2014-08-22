@@ -21,7 +21,7 @@
 - (IBAction)loginOut:(id)sender
 {
     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"你好" message:@"确定退出？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
+    [alertView show]; 
 }
 
 - (IBAction)gesturePasswordSwitchPressed:(id)sender

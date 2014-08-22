@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="VvK-Oq-mbO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="VvK-Oq-mbO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -145,10 +146,7 @@
                             <constraint firstItem="yYK-2O-rQk" firstAttribute="top" secondItem="vWZ-nh-uPx" secondAttribute="bottom" constant="8" id="pNl-Oc-uRS"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="alertLabel" destination="yYK-2O-rQk" id="UGW-86-u19"/>
                         <outlet property="gestureContainView" destination="Xj5-BK-UwQ" id="8Ja-7Q-Gje"/>
@@ -181,7 +179,7 @@
             </objects>
             <point key="canvasLocation" x="229" y="640"/>
         </scene>
-        <!--机会-->
+        <!--Navigation Controller - 机会-->
         <scene sceneID="4mU-J6-WSR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mji-iu-0BL" sceneMemberID="viewController">
@@ -200,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="-824"/>
         </scene>
-        <!--机会-->
+        <!--Chance View Controller - 机会-->
         <scene sceneID="BZt-bh-TnI">
             <objects>
                 <viewController id="oVR-Ce-2Ok" customClass="ZDChanceViewController" sceneMemberID="viewController">
@@ -284,7 +282,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="-816"/>
         </scene>
-        <!--客户-->
+        <!--Navigation Controller - 客户-->
         <scene sceneID="DAI-ka-iaJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AP8-oA-2Il" sceneMemberID="viewController">
@@ -303,7 +301,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="640"/>
         </scene>
-        <!--客户-->
+        <!--Table View Controller - 客户-->
         <scene sceneID="d4t-3L-as7">
             <objects>
                 <tableViewController id="6b8-Yb-2QR" sceneMemberID="viewController">
@@ -355,7 +353,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="640"/>
         </scene>
-        <!--产品-->
+        <!--Navigation Controller - 产品-->
         <scene sceneID="X84-9D-kjX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GuL-pV-57E" sceneMemberID="viewController">
@@ -374,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="2002"/>
         </scene>
-        <!--设置-->
+        <!--Navigation Controller - 设置-->
         <scene sceneID="Jwd-aB-dAz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7lg-KT-Of6" sceneMemberID="viewController">
@@ -393,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="1445" y="3323"/>
         </scene>
-        <!--设置-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="dtj-kn-dhq">
             <objects>
                 <tableViewController id="0xG-xQ-UaL" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -549,7 +547,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="3323"/>
         </scene>
-        <!--意见反馈-->
+        <!--Suggestion View Controller - 意见反馈-->
         <scene sceneID="k8V-kS-JgY">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="3ub-xI-xQA" customClass="ZDSuggestionViewController" sceneMemberID="viewController">
@@ -607,7 +605,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="3323"/>
         </scene>
-        <!--常见问题-->
+        <!--Table View Controller - 常见问题-->
         <scene sceneID="r3l-eb-xcQ">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="6kY-oG-l4t" sceneMemberID="viewController">
@@ -698,7 +696,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="4599"/>
         </scene>
-        <!--手势密码设置-->
+        <!--Gesture Password Setting View Controller - 手势密码设置-->
         <scene sceneID="59y-SJ-wob">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="wbK-7z-Yfv" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
@@ -736,7 +734,7 @@
             </objects>
             <point key="canvasLocation" x="3613" y="4599"/>
         </scene>
-        <!--产品-->
+        <!--Products List View Controller - 产品-->
         <scene sceneID="ROP-Q6-jo0">
             <objects>
                 <viewController id="s0p-ud-H9d" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -841,7 +839,7 @@
             </objects>
             <point key="canvasLocation" x="2509" y="2002"/>
         </scene>
-        <!--证大岁悦-->
+        <!--View Controller - 证大岁悦-->
         <scene sceneID="08L-9U-ZhV">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="khR-o4-31p" sceneMemberID="viewController">
@@ -888,10 +886,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination">
-            <size key="portraitSize" width="768" height="1024"/>
-            <size key="landscapeSize" width="1024" height="768"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="WNk-2W-Kdt"/>
