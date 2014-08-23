@@ -9,8 +9,12 @@
 #import "ZDWebService+URL.h"
 
 #define API_Base @"https://api.ezendai.com/hera/manageraccount/"
-#define API_Chance @"http://172.16.6.108:8060/hera/manageraccount/"
+//#define API_Chance @"http://172.16.6.108:8060/hera/manageraccount/"
 //http://172.16.230.187:9106/uc-server/index    用户名\密码 ：  admin\123456
+
+#define API_Chance @"http://121.199.0.190:8080/hera/manageraccount/"
+
+
 @implementation ZDWebService (URL)
 
 - (NSURL *)URLForLogin
