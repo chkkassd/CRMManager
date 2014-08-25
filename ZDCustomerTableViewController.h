@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZDModeClient.h"
 
 @interface ZDCustomerTableViewController : UITableViewController
 

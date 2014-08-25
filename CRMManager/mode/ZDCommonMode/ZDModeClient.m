@@ -41,7 +41,7 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
-                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+//                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                         //5.获取并保存所有客户的business
                         [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
                     } else {
@@ -507,7 +507,7 @@
 }
 
 #pragma mark - 客户的所有businessList
-- (NSArray *)zdBusinessListsWithCustomer:(NSString *)customerid
+- (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid
 {
     return [[ZDLocalDB sharedLocalDB] queryAllZDBusinessListsWithCustomerId:customerid];
 }

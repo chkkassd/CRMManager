@@ -40,7 +40,7 @@
 //得到一个客户的所有联系记录
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;
 //得到一个客户所有的businessList产品
-- (NSArray *)zdBusinessListsWithCustomer:(NSString *)customerid;
+- (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid;
 
 //保存manageruser
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
