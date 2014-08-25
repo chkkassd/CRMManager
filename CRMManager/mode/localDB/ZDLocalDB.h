@@ -35,6 +35,7 @@
 - (NSArray *)queryAllZDCustomersOfCurrentManager;
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager;
 - (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid;
+- (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid;
 //modify and save
 - (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;

@@ -506,6 +506,12 @@
     return [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
 }
 
+#pragma mark - 客户的所有businessList
+- (NSArray *)zdBusinessListsWithCustomer:(NSString *)customerid
+{
+    return [[ZDLocalDB sharedLocalDB] queryAllZDBusinessListsWithCustomerId:customerid];
+}
+
 - (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid
 {
     return [[ZDLocalDB sharedLocalDB] queryZDCustomerWithCustomerId:customerid];

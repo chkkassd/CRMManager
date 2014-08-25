@@ -222,18 +222,25 @@
 //查找business
 - (Business *)queryBusinessWithCustomerId:(NSString *)customerid
 {
-    Business * business = nil;
-    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Business"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"businessBelongCustomer.customerId == %@",customerid];
-    
-    NSError * error = nil;
-    NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    if (fetchResult.count) {
-        business = fetchResult[0];
-    } else {
-        NSLog(@"fail to fetch business of customer:%@ from db",customerid);
+//    Business * business = nil;
+//    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Business"];
+//    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"businessBelongCustomer.customerId == %@",customerid];
+//    
+//    NSError * error = nil;
+//    NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    if (fetchResult.count) {
+//        business = fetchResult[0];
+//    } else {
+//        NSLog(@"fail to fetch business of customer:%@ from db",customerid);
+//    }
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        if (customer.business) {
+            return customer.business;
+        }
+        return nil;
     }
-    return business;
+    return nil;
 }
 
 //查找businessList
@@ -251,6 +258,52 @@
         NSLog(@"fail to fetch businessList of customer:%@ from db",customerid);
     }
     return businessList;
+}
+
+//查找一个客户的所有businessLists
+- (NSArray *)queryAllBusinessListsWithCustomerId:(NSString *)customerid
+{
+    Business * business = [self queryBusinessWithCustomerId:customerid];
+    if (business) {
+        if ([[business.allBusinessLists allObjects] count]) {
+            return [business.allBusinessLists allObjects];
+        }
+        return nil;
+    }
+    return nil;
+}
+
+//查找一个客户的所有ZDBusinessLists
+- (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid
+{
+    NSMutableArray * zdBusinessLists = [[NSMutableArray alloc] init];
+    NSArray * businessLists = [self queryAllBusinessListsWithCustomerId:customerid];
+    if (businessLists.count) {
+        for (BusinessList * businessList in businessLists) {
+            ZDBusinessList * zdBusinessList = [[ZDBusinessList alloc] init];
+            [self modifyZDBusinessList:zdBusinessList fromBusinessList:businessList];
+            [zdBusinessLists addObject:zdBusinessList];
+        }
+        return zdBusinessLists;
+    }
+    return nil;
+}
+
+- (void)modifyZDBusinessList:(ZDBusinessList *)zdBusinessList fromBusinessList:(BusinessList *)businessList
+{
+    zdBusinessList.customerId = businessList.belongBusiness.businessBelongCustomer.customerId;
+    zdBusinessList.status = businessList.status;
+    zdBusinessList.managementFeeDiscount = businessList.managementFeeDiscount;
+    zdBusinessList.billDate = businessList.billDate;
+    zdBusinessList.startDate = businessList.startDate;
+    zdBusinessList.loanValue = businessList.loanValue;
+    zdBusinessList.pattern = businessList.pattern;
+    zdBusinessList.managementFeeRate = businessList.managementFeeRate;
+    zdBusinessList.incomeTotal = businessList.incomeTotal;
+    zdBusinessList.endDate = businessList.endDate;
+    zdBusinessList.investAmt = businessList.investAmt;
+    zdBusinessList.lendingNo = businessList.lendingNo ;
+    zdBusinessList.contractNo = businessList.contractNo;
 }
 
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
