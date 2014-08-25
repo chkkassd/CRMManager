@@ -58,8 +58,8 @@
 {
     if (buttonIndex != alertView.cancelButtonIndex) {
         //退出,nsuserdefaults清除保存的当前uesrid
-        [[NSUserDefaults standardUserDefaults] setObject:Nil forKey:DefaultCurrentUserId];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [[NSUserDefaults standardUserDefaults] setObject:Nil forKey:DefaultCurrentUserId];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
         [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
     }
 }

@@ -219,6 +219,40 @@
     return nil;
 }
 
+//查找business
+- (Business *)queryBusinessWithCustomerId:(NSString *)customerid
+{
+    Business * business = nil;
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Business"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"businessBelongCustomer.customerId == %@",customerid];
+    
+    NSError * error = nil;
+    NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchResult.count) {
+        business = fetchResult[0];
+    } else {
+        NSLog(@"fail to fetch business of customer:%@ from db",customerid);
+    }
+    return business;
+}
+
+//查找businessList
+- (BusinessList *)queryBusinessListWithCustomerId:(NSString *)customerid andLendingNo:(NSString *)lendingNo
+{
+    BusinessList * businessList = nil;
+    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"BusinessList"];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"belongBusiness.businessBelongCustomer.customerId == %@ && lendingNo == %@",customerid,lendingNo];
+    
+    NSError * error = nil;
+    NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchResult.count) {
+        businessList = fetchResult[0];
+    } else {
+        NSLog(@"fail to fetch businessList of customer:%@ from db",customerid);
+    }
+    return businessList;
+}
+
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
 
 //save managerUser for login
@@ -360,6 +394,80 @@
     contractRecord.inputId = zdContractRecord.inputId;
     contractRecord.memo = zdContractRecord.memo;
     contractRecord.recordBelongCustomer = [self queryCustomerWithCustomerId:zdContractRecord.customerId];
+}
+
+//save business
+- (BOOL)saveBusinessWith:(ZDBusiness *)zdBusiness error:(NSError *__autoreleasing *)error
+{
+    if (!zdBusiness) return NO;
+    
+    Business * business = [self queryBusinessWithCustomerId:zdBusiness.customerId];
+    if (business) {
+        //存在，修改并保存
+        [self modifyBusiness:business from:zdBusiness];
+    } else {
+        //不存在，插入一条
+        business = [NSEntityDescription insertNewObjectForEntityForName:@"Business" inManagedObjectContext:self.managedObjectContext];
+        [self modifyBusiness:business from:zdBusiness];
+    }
+    return [self.managedObjectContext save:error];
+}
+
+- (void)modifyBusiness:(Business *)business from:(ZDBusiness *)zdBusiness
+{
+    business.incomeTotal = zdBusiness.incomeTotal;
+    business.customerName = zdBusiness.customerName;
+    business.applyDate = zdBusiness.applyDate;
+    business.productType = zdBusiness.productType;
+    business.accountTotal = zdBusiness.accountTotal;
+    business.recoverableAmount = zdBusiness.recoverableAmount;
+    business.businessBelongCustomer = [self queryCustomerWithCustomerId:zdBusiness.customerId];
+}
+
+//save one businessList
+- (BOOL)saveBusinessList:(ZDBusinessList *)zdBusinessList error:(NSError *__autoreleasing *)error
+{
+    if (!zdBusinessList) return NO;
+    
+    BusinessList *businessList = [self queryBusinessListWithCustomerId:zdBusinessList.customerId andLendingNo:zdBusinessList.lendingNo];
+    if (businessList) {
+        // 存在，修改并保存
+        [self modifyBusinessList:businessList from:zdBusinessList];
+    } else {
+        // 不存在，插入一条
+        businessList = [NSEntityDescription insertNewObjectForEntityForName:@"BusinessList" inManagedObjectContext:self.managedObjectContext];
+        [self modifyBusinessList:businessList from:zdBusinessList];
+    }
+    
+    return [self.managedObjectContext save:error];
+}
+
+- (void)modifyBusinessList:(BusinessList *)businessList from:(ZDBusinessList *)zdBusinessList
+{
+    businessList.status = zdBusinessList.status;
+    businessList.managementFeeDiscount = zdBusinessList.managementFeeDiscount;
+    businessList.billDate = zdBusinessList.billDate;
+    businessList.startDate = zdBusinessList.startDate;
+    businessList.loanValue = zdBusinessList.loanValue;
+    businessList.pattern = zdBusinessList.pattern;
+    businessList.managementFeeRate = zdBusinessList.managementFeeRate;
+    businessList.incomeTotal = zdBusinessList.incomeTotal;
+    businessList.endDate = zdBusinessList.endDate;
+    businessList.investAmt = zdBusinessList.investAmt;
+    businessList.lendingNo = zdBusinessList.lendingNo ;
+    businessList.contractNo = zdBusinessList.contractNo;
+    businessList.belongBusiness = [self queryBusinessWithCustomerId:zdBusinessList.customerId];
+}
+
+// Save much businessLists
+- (BOOL)saveMuchBusinessList:(NSArray *)zdBusinessLists error:(NSError *__autoreleasing *)error
+{
+    if (!zdBusinessLists.count) return NO;
+    
+    for (ZDBusinessList * zdBusinessList in zdBusinessLists) {
+        if (![self saveBusinessList:zdBusinessList error:error]) return NO;
+    }
+    return YES;
 }
 
 #pragma mark - delete

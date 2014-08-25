@@ -136,9 +136,9 @@
 //    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
 //        
 //    }];
-//    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13339313631" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
+    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13339313631" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        
+    }];
 //{"status":"0"}
 //    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://172.16.56.39:8765/hera/manageraccount/login"]];//alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://172.16.56.39:8765/hera/manageraccount/login"]];
 //    NSString * str = @"{\"status\":\"0\"}";

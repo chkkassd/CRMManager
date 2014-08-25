@@ -24,14 +24,13 @@
                                     <constraint firstAttribute="width" constant="90" id="g0y-YE-IoN"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-o4-1HQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-o4-1HQ">
                                 <rect key="frame" x="20" y="386" width="280" height="50"/>
                                 <color key="backgroundColor" red="0.29803921568627451" green="0.85098039215686272" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="d3a-Qt-k06"/>
                                     <constraint firstAttribute="height" constant="50" id="ep7-bQ-epx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="登陆">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,8 +121,8 @@
                             <constraint firstAttribute="centerX" secondItem="Wkq-o4-1HQ" secondAttribute="centerX" id="045-CS-dgK"/>
                             <constraint firstItem="HA7-fS-3Cn" firstAttribute="top" secondItem="ZYs-Zk-HAM" secondAttribute="bottom" constant="8" id="1Nt-Wa-vKq"/>
                             <constraint firstItem="HA7-fS-3Cn" firstAttribute="leading" secondItem="ZFJ-Wc-2oo" secondAttribute="leading" id="3gC-7e-J8M"/>
+                            <constraint firstItem="ZYs-Zk-HAM" firstAttribute="top" secondItem="fFY-av-mIB" secondAttribute="bottom" constant="50" id="Agy-ca-AtC"/>
                             <constraint firstAttribute="centerX" secondItem="fFY-av-mIB" secondAttribute="centerX" id="ApW-LW-bv4"/>
-                            <constraint firstItem="ZYs-Zk-HAM" firstAttribute="top" secondItem="fFY-av-mIB" secondAttribute="bottom" constant="50" id="Ksm-KV-qQ3"/>
                             <constraint firstAttribute="trailing" secondItem="HA7-fS-3Cn" secondAttribute="trailing" id="MEc-M5-6Jc"/>
                             <constraint firstItem="ZYs-Zk-HAM" firstAttribute="leading" secondItem="ZFJ-Wc-2oo" secondAttribute="leading" id="PSU-s9-mJb"/>
                             <constraint firstItem="Wkq-o4-1HQ" firstAttribute="top" secondItem="HA7-fS-3Cn" secondAttribute="bottom" constant="61" id="ZSp-VL-9h2"/>
@@ -1507,16 +1506,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-Jg-Xqs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="100"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="BuH-HC-ubf" kind="push" id="Pah-Cw-keT"/>
-                                                    </connections>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_product_01" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-m5-RwJ">
                                                     <rect key="frame" x="5" y="8" width="58" height="58"/>
                                                 </imageView>
@@ -1532,6 +1521,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="eaV-m5-RwJ" id="sn7-8H-Uvi"/>
                                             <outlet property="label" destination="uNA-JZ-fpO" id="cZS-tP-I8g"/>
+                                            <segue destination="BuH-HC-ubf" kind="push" id="s0w-7d-GGm"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

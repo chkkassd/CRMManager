@@ -21,6 +21,6 @@
 @dynamic sex;
 @dynamic belongManager;
 @dynamic allContactRecords;
-@dynamic allBusiness;
+@dynamic business;
 
 @end

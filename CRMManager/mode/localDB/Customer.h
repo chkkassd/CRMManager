@@ -10,6 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @class Product;
+@class Business;
 
 @interface Customer : NSManagedObject
 
@@ -23,7 +24,7 @@
 
 @property (nonatomic, retain) NSManagedObject * belongManager;
 @property (nonatomic, retain) NSSet * allContactRecords;
-@property (nonatomic, retain) NSSet * allBusiness;
+@property (nonatomic, retain) Business * business;
 @end
 
 @interface Customer (CoreDataGeneratedAccessors)

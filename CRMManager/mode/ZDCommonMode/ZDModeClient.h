@@ -16,11 +16,14 @@
 #import "ZDProduct.h"
 #import "ZDProductDetail.h"
 #import "AllCustomerCategoryHeaders.h"
+#import "ZDBusiness.h"
+#import "ZDBusinessList.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
 #define ZDUpdateManagerUserNotification  @"UpdateManagerUserNotification"
 #define ZDUpdateCustomersNotification  @"UpdateCustomersNotification"
 #define ZDUpdateContactRecordsNotification  @"UpdateContactRecordsNotification"
+#define ZDUpdateBusinessAndBusinessListsNotification  @"UpdateBusinessAndBusinessListsNotification"
 
 @interface ZDModeClient : NSObject
 

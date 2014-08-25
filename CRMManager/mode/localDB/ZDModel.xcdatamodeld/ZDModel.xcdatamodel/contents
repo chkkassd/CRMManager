@@ -7,7 +7,23 @@
         <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recoverableAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="businessBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allBusiness" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="allBusinessLists" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BusinessList" inverseName="belongBusiness" inverseEntity="BusinessList" syncable="YES"/>
+        <relationship name="businessBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="business" inverseEntity="Customer" syncable="YES"/>
+    </entity>
+    <entity name="BusinessList" representedClassName="BusinessList" syncable="YES">
+        <attribute name="billDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contractNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="investAmt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lendingNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="loanValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="managementFeeDiscount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="managementFeeRate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pattern" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="belongBusiness" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Business" inverseName="allBusinessLists" inverseEntity="Business" syncable="YES"/>
     </entity>
     <entity name="ContactRecord" representedClassName="ContactRecord" syncable="YES">
         <attribute name="contactNum" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,9 +46,9 @@
         <attribute name="idNum" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="allBusiness" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
+        <relationship name="business" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
@@ -92,11 +108,12 @@
         <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Business" positionX="-513" positionY="-468" width="128" height="148"/>
+        <element name="Business" positionX="-513" positionY="-468" width="128" height="163"/>
         <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
         <element name="Customer" positionX="-531" positionY="-718" width="128" height="193"/>
         <element name="ManagerUser" positionX="-722" positionY="-711" width="128" height="148"/>
         <element name="Product" positionX="-684" positionY="89" width="128" height="118"/>
         <element name="ProductDetail" positionX="-864" positionY="-423" width="128" height="628"/>
+        <element name="BusinessList" positionX="-272" positionY="-459" width="128" height="238"/>
     </elements>
 </model>

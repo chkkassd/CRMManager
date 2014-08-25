@@ -18,5 +18,6 @@
 @dynamic accountTotal;
 @dynamic recoverableAmount;
 @dynamic businessBelongCustomer;
+@dynamic allBusinessLists;
 
 @end

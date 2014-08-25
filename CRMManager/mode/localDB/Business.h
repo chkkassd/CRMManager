@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSString * productType;
 @property (nonatomic, retain) NSString * accountTotal;
 @property (nonatomic, retain) NSString * recoverableAmount;
+
 @property (nonatomic, retain) Customer * businessBelongCustomer;
+@property (nonatomic, retain) NSSet * allBusinessLists;
 
 @end

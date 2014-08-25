@@ -68,7 +68,7 @@
     [sheet showFromTabBar:self.tabBarController.tabBar];
 }
 
-- (NSArray *)sortedByHope:(int)hope
+- (NSArray *)sortedByHope:(NSInteger)hope
 {
     switch (hope) {
         case 0:

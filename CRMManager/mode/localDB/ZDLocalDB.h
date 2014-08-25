@@ -18,6 +18,10 @@
 #import "ZDCustomer.h"
 #import "ContactRecord.h"
 #import "ZDContactRecord.h"
+#import "Business.h"
+#import "BusinessList.h"
+#import "ZDBusiness.h"
+#import "ZDBusinessList.h"
 
 @interface ZDLocalDB : NSObject
 
@@ -38,6 +42,9 @@
 - (BOOL)saveCustomerWith:(ZDCustomer *)zdCustomer error:(NSError **)error;
 - (BOOL)saveMuchContractRecordsWith:(NSArray *)contractRecords error:(NSError *__autoreleasing *)error;
 - (BOOL)saveContactRecordWith:(ZDContactRecord *)zdContactRecord error:(NSError *__autoreleasing *)error;
+- (BOOL)saveBusinessWith:(ZDBusiness *)zdBusiness error:(NSError *__autoreleasing *)error;
+- (BOOL)saveBusinessList:(ZDBusinessList *)zdBusinessList error:(NSError *__autoreleasing *)error;
+- (BOOL)saveMuchBusinessList:(NSArray *)zdBusinessLists error:(NSError *__autoreleasing *)error;
 //delete
 - (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error;
 - (BOOL)deleteOneContactRecordWithReocrdId:(NSString *)recordid error:(NSError **)error;

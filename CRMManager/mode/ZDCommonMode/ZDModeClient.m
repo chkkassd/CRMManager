@@ -10,8 +10,6 @@
 
 @interface ZDModeClient()
 
-@property (nonatomic) int defaultCount;
-
 @end
 
 @implementation ZDModeClient
@@ -43,8 +41,9 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
-                        self.defaultCount = 0;
                         [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+                        //5.获取并保存所有客户的business
+                        [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
                     } else {
                         NSLog(@"保存customers失败");
                     }
@@ -158,22 +157,130 @@
 //get and save all records
 - (void)fetchAndSaveAllContractRecordsWithAllCustomers:(NSArray *)customers
 {
-    if (self.defaultCount < customers.count) {
+    if (!customers.count) return;
+    
+    __block int count = 0;
+    for (ZDCustomer * customer in customers) {
         [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid
-                                                 CustomerId:[customers[self.defaultCount] customerId]
+                                                 CustomerId:[customer customerId]
                                           completionHandler:^(NSError *error) {
-            if (!error) {
-                NSLog(@"保存 customer:%@的record成功",[customers[self.defaultCount] customerId]);
-                self.defaultCount++;
-                [self fetchAndSaveAllContractRecordsWithAllCustomers:customers];
-            } else {
-                NSLog(@"保存 customer:%@的record失败",[customers[self.defaultCount] customerId]);
-            }
-        }];
-    } else {
-        //获取并保存完所有records后，发送更新records的通知
-        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
+                                              if (!error) {
+                                                  NSLog(@"save record of customerid:%@ success",customer.customerId);
+                                              } else {
+                                                  NSLog(@"save record of customerid:%@ fail",customer.customerId);
+                                              }
+                                              if (++count == customers.count) {
+                                                  [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateContactRecordsNotification object:self];
+                                              }
+                                          }];
+
     }
+}
+
+// Get and save all business and businessList of all customers
+- (void)fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:(NSArray *)customers
+{
+    if (!customers.count) return;
+    
+    __block int count = 0;
+    for (ZDCustomer * customer in customers) {
+        [self fetchAndSaveBusinessAndBusinessListsWithZDCustomer:customer
+                                               completionHandler:^(NSError *error) {
+                                                   if (!error) {
+                                                       NSLog(@"save business and businessList of customerid:%@ success",customer.customerId);
+                                                   } else {
+                                                       NSLog(@"save business and businessList of customerid:%@ fail",customer.customerId);
+                                                   }
+                                                   if (++count == customers.count) {
+                                                       [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateBusinessAndBusinessListsNotification object:self];
+                                                   }
+        }];
+    }
+
+}
+
+//get and save business and businesslist
+
+- (void)fetchAndSaveBusinessAndBusinessListsWithZDCustomer:(ZDCustomer *)zdCustomer
+                               completionHandler:(void(^)(NSError * error))handler
+{
+    if (!zdCustomer.mobile.length) {
+        NSLog(@"this customer has no mobile");
+        handler(nil);
+    };
+    
+    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:zdCustomer.mobile
+                                                         andBusinessType:@"0"
+                                                       completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                           if (!error) {
+                                                               //拿到business数据
+                                                               ZDBusiness * zdBusiness = [self modifyZDBusinessFromInfoDic:resultDic];
+                                                               zdBusiness.customerId = zdCustomer.customerId;
+                                                               
+                                                               NSArray * businessLists = resultDic[@"businessList"];
+                                                               NSMutableArray * savedZDBusinessLists = [self modifyZDBusinessListsFromInfoArr:businessLists andZDCustomer:zdCustomer];
+                                                               
+                                                               if (savedZDBusinessLists.count) {
+                                                                   
+                                                                   if ([[ZDLocalDB sharedLocalDB] saveMuchBusinessList:savedZDBusinessLists error:nil] && [[ZDLocalDB sharedLocalDB] saveBusinessWith:zdBusiness error:nil]) {
+                                                                       handler(nil);
+                                                                   } else {
+                                                                       // 保存数据失败，一般不会进入该else
+                                                                       NSError* error = [[NSError alloc] init];
+                                                                       handler(error);
+                                                                   }
+                                                               } else {
+                                                                   if ([[ZDLocalDB sharedLocalDB] saveBusinessWith:zdBusiness error:nil]) {
+                                                                       handler(nil);
+                                                                   } else {
+                                                                       // 保存数据失败，一般不会进入该else
+                                                                       NSError* error = [[NSError alloc] init];
+                                                                       handler(error);
+                                                                   }
+                                                               }
+                                                           } else {
+                                                               //请求数据失败
+                                                               handler(error);
+                                                           }
+                                                       }];
+}
+
+- (ZDBusiness *)modifyZDBusinessFromInfoDic:(NSDictionary *)resultDic
+{
+    ZDBusiness * zdBusiness = [[ZDBusiness alloc] init];
+    zdBusiness.incomeTotal = resultDic[@"incomeTotal"];
+    zdBusiness.customerName = resultDic[@"customerName"];
+    zdBusiness.applyDate = resultDic[@"applyDate"];
+    zdBusiness.productType = resultDic[@"productType"];
+    zdBusiness.accountTotal = resultDic[@"accountTotal"];
+    zdBusiness.recoverableAmount = resultDic[@"recoverableAmount"];
+    return zdBusiness;
+}
+
+- (NSMutableArray *)modifyZDBusinessListsFromInfoArr:(NSArray *)businessLists andZDCustomer:(ZDCustomer *)zdCustomer
+{
+    if (!businessLists.count) return nil;
+    
+    NSMutableArray * savedBusinessLists = [[NSMutableArray alloc] init];
+    for (int i = 0; i < businessLists.count; i++) {
+        ZDBusinessList * zdBusinessList = [[ZDBusinessList alloc] init];
+        NSDictionary * dic = businessLists[i];
+        zdBusinessList.status = dic[@"status"];
+        zdBusinessList.managementFeeDiscount = dic[@"managementFeeDiscount"];
+        zdBusinessList.billDate = dic[@"billDate"];
+        zdBusinessList.startDate = dic[@"startDate"];
+        zdBusinessList.loanValue = dic[@"loanValue"];
+        zdBusinessList.pattern = dic[@"pattern"];
+        zdBusinessList.managementFeeRate = dic[@"managementFeeRate"];
+        zdBusinessList.incomeTotal = dic[@"incomeTotal"];
+        zdBusinessList.endDate = dic[@"endDate"];
+        zdBusinessList.investAmt = dic[@"investAmt"];
+        zdBusinessList.lendingNo = dic[@"lendingNo"];
+        zdBusinessList.contractNo = dic[@"contractNo"];
+        zdBusinessList.customerId = zdCustomer.customerId;
+        [savedBusinessLists addObject:zdBusinessList];
+    }
+    return savedBusinessLists;
 }
 
 //刷新customer数据

@@ -32,6 +32,9 @@
 		6724CB7F1994B26600E1C058 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB7D1994B26600E1C058 /* InfoPlist.strings */; };
 		6724CB811994B26600E1C058 /* CRMManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB801994B26600E1C058 /* CRMManagerTests.m */; };
 		6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CBA11994BD6A00E1C058 /* NSString+Tony.m */; };
+		67984DF819AAD2F400F24D3E /* BusinessList.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DF719AAD2F400F24D3E /* BusinessList.m */; };
+		67984DFB19AAD8BA00F24D3E /* ZDBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */; };
+		67984DFE19AAD99300F24D3E /* ZDBusinessList.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DFD19AAD99300F24D3E /* ZDBusinessList.m */; };
 		67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */; };
 		67B457D819A5E30000C89859 /* GSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D519A5E30000C89859 /* GSReachability.m */; };
 		67B457D919A5E30000C89859 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D719A5E30000C89859 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -120,6 +123,12 @@
 		6724CBA01994BD6A00E1C058 /* NSString+Tony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tony.h"; sourceTree = "<group>"; };
 		6724CBA11994BD6A00E1C058 /* NSString+Tony.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tony.m"; sourceTree = "<group>"; };
 		6724CBA31994BDBC00E1C058 /* AllCustomerCategoryHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllCustomerCategoryHeaders.h; sourceTree = "<group>"; };
+		67984DF619AAD2F400F24D3E /* BusinessList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusinessList.h; sourceTree = "<group>"; };
+		67984DF719AAD2F400F24D3E /* BusinessList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusinessList.m; sourceTree = "<group>"; };
+		67984DF919AAD8BA00F24D3E /* ZDBusiness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBusiness.h; sourceTree = "<group>"; };
+		67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBusiness.m; sourceTree = "<group>"; };
+		67984DFC19AAD99300F24D3E /* ZDBusinessList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBusinessList.h; sourceTree = "<group>"; };
+		67984DFD19AAD99300F24D3E /* ZDBusinessList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBusinessList.m; sourceTree = "<group>"; };
 		67B457D019A58F8400C89859 /* ZDCustomerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerTableViewController.h; sourceTree = SOURCE_ROOT; };
 		67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerTableViewController.m; sourceTree = SOURCE_ROOT; };
 		67B457D419A5E30000C89859 /* GSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSReachability.h; sourceTree = "<group>"; };
@@ -473,6 +482,8 @@
 				67B7013D199B607F0061C345 /* ContactRecord.m */,
 				67C39A641998A89E00D796EA /* Business.h */,
 				67C39A651998A89E00D796EA /* Business.m */,
+				67984DF619AAD2F400F24D3E /* BusinessList.h */,
+				67984DF719AAD2F400F24D3E /* BusinessList.m */,
 				FF8F1A99199611B40062B71C /* Product.h */,
 				FF8F1A9A199611B40062B71C /* Product.m */,
 				FF8F1AA2199611B50062B71C /* ProductDetail.h */,
@@ -503,12 +514,16 @@
 				FF8F1AAC199755520062B71C /* ZDManagerUser.m */,
 				FF8F1AAE199755A10062B71C /* ZDCustomer.h */,
 				FF8F1AAF199755A10062B71C /* ZDCustomer.m */,
+				67B7013F199B61970061C345 /* ZDContactRecord.h */,
+				67B70140199B61970061C345 /* ZDContactRecord.m */,
 				FF8F1AB1199755D10062B71C /* ZDProduct.h */,
 				FF8F1AB2199755D10062B71C /* ZDProduct.m */,
 				FF8F1AB4199756320062B71C /* ZDProductDetail.h */,
 				FF8F1AB5199756320062B71C /* ZDProductDetail.m */,
-				67B7013F199B61970061C345 /* ZDContactRecord.h */,
-				67B70140199B61970061C345 /* ZDContactRecord.m */,
+				67984DF919AAD8BA00F24D3E /* ZDBusiness.h */,
+				67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */,
+				67984DFC19AAD99300F24D3E /* ZDBusinessList.h */,
+				67984DFD19AAD99300F24D3E /* ZDBusinessList.m */,
 			);
 			path = ZDCommonMode;
 			sourceTree = "<group>";
@@ -621,6 +636,7 @@
 				67BAA92119A2E650005671A8 /* ZDAddAndEditeViewController.m in Sources */,
 				18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */,
 				FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */,
+				67984DF819AAD2F400F24D3E /* BusinessList.m in Sources */,
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				67B70141199B61970061C345 /* ZDContactRecord.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
@@ -642,6 +658,7 @@
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
 				FF8F1A9B199611B40062B71C /* Product.m in Sources */,
 				FF8F1A9E199611B50062B71C /* Customer.m in Sources */,
+				67984DFE19AAD99300F24D3E /* ZDBusinessList.m in Sources */,
 				FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */,
 				67B457D819A5E30000C89859 /* GSReachability.m in Sources */,
 				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
@@ -658,6 +675,7 @@
 				18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
 				18861913199C0B09007635FC /* UIImage+Tab.m in Sources */,
+				67984DFB19AAD8BA00F24D3E /* ZDBusiness.m in Sources */,
 				FF8F1AB3199755D10062B71C /* ZDProduct.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
 				FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */,
