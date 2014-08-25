@@ -44,7 +44,11 @@
 
 - (NSURL *)URLForGetAllBusinessWithCustomer
 {
-    return [NSURL URLWithString:@"http://172.16.6.108:8060/hera/credit/queryBusiness"];
+//    return [NSURL URLWithString:@"http://172.16.6.108:8060/hera/credit/queryBusiness"];//172.16.55.241.
+    
+    return [NSURL URLWithString:@"http://172.16.55.241:8080/hera/credit/queryBusiness"];//172.16.55.241.
+
+    
     //https://172.16.230.190:8443/hera/
     //https://api.ezendai.com/hera/
 }
