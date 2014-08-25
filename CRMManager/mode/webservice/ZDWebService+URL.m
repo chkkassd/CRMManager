@@ -9,10 +9,10 @@
 #import "ZDWebService+URL.h"
 
 #define API_Base @"https://api.ezendai.com/hera/manageraccount/"
-#define API_Chance @"http://172.16.6.108:8060/hera/manageraccount/"
+//#define API_Chance @"http://172.16.6.108:8060/hera/manageraccount/"
 //http://172.16.230.187:9106/uc-server/index    用户名\密码 ：  admin\123456
 
-//#define API_Chance @"http://121.199.0.190:8080/hera2/manageraccount/"
+#define API_Chance @"http://121.199.0.190:8080/hera2/manageraccount/"
 
 
 @implementation ZDWebService (URL)
@@ -46,7 +46,7 @@
 {
 //    return [NSURL URLWithString:@"http://172.16.6.108:8060/hera/credit/queryBusiness"];//172.16.55.241.
     
-    return [NSURL URLWithString:@"http://172.16.55.241:8080/hera/credit/queryBusiness"];//172.16.55.241.
+    return [NSURL URLWithString:@"http://121.199.0.190:8080/hera3/credit/queryBusiness"];//172.16.55.241.
 
     
     //https://172.16.230.190:8443/hera/
