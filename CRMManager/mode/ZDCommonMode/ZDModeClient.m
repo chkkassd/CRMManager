@@ -220,24 +220,22 @@
                                                                NSArray * businessLists = resultDic[@"businessList"];
                                                                NSMutableArray * savedZDBusinessLists = [self modifyZDBusinessListsFromInfoArr:businessLists andZDCustomer:zdCustomer];
                                                                
-                                                               if (savedZDBusinessLists.count) {
-                                                                   
-                                                                   if ([[ZDLocalDB sharedLocalDB] saveMuchBusinessList:savedZDBusinessLists error:nil] && [[ZDLocalDB sharedLocalDB] saveBusinessWith:zdBusiness error:nil]) {
-                                                                       handler(nil);
-                                                                   } else {
-                                                                       // 保存数据失败，一般不会进入该else
-                                                                       NSError* error = [[NSError alloc] init];
-                                                                       handler(error);
+                                                               if ([[ZDLocalDB sharedLocalDB] saveBusinessWith:zdBusiness error:nil]) {
+                                                                   if (businessLists.count) {
+                                                                       if ([[ZDLocalDB sharedLocalDB] saveMuchBusinessList:savedZDBusinessLists error:NULL]) {
+                                                                           handler(nil);
+                                                                       } else {
+                                                                           //保存失败
+                                                                           NSError * error = [[NSError alloc] init];
+                                                                           handler(error);
+                                                                       }
                                                                    }
                                                                } else {
-                                                                   if ([[ZDLocalDB sharedLocalDB] saveBusinessWith:zdBusiness error:nil]) {
-                                                                       handler(nil);
-                                                                   } else {
-                                                                       // 保存数据失败，一般不会进入该else
-                                                                       NSError* error = [[NSError alloc] init];
-                                                                       handler(error);
-                                                                   }
+                                                                   //保存失败
+                                                                   NSError * error = [[NSError alloc] init];
+                                                                   handler(error);
                                                                }
+                                                               
                                                            } else {
                                                                //请求数据失败
                                                                handler(error);

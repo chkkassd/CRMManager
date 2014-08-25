@@ -25,7 +25,7 @@
                   symbolName = "-[ZDChanceCustomerDetailViewController tableView:commitEditingStyle:forRowAtIndexPath:]"
                   moduleName = "CRMManager"
                   urlString = "file://localhost/Users/shisaifeng/Desktop/CRMManager/CRMManager/controller/chance/ZDChanceCustomerDetailViewController.m"
-                  timestampString = "430651592.440893"
+                  timestampString = "430653470.425225"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -39,7 +39,7 @@
                   symbolName = "__87-[ZDChanceCustomerDetailViewController tableView:commitEditingStyle:forRowAtIndexPath:]_block_invoke"
                   moduleName = "CRMManager"
                   urlString = "file://localhost/Users/shisaifeng/Desktop/CRMManager/CRMManager/controller/chance/ZDChanceCustomerDetailViewController.m"
-                  timestampString = "430651592.441193"
+                  timestampString = "430653470.425476"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "430646523.378018"
+            timestampString = "430653470.148105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
             landmarkName = "-deleteContactRecordWithCustomerId:recordId:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -72,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "430646523.378018"
+            timestampString = "430653470.148105"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
             landmarkName = "-deleteContactRecordWithCustomerId:recordId:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
@@ -103,61 +103,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "430651478.70641"
+            filePath = "CRMManager/mode/localDB/ZDLocalDB.m"
+            timestampString = "430652908.40417"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
-            landmarkName = "-fetchAndSaveBusinessAndBusinessListsWithZDCustomer:completionHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/webservice/ZDWebService.m"
-            timestampString = "430651603.642256"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "286"
-            endingLineNumber = "286"
-            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/webservice/ZDWebService.m"
-            timestampString = "430651606.232456"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "430651946.034506"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "-fetchAndSaveBusinessAndBusinessListsWithZDCustomer:completionHandler:"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "-queryAllBusinessListsWithCustomerId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -168,12 +120,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/localDB/ZDLocalDB.m"
-            timestampString = "430651977.403605"
+            timestampString = "430652928.970314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-queryBusinessWithCustomerId:"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "-queryAllBusinessListsWithCustomerId:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
