@@ -50,6 +50,7 @@
 //delete
 - (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error;
 - (BOOL)deleteOneContactRecordWithReocrdId:(NSString *)recordid error:(NSError **)error;
+- (BOOL)deleteManagerUserWithUserId:(NSString *)userid error:(NSError **)error;
 //单例
 + (ZDLocalDB *)sharedLocalDB;
 
