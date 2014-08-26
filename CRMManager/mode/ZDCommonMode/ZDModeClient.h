@@ -34,6 +34,7 @@
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;//当前使用用户
 @property (strong, nonatomic) NSArray * allZDCustomers;//当前manager的所有customers
 @property (strong, nonatomic) NSArray * allZDChanceCustomers;//当前manager的所有chanceCustomers
+@property (strong, nonatomic) NSArray * allZDCurrentCustomers;// 当前manager的所有非储备客户，正在做业务的客户或者老客户
 
 //查找得到一个zdcustomer
 - (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid;

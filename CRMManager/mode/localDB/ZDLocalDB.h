@@ -34,6 +34,7 @@
 - (ZDCustomer *)queryZDCustomerWithCustomerId:(NSString *)customerid;
 - (NSArray *)queryAllZDCustomersOfCurrentManager;
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager;
+- (NSArray *)queryAllZDCurrentCustomersOfCurrentManager;
 - (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid;
 - (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid;
 //modify and save

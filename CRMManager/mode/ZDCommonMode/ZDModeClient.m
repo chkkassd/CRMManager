@@ -41,7 +41,7 @@
                 [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
                     if (!error) {
                         //4.获取并保存所有客户的联系记录
-//                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                         //5.获取并保存所有客户的business
                         [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
                     } else {
@@ -534,6 +534,11 @@
     _allZDChanceCustomers = [[ZDLocalDB sharedLocalDB] queryAllZDChanceCustomersOfCurrentManager];
     
     return _allZDChanceCustomers;
+}
+
+- (NSArray *)allZDCurrentCustomers
+{
+    return [[ZDLocalDB sharedLocalDB] queryAllZDCurrentCustomersOfCurrentManager];    
 }
 
 #pragma mark - sharedInstance

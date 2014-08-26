@@ -186,6 +186,18 @@
     return nil;
 }
 
+//查找非储备客户
+- (NSArray *)queryAllZDCurrentCustomersOfCurrentManager
+{
+    NSArray * allZDCustomers = [self queryAllZDCustomersOfCurrentManager];
+    if (allZDCustomers) {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"customerType != %@", @"1"];
+        NSArray* allZDCurrentCustomers = [allZDCustomers filteredArrayUsingPredicate:predicate];
+        return allZDCurrentCustomers;
+    }
+    return nil;
+}
+
 //查找Zdcustomer类型的所有机会客户
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager
 {
@@ -222,17 +234,6 @@
 //查找business
 - (Business *)queryBusinessWithCustomerId:(NSString *)customerid
 {
-//    Business * business = nil;
-//    NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Business"];
-//    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"businessBelongCustomer.customerId == %@",customerid];
-//    
-//    NSError * error = nil;
-//    NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    if (fetchResult.count) {
-//        business = fetchResult[0];
-//    } else {
-//        NSLog(@"fail to fetch business of customer:%@ from db",customerid);
-//    }
     Customer * customer = [self queryCustomerWithCustomerId:customerid];
     if (customer) {
         if (customer.business) {
