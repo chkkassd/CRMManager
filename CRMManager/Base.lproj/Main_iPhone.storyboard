@@ -754,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pd-8j-gEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="-348"/>
+            <point key="canvasLocation" x="2156" y="-336"/>
         </scene>
         <!--Navigation Controller - 客户-->
         <scene sceneID="YHh-ZU-gWX">
@@ -1936,16 +1936,17 @@
                     <connections>
                         <outlet property="tableView" destination="BLq-jh-xpt" id="oI3-aH-cJZ"/>
                         <segue destination="mQD-Uy-n2o" kind="push" id="DNw-LD-fRy"/>
+                        <segue destination="A16-8d-QTl" kind="push" id="nKv-w6-mbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RB-Uc-Lm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1492" y="356"/>
         </scene>
-        <!--View Controller-->
+        <!--Customer Record List View Controller-->
         <scene sceneID="C6y-nv-whe">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="mQD-Uy-n2o" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="mQD-Uy-n2o" customClass="ZDCustomerRecordListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hN3-bu-6pR"/>
                         <viewControllerLayoutGuide type="bottom" id="pvB-FT-2hX"/>
@@ -1967,9 +1968,6 @@
                                             <constraint firstAttribute="height" constant="93" id="AU2-bR-Yvh"/>
                                             <constraint firstAttribute="width" constant="93" id="NWD-pT-gAD"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="j8W-Vo-nY0" appends="YES" id="rqm-H9-yBX"/>
-                                        </connections>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j95-gV-uiQ">
                                         <rect key="frame" x="20" y="178" width="280" height="27"/>
@@ -2101,9 +2099,6 @@
                             <constraint firstItem="ikf-yL-3Al" firstAttribute="top" secondItem="Hmn-dJ-SEQ" secondAttribute="top" id="sqe-KR-xI6"/>
                             <constraint firstItem="LZc-lv-Jt3" firstAttribute="top" secondItem="hN3-bu-6pR" secondAttribute="bottom" id="sre-jy-YwH"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="P5a-Lh-7Fm" appends="YES" id="0Lk-TW-R3W"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="s9M-ua-gqK"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -2115,18 +2110,160 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffh-mK-6Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="P5a-Lh-7Fm">
+            </objects>
+            <point key="canvasLocation" x="2156" y="356"/>
+        </scene>
+        <!--Customer Detail View Controller-->
+        <scene sceneID="Avn-lp-sxy">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="A16-8d-QTl" customClass="ZDCustomerDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="41Y-x2-bwU"/>
+                        <viewControllerLayoutGuide type="bottom" id="eUB-zY-RWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OEw-0o-Vfm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-H1-xwp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-yb-rlU" userLabel="contain view">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aaa-L2-4cY" userLabel="line view">
+                                                <rect key="frame" x="0.0" y="56" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHv-p9-Z3a" userLabel="line view">
+                                                <rect key="frame" x="0.0" y="113" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CpK-oy-gpa" userLabel="line view">
+                                                <rect key="frame" x="0.0" y="170" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUi-Rc-APf" userLabel="line view">
+                                                <rect key="frame" x="0.0" y="226" width="320" height="1"/>
+                                                <color key="backgroundColor" red="0.82352941180000006" green="0.82352941180000006" blue="0.82352941180000006" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="手机号码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RB-Vj-FF8">
+                                                <rect key="frame" x="20" y="12" width="76" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="姓名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-pJ-3VG">
+                                                <rect key="frame" x="20" y="69" width="76" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="性别" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCb-WZ-ObH">
+                                                <rect key="frame" x="20" y="126" width="76" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="意愿" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kz-iV-QQ4">
+                                                <rect key="frame" x="20" y="182" width="76" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="备注" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2N-Fs-zuj">
+                                                <rect key="frame" x="20" y="235" width="76" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-Ht-6bt">
+                                                <rect key="frame" x="104" y="14" width="196" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORu-T9-QEL">
+                                                <rect key="frame" x="104" y="71" width="196" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-t7-cFs">
+                                                <rect key="frame" x="104" y="122" width="196" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="男">
+                                                    <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sexButtonPressed:" destination="A16-8d-QTl" eventType="touchUpInside" id="mZl-qT-cNZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iro-lX-gu3">
+                                                <rect key="frame" x="104" y="179" width="196" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="感兴趣">
+                                                    <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hopeButtonPressed:" destination="A16-8d-QTl" eventType="touchUpInside" id="ehr-HX-pyq"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_currentClient_go" translatesAutoresizingMaskIntoConstraints="NO" id="lO7-92-EVW">
+                                                <rect key="frame" x="300" y="135" width="15" height="15"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_currentClient_go" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-CE-EpS">
+                                                <rect key="frame" x="300" y="191" width="15" height="15"/>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-Wj-c78">
+                                                <rect key="frame" x="0.0" y="276" width="320" height="228"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="opy-WZ-60h" appends="YES" id="DXa-6m-boF"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FmF-H1-xwp" firstAttribute="leading" secondItem="OEw-0o-Vfm" secondAttribute="leading" id="3cj-CJ-X9Q"/>
+                            <constraint firstAttribute="trailing" secondItem="FmF-H1-xwp" secondAttribute="trailing" id="MUx-0b-FoE"/>
+                            <constraint firstAttribute="bottom" secondItem="FmF-H1-xwp" secondAttribute="bottom" id="QGY-bP-qma"/>
+                            <constraint firstItem="FmF-H1-xwp" firstAttribute="top" secondItem="41Y-x2-bwU" secondAttribute="bottom" id="V4o-Z1-SiS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mkq-WC-F0h">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="cd1-P5-gQr">
+                            <connections>
+                                <action selector="finishButtonPressed:" destination="A16-8d-QTl" id="U4i-3O-DT2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <action selector="swipeBack:" destination="mQD-Uy-n2o" id="TEW-PF-3WY"/>
+                        <outlet property="hopeButton" destination="iro-lX-gu3" id="FIy-7c-Iy3"/>
+                        <outlet property="mobileTextField" destination="kKQ-Ht-6bt" id="fT0-I4-76l"/>
+                        <outlet property="nameTextField" destination="ORu-T9-QEL" id="xdc-zf-Yx2"/>
+                        <outlet property="scrollView" destination="FmF-H1-xwp" id="Sy3-wX-5HL"/>
+                        <outlet property="sexButton" destination="UZu-t7-cFs" id="JwR-Fr-1bO"/>
+                        <outlet property="textView" destination="Ty0-Wj-c78" id="5Ox-vP-IZ6"/>
                     </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="j8W-Vo-nY0">
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vd-7n-tJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="opy-WZ-60h">
                     <connections>
-                        <action selector="tapHeadImageView:" destination="mQD-Uy-n2o" id="xUN-rc-6xb"/>
+                        <action selector="hideKeyBoard:" destination="A16-8d-QTl" id="3Ut-Oy-Sbz"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2156" y="356"/>
+            <point key="canvasLocation" x="2156" y="1082"/>
         </scene>
     </scenes>
     <resources>
@@ -2155,7 +2292,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OnM-he-V73"/>
         <segue reference="fvB-jW-oHO"/>
+        <segue reference="OnM-he-V73"/>
     </inferredMetricsTieBreakers>
 </document>
