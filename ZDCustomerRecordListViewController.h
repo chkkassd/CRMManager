@@ -10,7 +10,7 @@
 
 @class ZDCustomer;
 
-@interface ZDCustomerRecordListViewController : UIViewController
+@interface ZDCustomerRecordListViewController : UITableViewController
 
 @property (strong, nonatomic) ZDCustomer * zdCustomer;
 

@@ -11,28 +11,12 @@
 
 @interface ZDCustomerRecordListViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * allRecords;
 @property (strong, nonatomic) ZDContactRecord * selectedRecord;
 
 @end
 
 @implementation ZDCustomerRecordListViewController
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController.navigationBar setHidden:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setHidden:NO];
-}
 
 #pragma mark - table view datasource
 
@@ -48,7 +32,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"customerDetail Cell" forIndexPath:indexPath];
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"record Cell" forIndexPath:indexPath];
 //    ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
 //    cell.textLabel.text = zdContactRecord.content;
 //    cell.detailTextLabel.text = zdContactRecord.contactTime;
