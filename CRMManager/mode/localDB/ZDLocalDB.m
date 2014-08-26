@@ -186,7 +186,7 @@
     return nil;
 }
 
-//查找非储备客户
+//查找Zdcustomer类型的所有非储备客户
 - (NSArray *)queryAllZDCurrentCustomersOfCurrentManager
 {
     NSArray * allZDCustomers = [self queryAllZDCustomersOfCurrentManager];

@@ -15,6 +15,7 @@
 @interface ZDCustomerTableViewController () <SSFLeftRightSwipeTableViewCellDelegate>
 
 @property (nonatomic, strong) NSArray * allCurrentCustomers;
+@property (nonatomic, strong) NSArray * filterdCurrentCustomers;
 @property (strong, nonatomic) ZDCustomer * selectedZDCustomer;
 
 @end
@@ -25,14 +26,58 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
+    
     [self.tableView registerNib:[UINib nibWithNibName:SSFLeftRightSwipe_TableViewCell bundle:nil] forCellReuseIdentifier:SSFLeftRightSwipe_TableViewCell];
+    [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:SSFLeftRightSwipe_TableViewCell bundle:nil] forCellReuseIdentifier:SSFLeftRightSwipe_TableViewCell];
+    
+    [self configureRefreshController];
+    self.allCurrentCustomers = [ZDModeClient sharedModeClient].allZDCurrentCustomers;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - methods
+
+- (void)updateCurrentCustomers:(NSNotification *)noti
+{
+    self.allCurrentCustomers = [ZDModeClient sharedModeClient].allZDCurrentCustomers;
+}
+
+- (void)configureRefreshController
+{
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshCustomerView) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)refreshCustomerView
+{
+    [[ZDModeClient sharedModeClient] refreshCustomersCompletionHandler:^(NSError *error) {
+        [self.refreshControl endRefreshing];
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        if (!error) {
+            self.allCurrentCustomers = [ZDModeClient sharedModeClient].allZDCurrentCustomers;
+            hud.labelText = @"刷新成功";
+        } else {
+            hud.labelText = @"刷新失败";
+        }
+        [hud hide:YES afterDelay:1];
+    }];
 }
 
 #pragma mark - UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.allCurrentCustomers.count;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return self.filterdCurrentCustomers.count;
+    } else {
+       return self.allCurrentCustomers.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -40,18 +85,18 @@
     SSFLeftRightSwipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:SSFLeftRightSwipe_TableViewCell forIndexPath:indexPath];
     cell.delegate = self;
     
-    ZDCustomer * customer = self.allCurrentCustomers[indexPath.row];
+    ZDCustomer * customer = [[ZDCustomer alloc] init];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        customer = self.filterdCurrentCustomers[indexPath.row];
+    } else {
+        customer = self.allCurrentCustomers[indexPath.row];
+    }
+    
     cell.label.text = customer.customerName;
     
-    NSString * interest = @"未分类";
-    if ([customer.cdHope isEqual: @"1"]) {
-        interest = @"强烈";
-    } else if ([customer.cdHope isEqual: @"2"]) {
-        interest = @"感兴趣";
-    } else if ([customer.cdHope isEqual: @"3"]) {
-        interest = @"一般";
-    }
-    cell.interestLabel.text = interest;
+    NSArray * businessLists = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:customer.customerId];
+    NSUInteger count = businessLists.count ? businessLists.count :0;
+    cell.interestLabel.text = [NSString stringWithFormat:@"共%d笔业务",(int)count];
     cell.headImageView.image = [UIImage headImageForZDCustomer:customer andIsBig:NO];
     
     return cell;
@@ -114,12 +159,11 @@
 }
 
 #pragma mark - Properties
-- (NSArray *)allCurrentCustomers
+
+- (void)setAllCurrentCustomers:(NSArray *)allCurrentCustomers
 {
-    if (!_allCurrentCustomers) {
-        _allCurrentCustomers = [ZDModeClient sharedModeClient].allZDCurrentCustomers;
-    }
-    return _allCurrentCustomers;
+    _allCurrentCustomers = allCurrentCustomers;
+    [self.tableView reloadData];
 }
 
 #pragma mark - Segue
@@ -130,6 +174,15 @@
         ZDCustomerListViewController * listViewController = segue.destinationViewController;
         listViewController.customer = self.selectedZDCustomer;
     }
+}
+
+#pragma mark - search display controller delegate
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
+    self.filterdCurrentCustomers = [self.allCurrentCustomers filteredArrayUsingPredicate:predicate];
+    return YES;
 }
 
 @end

@@ -174,16 +174,16 @@
     
     switch (self.segmentedControl.selectedIndex) {
         case 0:
-            cell.interestLabel.text = @"一般";
+            cell.interestLabel.text = @"意愿  一般";
             break;
         case 1:
-            cell.interestLabel.text = @"强烈";
+            cell.interestLabel.text = @"意愿  强烈";
             break;
         case 2:
-            cell.interestLabel.text = @"感兴趣";
+            cell.interestLabel.text = @"意愿  感兴趣";
             break;
         case 3:
-            cell.interestLabel.text = @"待归类";
+            cell.interestLabel.text = @"意愿  待归类";
             break;
         default:
             break;

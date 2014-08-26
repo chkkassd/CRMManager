@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZDModeClient.h"
 
-@interface ZDCustomerListViewController : UIViewController
+@interface ZDCustomerListViewController : UIViewController<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate>
 
 @property (nonatomic, strong) ZDCustomer * customer;
 
