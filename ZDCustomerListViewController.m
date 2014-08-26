@@ -8,6 +8,7 @@
 
 #import "ZDCustomerListViewController.h"
 #import "ZDCustomerListTableViewCell.h"
+#import "ZDCustomerBusinessTableViewController.h"
 
 @interface ZDCustomerListViewController ()
 
@@ -94,7 +95,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    if (indexPath.row == 0) {
+        [self performSegueWithIdentifier:@"Show Detail" sender:self];
+    } else if (indexPath.row == 2) {
+        [self performSegueWithIdentifier:@"Show Record" sender:self];
+    } else if (indexPath.row == 1) {
+        [self performSegueWithIdentifier:@"show business" sender:self];
+    }
 }
 
 #pragma mark - action sheet delegate
@@ -109,12 +116,13 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if (indexPath.row == 0) {
-        [self performSegueWithIdentifier:@"Show Detail" sender:self];
-    } else if (indexPath.row == 2) {
-        [self performSegueWithIdentifier:@"Show Record" sender:self];
+    if ([segue.identifier isEqualToString:@"show business"]) {
+        ZDCustomerBusinessTableViewController * zdCustomerBusinessTableViewController = segue.destinationViewController;
+        zdCustomerBusinessTableViewController.customer = self.customer;
     }
 }
 
