@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZDCustomerListTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView* imageViewFirst;
-@property (weak, nonatomic) IBOutlet UILabel* label;
+
+@property (weak, nonatomic) IBOutlet UIImageView * imageViewFirst;
+@property (weak, nonatomic) IBOutlet UILabel * label;
+
 @end
