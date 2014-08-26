@@ -1935,8 +1935,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="BLq-jh-xpt" id="oI3-aH-cJZ"/>
-                        <segue destination="mQD-Uy-n2o" kind="push" id="DNw-LD-fRy"/>
-                        <segue destination="A16-8d-QTl" kind="push" id="nKv-w6-mbU"/>
+                        <segue destination="mQD-Uy-n2o" kind="push" identifier="Show Record" id="DNw-LD-fRy"/>
+                        <segue destination="A16-8d-QTl" kind="push" identifier="Show Detail" id="nKv-w6-mbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9RB-Uc-Lm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1996,9 +1996,6 @@
                                         <state key="normal" image="customer_call">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="telephoneButtonPressed:" destination="mQD-Uy-n2o" eventType="touchUpInside" id="P1b-KC-d5V"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2029,9 +2026,6 @@
                                 <state key="normal" image="ico_header_add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="addButtonPressed:" destination="mQD-Uy-n2o" eventType="touchUpInside" id="5Hc-zB-hfX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZc-lv-Jt3">
                                 <rect key="frame" x="0.0" y="20" width="44" height="44"/>
@@ -2042,15 +2036,12 @@
                                 <state key="normal" image="ico_header_back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="backAction:" destination="mQD-Uy-n2o" eventType="touchUpInside" id="Ku7-Zk-zBM"/>
-                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bUs-A2-ece">
                                 <rect key="frame" x="0.0" y="265" width="320" height="303"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customerDetail Cell" textLabel="ifJ-WW-gvV" detailTextLabel="JVE-Ha-qqd" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="VkI-aH-BcJ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customerDetail Cell" textLabel="ifJ-WW-gvV" detailTextLabel="JVE-Ha-qqd" rowHeight="50" style="IBUITableViewCellStyleValue1" id="VkI-aH-BcJ">
                                         <rect key="frame" x="0.0" y="22" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VkI-aH-BcJ" id="LZl-LJ-Qdg">
@@ -2058,17 +2049,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ifJ-WW-gvV">
-                                                    <rect key="frame" x="15" y="6" width="34" height="22"/>
+                                                    <rect key="frame" x="15" y="14" width="33" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JVE-Ha-qqd">
-                                                    <rect key="frame" x="15" y="28" width="32" height="15"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JVE-Ha-qqd">
+                                                    <rect key="frame" x="241" y="14" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -2102,12 +2093,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="s9M-ua-gqK"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="headImageView" destination="Y7f-kI-Yh0" id="95x-Ey-iTY"/>
-                        <outlet property="mobileLabel" destination="xzL-iS-qI8" id="hXE-BS-D58"/>
-                        <outlet property="nameLabel" destination="j95-gV-uiQ" id="s8y-uS-zj9"/>
-                        <outlet property="tableView" destination="bUs-A2-ece" id="KAp-fB-Ccf"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffh-mK-6Ts" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2194,9 +2179,6 @@
                                                     <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="sexButtonPressed:" destination="A16-8d-QTl" eventType="touchUpInside" id="mZl-qT-cNZ"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iro-lX-gu3">
                                                 <rect key="frame" x="104" y="179" width="196" height="40"/>
@@ -2205,9 +2187,6 @@
                                                     <color key="titleColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
-                                                <connections>
-                                                    <action selector="hopeButtonPressed:" destination="A16-8d-QTl" eventType="touchUpInside" id="ehr-HX-pyq"/>
-                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_currentClient_go" translatesAutoresizingMaskIntoConstraints="NO" id="lO7-92-EVW">
                                                 <rect key="frame" x="300" y="135" width="15" height="15"/>
@@ -2227,9 +2206,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="opy-WZ-60h" appends="YES" id="DXa-6m-boF"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2240,28 +2216,9 @@
                             <constraint firstItem="FmF-H1-xwp" firstAttribute="top" secondItem="41Y-x2-bwU" secondAttribute="bottom" id="V4o-Z1-SiS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mkq-WC-F0h">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="cd1-P5-gQr">
-                            <connections>
-                                <action selector="finishButtonPressed:" destination="A16-8d-QTl" id="U4i-3O-DT2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="hopeButton" destination="iro-lX-gu3" id="FIy-7c-Iy3"/>
-                        <outlet property="mobileTextField" destination="kKQ-Ht-6bt" id="fT0-I4-76l"/>
-                        <outlet property="nameTextField" destination="ORu-T9-QEL" id="xdc-zf-Yx2"/>
-                        <outlet property="scrollView" destination="FmF-H1-xwp" id="Sy3-wX-5HL"/>
-                        <outlet property="sexButton" destination="UZu-t7-cFs" id="JwR-Fr-1bO"/>
-                        <outlet property="textView" destination="Ty0-Wj-c78" id="5Ox-vP-IZ6"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="mkq-WC-F0h"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vd-7n-tJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="opy-WZ-60h">
-                    <connections>
-                        <action selector="hideKeyBoard:" destination="A16-8d-QTl" id="3Ut-Oy-Sbz"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2156" y="1082"/>
         </scene>
