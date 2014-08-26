@@ -58,9 +58,14 @@
 {
     if (buttonIndex != alertView.cancelButtonIndex) {
         //退出,nsuserdefaults清除保存的当前uesrid
-        [[NSUserDefaults standardUserDefaults] setObject:Nil forKey:DefaultCurrentUserId];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+        if (self.presentingViewController) {
+            [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+        } else {
+            UIViewController* loginViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDLoginViewController"];
+            self.view.window.rootViewController = loginViewController;
+        }
     }
 }
 

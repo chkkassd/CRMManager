@@ -7,6 +7,7 @@
 //
 
 #import "ZDAppDelegate.h"
+#import "ZDModeClient.h"
 
 @implementation ZDAppDelegate
 
@@ -34,6 +35,14 @@
     //设置statusbar
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    NSString* userInfo = [[NSUserDefaults standardUserDefaults] stringForKey:DefaultCurrentUserId];
+    if (userInfo) {
+        // 已经登录过，直接呈现手势密码
+    }
 }
 
 @end

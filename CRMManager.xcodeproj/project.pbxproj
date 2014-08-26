@@ -10,6 +10,7 @@
 		1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578619A51F5600A76AE2 /* UIView+CCPlus.m */; };
 		1805578A19A55C1800A76AE2 /* ZDProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578919A55C1800A76AE2 /* ZDProductCell.m */; };
 		18861913199C0B09007635FC /* UIImage+Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 18861912199C0B09007635FC /* UIImage+Tab.m */; };
+		18BA9A1A19ABD6F00025D962 /* ZDNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA9A1919ABD6F00025D962 /* ZDNewFeatureViewController.m */; };
 		18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
 		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
@@ -85,6 +86,8 @@
 		1805578919A55C1800A76AE2 /* ZDProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductCell.m; sourceTree = SOURCE_ROOT; };
 		18861911199C0B09007635FC /* UIImage+Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tab.h"; sourceTree = "<group>"; };
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
+		18BA9A1819ABD6F00025D962 /* ZDNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewFeatureViewController.h; sourceTree = "<group>"; };
+		18BA9A1919ABD6F00025D962 /* ZDNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewFeatureViewController.m; sourceTree = "<group>"; };
 		18BFEECF19A50A5700644953 /* ZDAboutUsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutUsTableViewController.h; sourceTree = "<group>"; };
 		18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAboutUsTableViewController.m; sourceTree = "<group>"; };
 		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
@@ -210,6 +213,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18BA9A1719ABD6F00025D962 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				18BA9A1819ABD6F00025D962 /* ZDNewFeatureViewController.h */,
+				18BA9A1919ABD6F00025D962 /* ZDNewFeatureViewController.m */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		18E9F9901995B6F000E6DC8F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +347,7 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				18BA9A1719ABD6F00025D962 /* NewFeature */,
 				FF59822E199CFE760031D575 /* chance */,
 				FF59822F199CFE760031D575 /* customer */,
 				18E9F9901995B6F000E6DC8F /* Login */,
@@ -630,6 +643,7 @@
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
+				18BA9A1A19ABD6F00025D962 /* ZDNewFeatureViewController.m in Sources */,
 				67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
 				67B457D919A5E30000C89859 /* Reachability.m in Sources */,

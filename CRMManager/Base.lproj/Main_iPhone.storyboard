@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="Dpn-du-NPe">
             <objects>
-                <viewController id="guK-TN-hfS" customClass="ZDLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ZDLoginViewController" id="guK-TN-hfS" customClass="ZDLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Qh-ET-GM7"/>
                         <viewControllerLayoutGuide type="bottom" id="laz-nq-UHd"/>
