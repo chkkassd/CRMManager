@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ZDModeClient.h"
 
+@protocol ZDSettingViewControllerDelegate;
 @interface ZDSettingViewController : UITableViewController
+
+@property (weak, nonatomic) id <ZDSettingViewControllerDelegate> delegate;
 
 @end
 

@@ -60,7 +60,8 @@
         //若是正常退出，DefaultCurrentUserId清空，用户名和密码不清空,若非正常退出,DefaultCurrentUserId不清空
         [[NSUserDefaults standardUserDefaults] setObject:Nil forKey:DefaultCurrentUserId];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+//        [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+        [self.delegate settingViewControllerDidLoginOut:self];
     }
 }
 

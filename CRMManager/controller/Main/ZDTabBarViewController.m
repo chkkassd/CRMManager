@@ -10,21 +10,30 @@
 #import "ZDChanceViewController.h"
 #import "ZDGesturePasswordViewController.h"
 #import "AllCustomerCategoryHeaders.h"
+#import "ZDSettingViewController.h"
 
 #define DefaultEnterBackgroundTime  5.0
 
-@interface ZDTabBarViewController ()<ZDGesturePasswordViewControllerDelegate>
+@interface ZDTabBarViewController ()<ZDGesturePasswordViewControllerDelegate,ZDSettingViewControllerDelegate>
 
 @property (strong, nonatomic) NSDate * enterBackgroundDate;
 @property (strong, nonatomic) NSDate * enterForegroundDate;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
 @property (strong, nonatomic) Reachability * reachability;
 @property (strong, nonatomic) ZDChanceViewController * chanceViewController;
+@property (strong, nonatomic) ZDSettingViewController * settingViewController;
 
 @end
 
 @implementation ZDTabBarViewController
 
+- (void)awakeFromNib
+{
+    self.settingViewController = [[self.viewControllers[3] viewControllers] firstObject];
+    self.settingViewController.delegate = self;
+    
+    self.chanceViewController = [[self.viewControllers[0] viewControllers] firstObject];
+}
 
 - (void)viewDidLoad
 {
@@ -65,15 +74,6 @@
     return _reachability;
 }
 
-- (ZDChanceViewController *)chanceViewController
-{
-    if (!_chanceViewController) {
-        UINavigationController * nav = self.viewControllers[0];
-        _chanceViewController = (ZDChanceViewController *)[nav.viewControllers firstObject];
-    }
-    return _chanceViewController;
-}
-
 #pragma mark - methods
 
 - (void)enterBackground
@@ -106,6 +106,13 @@
 - (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller
 {
     [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma mark - ZDSettingview delegate
+
+- (void)settingViewControllerDidLoginOut:(ZDSettingViewController *)controller
+{
+    [self.customDelegate tabBarViewControllerDidLogOut:self];
 }
 
 #pragma mark - reachability 网络实时监测

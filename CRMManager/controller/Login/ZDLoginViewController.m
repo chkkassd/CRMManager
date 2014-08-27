@@ -11,7 +11,7 @@
 #import "ZDGesturePasswordViewController.h"
 #import "ZDTabBarViewController.h"
 
-@interface ZDLoginViewController ()<ZDGesturePasswordViewControllerDelegate>
+@interface ZDLoginViewController ()<ZDGesturePasswordViewControllerDelegate,ZDTabBarViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView * passwordView;
 @property (weak, nonatomic) IBOutlet UIButton * loginButton;
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;
+@property (nonatomic) BOOL isQuickLogin;
 
 @end
 
@@ -29,14 +30,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateManagerUser:) name:ZDUpdateManagerUserNotification object:[ZDModeClient sharedModeClient]];
+    
     NSString * userid = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
-//    NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
-//    NSString * defaultPassword = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultPassword];
     if (userid.length) {
         //非正常退出
+        self.isQuickLogin = YES;
+    } else self.isQuickLogin = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSString * userid = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
+    if (self.isQuickLogin) {
         [self presentToGesturePasswordView];
         [[ZDModeClient sharedModeClient] quickLoginWithManagerUserId:userid];
     }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - properties
@@ -57,6 +72,14 @@
 {
     _loginButton = loginButton;
     _loginButton.layer.cornerRadius = 4.0;
+}
+
+- (ZDManagerUser *)zdManagerUser
+{
+    if (!_zdManagerUser) {
+        _zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
+    }
+    return _zdManagerUser;
 }
 
 #pragma mark - Action
@@ -84,6 +107,18 @@
 
 }
 
+- (IBAction)hideKeyboard:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
+#pragma mark - methods
+
+- (void)updateManagerUser:(NSNotification *)noti
+{
+    self.zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
+}
+
 - (void)presentToGesturePasswordView
 {
     ZDGesturePasswordViewController * gesturePasswordViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDGesturePasswordViewController"];
@@ -94,6 +129,7 @@
 - (void)presentToMainView
 {
     ZDTabBarViewController * tabBarViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDTabBarViewController"];
+    tabBarViewController.customDelegate = self;
     [self presentViewController:tabBarViewController animated:YES completion:NULL];
 }
 
@@ -101,19 +137,22 @@
 
 - (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller
 {
+    self.isQuickLogin = NO;
     [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
         [self presentToMainView];
     }];
 }
 
-#pragma mark - properties
+#pragma mark - tabbar view delegate
 
-- (ZDManagerUser *)zdManagerUser
+- (void)tabBarViewControllerDidLogOut:(ZDTabBarViewController *)controller
 {
-    if (!_zdManagerUser) {
-        _zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
-    }
-    return _zdManagerUser;
+    [self dismissViewControllerAnimated:YES completion:^{
+        NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
+        NSString * defaultPassword = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultPassword];
+        self.nameTextField.text = defaultClientName;
+        self.passwordTextField.text = defaultPassword;
+    }];
 }
 
 - (IBAction)test:(id)sender

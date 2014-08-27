@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZDTabBarViewControllerDelegate;
+
 @interface ZDTabBarViewController : UITabBarController
+
+@property (weak, nonatomic) id <ZDTabBarViewControllerDelegate> customDelegate;
+
+@end
+
+@protocol ZDTabBarViewControllerDelegate <NSObject>
+
+- (void)tabBarViewControllerDidLogOut:(ZDTabBarViewController *)controller;
 
 @end

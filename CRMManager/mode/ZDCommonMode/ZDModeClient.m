@@ -314,7 +314,11 @@
 
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser
 {
-    return [[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:zdManageruser error:NULL];
+    if ([[ZDLocalDB sharedLocalDB] saveManagerUserWithZDManagerUser:zdManageruser error:NULL]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateManagerUserNotification object:self];
+        return YES;
+    }
+    return NO;
 }
 
 //新增储备客户
