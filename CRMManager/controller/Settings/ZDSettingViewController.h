@@ -12,3 +12,9 @@
 @interface ZDSettingViewController : UITableViewController
 
 @end
+
+@protocol ZDSettingViewControllerDelegate <NSObject>
+
+- (void)settingViewControllerDidLoginOut:(ZDSettingViewController *)controller;
+
+@end

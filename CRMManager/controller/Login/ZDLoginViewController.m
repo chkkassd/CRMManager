@@ -29,9 +29,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.nameTextField.text = @"zdcrm_system";
-    self.passwordTextField.text = @"123456";
-    
     NSString * userid = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
 //    NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
 //    NSString * defaultPassword = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultPassword];
