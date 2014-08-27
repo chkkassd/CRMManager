@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView * passwordView;
 @property (weak, nonatomic) IBOutlet UIButton * loginButton;
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;
+
 @property (nonatomic) BOOL isQuickLogin;
 
 @end

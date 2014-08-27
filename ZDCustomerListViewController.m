@@ -8,6 +8,7 @@
 
 #import "ZDCustomerListViewController.h"
 #import "ZDCustomerListTableViewCell.h"
+#import "ZDCustomerBusinessTableViewController.h"
 
 @interface ZDCustomerListViewController ()
 
@@ -108,6 +109,18 @@
         [self performSegueWithIdentifier:@"Show Detail" sender:self];
     } else if (indexPath.row == 2) {
         [self performSegueWithIdentifier:@"Show Record" sender:self];
+    } else if (indexPath.row == 1) {
+        [self performSegueWithIdentifier:@"show business" sender:self];
+    }
+}
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"show business"]) {
+        ZDCustomerBusinessTableViewController * customerBusinessTableViewController = segue.destinationViewController;
+        customerBusinessTableViewController.customer = self.customer;
     }
 }
 
