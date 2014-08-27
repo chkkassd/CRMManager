@@ -20,6 +20,8 @@
 #import "ZDBusinessList.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
+#define DefaultClientName   @"DefaultClientName"
+#define DefaultPassword     @"DefaultPassword"
 #define ZDUpdateManagerUserNotification  @"UpdateManagerUserNotification"
 #define ZDUpdateCustomersNotification  @"UpdateCustomersNotification"
 #define ZDUpdateContactRecordsNotification  @"UpdateContactRecordsNotification"
@@ -27,6 +29,8 @@
 
 @interface ZDModeClient : NSObject
 
+//快速登陆
+- (void)quickLoginWithManagerUserId:(NSString *)userid;
 //login
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler;
 

@@ -548,6 +548,17 @@
     return NO;
 }
 
+//delete managerUser
+- (BOOL)deleteManagerUserWithUserId:(NSString *)userid error:(NSError *__autoreleasing *)error
+{
+    ManagerUser * managerUser = [self queryManagerUserWithUserId:userid];
+    if (managerUser) {
+        [self.managedObjectContext deleteObject:managerUser];
+        return [self.managedObjectContext save:error];
+    }
+    return YES;
+}
+
 #pragma mark - coreData properties
 
 - (NSString *)defaultCurrentUserId

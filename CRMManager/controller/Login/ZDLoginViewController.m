@@ -31,6 +31,15 @@
     [super viewDidLoad];
     self.nameTextField.text = @"zdcrm_system";
     self.passwordTextField.text = @"123456";
+    
+    NSString * userid = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
+//    NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
+//    NSString * defaultPassword = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultPassword];
+    if (userid.length) {
+        //非正常退出
+        [self presentToGesturePasswordView];
+        [[ZDModeClient sharedModeClient] quickLoginWithManagerUserId:userid];
+    }
 }
 
 #pragma mark - properties
@@ -57,6 +66,9 @@
 
 - (IBAction)loginButtonPressed:(id)sender
 {
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.labelText = @"正在登陆,请稍后..";
     [[ZDModeClient sharedModeClient] loginWithUserName:self.nameTextField.text password:self.passwordTextField.text completionHandler:^(NSError *error) {
         if (!error) {
             if (!self.zdManagerUser.gesturePassword.length) {
@@ -67,8 +79,10 @@
                 [self presentToMainView];
             }
         } else {
+            hud.labelText = @"登陆失败,请稍后再试";
             NSLog(@"fail to login");
         }
+        [hud hide:YES afterDelay:1];
     }];
 
 }

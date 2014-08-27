@@ -15,6 +15,21 @@
 @implementation ZDModeClient
 
 #pragma mark - login and fetch data
+//快速登陆
+- (void)quickLoginWithManagerUserId:(NSString *)userid
+{
+    //3.获取并保存客户信息
+    [self fetchAndSaveCustomersWithManagerUserId:userid completionHandler:^(NSError *error) {
+        if (!error) {
+            //4.获取并保存所有客户的联系记录
+            [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+            //5.获取并保存所有客户的business
+            [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
+        } else {
+            NSLog(@"保存customers失败");
+        }
+    }];
+}
 
 //login and save all data
 - (void)loginWithUserName:(NSString *)userName password:(NSString *)password completionHandler:(void(^)(NSError *error))handler
@@ -25,33 +40,35 @@
         if (!error) {
             //登陆成功
             
-            //1.保存当前登录账号的userid
+            //1.保存当前登录账号的userid,账户名和密码
             [[NSUserDefaults standardUserDefaults] setObject:resultDic[@"id"] forKey:DefaultCurrentUserId];
+            [[NSUserDefaults standardUserDefaults] setObject:userName forKey:DefaultClientName];
+            [[NSUserDefaults standardUserDefaults] setObject:password forKey:DefaultPassword];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            //2.保存当前用户(managerUser)信息
-            managerUser.userid = resultDic[@"id"];
-            managerUser.password = password;
-            if ([[ZDLocalDB sharedLocalDB] loginSaveManagerUserWithZDManagerUser:managerUser error:NULL]) {
-                //发送更新manageruser的通知
-                [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateManagerUserNotification object:self];
-                //保存完managerUser进入下一界面
-                handler(nil);
-                
-                //3.获取并保存客户信息
-                [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
-                    if (!error) {
-                        //4.获取并保存所有客户的联系记录
-                        [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
-                        //5.获取并保存所有客户的business
-                        [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
-                    } else {
-                        NSLog(@"保存customers失败");
-                    }
-                }];
-            } else {
-                NSLog(@"保存managerUser失败");
-            }
             
+                //2.保存当前用户(managerUser)信息
+                managerUser.userid = resultDic[@"id"];
+                managerUser.password = password;
+                if ([[ZDLocalDB sharedLocalDB] loginSaveManagerUserWithZDManagerUser:managerUser error:NULL]) {
+                    //发送更新manageruser的通知
+                    [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateManagerUserNotification object:self];
+                    //保存完managerUser进入下一界面
+                    handler(nil);
+                    
+                    //3.获取并保存客户信息
+                    [self fetchAndSaveCustomersWithManagerUserId:managerUser.userid completionHandler:^(NSError *error) {
+                        if (!error) {
+                            //4.获取并保存所有客户的联系记录
+                            [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+                            //5.获取并保存所有客户的business
+                            [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
+                        } else {
+                            NSLog(@"保存customers失败");
+                        }
+                    }];
+                } else {
+                    NSLog(@"保存managerUser失败");
+                }
             
             
         } else {
