@@ -50,6 +50,12 @@
 		67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6D19AEB78600125917 /* ZDCustomerRecordListViewController.m */; };
 		67BD1F7419AEB78600125917 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */; };
 		67BD1F7719AEB7A500125917 /* ZDProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F7619AEB7A500125917 /* ZDProductCell.m */; };
+		67BD1F7A19AED48200125917 /* ZDAddressBookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F7919AED48200125917 /* ZDAddressBookTableViewController.m */; };
+		67BD1F7C19AED56800125917 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BD1F7B19AED56800125917 /* AddressBook.framework */; };
+		67BD1F7E19AED57200125917 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67BD1F7D19AED57200125917 /* AddressBookUI.framework */; };
+		67BD1F8119AF044900125917 /* ZDAddressBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F8019AF044900125917 /* ZDAddressBookTableViewCell.m */; };
+		67BD1F8519AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F8319AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m */; };
+		67BD1F8619AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67BD1F8419AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
 		67BE321419AC2B990030C32E /* ZDCustomerListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BE321319AC2B990030C32E /* ZDCustomerListTableViewCell.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
@@ -166,6 +172,15 @@
 		67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerTableViewController.m; sourceTree = "<group>"; };
 		67BD1F7519AEB7A500125917 /* ZDProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductCell.h; sourceTree = "<group>"; };
 		67BD1F7619AEB7A500125917 /* ZDProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductCell.m; sourceTree = "<group>"; };
+		67BD1F7819AED48200125917 /* ZDAddressBookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAddressBookTableViewController.h; sourceTree = "<group>"; };
+		67BD1F7919AED48200125917 /* ZDAddressBookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAddressBookTableViewController.m; sourceTree = "<group>"; };
+		67BD1F7B19AED56800125917 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		67BD1F7D19AED57200125917 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		67BD1F7F19AF044900125917 /* ZDAddressBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAddressBookTableViewCell.h; sourceTree = "<group>"; };
+		67BD1F8019AF044900125917 /* ZDAddressBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAddressBookTableViewCell.m; sourceTree = "<group>"; };
+		67BD1F8219AF252B00125917 /* ZDFilterdAddressBookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDFilterdAddressBookTableViewCell.h; sourceTree = "<group>"; };
+		67BD1F8319AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDFilterdAddressBookTableViewCell.m; sourceTree = "<group>"; };
+		67BD1F8419AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZDFilterdAddressBookTableViewCell.xib; sourceTree = "<group>"; };
 		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
 		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
 		67BE321219AC2B990030C32E /* ZDCustomerListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerListTableViewCell.h; sourceTree = "<group>"; };
@@ -221,6 +236,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67BD1F7E19AED57200125917 /* AddressBookUI.framework in Frameworks */,
+				67BD1F7C19AED56800125917 /* AddressBook.framework in Frameworks */,
 				6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */,
 				6724CB571994B26600E1C058 /* UIKit.framework in Frameworks */,
 				6724CB531994B26600E1C058 /* Foundation.framework in Frameworks */,
@@ -308,6 +325,8 @@
 		6724CB511994B26600E1C058 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				67BD1F7D19AED57200125917 /* AddressBookUI.framework */,
+				67BD1F7B19AED56800125917 /* AddressBook.framework */,
 				6724CB521994B26600E1C058 /* Foundation.framework */,
 				6724CB541994B26600E1C058 /* CoreGraphics.framework */,
 				6724CB561994B26600E1C058 /* UIKit.framework */,
@@ -396,6 +415,11 @@
 				67CD594A19ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.m */,
 				67CD594C19ADBCB100303317 /* ZDCustomerBusinessTableViewCellUnfold.h */,
 				67CD594D19ADBCB100303317 /* ZDCustomerBusinessTableViewCellUnfold.m */,
+				67BD1F7F19AF044900125917 /* ZDAddressBookTableViewCell.h */,
+				67BD1F8019AF044900125917 /* ZDAddressBookTableViewCell.m */,
+				67BD1F8219AF252B00125917 /* ZDFilterdAddressBookTableViewCell.h */,
+				67BD1F8319AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m */,
+				67BD1F8419AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -489,6 +513,8 @@
 				67BAA92019A2E650005671A8 /* ZDAddAndEditeViewController.m */,
 				67BAA92219A321DF005671A8 /* ZDRecordAddOrEditViewController.h */,
 				67BAA92319A321DF005671A8 /* ZDRecordAddOrEditViewController.m */,
+				67BD1F7819AED48200125917 /* ZDAddressBookTableViewController.h */,
+				67BD1F7919AED48200125917 /* ZDAddressBookTableViewController.m */,
 			);
 			path = chance;
 			sourceTree = "<group>";
@@ -645,6 +671,7 @@
 			files = (
 				FF59828B19A10FC50031D575 /* SSFSegmentControl.xib in Resources */,
 				6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */,
+				67BD1F8619AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib in Resources */,
 				6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */,
 				67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */,
 				FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */,
@@ -675,6 +702,7 @@
 				6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */,
 				67B70141199B61970061C345 /* ZDContactRecord.m in Sources */,
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
+				67BD1F7A19AED48200125917 /* ZDAddressBookTableViewController.m in Sources */,
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
 				67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
@@ -690,6 +718,7 @@
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
 				67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */,
 				1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */,
+				67BD1F8519AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m in Sources */,
 				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				67BD1F7719AEB7A500125917 /* ZDProductCell.m in Sources */,
 				67BD1F7019AEB78600125917 /* ZDCustomerBusinessTableViewController.m in Sources */,
@@ -700,6 +729,7 @@
 				67984DFE19AAD99300F24D3E /* ZDBusinessList.m in Sources */,
 				FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */,
 				67CD594E19ADBCB100303317 /* ZDCustomerBusinessTableViewCellUnfold.m in Sources */,
+				67BD1F8119AF044900125917 /* ZDAddressBookTableViewCell.m in Sources */,
 				67B457D819A5E30000C89859 /* GSReachability.m in Sources */,
 				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
 				FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */,

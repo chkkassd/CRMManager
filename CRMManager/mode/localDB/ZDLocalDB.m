@@ -174,6 +174,22 @@
     return nil;
 }
 
+//查找当前用户Zdcustomer类型的所有客户
+- (NSArray *)queryAllZDCustomersOfCurrentManager
+{
+    NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];
+    if (allCustomers.count) {
+        NSMutableArray * allZDCustomers = [[NSMutableArray alloc] init];
+        for (Customer * customer in allCustomers) {
+            ZDCustomer * zdCustomer = [[ZDCustomer alloc] init];
+            [self modifyZDCustomer:zdCustomer from:customer];
+            [allZDCustomers addObject:zdCustomer];
+        }
+        return allZDCustomers;
+    }
+    return nil;
+}
+
 //查找当前用户所有的ChanceCustomers
 - (NSArray *)queryAllChanceCustomersOfCurrentManager
 {
@@ -186,19 +202,7 @@
     return nil;
 }
 
-//查找Zdcustomer类型的所有非储备客户
-- (NSArray *)queryAllZDCurrentCustomersOfCurrentManager
-{
-    NSArray * allZDCustomers = [self queryAllZDCustomersOfCurrentManager];
-    if (allZDCustomers) {
-        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"customerType != %@", @"1"];
-        NSArray* allZDCurrentCustomers = [allZDCustomers filteredArrayUsingPredicate:predicate];
-        return allZDCurrentCustomers;
-    }
-    return nil;
-}
-
-//查找Zdcustomer类型的所有机会客户
+//查找当前用户Zdcustomer类型的所有机会客户
 - (NSArray *)queryAllZDChanceCustomersOfCurrentManager
 {
     NSArray * allChanceCustomers = [self queryAllChanceCustomersOfCurrentManager];
@@ -212,21 +216,17 @@
         return allZDChanceCustomers;
     }
     return nil;
-
+    
 }
 
-//查找Zdcustomer类型的所有客户
-- (NSArray *)queryAllZDCustomersOfCurrentManager
+//查找Zdcustomer类型的所有非储备客户
+- (NSArray *)queryAllZDCurrentCustomersOfCurrentManager
 {
-    NSArray * allCustomers = [self queryAllCustomersOfCurrentManager];
-    if (allCustomers.count) {
-        NSMutableArray * allZDCustomers = [[NSMutableArray alloc] init];
-        for (Customer * customer in allCustomers) {
-            ZDCustomer * zdCustomer = [[ZDCustomer alloc] init];
-            [self modifyZDCustomer:zdCustomer from:customer];
-            [allZDCustomers addObject:zdCustomer];
-        }
-        return allZDCustomers;
+    NSArray * allZDCustomers = [self queryAllZDCustomersOfCurrentManager];
+    if (allZDCustomers) {
+        NSPredicate* predicate = [NSPredicate predicateWithFormat:@"customerType != %@", @"1"];
+        NSArray* allZDCurrentCustomers = [allZDCustomers filteredArrayUsingPredicate:predicate];
+        return allZDCurrentCustomers;
     }
     return nil;
 }

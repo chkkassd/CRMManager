@@ -9,6 +9,7 @@
 #import "ZDChanceViewController.h"
 #import "ZDChanceCustomerDetailViewController.h"
 #import "ZDAddAndEditeViewController.h"
+#import "ZDAddressBookTableViewController.h"
 
 @interface ZDChanceViewController ()<SSFLeftRightSwipeTableViewCellDelegate,SSFSegmentControlDelegate,ZDAddAndEditeViewControllerDelegate>
 
@@ -112,6 +113,7 @@
             [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
         } else if ([buttonTitle isEqualToString:@"从通讯录导入"]) {
             //做通讯录导入操作
+            [self performSegueWithIdentifier:@"AddressBook Display" sender:self];
         }
     } else if ([actionSheet.title isEqualToString:@"拨号"]) {
         if (buttonIndex != actionSheet.cancelButtonIndex) {
@@ -123,6 +125,12 @@
 }
 
 #pragma mark - properties
+
+- (void)setTableView:(UITableView *)tableView
+{
+    _tableView = tableView;
+    _tableView.tableHeaderView = self.segmentedControl;
+}
 
 - (SSFSegmentControl *)segmentedControl
 {
@@ -192,22 +200,10 @@
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView != self.searchDisplayController.searchResultsTableView) {
-        return self.segmentedControl;
-    }
-    return nil;
+    return 69;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (tableView != self.searchDisplayController.searchResultsTableView) {
-        return self.segmentedControl.frame.size.height;
-    }
-    return 0;
-}
-
 #pragma mark - UITableView delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

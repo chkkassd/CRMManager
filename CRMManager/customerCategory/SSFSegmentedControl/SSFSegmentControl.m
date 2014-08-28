@@ -72,6 +72,7 @@
 
 +(SSFSegmentControl *)SSFSegmentedControlInstance
 {
+    //从nib中加载自定义的组件
     NSArray * arr = [[NSBundle mainBundle] loadNibNamed:@"SSFSegmentControl" owner:self options:nil];
     return arr[0];
 }
