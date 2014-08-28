@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578619A51F5600A76AE2 /* UIView+CCPlus.m */; };
-		1805578A19A55C1800A76AE2 /* ZDProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578919A55C1800A76AE2 /* ZDProductCell.m */; };
 		18861913199C0B09007635FC /* UIImage+Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 18861912199C0B09007635FC /* UIImage+Tab.m */; };
-		18BA9A1D19AD2C190025D962 /* ZDCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA9A1C19AD2C190025D962 /* ZDCustomerDetailViewController.m */; };
-		18BA9A2019AD2C310025D962 /* ZDCustomerRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA9A1F19AD2C310025D962 /* ZDCustomerRecordListViewController.m */; };
 		18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
 		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
@@ -37,7 +34,6 @@
 		67984DF819AAD2F400F24D3E /* BusinessList.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DF719AAD2F400F24D3E /* BusinessList.m */; };
 		67984DFB19AAD8BA00F24D3E /* ZDBusiness.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */; };
 		67984DFE19AAD99300F24D3E /* ZDBusinessList.m in Sources */ = {isa = PBXBuildFile; fileRef = 67984DFD19AAD99300F24D3E /* ZDBusinessList.m */; };
-		67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */; };
 		67B457D819A5E30000C89859 /* GSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D519A5E30000C89859 /* GSReachability.m */; };
 		67B457D919A5E30000C89859 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B457D719A5E30000C89859 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		67B7013E199B607F0061C345 /* ContactRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7013D199B607F0061C345 /* ContactRecord.m */; };
@@ -48,10 +44,14 @@
 		67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BAA92A19A34059005671A8 /* MBProgressHUD.m */; };
 		67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */; };
 		67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */; };
+		67BD1F7019AEB78600125917 /* ZDCustomerBusinessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6719AEB78600125917 /* ZDCustomerBusinessTableViewController.m */; };
+		67BD1F7119AEB78600125917 /* ZDCustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6919AEB78600125917 /* ZDCustomerDetailViewController.m */; };
+		67BD1F7219AEB78600125917 /* ZDCustomerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6B19AEB78600125917 /* ZDCustomerListViewController.m */; };
+		67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6D19AEB78600125917 /* ZDCustomerRecordListViewController.m */; };
+		67BD1F7419AEB78600125917 /* ZDCustomerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */; };
+		67BD1F7719AEB7A500125917 /* ZDProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BD1F7619AEB7A500125917 /* ZDProductCell.m */; };
 		67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */; };
-		67BE321119AC29100030C32E /* ZDCustomerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BE321019AC29100030C32E /* ZDCustomerListViewController.m */; };
 		67BE321419AC2B990030C32E /* ZDCustomerListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BE321319AC2B990030C32E /* ZDCustomerListTableViewCell.m */; };
-		67BE321719AC66580030C32E /* ZDCustomerBusinessTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67BE321619AC66580030C32E /* ZDCustomerBusinessTableViewController.m */; };
 		67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */; };
 		67C39A6219985FBA00D796EA /* SSFPasswordGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */; };
 		67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C39A6019985FBA00D796EA /* SSFPathLineLayer.m */; };
@@ -91,14 +91,8 @@
 /* Begin PBXFileReference section */
 		1805578519A51F5600A76AE2 /* UIView+CCPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CCPlus.h"; sourceTree = "<group>"; };
 		1805578619A51F5600A76AE2 /* UIView+CCPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CCPlus.m"; sourceTree = "<group>"; };
-		1805578819A55C1800A76AE2 /* ZDProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductCell.h; sourceTree = SOURCE_ROOT; };
-		1805578919A55C1800A76AE2 /* ZDProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductCell.m; sourceTree = SOURCE_ROOT; };
 		18861911199C0B09007635FC /* UIImage+Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tab.h"; sourceTree = "<group>"; };
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
-		18BA9A1B19AD2C190025D962 /* ZDCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerDetailViewController.h; sourceTree = SOURCE_ROOT; };
-		18BA9A1C19AD2C190025D962 /* ZDCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerDetailViewController.m; sourceTree = SOURCE_ROOT; };
-		18BA9A1E19AD2C310025D962 /* ZDCustomerRecordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerRecordListViewController.h; sourceTree = SOURCE_ROOT; };
-		18BA9A1F19AD2C310025D962 /* ZDCustomerRecordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerRecordListViewController.m; sourceTree = SOURCE_ROOT; };
 		18BFEECF19A50A5700644953 /* ZDAboutUsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutUsTableViewController.h; sourceTree = "<group>"; };
 		18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAboutUsTableViewController.m; sourceTree = "<group>"; };
 		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
@@ -140,8 +134,6 @@
 		67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBusiness.m; sourceTree = "<group>"; };
 		67984DFC19AAD99300F24D3E /* ZDBusinessList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBusinessList.h; sourceTree = "<group>"; };
 		67984DFD19AAD99300F24D3E /* ZDBusinessList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBusinessList.m; sourceTree = "<group>"; };
-		67B457D019A58F8400C89859 /* ZDCustomerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerTableViewController.h; sourceTree = SOURCE_ROOT; };
-		67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerTableViewController.m; sourceTree = SOURCE_ROOT; };
 		67B457D419A5E30000C89859 /* GSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSReachability.h; sourceTree = "<group>"; };
 		67B457D519A5E30000C89859 /* GSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSReachability.m; sourceTree = "<group>"; };
 		67B457D619A5E30000C89859 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -162,14 +154,22 @@
 		67BBE06D19A19D11006BE12C /* ZDChanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceViewController.m; sourceTree = "<group>"; };
 		67BBE06F19A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDChanceCustomerDetailViewController.h; sourceTree = "<group>"; };
 		67BBE07019A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDChanceCustomerDetailViewController.m; sourceTree = "<group>"; };
+		67BD1F6619AEB78600125917 /* ZDCustomerBusinessTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerBusinessTableViewController.h; sourceTree = "<group>"; };
+		67BD1F6719AEB78600125917 /* ZDCustomerBusinessTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerBusinessTableViewController.m; sourceTree = "<group>"; };
+		67BD1F6819AEB78600125917 /* ZDCustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerDetailViewController.h; sourceTree = "<group>"; };
+		67BD1F6919AEB78600125917 /* ZDCustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerDetailViewController.m; sourceTree = "<group>"; };
+		67BD1F6A19AEB78600125917 /* ZDCustomerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerListViewController.h; sourceTree = "<group>"; };
+		67BD1F6B19AEB78600125917 /* ZDCustomerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerListViewController.m; sourceTree = "<group>"; };
+		67BD1F6C19AEB78600125917 /* ZDCustomerRecordListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerRecordListViewController.h; sourceTree = "<group>"; };
+		67BD1F6D19AEB78600125917 /* ZDCustomerRecordListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerRecordListViewController.m; sourceTree = "<group>"; };
+		67BD1F6E19AEB78600125917 /* ZDCustomerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerTableViewController.h; sourceTree = "<group>"; };
+		67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerTableViewController.m; sourceTree = "<group>"; };
+		67BD1F7519AEB7A500125917 /* ZDProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductCell.h; sourceTree = "<group>"; };
+		67BD1F7619AEB7A500125917 /* ZDProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductCell.m; sourceTree = "<group>"; };
 		67BDCB2C199DF83B00853285 /* ZDSuggestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSuggestionViewController.h; sourceTree = "<group>"; };
 		67BDCB2D199DF83B00853285 /* ZDSuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSuggestionViewController.m; sourceTree = "<group>"; };
-		67BE320F19AC29100030C32E /* ZDCustomerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerListViewController.h; sourceTree = SOURCE_ROOT; };
-		67BE321019AC29100030C32E /* ZDCustomerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerListViewController.m; sourceTree = SOURCE_ROOT; };
 		67BE321219AC2B990030C32E /* ZDCustomerListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerListTableViewCell.h; sourceTree = "<group>"; };
 		67BE321319AC2B990030C32E /* ZDCustomerListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerListTableViewCell.m; sourceTree = "<group>"; };
-		67BE321519AC66580030C32E /* ZDCustomerBusinessTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomerBusinessTableViewController.h; sourceTree = SOURCE_ROOT; };
-		67BE321619AC66580030C32E /* ZDCustomerBusinessTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomerBusinessTableViewController.m; sourceTree = SOURCE_ROOT; };
 		67C39A5C19985FBA00D796EA /* SSFPasswordGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFPasswordGestureView.h; sourceTree = "<group>"; };
 		67C39A5D19985FBA00D796EA /* SSFPasswordGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFPasswordGestureView.m; sourceTree = "<group>"; };
 		67C39A5E19985FBA00D796EA /* SSFPasswordGestureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFPasswordGestureView.xib; sourceTree = "<group>"; };
@@ -365,8 +365,8 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				67BD1F6519AEB78600125917 /* customer */,
 				FF59822E199CFE760031D575 /* chance */,
-				FF59822F199CFE760031D575 /* customer */,
 				18E9F9901995B6F000E6DC8F /* Login */,
 				18E9F9951995B6F000E6DC8F /* Main */,
 				18E9F9981995B6F000E6DC8F /* Products */,
@@ -388,8 +388,8 @@
 		6724CB8F1994B52500E1C058 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				1805578819A55C1800A76AE2 /* ZDProductCell.h */,
-				1805578919A55C1800A76AE2 /* ZDProductCell.m */,
+				67BD1F7519AEB7A500125917 /* ZDProductCell.h */,
+				67BD1F7619AEB7A500125917 /* ZDProductCell.m */,
 				67BE321219AC2B990030C32E /* ZDCustomerListTableViewCell.h */,
 				67BE321319AC2B990030C32E /* ZDCustomerListTableViewCell.m */,
 				67CD594919ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.h */,
@@ -439,6 +439,23 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		67BD1F6519AEB78600125917 /* customer */ = {
+			isa = PBXGroup;
+			children = (
+				67BD1F6619AEB78600125917 /* ZDCustomerBusinessTableViewController.h */,
+				67BD1F6719AEB78600125917 /* ZDCustomerBusinessTableViewController.m */,
+				67BD1F6819AEB78600125917 /* ZDCustomerDetailViewController.h */,
+				67BD1F6919AEB78600125917 /* ZDCustomerDetailViewController.m */,
+				67BD1F6A19AEB78600125917 /* ZDCustomerListViewController.h */,
+				67BD1F6B19AEB78600125917 /* ZDCustomerListViewController.m */,
+				67BD1F6C19AEB78600125917 /* ZDCustomerRecordListViewController.h */,
+				67BD1F6D19AEB78600125917 /* ZDCustomerRecordListViewController.m */,
+				67BD1F6E19AEB78600125917 /* ZDCustomerTableViewController.h */,
+				67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */,
+			);
+			path = customer;
+			sourceTree = "<group>";
+		};
 		67C39A5B19985FBA00D796EA /* SSFGesturePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,23 +491,6 @@
 				67BAA92319A321DF005671A8 /* ZDRecordAddOrEditViewController.m */,
 			);
 			path = chance;
-			sourceTree = "<group>";
-		};
-		FF59822F199CFE760031D575 /* customer */ = {
-			isa = PBXGroup;
-			children = (
-				67B457D019A58F8400C89859 /* ZDCustomerTableViewController.h */,
-				67B457D119A58F8400C89859 /* ZDCustomerTableViewController.m */,
-				67BE320F19AC29100030C32E /* ZDCustomerListViewController.h */,
-				67BE321019AC29100030C32E /* ZDCustomerListViewController.m */,
-				18BA9A1B19AD2C190025D962 /* ZDCustomerDetailViewController.h */,
-				18BA9A1C19AD2C190025D962 /* ZDCustomerDetailViewController.m */,
-				18BA9A1E19AD2C310025D962 /* ZDCustomerRecordListViewController.h */,
-				18BA9A1F19AD2C310025D962 /* ZDCustomerRecordListViewController.m */,
-				67BE321519AC66580030C32E /* ZDCustomerBusinessTableViewController.h */,
-				67BE321619AC66580030C32E /* ZDCustomerBusinessTableViewController.m */,
-			);
-			path = customer;
 			sourceTree = "<group>";
 		};
 		FF59828619A10FC50031D575 /* SSFSegmentedControl */ = {
@@ -677,7 +677,6 @@
 				67C39A6119985FBA00D796EA /* SSFPasswordGestureView.m in Sources */,
 				67B96CB11999B03300CBF5AF /* ZDGesturePasswordSettingViewController.m in Sources */,
 				67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */,
-				1805578A19A55C1800A76AE2 /* ZDProductCell.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
@@ -689,10 +688,11 @@
 				67CD594B19ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
+				67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */,
 				1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */,
-				67BE321719AC66580030C32E /* ZDCustomerBusinessTableViewController.m in Sources */,
-				18BA9A2019AD2C310025D962 /* ZDCustomerRecordListViewController.m in Sources */,
 				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
+				67BD1F7719AEB7A500125917 /* ZDProductCell.m in Sources */,
+				67BD1F7019AEB78600125917 /* ZDCustomerBusinessTableViewController.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
 				FF8F1A9B199611B40062B71C /* Product.m in Sources */,
@@ -706,22 +706,22 @@
 				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
 				67BAA92419A321DF005671A8 /* ZDRecordAddOrEditViewController.m in Sources */,
 				67C39A661998A89E00D796EA /* Business.m in Sources */,
-				67B457D219A58F8400C89859 /* ZDCustomerTableViewController.m in Sources */,
 				18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */,
 				FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */,
 				67B7013E199B607F0061C345 /* ContactRecord.m in Sources */,
 				FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */,
 				6724CB5F1994B26600E1C058 /* main.m in Sources */,
-				18BA9A1D19AD2C190025D962 /* ZDCustomerDetailViewController.m in Sources */,
 				18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */,
 				18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */,
+				67BD1F7219AEB78600125917 /* ZDCustomerListViewController.m in Sources */,
 				18861913199C0B09007635FC /* UIImage+Tab.m in Sources */,
-				67BE321119AC29100030C32E /* ZDCustomerListViewController.m in Sources */,
+				67BD1F7119AEB78600125917 /* ZDCustomerDetailViewController.m in Sources */,
 				67984DFB19AAD8BA00F24D3E /* ZDBusiness.m in Sources */,
 				FF8F1AB3199755D10062B71C /* ZDProduct.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
 				FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,
+				67BD1F7419AEB78600125917 /* ZDCustomerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
