@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -2088,9 +2088,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="5Ga-o4-m5V" kind="push" id="IyG-5Y-o3o"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2099,13 +2096,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="联系记录" id="Iv2-cd-n25">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="WBh-fa-4uB"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="WBh-fa-4uB">
+                            <connections>
+                                <segue destination="5Ga-o4-m5V" kind="push" identifier="Add Contact" id="gge-O5-JOg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="5Ga-o4-m5V" kind="push" identifier="Edit Contact" id="h8d-bX-9Nm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckN-P6-72H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="356"/>
+            <point key="canvasLocation" x="2156" y="368"/>
         </scene>
         <!--Customer Business Table View Controller - 理财记录-->
         <scene sceneID="a02-dg-7gv">
@@ -2333,17 +2337,17 @@
                                                 <color key="textColor" red="0.015686274510000001" green="0.49019607840000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-Ht-6bt">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kKQ-Ht-6bt">
                                                 <rect key="frame" x="104" y="14" width="196" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORu-T9-QEL">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入姓名" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ORu-T9-QEL">
                                                 <rect key="frame" x="104" y="71" width="196" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-t7-cFs">
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZu-t7-cFs">
                                                 <rect key="frame" x="104" y="122" width="196" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="男">
@@ -2374,6 +2378,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mkq-WC-F0h"/>
+                    <connections>
+                        <outlet property="mobileTextField" destination="kKQ-Ht-6bt" id="nA8-TL-FwH"/>
+                        <outlet property="nameTextField" destination="ORu-T9-QEL" id="RKE-My-KsP"/>
+                        <outlet property="sexButton" destination="UZu-t7-cFs" id="ttL-dm-dUv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vd-7n-tJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2409,7 +2418,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="IyG-5Y-o3o"/>
         <segue reference="VYf-II-zpB"/>
+        <segue reference="h8d-bX-9Nm"/>
     </inferredMetricsTieBreakers>
 </document>

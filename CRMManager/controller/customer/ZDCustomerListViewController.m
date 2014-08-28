@@ -9,6 +9,8 @@
 #import "ZDCustomerListViewController.h"
 #import "ZDCustomerListTableViewCell.h"
 #import "ZDCustomerBusinessTableViewController.h"
+#import "ZDCustomerRecordListViewController.h"
+#import "ZDCustomerDetailViewController.h"
 
 @interface ZDCustomerListViewController ()
 
@@ -121,6 +123,12 @@
     if ([segue.identifier isEqualToString:@"show business"]) {
         ZDCustomerBusinessTableViewController * customerBusinessTableViewController = segue.destinationViewController;
         customerBusinessTableViewController.customer = self.customer;
+    } else if ([segue.identifier isEqualToString:@"Show Record"]) {
+        ZDCustomerRecordListViewController* recordViewController = segue.destinationViewController;
+        recordViewController.zdCustomer = self.customer;
+    } else if ([segue.identifier isEqualToString:@"Show Detail"]) {
+        ZDCustomerDetailViewController* detailViewController = segue.destinationViewController;
+        detailViewController.zdCustomer = self.customer;
     }
 }
 

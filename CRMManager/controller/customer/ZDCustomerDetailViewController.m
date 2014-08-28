@@ -7,8 +7,13 @@
 //
 
 #import "ZDCustomerDetailViewController.h"
+#import "AllCustomerCategoryHeaders.h"
 
 @interface ZDCustomerDetailViewController ()
+
+@property (nonatomic, weak) IBOutlet UITextField* nameTextField;
+@property (nonatomic, weak) IBOutlet UITextField* mobileTextField;
+@property (nonatomic, weak) IBOutlet UIButton* sexButton;
 
 @end
 
@@ -27,6 +32,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.nameTextField.text = self.zdCustomer.customerName;
+    self.mobileTextField.text = self.zdCustomer.mobile;
+    [self.sexButton setTitle:[self.zdCustomer.sex isEqualToString:@"0"] ? @"女" : @"男" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning

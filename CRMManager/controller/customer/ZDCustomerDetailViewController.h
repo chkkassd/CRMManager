@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZDCustomer;
+
 @interface ZDCustomerDetailViewController : UIViewController
+
+@property (nonatomic, strong) ZDCustomer* zdCustomer;
 
 @end

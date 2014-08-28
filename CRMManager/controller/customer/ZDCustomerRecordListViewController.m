@@ -8,8 +8,10 @@
 
 #import "ZDCustomerRecordListViewController.h"
 #import "ZDModeClient.h"
+#import "ZDRecordAddOrEditViewController.h"
+#import "AllCustomerCategoryHeaders.h"
 
-@interface ZDCustomerRecordListViewController ()
+@interface ZDCustomerRecordListViewController () <ZDRecordAddOrEditViewControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray * allRecords;
 @property (strong, nonatomic) ZDContactRecord * selectedRecord;
@@ -18,24 +20,39 @@
 
 @implementation ZDCustomerRecordListViewController
 
-#pragma mark - table view datasource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    return 1;
+    // 无论修改还是新增，zdCustomer都需要穿过去
+    ZDRecordAddOrEditViewController* recordAddOrEditViewController = segue.destinationViewController;
+    
+    if ([segue.identifier isEqualToString:@"Edit Contact"]) {
+        recordAddOrEditViewController.editedReocrd = self.selectedRecord;
+    }
+    recordAddOrEditViewController.delegate = self;
+    recordAddOrEditViewController.selectedCustomer = self.zdCustomer;
 }
+
+#pragma mark - properties
+
+- (void)setZdCustomer:(ZDCustomer *)zdCustomer
+{
+    _zdCustomer = zdCustomer;
+    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:zdCustomer.customerId] copy];
+}
+
+#pragma mark - table view datasource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.allRecords.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"record Cell" forIndexPath:indexPath];
-//    ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
-//    cell.textLabel.text = zdContactRecord.content;
-//    cell.detailTextLabel.text = zdContactRecord.contactTime;
+    ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
+    cell.textLabel.text = zdContactRecord.content;
+    cell.detailTextLabel.text = zdContactRecord.contactTime;
     return cell;
 }
 
@@ -66,4 +83,34 @@
 {
     return @"删除";
 }
+
+#pragma mark - UITableView Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedRecord = self.allRecords[indexPath.row];
+    [self performSegueWithIdentifier:@"Edit Contact" sender:self];
+}
+
+#pragma mark - ZDRecordAddOrEditViewControllerDelegate
+
+- (void)recordAddOrEditViewControllerDidFinishAddRecord:(ZDRecordAddOrEditViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"增加成功";
+}
+
+- (void)recordAddOrEditViewControllerDidfinishEditRecord:(ZDRecordAddOrEditViewController *)controller
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"修改成功";
+}
+
+
 @end
