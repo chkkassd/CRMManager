@@ -7,8 +7,9 @@
 //
 
 #import "ZDSettingViewController.h"
+#import "ZDSuggestionViewController.h"
 
-@interface ZDSettingViewController () <UIAlertViewDelegate>
+@interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISwitch * gesturePasswordSwitch;
 
@@ -50,6 +51,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+}
+
+#pragma mark - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"setting To Suggsetion"]) {
+        ZDSuggestionViewController * suggestionViewController = segue.destinationViewController;
+        suggestionViewController.delegate = self;
+    }
+}
+
+#pragma mark - suggestion view delegate
+
+- (void)suggestionViewControllerDidFinishFeedBack:(ZDSuggestionViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"提交成功";
+    [hud hide:YES afterDelay:1];
 }
 
 #pragma mark - UIAlertViewDelegate

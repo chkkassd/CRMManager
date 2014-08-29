@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ZDAddressBookTableViewCellDelegate;
 @interface ZDAddressBookTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel * nameLabel;
+@property (weak, nonatomic) id <ZDAddressBookTableViewCellDelegate> delegate;
+
+@end
+
+@protocol ZDAddressBookTableViewCellDelegate <NSObject>
+
+- (void)addressBookTableViewCellAddButtonPressed:(ZDAddressBookTableViewCell *)cell;
 
 @end

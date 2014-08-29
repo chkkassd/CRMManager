@@ -10,6 +10,7 @@
 @interface SSFSegmentControl()
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray * items;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray * labels;
 
 @end
 
@@ -20,6 +21,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.selectedIndex = 0;
+        
     }
     return self;
 }
@@ -66,6 +68,14 @@
         button.selected = NO;
     }
     button.selected = YES;
+    
+    for (UILabel * label in self.labels) {
+        if (label.tag == index + 100) {
+            label.textColor = [UIColor colorWithRed:44/255.0 green:186/255.0 blue:233/255.0 alpha:1.0];
+        } else {
+            label.textColor = [UIColor blackColor];
+        }
+    }
 }
 
 #pragma mark - Instance

@@ -82,8 +82,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SSFLeftRightSwipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:SSFLeftRightSwipe_TableViewCell forIndexPath:indexPath];
+    SSFLeftRightSwipeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:SSFLeftRightSwipe_TableViewCell forIndexPath:indexPath];
     cell.delegate = self;
+    cell.startGesture = NO;//关闭手势
     
     ZDCustomer * customer = [[ZDCustomer alloc] init];
     if (tableView == self.searchDisplayController.searchResultsTableView) {

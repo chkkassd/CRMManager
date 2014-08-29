@@ -20,6 +20,26 @@
 
 @implementation ZDCustomerRecordListViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - methods
+
+- (void)updateRecords:(NSNotification *)noti
+{
+    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
+}
+
+#pragma makr - segue
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // 无论修改还是新增，zdCustomer都需要穿过去
@@ -37,7 +57,13 @@
 - (void)setZdCustomer:(ZDCustomer *)zdCustomer
 {
     _zdCustomer = zdCustomer;
-    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:zdCustomer.customerId] copy];
+    self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:zdCustomer.customerId] mutableCopy];
+}
+
+- (void)setAllRecords:(NSMutableArray *)allRecords
+{
+    _allRecords = allRecords;
+    [self.tableView reloadData];
 }
 
 #pragma mark - table view datasource
@@ -61,7 +87,7 @@
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在删除,请稍后";
     ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
-    [self.allRecords removeObjectAtIndex:indexPath.row];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //调接口删除网上数据，并删除数据库数据
         [[ZDModeClient sharedModeClient] deleteContactRecordWithCustomerId:self.zdCustomer.customerId recordId:zdContactRecord.recordId completionHandler:^(NSError * error) {
@@ -75,7 +101,6 @@
                 [hud hide:YES afterDelay:1];
             }
         }];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
 
@@ -101,6 +126,7 @@
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"增加成功";
+    [hud hide:YES afterDelay:1];
 }
 
 - (void)recordAddOrEditViewControllerDidfinishEditRecord:(ZDRecordAddOrEditViewController *)controller
@@ -110,6 +136,7 @@
     MBProgressHUD* hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"修改成功";
+    [hud hide:YES afterDelay:1];
 }
 
 

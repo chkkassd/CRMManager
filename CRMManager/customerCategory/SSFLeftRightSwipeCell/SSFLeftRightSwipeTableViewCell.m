@@ -20,7 +20,8 @@
 - (void)awakeFromNib
 {
     self.isEditMode = NO;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    self.startGesture = YES;
+    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     pan.delegate = self;
     [self.realContentView addGestureRecognizer:pan];
 }
@@ -115,14 +116,20 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-        UIPanGestureRecognizer * panGR = (UIPanGestureRecognizer *)gestureRecognizer;
-        CGPoint point = [panGR translationInView:self];
-        if (fabs(point.x) > fabs(point.y)) {
-            return YES;
-        } else return NO;
+    if (self.startGesture) {
+        //手势开启
+        if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
+            UIPanGestureRecognizer * panGR = (UIPanGestureRecognizer *)gestureRecognizer;
+            CGPoint point = [panGR translationInView:self];
+            if (fabs(point.x) > fabs(point.y)) {
+                return YES;
+            } else return NO;
+        }
+        return YES;
+    } else {
+        //手势关闭
+        return NO;
     }
-    return YES;
 }
 
 #pragma mark - sharedInstance

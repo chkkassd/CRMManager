@@ -12,6 +12,6 @@
 
 @interface ZDCustomerDetailViewController : UIViewController
 
-@property (nonatomic, strong) ZDCustomer* zdCustomer;
+@property (nonatomic, strong) ZDCustomer * zdCustomer;
 
 @end

@@ -20,6 +20,7 @@ typedef enum {
 
 @property (nonatomic) addAndEditeViewControllerMode mode;
 @property (strong, nonatomic) ZDCustomer * editedCustomer;
+@property (strong, nonatomic) NSDictionary * infoDic;//用于通讯录添加
 @property (weak, nonatomic) id <ZDAddAndEditeViewControllerDelegate> delegate;
 
 @end

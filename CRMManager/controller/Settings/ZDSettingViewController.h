@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZDModeClient.h"
+#import "AllCustomerCategoryHeaders.h"
 
 @protocol ZDSettingViewControllerDelegate;
 @interface ZDSettingViewController : UITableViewController

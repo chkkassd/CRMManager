@@ -36,7 +36,7 @@
     hud.labelText = @"正在提交,请稍后";
     [[ZDModeClient sharedModeClient] commitFeedbackWithContext:self.textView.text completionHandler:^(NSError *error) {
         if (!error) {
-            hud.labelText = @"提交成功";
+            [self.delegate suggestionViewControllerDidFinishFeedBack:self];
             [hud hide:YES afterDelay:1];
         } else {
             hud.labelText = @"提交失败,请稍后再试";

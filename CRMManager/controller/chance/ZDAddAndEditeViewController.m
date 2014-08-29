@@ -60,6 +60,12 @@
             [self.hopeButton setTitle:@"未设置" forState:UIControlStateNormal];
         }
         
+    } else if (self.mode == ZDAddAndEditeViewControllerModeAdd && self.infoDic.count) {
+        self.title = @"新增客户";
+        self.nameTextField.text = self.infoDic[@"name"];
+        self.mobileTextField.text = self.infoDic[@"mobile"];
+        self.sexNum = 1;
+        self.hopeNum = 2;
     } else {
         self.title = @"新增客户";
         self.sexNum = 1;
@@ -70,8 +76,7 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 200);
-//    NSLog(@"%f,%f",self.scrollView.contentSize.width,self.scrollView.contentSize.height);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 150);
 }
 
 #pragma mark - Action

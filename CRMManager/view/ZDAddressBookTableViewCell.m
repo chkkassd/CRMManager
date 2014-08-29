@@ -25,6 +25,8 @@
 #pragma mark - action
 
 - (IBAction)addButtonPressed:(id)sender
-{}
+{
+    [self.delegate addressBookTableViewCellAddButtonPressed:self];
+}
 
 @end

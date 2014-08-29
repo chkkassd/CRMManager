@@ -102,7 +102,7 @@
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在删除,请稍后";
     ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
-    [self.allRecords removeObjectAtIndex:indexPath.row];
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //调接口删除网上数据，并删除数据库数据
         [[ZDModeClient sharedModeClient] deleteContactRecordWithCustomerId:self.zdCustomer.customerId recordId:zdContactRecord.recordId completionHandler:^(NSError * error) {
@@ -116,7 +116,6 @@
                 [hud hide:YES afterDelay:1];
             }
         }];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
     }
 }
 
