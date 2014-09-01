@@ -21,8 +21,14 @@
 
 - (IBAction)loginOut:(id)sender
 {
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"你好" message:@"确定退出？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show]; 
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"退出后不会删除任何历史数据，下次登录依然可以使用本账号。"
+                                  delegate:self
+                                  cancelButtonTitle:@"取消"
+                                  destructiveButtonTitle:@"退出登录"
+                                  otherButtonTitles:nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [actionSheet showInView:self.view];
 }
 
 - (IBAction)gesturePasswordSwitchPressed:(id)sender
@@ -74,15 +80,14 @@
     [hud hide:YES afterDelay:1];
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - UIActionSheetDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != alertView.cancelButtonIndex) {
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
         //若是正常退出，DefaultCurrentUserId清空，用户名和密码不清空,若非正常退出,DefaultCurrentUserId不清空
-        [[NSUserDefaults standardUserDefaults] setObject:Nil forKey:DefaultCurrentUserId];
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
         [[NSUserDefaults standardUserDefaults] synchronize];
-//        [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
         [self.delegate settingViewControllerDidLoginOut:self];
     }
 }

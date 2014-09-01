@@ -11,7 +11,7 @@
 #import "AllCustomerCategoryHeaders.h"
 
 @protocol ZDSettingViewControllerDelegate;
-@interface ZDSettingViewController : UITableViewController
+@interface ZDSettingViewController : UITableViewController <UIActionSheetDelegate>
 
 @property (weak, nonatomic) id <ZDSettingViewControllerDelegate> delegate;
 
