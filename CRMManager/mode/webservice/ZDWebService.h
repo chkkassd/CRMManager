@@ -106,6 +106,22 @@
                       SystemVersion:(NSString *)systemVersion
                   completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
+//登录后获取提醒信息
+- (void)fetchRemindInfosWithManagerId:(NSString *)managerId
+                    completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
+//查看投资到期提醒信息列表
+- (void)fetchCreditRemindListWithManagerId:(NSString *)managerId
+                                  pageSize:(NSString *)pageSize
+                                    pageNo:(NSString *)pageNo
+                         completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
+//查看生日到期提醒信息列表
+- (void)fetchBirthRemindListWithManagerId:(NSString *)managerId
+                                 pageSize:(NSString *)pageSize
+                                   pageNo:(NSString *)pageNo
+                        completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
 //单例
 +(ZDWebService *)sharedWebViewService;
 

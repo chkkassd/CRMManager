@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="12F45" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="BirthRemind" syncable="YES">
+        <attribute name="dataOfBirth" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="birthOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="birthRemind" inverseEntity="Customer" syncable="YES"/>
+    </entity>
     <entity name="Business" representedClassName="Business" syncable="YES">
         <attribute name="accountTotal" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="applyDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -48,7 +52,15 @@
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
+        <relationship name="birthRemind" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BirthRemind" inverseName="birthOfCustomer" inverseEntity="BirthRemind" syncable="YES"/>
         <relationship name="business" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
+        <relationship name="investmentRemind" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InvestmentRemind" inverseName="investmentRemindOfCustomer" inverseEntity="InvestmentRemind" syncable="YES"/>
+    </entity>
+    <entity name="InvestmentRemind" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="investAmt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pattern" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="investmentRemindOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="investmentRemind" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
@@ -109,11 +121,13 @@
     </entity>
     <elements>
         <element name="Business" positionX="-513" positionY="-468" width="128" height="163"/>
-        <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
-        <element name="Customer" positionX="-531" positionY="-718" width="128" height="193"/>
-        <element name="ManagerUser" positionX="-722" positionY="-711" width="128" height="148"/>
-        <element name="Product" positionX="-684" positionY="89" width="128" height="118"/>
-        <element name="ProductDetail" positionX="-864" positionY="-423" width="128" height="628"/>
         <element name="BusinessList" positionX="-272" positionY="-459" width="128" height="238"/>
+        <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
+        <element name="Customer" positionX="-531" positionY="-736" width="128" height="223"/>
+        <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="148"/>
+        <element name="Product" positionX="-1044" positionY="-64" width="128" height="118"/>
+        <element name="ProductDetail" positionX="-1224" positionY="-576" width="128" height="628"/>
+        <element name="BirthRemind" positionX="-873" positionY="-486" width="128" height="73"/>
+        <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="103"/>
     </elements>
 </model>

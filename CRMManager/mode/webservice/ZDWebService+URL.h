@@ -26,5 +26,8 @@
 - (NSURL *)URLForUpdateContact;
 - (NSURL *)URLForDeleteContact;
 - (NSURL *)URLForCommitFeedback;
+- (NSURL *)URLForGetRemindInfos;
+- (NSURL *)URLForGetCreditRemindList;
+- (NSURL *)URLForGetBirthRemindList;
 
 @end

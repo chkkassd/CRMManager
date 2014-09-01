@@ -50,9 +50,6 @@
     
 //    return [NSURL URLWithString:@"http://121.199.0.190:8080/hera3/credit/queryBusiness"];//172.16.55.241.
     return [NSURL URLWithString:@"http://172.16.230.190:7070/hera/credit/queryBusiness"];
-    
-    //https://172.16.230.190:8443/hera/
-    //https://api.ezendai.com/hera/
 }
 
 - (NSURL *)URLForGetAllChanceCustomers
@@ -105,6 +102,24 @@
 - (NSURL *)URLForCommitFeedback
 {
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"commitFeedback"]];
+}
+
+//登录后获取提醒信息
+- (NSURL *)URLForGetRemindInfos
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getRemindInfos"]];
+}
+
+//登录后获取投资到期提醒列表
+- (NSURL *)URLForGetCreditRemindList
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"creditList"]];
+}
+
+//登录后获取投资到期提醒列表
+- (NSURL *)URLForGetBirthRemindList
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"birthList"]];
 }
 
 @end

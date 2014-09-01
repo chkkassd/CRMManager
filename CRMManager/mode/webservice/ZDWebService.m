@@ -262,6 +262,41 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+//登录后获取提醒信息,  infoType:1投资，2生日
+- (void)fetchRemindInfosWithManagerId:(NSString *)managerId
+                    completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"id": managerId};
+    NSURL * url = [self URLForGetRemindInfos];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+//查看投资到期提醒信息列表
+- (void)fetchCreditRemindListWithManagerId:(NSString *)managerId
+                                  pageSize:(NSString *)pageSize
+                                    pageNo:(NSString *)pageNo
+                         completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"pageNo": pageNo,
+                           @"pageSize": pageSize,
+                           @"id": managerId};
+    NSURL * url = [self URLForGetCreditRemindList];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+//查看生日到期提醒信息列表
+- (void)fetchBirthRemindListWithManagerId:(NSString *)managerId
+                                  pageSize:(NSString *)pageSize
+                                    pageNo:(NSString *)pageNo
+                         completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"pageNo": pageNo,
+                           @"pageSize": pageSize,
+                           @"id": managerId};
+    NSURL * url = [self URLForGetBirthRemindList];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
 #pragma mark - 共用请求方法
 
 // webservice的接口请求设置

@@ -187,16 +187,15 @@
 //    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
 //        
 //    }];
-    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13339313631" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13339313631" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//        
+//    }];
+//    [[ZDWebService sharedWebViewService] fetchRemindInfosWithManagerId:@"20109601" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//        
+//    }];
+    
+    [[ZDWebService sharedWebViewService] fetchBirthRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
         
     }];
-//{"status":"0"}
-//    NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://172.16.56.39:8765/hera/manageraccount/login"]];//alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://172.16.56.39:8765/hera/manageraccount/login"]];
-//    NSString * str = @"{\"status\":\"0\"}";
-//    NSData * data = [str dataUsingEncoding:NSUTF8StringEncoding];
-//        NSError * error = nil;
-//        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-//    NSLog(@"%@",responseDic);
-    
 }
 @end
