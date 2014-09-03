@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -51,7 +50,6 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-Zk-HAM" userLabel="name view">
                                 <rect key="frame" x="0.0" y="197" width="320" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="账号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJI-Cf-3e9">
                                         <rect key="frame" x="20" y="13" width="42" height="34"/>
@@ -84,7 +82,6 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-fS-3Cn" userLabel="password view">
                                 <rect key="frame" x="0.0" y="265" width="320" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjL-TD-3Cp">
                                         <rect key="frame" x="20" y="13" width="42" height="34"/>
@@ -210,7 +207,10 @@
                             <constraint firstItem="2oc-OH-Qyb" firstAttribute="top" secondItem="JFb-o2-2OC" secondAttribute="bottom" constant="8" id="zr3-Rk-XyZ"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
+                        <size key="portraitSize" width="320" height="568"/>
+                        <size key="landscapeSize" width="568" height="320"/>
+                    </simulatedScreenMetrics>
                     <connections>
                         <outlet property="alertLabel" destination="JFb-o2-2OC" id="LYX-aM-2wl"/>
                         <outlet property="gestureContainView" destination="2oc-OH-Qyb" id="BOU-eI-xSw"/>
@@ -242,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="-203" y="640"/>
         </scene>
-        <!--Navigation Controller - 机会-->
+        <!--机会-->
         <scene sceneID="5ZK-Bf-xJM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WGM-OG-6aH" sceneMemberID="viewController">
@@ -273,7 +273,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-63-glM" userLabel="contain view">
@@ -413,7 +413,7 @@
             </objects>
             <point key="canvasLocation" x="1858" y="-1060"/>
         </scene>
-        <!--Chance View Controller - 机会-->
+        <!--机会-->
         <scene sceneID="0f7-Lx-xGd">
             <objects>
                 <viewController storyboardIdentifier="ZDChanceViewController" id="grb-8r-dgj" customClass="ZDChanceViewController" sceneMemberID="viewController">
@@ -503,7 +503,7 @@
             </objects>
             <point key="canvasLocation" x="962" y="-336"/>
         </scene>
-        <!--Address Book Table View Controller - 通讯录客户-->
+        <!--通讯录客户-->
         <scene sceneID="cSM-Gm-1Rj">
             <objects>
                 <tableViewController id="iYn-9F-yrK" customClass="ZDAddressBookTableViewController" sceneMemberID="viewController">
@@ -529,7 +529,6 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gte-7J-YvH">
                                             <rect key="frame" x="20" y="16" width="110" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="b9u-9v-b9V"/>
                                                 <constraint firstAttribute="height" constant="35" id="qxv-lw-DZj"/>
@@ -540,7 +539,6 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_addressList_plus" translatesAutoresizingMaskIntoConstraints="NO" id="KSX-yw-UV5">
                                             <rect key="frame" x="237" y="27" width="14" height="14"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="14" id="71y-pW-LWc"/>
                                                 <constraint firstAttribute="width" constant="14" id="f3Z-xZ-RbG"/>
@@ -548,7 +546,6 @@
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vud-Io-NmM">
                                             <rect key="frame" x="242" y="19" width="58" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="58" id="Lna-Iy-9Lm"/>
                                                 <constraint firstAttribute="height" constant="30" id="sRS-5a-eJZ"/>
@@ -715,7 +712,6 @@
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTQ-c6-ah9">
                                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="eU3-YY-st3"/>
                                             </constraints>
@@ -725,7 +721,6 @@
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tex-nZ-yDi">
                                             <rect key="frame" x="0.0" y="43" width="320" height="1"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.90105216733870963" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="x5G-Nk-dYS"/>
@@ -879,7 +874,7 @@
             </objects>
             <point key="canvasLocation" x="2156" y="-336"/>
         </scene>
-        <!--Navigation Controller - 客户-->
+        <!--客户-->
         <scene sceneID="YHh-ZU-gWX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3G-th-KrS" sceneMemberID="viewController">
@@ -898,7 +893,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="356"/>
         </scene>
-        <!--Customer Table View Controller - 客户-->
+        <!--客户-->
         <scene sceneID="nYh-X3-ASc">
             <objects>
                 <tableViewController id="BcE-NZ-12n" customClass="ZDCustomerTableViewController" sceneMemberID="viewController">
@@ -940,7 +935,7 @@
             </objects>
             <point key="canvasLocation" x="962" y="356"/>
         </scene>
-        <!--Navigation Controller - 产品-->
+        <!--产品-->
         <scene sceneID="wfF-bu-cfO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37u-Nd-QJm" sceneMemberID="viewController">
@@ -959,7 +954,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="1082"/>
         </scene>
-        <!--Navigation Controller - 设置-->
+        <!--设置-->
         <scene sceneID="5yg-ER-5s1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bY0-Ej-Gu0" sceneMemberID="viewController">
@@ -978,7 +973,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="1791"/>
         </scene>
-        <!--Setting View Controller - 设置-->
+        <!--设置-->
         <scene sceneID="eSg-z6-iUU">
             <objects>
                 <tableViewController id="orw-34-dL9" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -1179,7 +1174,7 @@
             </objects>
             <point key="canvasLocation" x="962" y="1791"/>
         </scene>
-        <!--About Us Table View Controller - 关于-->
+        <!--关于-->
         <scene sceneID="GWF-kW-82r">
             <objects>
                 <tableViewController id="dlL-SE-RGw" customClass="ZDAboutUsTableViewController" sceneMemberID="viewController">
@@ -1430,7 +1425,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="1791"/>
         </scene>
-        <!--Suggestion View Controller - 意见反馈-->
+        <!--意见反馈-->
         <scene sceneID="1w3-t8-tMB">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dVy-Fh-7ff" customClass="ZDSuggestionViewController" sceneMemberID="viewController">
@@ -1489,7 +1484,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="2516"/>
         </scene>
-        <!--Table View Controller - 常见问题-->
+        <!--常见问题-->
         <scene sceneID="4kr-eo-mh9">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="dK2-ch-ggH" sceneMemberID="viewController">
@@ -1580,7 +1575,7 @@
             </objects>
             <point key="canvasLocation" x="954" y="2516"/>
         </scene>
-        <!--Gesture Password Setting View Controller - 手势密码设置-->
+        <!--手势密码设置-->
         <scene sceneID="M2x-54-AbC">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Stb-zg-pkS" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
@@ -1618,7 +1613,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="2516"/>
         </scene>
-        <!--Products List View Controller - 产品-->
+        <!--产品-->
         <scene sceneID="Erv-SZ-4Zb">
             <objects>
                 <viewController id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -1680,7 +1675,7 @@
             </objects>
             <point key="canvasLocation" x="962" y="1082"/>
         </scene>
-        <!--Product Detail View Controller - 证大岁悦-->
+        <!--证大岁悦-->
         <scene sceneID="VOw-sJ-8jd">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BuH-HC-ubf" customClass="ZDProductDetailViewController" sceneMemberID="viewController">
@@ -1997,11 +1992,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_currentClient_invest" translatesAutoresizingMaskIntoConstraints="NO" id="RLr-pT-Pk0">
                                                     <rect key="frame" x="20" y="21" width="25" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="详细信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM1-8M-oxA">
                                                     <rect key="frame" x="53" y="23" width="72" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2058,7 +2051,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="356"/>
         </scene>
-        <!--Customer Record List View Controller - 联系记录-->
+        <!--联系记录-->
         <scene sceneID="08S-am-nkk">
             <objects>
                 <tableViewController id="Jdt-cf-boJ" customClass="ZDCustomerRecordListViewController" sceneMemberID="viewController">
@@ -2113,7 +2106,7 @@
             </objects>
             <point key="canvasLocation" x="2156" y="368"/>
         </scene>
-        <!--Customer Business Table View Controller - 理财记录-->
+        <!--理财记录-->
         <scene sceneID="a02-dg-7gv">
             <objects>
                 <tableViewController id="6gV-Tn-GuK" customClass="ZDCustomerBusinessTableViewController" sceneMemberID="viewController">
@@ -2131,12 +2124,10 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fds-9q-f10">
                                             <rect key="frame" x="10" y="5" width="300" height="127"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.1294117719" green="0.58823531870000001" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正大年丰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-Xs-yvf">
                                             <rect key="frame" x="20" y="20" width="280" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="46" id="OZY-Y1-yTs"/>
                                             </constraints>
@@ -2146,7 +2137,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00000000000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POW-Lq-EtO">
                                             <rect key="frame" x="20" y="74" width="280" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="3Zq-8I-rPE"/>
                                             </constraints>
@@ -2184,11 +2174,9 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_fortune" translatesAutoresizingMaskIntoConstraints="NO" id="Yyn-RZ-5jk">
                                             <rect key="frame" x="10" y="0.0" width="300" height="167"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资金额:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbY-G2-8tV">
                                             <rect key="frame" x="59" y="20" width="77" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="77" id="7ja-Nr-gD4"/>
                                                 <constraint firstAttribute="height" constant="23" id="oRq-QL-bNg"/>
@@ -2199,7 +2187,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3H9-Vn-rdv">
                                             <rect key="frame" x="166" y="20" width="134" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="8Ls-O1-7XG"/>
                                                 <constraint firstAttribute="width" constant="134" id="ON0-ma-93L"/>
@@ -2210,7 +2197,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通过" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckw-iM-yOw">
                                             <rect key="frame" x="166" y="51" width="134" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="Isf-c7-vUf"/>
                                                 <constraint firstAttribute="width" constant="134" id="TwQ-zV-8cf"/>
@@ -2221,7 +2207,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-3-4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-O3-pqR">
                                             <rect key="frame" x="166" y="111" width="134" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="134" id="Mbh-Fa-qWQ"/>
                                                 <constraint firstAttribute="height" constant="23" id="weV-fQ-zSC"/>
@@ -2232,7 +2217,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资状态:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hH0-YO-eCx">
                                             <rect key="frame" x="59" y="51" width="77" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="77" id="bV5-g8-hlZ"/>
                                                 <constraint firstAttribute="height" constant="23" id="cps-Kh-hf3"/>
@@ -2243,7 +2227,6 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投资到期日:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTx-ai-bK4">
                                             <rect key="frame" x="51" y="111" width="85" height="23"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="85" id="jwJ-nQ-RRe"/>
                                                 <constraint firstAttribute="height" constant="23" id="s8V-y6-5dZ"/>
@@ -2303,7 +2286,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-H1-xwp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-H1-xwp">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-yb-rlU" userLabel="contain view">
@@ -2417,10 +2400,13 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="VYf-II-zpB"/>
-        <segue reference="h8d-bX-9Nm"/>
+        <segue reference="OnM-he-V73"/>
+        <segue reference="Qyt-3H-7eu"/>
     </inferredMetricsTieBreakers>
 </document>
