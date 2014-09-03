@@ -563,9 +563,8 @@
 
 - (NSString *)defaultCurrentUserId
 {
-    if (!_defaultCurrentUserId) {
-        _defaultCurrentUserId = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
-    }
+    _defaultCurrentUserId = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
+    
     return _defaultCurrentUserId;
 }
 
