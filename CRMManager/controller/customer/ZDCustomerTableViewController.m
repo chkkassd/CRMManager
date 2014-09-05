@@ -69,6 +69,13 @@
     }];
 }
 
+#pragma mark - action
+
+- (IBAction)scanButtonPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"show scanView" sender:self];
+}
+
 #pragma mark - UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

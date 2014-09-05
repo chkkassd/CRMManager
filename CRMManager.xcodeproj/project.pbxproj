@@ -16,6 +16,8 @@
 		18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99A1995B6F000E6DC8F /* ZDProductDetailViewController.m */; };
 		18E9F9A61995B6F000E6DC8F /* ZDProductsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */; };
 		18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */; };
+		671828CB19B9541B00432505 /* ZDScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 671828CA19B9541B00432505 /* ZDScanBarCodeViewController.m */; };
+		671828CD19B954CE00432505 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 671828CC19B954CE00432505 /* AVFoundation.framework */; };
 		6724CB531994B26600E1C058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB521994B26600E1C058 /* Foundation.framework */; };
 		6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB541994B26600E1C058 /* CoreGraphics.framework */; };
 		6724CB571994B26600E1C058 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB561994B26600E1C058 /* UIKit.framework */; };
@@ -118,6 +120,9 @@
 		18E9F99C1995B6F000E6DC8F /* ZDProductsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductsListViewController.m; sourceTree = "<group>"; };
 		18E9F9A01995B6F000E6DC8F /* ZDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDSettingViewController.h; sourceTree = "<group>"; };
 		18E9F9A11995B6F000E6DC8F /* ZDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDSettingViewController.m; sourceTree = "<group>"; };
+		671828C919B9541B00432505 /* ZDScanBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDScanBarCodeViewController.h; sourceTree = "<group>"; };
+		671828CA19B9541B00432505 /* ZDScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDScanBarCodeViewController.m; sourceTree = "<group>"; };
+		671828CC19B954CE00432505 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6724CB4F1994B26600E1C058 /* CRMManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRMManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6724CB521994B26600E1C058 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6724CB541994B26600E1C058 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -249,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				671828CD19B954CE00432505 /* AVFoundation.framework in Frameworks */,
 				67BD1F7E19AED57200125917 /* AddressBookUI.framework in Frameworks */,
 				67BD1F7C19AED56800125917 /* AddressBook.framework in Frameworks */,
 				6724CB551994B26600E1C058 /* CoreGraphics.framework in Frameworks */,
@@ -338,6 +344,7 @@
 		6724CB511994B26600E1C058 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				671828CC19B954CE00432505 /* AVFoundation.framework */,
 				67BD1F7D19AED57200125917 /* AddressBookUI.framework */,
 				67BD1F7B19AED56800125917 /* AddressBook.framework */,
 				6724CB521994B26600E1C058 /* Foundation.framework */,
@@ -490,6 +497,8 @@
 				67BD1F6D19AEB78600125917 /* ZDCustomerRecordListViewController.m */,
 				67BD1F6E19AEB78600125917 /* ZDCustomerTableViewController.h */,
 				67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */,
+				671828C919B9541B00432505 /* ZDScanBarCodeViewController.h */,
+				671828CA19B9541B00432505 /* ZDScanBarCodeViewController.m */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -744,6 +753,7 @@
 				67B457D919A5E30000C89859 /* Reachability.m in Sources */,
 				67BE321419AC2B990030C32E /* ZDCustomerListTableViewCell.m in Sources */,
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
+				671828CB19B9541B00432505 /* ZDScanBarCodeViewController.m in Sources */,
 				67CD594B19ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.m in Sources */,
 				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
