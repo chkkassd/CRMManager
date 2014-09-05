@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>证大岁悦</string>
+		<key>icon</key>
+		<string>ico_product_01</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>证大季喜</string>
+		<key>icon</key>
+		<string>ico_product_02</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>证大年丰</string>
+		<key>icon</key>
+		<string>ico_product_03</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>证大月收</string>
+		<key>icon</key>
+		<string>ico_product_04</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>证大双鑫</string>
+		<key>icon</key>
+		<string>ico_product_05</string>
+	</dict>
+</array>
+</plist>

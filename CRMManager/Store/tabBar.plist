@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>main_ico_footer_chance_pressed</string>
+	<string>main_ico_footer_client_pressed</string>
+	<string>main_ico_footer_product_pressed</string>
+	<string>maini_ico_footer_setting_pressed</string>
+</array>
+</plist>

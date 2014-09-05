@@ -13,7 +13,7 @@
 #import "ZDCachePathUtility.h"
 #import "ZDManagerUser.h"
 #import "ZDCustomer.h"
-#import "ZDProduct.h"
+#import "ZDCurrentProduct.h"
 #import "ZDProductDetail.h"
 #import "AllCustomerCategoryHeaders.h"
 #import "ZDBusiness.h"

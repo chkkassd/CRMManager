@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZDProduct : NSObject
+@interface ZDCurrentProduct : NSObject
 
 @property (nonatomic, retain) NSString * productId;
 @property (nonatomic, retain) NSString * productName;

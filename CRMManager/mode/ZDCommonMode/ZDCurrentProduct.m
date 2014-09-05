@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 peter. All rights reserved.
 //
 
-#import "ZDProduct.h"
+#import "ZDCurrentProduct.h"
 
-@implementation ZDProduct
+@implementation ZDCurrentProduct
 
 @end

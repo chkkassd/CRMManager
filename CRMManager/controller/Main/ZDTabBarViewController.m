@@ -11,6 +11,7 @@
 #import "ZDGesturePasswordViewController.h"
 #import "AllCustomerCategoryHeaders.h"
 #import "ZDSettingViewController.h"
+#import "ZDTabBarStore.h"
 
 #define DefaultEnterBackgroundTime  5.0
 
@@ -42,11 +43,16 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackground) name:UIApplicationDidEnterBackgroundNotification object:[UIApplication sharedApplication]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground) name:UIApplicationWillEnterForegroundNotification object:[UIApplication sharedApplication]];
     
+    NSArray* iconNames = [ZDTabBarStore sharedStore].highlightedIcons;
+    
     for (int i = 0; i < self.tabBar.items.count; i++)
     {
         UITabBarItem * barItem = self.tabBar.items[i];
-        barItem.selectedImage = [UIImage imageWithIndex:i];
+        barItem.selectedImage = [UIImage imageNamed:iconNames[i]];
     }
+    
+    
+    
     [self startReachabilityNotification];
 }
 
