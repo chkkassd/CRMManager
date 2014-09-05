@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -207,10 +208,7 @@
                             <constraint firstItem="2oc-OH-Qyb" firstAttribute="top" secondItem="JFb-o2-2OC" secondAttribute="bottom" constant="8" id="zr3-Rk-XyZ"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4">
-                        <size key="portraitSize" width="320" height="568"/>
-                        <size key="landscapeSize" width="568" height="320"/>
-                    </simulatedScreenMetrics>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="alertLabel" destination="JFb-o2-2OC" id="LYX-aM-2wl"/>
                         <outlet property="gestureContainView" destination="2oc-OH-Qyb" id="BOU-eI-xSw"/>
@@ -242,7 +240,7 @@
             </objects>
             <point key="canvasLocation" x="-203" y="640"/>
         </scene>
-        <!--机会-->
+        <!--Navigation Controller - 机会-->
         <scene sceneID="5ZK-Bf-xJM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WGM-OG-6aH" sceneMemberID="viewController">
@@ -273,7 +271,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-63-glM" userLabel="contain view">
@@ -413,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="1858" y="-1060"/>
         </scene>
-        <!--机会-->
+        <!--Chance View Controller - 机会-->
         <scene sceneID="0f7-Lx-xGd">
             <objects>
                 <viewController storyboardIdentifier="ZDChanceViewController" id="grb-8r-dgj" customClass="ZDChanceViewController" sceneMemberID="viewController">
@@ -503,7 +501,7 @@
             </objects>
             <point key="canvasLocation" x="962" y="-336"/>
         </scene>
-        <!--通讯录客户-->
+        <!--Address Book Table View Controller - 通讯录客户-->
         <scene sceneID="cSM-Gm-1Rj">
             <objects>
                 <tableViewController id="iYn-9F-yrK" customClass="ZDAddressBookTableViewController" sceneMemberID="viewController">
@@ -874,7 +872,7 @@
             </objects>
             <point key="canvasLocation" x="2156" y="-336"/>
         </scene>
-        <!--客户-->
+        <!--Navigation Controller - 客户-->
         <scene sceneID="YHh-ZU-gWX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3G-th-KrS" sceneMemberID="viewController">
@@ -893,7 +891,7 @@
             </objects>
             <point key="canvasLocation" x="445" y="356"/>
         </scene>
-        <!--客户-->
+        <!--Customer Table View Controller - 客户-->
         <scene sceneID="nYh-X3-ASc">
             <objects>
                 <tableViewController id="BcE-NZ-12n" customClass="ZDCustomerTableViewController" sceneMemberID="viewController">
@@ -915,11 +913,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="客户" id="hrR-QG-5ed">
-                        <barButtonItem key="rightBarButtonItem" image="ico_header_scan" id="2iD-1G-JSl"/>
+                        <barButtonItem key="rightBarButtonItem" image="ico_header_scan" id="2iD-1G-JSl">
+                            <connections>
+                                <action selector="scanButtonPressed:" destination="BcE-NZ-12n" id="zTF-eQ-exH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Gaj-uY-zfp" id="Hi3-Kx-TOe"/>
                         <segue destination="oRf-Kh-N4w" kind="push" identifier="Show List" id="YCH-ax-Mio"/>
+                        <segue destination="tF9-bp-xf0" kind="push" identifier="show scanView" id="oaH-jg-XHj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NFo-Hv-ktE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -935,7 +938,57 @@
             </objects>
             <point key="canvasLocation" x="962" y="356"/>
         </scene>
-        <!--产品-->
+        <!--Scan Bar Code View Controller - 扫瞄二维码-->
+        <scene sceneID="Orh-C1-wV6">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="tF9-bp-xf0" customClass="ZDScanBarCodeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MGg-0T-hvh"/>
+                        <viewControllerLayoutGuide type="bottom" id="ap3-6f-hsc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rKM-7B-0p1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOl-WR-Yyy">
+                                <rect key="frame" x="50" y="112" width="220" height="220"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="Bzh-EB-Sfj"/>
+                                    <constraint firstAttribute="width" constant="220" id="j4L-pO-NC0"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码放入框中，即可自动扫瞄" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BU5-Bg-hyp">
+                                <rect key="frame" x="20" y="371" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="3td-Mi-PNE"/>
+                                    <constraint firstAttribute="height" constant="21" id="t45-Cz-aLn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="BU5-Bg-hyp" secondAttribute="centerX" id="Mp7-mA-g2m"/>
+                            <constraint firstItem="OOl-WR-Yyy" firstAttribute="top" secondItem="MGg-0T-hvh" secondAttribute="bottom" constant="48" id="Uz3-Zl-fdg"/>
+                            <constraint firstItem="BU5-Bg-hyp" firstAttribute="top" secondItem="OOl-WR-Yyy" secondAttribute="bottom" constant="39" id="V4U-Jd-9fs"/>
+                            <constraint firstAttribute="centerX" secondItem="OOl-WR-Yyy" secondAttribute="centerX" id="eNg-3S-6zP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫瞄二维码" id="y9R-Co-CBM"/>
+                    <connections>
+                        <outlet property="viewPreview" destination="OOl-WR-Yyy" id="aHf-75-vBR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrr-nK-fAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="1082"/>
+        </scene>
+        <!--Navigation Controller - 产品-->
         <scene sceneID="wfF-bu-cfO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="37u-Nd-QJm" sceneMemberID="viewController">
@@ -952,9 +1005,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyI-U4-Bs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="1082"/>
+            <point key="canvasLocation" x="445" y="1842"/>
         </scene>
-        <!--设置-->
+        <!--Navigation Controller - 设置-->
         <scene sceneID="5yg-ER-5s1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bY0-Ej-Gu0" sceneMemberID="viewController">
@@ -971,9 +1024,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDP-ZI-bCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="1791"/>
+            <point key="canvasLocation" x="445" y="2551"/>
         </scene>
-        <!--设置-->
+        <!--Setting View Controller - 设置-->
         <scene sceneID="eSg-z6-iUU">
             <objects>
                 <tableViewController id="orw-34-dL9" customClass="ZDSettingViewController" sceneMemberID="viewController">
@@ -1172,9 +1225,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z2-kn-Oyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="1791"/>
+            <point key="canvasLocation" x="962" y="2551"/>
         </scene>
-        <!--关于-->
+        <!--About Us Table View Controller - 关于-->
         <scene sceneID="GWF-kW-82r">
             <objects>
                 <tableViewController id="dlL-SE-RGw" customClass="ZDAboutUsTableViewController" sceneMemberID="viewController">
@@ -1423,9 +1476,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0d-OT-GKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="1791"/>
+            <point key="canvasLocation" x="1492" y="2551"/>
         </scene>
-        <!--意见反馈-->
+        <!--Suggestion View Controller - 意见反馈-->
         <scene sceneID="1w3-t8-tMB">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="dVy-Fh-7ff" customClass="ZDSuggestionViewController" sceneMemberID="viewController">
@@ -1482,9 +1535,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Srw-m8-2NB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="2516"/>
+            <point key="canvasLocation" x="445" y="3276"/>
         </scene>
-        <!--常见问题-->
+        <!--Table View Controller - 常见问题-->
         <scene sceneID="4kr-eo-mh9">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="dK2-ch-ggH" sceneMemberID="viewController">
@@ -1573,9 +1626,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbZ-bX-NWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="954" y="2516"/>
+            <point key="canvasLocation" x="954" y="3276"/>
         </scene>
-        <!--手势密码设置-->
+        <!--Gesture Password Setting View Controller - 手势密码设置-->
         <scene sceneID="M2x-54-AbC">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="Stb-zg-pkS" customClass="ZDGesturePasswordSettingViewController" sceneMemberID="viewController">
@@ -1611,9 +1664,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eb5-Yp-3Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="2516"/>
+            <point key="canvasLocation" x="1492" y="3276"/>
         </scene>
-        <!--产品-->
+        <!--Products List View Controller - 产品-->
         <scene sceneID="Erv-SZ-4Zb">
             <objects>
                 <viewController id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
@@ -1673,9 +1726,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c8-2H-Ba9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="1082"/>
+            <point key="canvasLocation" x="962" y="1842"/>
         </scene>
-        <!--证大岁悦-->
+        <!--Product Detail View Controller - 证大岁悦-->
         <scene sceneID="VOw-sJ-8jd">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="BuH-HC-ubf" customClass="ZDProductDetailViewController" sceneMemberID="viewController">
@@ -1887,7 +1940,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1492" y="1082"/>
+            <point key="canvasLocation" x="1492" y="1842"/>
         </scene>
         <!--Customer List View Controller-->
         <scene sceneID="gcx-WY-ta3">
@@ -2051,7 +2104,7 @@
             </objects>
             <point key="canvasLocation" x="1492" y="356"/>
         </scene>
-        <!--联系记录-->
+        <!--Customer Record List View Controller - 联系记录-->
         <scene sceneID="08S-am-nkk">
             <objects>
                 <tableViewController id="Jdt-cf-boJ" customClass="ZDCustomerRecordListViewController" sceneMemberID="viewController">
@@ -2106,7 +2159,7 @@
             </objects>
             <point key="canvasLocation" x="2156" y="368"/>
         </scene>
-        <!--理财记录-->
+        <!--Customer Business Table View Controller - 理财记录-->
         <scene sceneID="a02-dg-7gv">
             <objects>
                 <tableViewController id="6gV-Tn-GuK" customClass="ZDCustomerBusinessTableViewController" sceneMemberID="viewController">
@@ -2286,7 +2339,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-H1-xwp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FmF-H1-xwp">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-yb-rlU" userLabel="contain view">
@@ -2400,13 +2453,10 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="OnM-he-V73"/>
-        <segue reference="Qyt-3H-7eu"/>
+        <segue reference="h8d-bX-9Nm"/>
     </inferredMetricsTieBreakers>
 </document>
