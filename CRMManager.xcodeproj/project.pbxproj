@@ -25,7 +25,6 @@
 		6724CB5F1994B26600E1C058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB5E1994B26600E1C058 /* main.m */; };
 		6724CB631994B26600E1C058 /* ZDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6724CB621994B26600E1C058 /* ZDAppDelegate.m */; };
 		6724CB661994B26600E1C058 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB641994B26600E1C058 /* Main_iPhone.storyboard */; };
-		6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB671994B26600E1C058 /* Main_iPad.storyboard */; };
 		6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6724CB6D1994B26600E1C058 /* Images.xcassets */; };
 		6724CB751994B26600E1C058 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB741994B26600E1C058 /* XCTest.framework */; };
 		6724CB761994B26600E1C058 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6724CB521994B26600E1C058 /* Foundation.framework */; };
@@ -134,7 +133,6 @@
 		6724CB611994B26600E1C058 /* ZDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDAppDelegate.h; sourceTree = "<group>"; };
 		6724CB621994B26600E1C058 /* ZDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZDAppDelegate.m; sourceTree = "<group>"; };
 		6724CB651994B26600E1C058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6724CB681994B26600E1C058 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		6724CB6D1994B26600E1C058 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6724CB731994B26600E1C058 /* CRMManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRMManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6724CB741994B26600E1C058 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -366,7 +364,6 @@
 				6724CB611994B26600E1C058 /* ZDAppDelegate.h */,
 				6724CB621994B26600E1C058 /* ZDAppDelegate.m */,
 				6724CB641994B26600E1C058 /* Main_iPhone.storyboard */,
-				6724CB671994B26600E1C058 /* Main_iPad.storyboard */,
 				6724CB6D1994B26600E1C058 /* Images.xcassets */,
 				6724CB591994B26600E1C058 /* Supporting Files */,
 			);
@@ -709,7 +706,6 @@
 			files = (
 				7C05ABE819BA00F000584860 /* tabBar.plist in Resources */,
 				FF59828B19A10FC50031D575 /* SSFSegmentControl.xib in Resources */,
-				6724CB691994B26600E1C058 /* Main_iPad.storyboard in Resources */,
 				67BD1F8619AF252B00125917 /* ZDFilterdAddressBookTableViewCell.xib in Resources */,
 				6724CB6E1994B26600E1C058 /* Images.xcassets in Resources */,
 				7C05ABE319B9F92000584860 /* product.plist in Resources */,
@@ -832,14 +828,6 @@
 				6724CB651994B26600E1C058 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		6724CB671994B26600E1C058 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6724CB681994B26600E1C058 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		6724CB7D1994B26600E1C058 /* InfoPlist.strings */ = {
