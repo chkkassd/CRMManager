@@ -673,7 +673,7 @@
 				ORGANIZATIONNAME = peter;
 				TargetAttributes = {
 					6724CB4E1994B26600E1C058 = {
-						DevelopmentTeam = 742CSLGJ92;
+						DevelopmentTeam = 4YB2GQAF4F;
 					};
 					6724CB721994B26600E1C058 = {
 						TestTargetID = 6724CB4E1994B26600E1C058;

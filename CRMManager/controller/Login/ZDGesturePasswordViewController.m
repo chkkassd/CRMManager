@@ -31,6 +31,8 @@
     [self positonSSFPasswordView];
 }
 
+#pragma mark - methods
+
 - (void)creatSSFPasswordGestureView
 {
     self.passwordGestureView.delegate = self;
@@ -56,6 +58,14 @@
     self.passwordGestureView.center = CGPointMake(self.gestureContainView.frame.size.width/2, self.gestureContainView.frame.size.height/2);
 }
 
+#pragma mark - action
+
+- (IBAction)forgetPasswordButtonPressed:(id)sender
+{
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:@"确定重新登录?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
 #pragma mark - properties
 
 - (ZDManagerUser *)zdManagerUser
@@ -72,6 +82,23 @@
         _passwordGestureView = [SSFPasswordGestureView instancePasswordView];
     }
     return _passwordGestureView;
+}
+
+#pragma mark - alert delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        //将手势密码置空
+        self.zdManagerUser.gesturePassword = @"";
+        self.zdManagerUser.gesturePasswordSwitch = YES;
+        [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
+        //置空，忘记密码默认为安全推出
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        [self.delegate gesturePasswordViewControllerDidForgetGesturePassword:self];
+    }
 }
 
 #pragma mark - SSFPasswordGestureViewDelegate
@@ -95,7 +122,7 @@
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
 {
-    self.alertLabel.text = @"两次密码不同,请重设第二次密码";
+    self.alertLabel.text = @"两次密码不同,请重设密码";
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
 }
 

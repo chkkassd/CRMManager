@@ -44,6 +44,7 @@
 {
     [super viewDidAppear:animated];
     NSString * userid = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultCurrentUserId];
+    
     if (self.isQuickLogin) {
         [self presentToGesturePasswordView];
         [[ZDModeClient sharedModeClient] quickLoginWithManagerUserId:userid];
@@ -142,6 +143,12 @@
     [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
         [self presentToMainView];
     }];
+}
+
+- (void)gesturePasswordViewControllerDidForgetGesturePassword:(ZDGesturePasswordViewController *)controller
+{
+    self.isQuickLogin = NO;
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark - tabbar view delegate

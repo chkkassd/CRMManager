@@ -17,6 +17,13 @@
 
 @implementation ZDSettingViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    ZDManagerUser * zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
+    [self.gesturePasswordSwitch setOn:zdManagerUser.gesturePasswordSwitch];
+}
+
 #pragma mark - Action
 
 - (IBAction)loginOut:(id)sender

@@ -114,6 +114,11 @@
     [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)gesturePasswordViewControllerDidForgetGesturePassword:(ZDGesturePasswordViewController *)controller
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark - ZDSettingview delegate
 
 - (void)settingViewControllerDidLoginOut:(ZDSettingViewController *)controller

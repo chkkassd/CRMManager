@@ -69,7 +69,7 @@
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
 {
-    self.alertLabel.text = @"两次绘制不同,请重绘第二次图案";
+    self.alertLabel.text = @"两次绘制不同,请重绘手势图案";
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
 }
 

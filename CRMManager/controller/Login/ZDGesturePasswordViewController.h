@@ -12,7 +12,7 @@
 
 @protocol ZDGesturePasswordViewControllerDelegate;
 
-@interface ZDGesturePasswordViewController : UIViewController
+@interface ZDGesturePasswordViewController : UIViewController<UIAlertViewDelegate>
 
 @property (weak, nonatomic) id <ZDGesturePasswordViewControllerDelegate> delegate;
 
@@ -20,6 +20,8 @@
 
 @protocol ZDGesturePasswordViewControllerDelegate <NSObject>
 
+@optional
 - (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller;
+- (void)gesturePasswordViewControllerDidForgetGesturePassword:(ZDGesturePasswordViewController *)controller;
 
 @end

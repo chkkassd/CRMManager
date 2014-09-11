@@ -56,14 +56,14 @@
     if (sender.state == UIGestureRecognizerStateEnded) {
         //绘制完成先保存密码
         NSString *string = [[NSString alloc] init];
-        if (self.state == SSFPasswordGestureViewStateWillFirstDraw) {
+        if (self.state == SSFPasswordGestureViewStateWillFirstDraw || self.state == SSFPasswordGestureViewStateFinishWrong) {
             for (int i = 0; i < self.selectedButtons.count; i++) {
                 UIButton *button = self.selectedButtons[i];
                 string = [string stringByAppendingString:[NSString stringWithFormat:@"%d",(int)button.tag]];
             }
             [[NSUserDefaults standardUserDefaults] setObject:string forKey:SSFFirstUserGesturePasswordKey];
             [[NSUserDefaults standardUserDefaults] synchronize];
-        } else if (self.state == SSFPasswordGestureViewStateWillAgainDraw || self.state == SSFPasswordGestureViewStateFinishWrong) {
+        } else if (self.state == SSFPasswordGestureViewStateWillAgainDraw) {
             for (int i = 0; i < self.selectedButtons.count; i++) {
                 UIButton *button = self.selectedButtons[i];
                 string = [string stringByAppendingString:[NSString stringWithFormat:@"%d",(int)button.tag]];
@@ -94,9 +94,9 @@
         [self.pathLayer setNeedsDisplay];
         
         //状态切换
-        if (self.state == SSFPasswordGestureViewStateWillFirstDraw) {
+        if (self.state == SSFPasswordGestureViewStateWillFirstDraw || self.state == SSFPasswordGestureViewStateFinishWrong) {
             self.state = SSFPasswordGestureViewStateWillAgainDraw;
-        } else if (self.state == SSFPasswordGestureViewStateWillAgainDraw || self.state == SSFPasswordGestureViewStateFinishWrong) {
+        } else if (self.state == SSFPasswordGestureViewStateWillAgainDraw) {
             if ([self checkFirstAndSecondPassword]) {
                 self.state = SSFPasswordGestureViewStateFinishDraw;
             } else {
