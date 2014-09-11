@@ -3,34 +3,94 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>id</key>
+		<string>ZhengDaSuiYue</string>
 		<key>name</key>
 		<string>证大岁悦</string>
 		<key>icon</key>
 		<string>ico_product_01</string>
+		<key>closePeriod</key>
+		<string>12个月</string>
+		<key>predictInterest</key>
+		<string>10%（年）</string>
+		<key>atLeastMoney</key>
+		<string>10万元</string>
+		<key>feature</key>
+		<string>固定期限固定收益，更稳健</string>
+		<key>objectCustomer</key>
+		<string>适合在一段时间内有闲置资金理财的人群，实现资产增值</string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>ZhengDaJiXi</string>
 		<key>name</key>
 		<string>证大季喜</string>
 		<key>icon</key>
 		<string>ico_product_02</string>
+		<key>closePeriod</key>
+		<string>3个月</string>
+		<key>predictInterest</key>
+		<string>8%（年）</string>
+		<key>atLeastMoney</key>
+		<string>10万元</string>
+		<key>feature</key>
+		<string>固定期限固定收益，更稳健</string>
+		<key>objectCustomer</key>
+		<string>适合在一段时间内有闲置资金理财的人群，实现资产增值</string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>ZhengDaNianFeng</string>
 		<key>name</key>
 		<string>证大年丰</string>
 		<key>icon</key>
 		<string>ico_product_03</string>
+		<key>closePeriod</key>
+		<string>12个月</string>
+		<key>predictInterest</key>
+		<string>10-12%（年）</string>
+		<key>atLeastMoney</key>
+		<string>10万元</string>
+		<key>feature</key>
+		<string>循环出借方式，获取较高预期收益</string>
+		<key>objectCustomer</key>
+		<string>有闲置资金，短期内无流动，并有中长期投资理念，使得收益最大化的客户</string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>ZhengDaYueShou</string>
 		<key>name</key>
 		<string>证大月收</string>
 		<key>icon</key>
 		<string>ico_product_04</string>
+		<key>closePeriod</key>
+		<string>12个月</string>
+		<key>predictInterest</key>
+		<string>0.85-1%（月）</string>
+		<key>atLeastMoney</key>
+		<string>10万元</string>
+		<key>feature</key>
+		<string>每月回收利息，本金持续出借</string>
+		<key>objectCustomer</key>
+		<string>每月有固定资金流动需求，并有中长期投资理念</string>
 	</dict>
 	<dict>
+		<key>id</key>
+		<string>ZhengDaShuangXin</string>
 		<key>name</key>
 		<string>证大双鑫</string>
 		<key>icon</key>
 		<string>ico_product_05</string>
+		<key>closePeriod</key>
+		<string>6个月</string>
+		<key>predictInterest</key>
+		<string>9%（年）</string>
+		<key>atLeastMoney</key>
+		<string>10万元</string>
+		<key>feature</key>
+		<string>循环出借方式，获取较高预期收益</string>
+		<key>objectCustomer</key>
+		<string>适合在一段时间内有闲置资金理财的人群，实现资产增值</string>
 	</dict>
 </array>
 </plist>

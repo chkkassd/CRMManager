@@ -10,4 +10,6 @@
 
 @interface ZDProductDetailViewController : UIViewController
 
+@property (nonatomic, strong) NSString* productId;
+
 @end

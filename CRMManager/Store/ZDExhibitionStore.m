@@ -37,10 +37,27 @@
             ZDExhibition* product = [ZDExhibition new];
             product.iconName = dic[@"icon"];
             product.productName = dic[@"name"];
+            product.productId = dic[@"id"];
+            product.predictInterest = dic[@"predictInterest"];
+            product.closePeriod = dic[@"closePeriod"];
+            product.atLeastMoney = dic[@"atLeastMoney"];
+            product.feature = dic[@"feature"];
+            product.objectCustomer = dic[@"objectCustomer"];
+            
             [m_products addObject:product];
         }
+        
+        _products = [m_products copy];
     }
-    return [m_products copy];
+    return _products;
+}
+
+- (ZDExhibition *)productWithId:(NSString *)productId
+{
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"productId == %@", productId];
+    
+    NSArray* arr = [self.products filteredArrayUsingPredicate:predicate];
+    return [arr firstObject];
 }
 
 

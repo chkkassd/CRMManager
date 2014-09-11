@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class ZDExhibition;
+
 @interface ZDExhibitionStore : NSObject
 
 @property (nonatomic, strong) NSArray* products;
 
 + (instancetype)sharedStore;
+
+- (ZDExhibition *)productWithId:(NSString *)id;
 
 @end
