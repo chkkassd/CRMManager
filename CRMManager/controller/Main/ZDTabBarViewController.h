@@ -18,6 +18,8 @@
 
 @protocol ZDTabBarViewControllerDelegate <NSObject>
 
+@optional
 - (void)tabBarViewControllerDidLogOut:(ZDTabBarViewController *)controller;
+- (void)tabBarViewControllerDidForgetGesturePasswordAndRelogin:(ZDTabBarViewController *)controller;
 
 @end

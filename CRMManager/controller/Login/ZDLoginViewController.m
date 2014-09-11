@@ -148,6 +148,9 @@
 - (void)gesturePasswordViewControllerDidForgetGesturePassword:(ZDGesturePasswordViewController *)controller
 {
     self.isQuickLogin = NO;
+    NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
+    self.nameTextField.text = defaultClientName;
+    self.passwordTextField.text = @"";
     [self.presentedViewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -161,6 +164,14 @@
         self.nameTextField.text = defaultClientName;
         self.passwordTextField.text = defaultPassword;
     }];
+}
+
+- (void)tabBarViewControllerDidForgetGesturePasswordAndRelogin:(ZDTabBarViewController *)controller
+{
+    NSString * defaultClientName = [[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName];
+    self.nameTextField.text = defaultClientName;
+    self.passwordTextField.text = @"";
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (IBAction)test:(id)sender

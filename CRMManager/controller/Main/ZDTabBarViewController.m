@@ -116,7 +116,7 @@
 
 - (void)gesturePasswordViewControllerDidForgetGesturePassword:(ZDGesturePasswordViewController *)controller
 {
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+    [self.customDelegate tabBarViewControllerDidForgetGesturePasswordAndRelogin:self];
 }
 
 #pragma mark - ZDSettingview delegate
