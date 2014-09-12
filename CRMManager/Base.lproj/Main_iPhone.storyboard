@@ -1660,7 +1660,7 @@
         <!--理财规划服务-->
         <scene sceneID="Erv-SZ-4Zb">
             <objects>
-                <viewController id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Y38-3G-X2c" customClass="ZDProductsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xxx-Kd-dUE"/>
                         <viewControllerLayoutGuide type="bottom" id="F0C-Wc-mzQ"/>
@@ -1669,8 +1669,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vxi-Lw-FhX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vxi-Lw-FhX">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jOH-4e-tu2">
                                     <size key="itemSize" width="70" height="100"/>
@@ -1686,18 +1686,32 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ico_product_01" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-m5-RwJ">
-                                                    <rect key="frame" x="5" y="8" width="58" height="58"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="证大岁悦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNA-JZ-fpO">
-                                                    <rect key="frame" x="5" y="74" width="60" height="18"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="证大岁悦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNA-JZ-fpO">
+                                                    <rect key="frame" x="0.0" y="74" width="70" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="t2T-KR-Ifg"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_product_01" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-m5-RwJ">
+                                                    <rect key="frame" x="6" y="8" width="58" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="Azg-2u-vww"/>
+                                                        <constraint firstAttribute="height" constant="58" id="BpR-Ct-otl"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="uNA-JZ-fpO" firstAttribute="bottom" secondItem="D8I-Lx-ldX" secondAttribute="bottomMargin" id="L9L-Ne-UJh"/>
+                                            <constraint firstItem="uNA-JZ-fpO" firstAttribute="leading" secondItem="D8I-Lx-ldX" secondAttribute="leadingMargin" constant="-8" id="LlB-qq-ovC"/>
+                                            <constraint firstItem="eaV-m5-RwJ" firstAttribute="top" secondItem="D8I-Lx-ldX" secondAttribute="topMargin" id="V1J-PV-e3P"/>
+                                            <constraint firstItem="eaV-m5-RwJ" firstAttribute="leading" secondItem="D8I-Lx-ldX" secondAttribute="leadingMargin" constant="-2" id="aAu-im-mzB"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="uNA-JZ-fpO" secondAttribute="trailing" constant="-8" id="lha-4f-HDC"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="eaV-m5-RwJ" id="sn7-8H-Uvi"/>
                                             <outlet property="label" destination="uNA-JZ-fpO" id="cZS-tP-I8g"/>
@@ -1711,6 +1725,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vxi-Lw-FhX" firstAttribute="top" secondItem="Xxx-Kd-dUE" secondAttribute="bottom" id="7IE-1f-r3N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vxi-Lw-FhX" secondAttribute="trailing" constant="-16" id="EZv-7c-qhq"/>
+                            <constraint firstItem="Vxi-Lw-FhX" firstAttribute="leading" secondItem="kyh-EV-fCt" secondAttribute="leadingMargin" constant="-16" id="WtC-Py-IV4"/>
+                            <constraint firstItem="Vxi-Lw-FhX" firstAttribute="bottom" secondItem="kyh-EV-fCt" secondAttribute="bottomMargin" id="tZo-kA-EkJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="理财规划服务" id="TWV-9c-p0k"/>
                     <connections>
@@ -1769,8 +1789,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="证大岁悦" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-my-isw">
-                                        <rect key="frame" x="168" y="30" width="80" height="24"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="证大岁悦" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CT3-my-isw">
+                                        <rect key="frame" x="120" y="30" width="80" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="0vw-mg-0H2"/>
                                             <constraint firstAttribute="width" constant="80" id="LyP-QT-dNX"/>

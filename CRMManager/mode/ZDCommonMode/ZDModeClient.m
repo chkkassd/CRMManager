@@ -89,7 +89,7 @@
             if (customers.count) {
                 
                 NSMutableArray *savedCustomers = [[NSMutableArray alloc] init];
-                int count = customers.count;
+                NSUInteger count = customers.count;
                 for (int i = 0;i < count;i++) {
                     NSDictionary *dic = customers[i];
                     ZDCustomer *customer = [[ZDCustomer alloc] init];
@@ -100,6 +100,7 @@
                     customer.cdHope = dic[@"hope"];
                     customer.sex = dic[@"sex"];
                     customer.customerType = dic[@"customerType"];
+                    customer.memo = dic[@"memo"];
                     [savedCustomers addObject:customer];
                 }
                 
@@ -356,6 +357,7 @@
     zdCustomer.cdHope = infoDic[@"hope"];
     zdCustomer.customerType = @"1";
     zdCustomer.sex = infoDic[@"sex"];
+    zdCustomer.memo = infoDic[@"memo"];
     return zdCustomer;
 }
 

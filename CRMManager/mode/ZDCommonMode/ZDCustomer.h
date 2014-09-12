@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString * cdHope;
 @property (nonatomic, retain) NSString * sex;
 @property (nonatomic, retain) NSString * customerType;
+@property (nonatomic, retain) NSString * memo;
 
 @end

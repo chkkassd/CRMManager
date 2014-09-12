@@ -134,6 +134,7 @@
     zdCustomer.mobile = customer.mobile;
     zdCustomer.cdHope = customer.cdHope;
     zdCustomer.sex = customer.sex;
+    zdCustomer.memo = customer.memo;
     zdCustomer.customerType = customer.customerType;
 }
 
@@ -401,6 +402,7 @@
     customer.mobile = zdCustomer.mobile;
     customer.cdHope = zdCustomer.cdHope;
     customer.sex = zdCustomer.sex;
+    customer.memo = zdCustomer.memo;
     customer.customerType = zdCustomer.customerType;
     customer.belongManager = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
 }

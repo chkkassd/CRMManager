@@ -60,6 +60,8 @@
             [self.hopeButton setTitle:@"未设置" forState:UIControlStateNormal];
         }
         
+        self.textView.text = self.editedCustomer.memo;
+        
     } else if (self.mode == ZDAddAndEditeViewControllerModeAdd && self.infoDic.count) {
         self.title = @"新增客户";
         self.nameTextField.text = self.infoDic[@"name"];
