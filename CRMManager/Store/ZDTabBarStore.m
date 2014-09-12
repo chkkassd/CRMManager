@@ -13,10 +13,9 @@
 - (NSArray *)highlightedIcons
 {
     if (!_highlightedIcons) {
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"tabBar.plist" ofType:nil];
+        NSString * path = [[NSBundle mainBundle] pathForResource:@"tabBar" ofType:@"plist"];
         _highlightedIcons = [NSArray arrayWithContentsOfFile:path];
     }
-    
     return _highlightedIcons;
 }
 

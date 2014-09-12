@@ -169,6 +169,7 @@
 {
     SSFLeftRightSwipeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"SSFLeftRightSwipeTableViewCell" forIndexPath:indexPath];
     cell.delegate = self;
+    cell.realContentView.frame = cell.contentView.frame;
     
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         ZDCustomer * zdFilterCustomer = self.filteredChanceCustomers[indexPath.row];

@@ -12,7 +12,6 @@
 @class ZDCustomer;
 @interface UIImage (Tab)
 
-+ (UIImage *)imageWithIndex:(int)index;
 + (UIImage *)headImageForZDCustomer:(ZDCustomer *)zdCustomer
                            andIsBig:(BOOL)isBig;
 @end

@@ -10,7 +10,7 @@
 
 @interface ZDTabBarStore : NSObject
 
-@property (nonatomic, strong) NSArray* highlightedIcons;
+@property (nonatomic, strong) NSArray * highlightedIcons;
 
 + (instancetype)sharedStore;
 

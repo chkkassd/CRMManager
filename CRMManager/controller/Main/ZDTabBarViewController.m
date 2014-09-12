@@ -43,7 +43,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterBackground) name:UIApplicationDidEnterBackgroundNotification object:[UIApplication sharedApplication]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForeground) name:UIApplicationWillEnterForegroundNotification object:[UIApplication sharedApplication]];
     
-    NSArray* iconNames = [ZDTabBarStore sharedStore].highlightedIcons;
+    NSArray * iconNames = [ZDTabBarStore sharedStore].highlightedIcons;
     
     for (int i = 0; i < self.tabBar.items.count; i++)
     {
