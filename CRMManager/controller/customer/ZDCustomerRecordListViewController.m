@@ -24,6 +24,7 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
+    self.title = self.zdCustomer.customerName;
 }
 
 - (void)dealloc

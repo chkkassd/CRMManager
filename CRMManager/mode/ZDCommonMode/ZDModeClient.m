@@ -522,7 +522,11 @@
 #pragma mark - 客户所有联系记录
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid
 {
-    return [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
+    NSArray* arr = [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
+    
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"contactTime" ascending:NO];
+    
+    return [arr sortedArrayUsingDescriptors:@[sortDescriptor]];
 }
 
 #pragma mark - 客户的所有businessList

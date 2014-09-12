@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    self.title = self.zdCustomer.customerName;
     self.nameTextField.text = self.zdCustomer.customerName;
     self.mobileTextField.text = self.zdCustomer.mobile;
     [self.sexButton setTitle:[self.zdCustomer.sex isEqualToString:@"0"] ? @"女" : @"男" forState:UIControlStateNormal];
