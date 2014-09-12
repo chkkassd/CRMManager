@@ -2497,7 +2497,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="gge-O5-JOg"/>
         <segue reference="VYf-II-zpB"/>
-        <segue reference="h8d-bX-9Nm"/>
     </inferredMetricsTieBreakers>
 </document>
