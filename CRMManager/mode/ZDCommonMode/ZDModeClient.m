@@ -524,7 +524,7 @@
 #pragma mark - 客户所有联系记录
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid
 {
-    NSArray* arr = [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
+    NSArray * arr = [[ZDLocalDB sharedLocalDB] queryZDContactRecordsWithCustomerId:customerid];
     
     NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"contactTime" ascending:NO];
     

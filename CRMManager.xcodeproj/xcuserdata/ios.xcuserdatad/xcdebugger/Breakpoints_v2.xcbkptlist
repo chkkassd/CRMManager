@@ -55,38 +55,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432198589.981624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "-updateChanceCustomerWithCustomerInfoDictionary:customerId:completionHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432198589.981624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "-updateChanceCustomerWithCustomerInfoDictionary:customerId:completionHandler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/webservice/ZDWebService.m"
             timestampString = "432198472.91551"
             startingColumnNumber = "9223372036854775807"
@@ -110,22 +78,6 @@
             startingLineNumber = "325"
             endingLineNumber = "325"
             landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432198589.981624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
-            landmarkName = "-updateChanceCustomerWithCustomerInfoDictionary:customerId:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
