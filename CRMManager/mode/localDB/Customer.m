@@ -22,5 +22,6 @@
 @dynamic belongManager;
 @dynamic allContactRecords;
 @dynamic business;
+@dynamic memo;
 
 @end
