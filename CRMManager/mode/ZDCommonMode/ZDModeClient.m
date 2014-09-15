@@ -266,7 +266,6 @@
 }
 
 //get and save birthRemind info
-
 - (void)fetchAndSaveBirthRemindInfoWithManagerId:(NSString *)managerId
                                         pageSize:(NSString *)pageSize
                                           pageNo:(NSString *)pageNo
@@ -305,6 +304,23 @@
         NSLog(@"pp%@,%@",dic[@"customerId"],dic[@"customerName"]);
     }
     return birthReminds;
+}
+
+//get and save investmentRemind
+- (void)fetchAndSaveInvestmentRemindInfoWithManagerId:(NSString *)managerId
+                                             pageSize:(NSString *)pageSize
+                                               pageNo:(NSString *)pageNo
+{
+    [[ZDWebService sharedWebViewService] fetchCreditRemindListWithManagerId:managerId
+                                                                   pageSize:pageSize
+                                                                     pageNo:pageNo
+                                                          completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                              if (!error) {
+                                                                  
+                                                              } else {
+                                                                  NSLog(@"fail to fetch investmentRemind");
+                                                              }
+    }];
 }
 
 - (ZDBusiness *)modifyZDBusinessFromInfoDic:(NSDictionary *)resultDic
