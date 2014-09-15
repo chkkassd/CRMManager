@@ -25,6 +25,8 @@
             [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
             //5.获取并保存所有客户的business
             [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
+            //6.获取生日提醒信息
+            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
         } else {
             NSLog(@"保存customers失败");
         }
@@ -62,6 +64,8 @@
                             [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
                             //5.获取并保存所有客户的business
                             [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
+                            //6.获取生日提醒信息
+                            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
                         } else {
                             NSLog(@"保存customers失败");
                         }
@@ -259,6 +263,48 @@
                                                                handler(error);
                                                            }
                                                        }];
+}
+
+//get and save birthRemind info
+
+- (void)fetchAndSaveBirthRemindInfoWithManagerId:(NSString *)managerId
+                                        pageSize:(NSString *)pageSize
+                                          pageNo:(NSString *)pageNo
+{
+    [[ZDWebService sharedWebViewService] fetchBirthRemindListWithManagerId:managerId
+                                                                  pageSize:pageSize
+                                                                    pageNo:pageNo
+                                                         completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                             if (!error) {
+                                                                 NSArray * infosArr = resultDic[@"infos"];
+                                                                 if (infosArr.count) {
+                                                                     NSArray * birthReminds = [self birthRemindForInfos:infosArr];
+                                                                     
+                                                                     //保存
+                                                                     if ([[ZDLocalDB sharedLocalDB] saveBirthReminds:birthReminds error:NULL]) {
+                                                                         [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateBirthRemindsNotification object:self];
+                                                                     } else {
+                                                                         NSLog(@"fail to save birthRemind");
+                                                                     }
+                                                                 }
+                                                             } else {
+                                                                 NSLog(@"fail to fetch birthReminds");
+                                                             }
+        
+    }];
+}
+
+- (NSArray *)birthRemindForInfos:(NSArray *)infosArr
+{
+    NSMutableArray * birthReminds = [[NSMutableArray alloc] init];
+    for (NSDictionary * dic in infosArr) {
+        ZDBirthRemind * zdBirthRemind = [[ZDBirthRemind alloc] init];
+        zdBirthRemind.dateOfBirth = dic[@"dataOfBirth"];
+        zdBirthRemind.customerId = dic[@"customerId"];
+        [birthReminds addObject:zdBirthRemind];
+        NSLog(@"pp%@,%@",dic[@"customerId"],dic[@"customerName"]);
+    }
+    return birthReminds;
 }
 
 - (ZDBusiness *)modifyZDBusinessFromInfoDic:(NSDictionary *)resultDic
@@ -535,6 +581,12 @@
 - (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid
 {
     return [[ZDLocalDB sharedLocalDB] queryAllZDBusinessListsWithCustomerId:customerid];
+}
+
+#pragma mark - 客户的生日提醒
+- (NSString *)birthRemindWithCustomerId:(NSString *)customerid
+{
+    return [[[ZDLocalDB sharedLocalDB] queryBirthRemindByRelationshipWithCustomerId:customerid] dataOfBirth];
 }
 
 - (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid

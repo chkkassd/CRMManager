@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="BirthRemind" syncable="YES">
+    <entity name="BirthRemind" representedClassName="BirthRemind" syncable="YES">
         <attribute name="dataOfBirth" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="birthOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="birthRemind" inverseEntity="Customer" syncable="YES"/>
     </entity>
@@ -52,16 +52,16 @@
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
+        <relationship name="allInvestmentReminds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InvestmentRemind" inverseName="investmentRemindOfCustomer" inverseEntity="InvestmentRemind" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
         <relationship name="birthRemind" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BirthRemind" inverseName="birthOfCustomer" inverseEntity="BirthRemind" syncable="YES"/>
         <relationship name="business" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
-        <relationship name="investmentRemind" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InvestmentRemind" inverseName="investmentRemindOfCustomer" inverseEntity="InvestmentRemind" syncable="YES"/>
     </entity>
-    <entity name="InvestmentRemind" syncable="YES">
+    <entity name="InvestmentRemind" representedClassName="InvestmentRemind" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="investAmt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pattern" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="investmentRemindOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="investmentRemind" inverseEntity="Customer" syncable="YES"/>
+        <relationship name="investmentRemindOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allInvestmentReminds" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
@@ -72,63 +72,13 @@
         <attribute name="userid" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="allCustomers" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Customer" inverseName="belongManager" inverseEntity="Customer" syncable="YES"/>
     </entity>
-    <entity name="Product" representedClassName="Product" syncable="YES">
-        <attribute name="contractNumber" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="manageFee" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="theDetail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ProductDetail" inverseName="belongProduct" inverseEntity="ProductDetail" syncable="YES"/>
-    </entity>
-    <entity name="ProductDetail" representedClassName="ProductDetail" syncable="YES">
-        <attribute name="privateDatefeDeductDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeDivestDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeInputTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeInvestDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeModifyDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeRepaymentDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeRequestDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeTimeInvestEnd" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDatefeTimeInvestStart" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDoublefeAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDoublefeInterestRate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDoublefeManageFee" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDoublefeMonthRepay" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateDoublefeTimeInvestAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateIntegerfeDeductCompany" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateIntegerfeTerm" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongcustomerid" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfeDeductAccount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfeInputId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfeManager" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfeModifyId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfePreviousId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateLongfeReturnAccount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeBusiState" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeCallback" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeContinueInvest" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeContinueProduct" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeContractNo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeInvestWay" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeLendNo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeMemo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfePaymentWay" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeProduct" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeProtocolVersion" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeRemittanceAccount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeResult" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeRiskCompensation" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="privateStringfeState" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="belongProduct" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="theDetail" inverseEntity="Product" syncable="YES"/>
-    </entity>
     <elements>
         <element name="BirthRemind" positionX="-873" positionY="-486" width="128" height="73"/>
         <element name="Business" positionX="-513" positionY="-468" width="128" height="163"/>
         <element name="BusinessList" positionX="-272" positionY="-459" width="128" height="238"/>
         <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
-        <element name="Customer" positionX="-531" positionY="-736" width="128" height="240"/>
+        <element name="Customer" positionX="-531" positionY="-736" width="128" height="238"/>
         <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="103"/>
         <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="148"/>
-        <element name="Product" positionX="-1044" positionY="-64" width="128" height="118"/>
-        <element name="ProductDetail" positionX="-1224" positionY="-576" width="128" height="628"/>
     </elements>
 </model>

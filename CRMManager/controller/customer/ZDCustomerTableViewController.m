@@ -100,6 +100,12 @@
         customer = self.allCurrentCustomers[indexPath.row];
     }
     
+    if ([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer.customerId].length) {
+        cell.alertImageView.image = [UIImage imageNamed:@"ico_client_new1"];
+    } else {
+        cell.alertImageView.image = nil;
+    }
+    
     cell.label.text = customer.customerName;
     
     NSArray * businessLists = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:customer.customerId];

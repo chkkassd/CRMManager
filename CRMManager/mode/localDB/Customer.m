@@ -7,8 +7,6 @@
 //
 
 #import "Customer.h"
-#import "Product.h"
-
 
 @implementation Customer
 
@@ -23,5 +21,7 @@
 @dynamic allContactRecords;
 @dynamic business;
 @dynamic memo;
+@dynamic birthRemind;
+@dynamic allInvestmentReminds;
 
 @end

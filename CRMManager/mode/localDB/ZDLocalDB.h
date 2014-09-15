@@ -12,8 +12,6 @@
 #import "ZDModeClient.h"
 #import "ManagerUser.h"
 #import "Customer.h"
-#import "Product.h"
-#import "ProductDetail.h"
 #import "ZDManagerUser.h"
 #import "ZDCustomer.h"
 #import "ContactRecord.h"
@@ -22,6 +20,8 @@
 #import "BusinessList.h"
 #import "ZDBusiness.h"
 #import "ZDBusinessList.h"
+#import "BirthRemind.h"
+#import "InvestmentRemind.h"
 
 @interface ZDLocalDB : NSObject
 
@@ -37,6 +37,7 @@
 - (NSArray *)queryAllZDCurrentCustomersOfCurrentManager;
 - (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid;
 - (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid;
+- (BirthRemind *)queryBirthRemindByRelationshipWithCustomerId:(NSString *)customerId;
 //modify and save
 - (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;
@@ -47,6 +48,7 @@
 - (BOOL)saveBusinessWith:(ZDBusiness *)zdBusiness error:(NSError *__autoreleasing *)error;
 - (BOOL)saveBusinessList:(ZDBusinessList *)zdBusinessList error:(NSError *__autoreleasing *)error;
 - (BOOL)saveMuchBusinessList:(NSArray *)zdBusinessLists error:(NSError *__autoreleasing *)error;
+- (BOOL)saveBirthReminds:(NSArray *)zdBirthReminds error:(NSError *__autoreleasing *)error;
 //delete
 - (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error;
 - (BOOL)deleteOneContactRecordWithReocrdId:(NSString *)recordid error:(NSError **)error;

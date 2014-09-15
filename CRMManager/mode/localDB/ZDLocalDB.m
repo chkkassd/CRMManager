@@ -75,7 +75,7 @@
 
 - (ManagerUser *)queryManagerUserWithUserId:(NSString *)userid
 {
-    ManagerUser *managerUser = nil;
+    ManagerUser * managerUser = nil;
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ManagerUser"];
     request.predicate = [NSPredicate predicateWithFormat:@"userid == %@",userid];
     
@@ -91,9 +91,9 @@
 
 - (ZDManagerUser *)queryCurrentZDmanagerUser
 {
-    if (!self.defaultCurrentUserId.length) return NO;
+    if (!self.defaultCurrentUserId.length) return nil;
     
-    ManagerUser *managerUser = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
+    ManagerUser * managerUser = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
     if (managerUser) {
         ZDManagerUser * zdManagerUser = [[ZDManagerUser alloc] init];
         [self modifyZDManagerUser:zdManagerUser from:managerUser];
@@ -226,7 +226,7 @@
     NSArray * allZDCustomers = [self queryAllZDCustomersOfCurrentManager];
     if (allZDCustomers) {
         NSPredicate* predicate = [NSPredicate predicateWithFormat:@"customerType != %@", @"1"];
-        NSArray* allZDCurrentCustomers = [allZDCustomers filteredArrayUsingPredicate:predicate];
+        NSArray * allZDCurrentCustomers = [allZDCustomers filteredArrayUsingPredicate:predicate];
         return allZDCurrentCustomers;
     }
     return nil;
@@ -306,6 +306,32 @@
     zdBusinessList.investAmt = businessList.investAmt;
     zdBusinessList.lendingNo = businessList.lendingNo ;
     zdBusinessList.contractNo = businessList.contractNo;
+}
+
+//查找一个birthRemind
+
+- (BirthRemind *)queryBirthRemindWithCustomerId:(NSString *)customerId
+{
+    if (!customerId.length) return nil;
+    
+    BirthRemind * birthRemind = nil;
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"BirthRemind"];
+    request.predicate = [NSPredicate predicateWithFormat:@"birthOfCustomer.customerId == %@",customerId];
+    
+    NSError * error = nil;
+    NSArray * fetchResults = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (fetchResults.count) {
+        birthRemind = fetchResults[0];
+    } else {
+        NSLog(@"fail to fetch birthRemind of customer:%@",customerId);
+    }
+    return birthRemind;
+}
+
+- (BirthRemind *)queryBirthRemindByRelationshipWithCustomerId:(NSString *)customerId
+{
+    Customer * customer = [self queryCustomerWithCustomerId:customerId];
+    return customer.birthRemind;
 }
 
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
@@ -485,7 +511,7 @@
 {
     if (!zdBusinessList) return NO;
     
-    BusinessList *businessList = [self queryBusinessListWithCustomerId:zdBusinessList.customerId andLendingNo:zdBusinessList.lendingNo];
+    BusinessList * businessList = [self queryBusinessListWithCustomerId:zdBusinessList.customerId andLendingNo:zdBusinessList.lendingNo];
     if (businessList) {
         // 存在，修改并保存
         [self modifyBusinessList:businessList from:zdBusinessList];
@@ -522,6 +548,41 @@
     
     for (ZDBusinessList * zdBusinessList in zdBusinessLists) {
         if (![self saveBusinessList:zdBusinessList error:error]) return NO;
+    }
+    return YES;
+}
+
+//save one birthRemind
+- (BOOL)saveBirthRemind:(ZDBirthRemind *)zdBirthRemind error:(NSError *__autoreleasing *)error
+{
+    if (!zdBirthRemind) return NO;
+    
+    BirthRemind * birthRemind = [self queryBirthRemindWithCustomerId:zdBirthRemind.customerId];
+    
+    if (birthRemind) {
+        //存在，修改并保存
+        [self modifyBirthRemind:birthRemind from:zdBirthRemind];
+    }else {
+        //不存在，插入一条
+        birthRemind = [NSEntityDescription insertNewObjectForEntityForName:@"BirthRemind" inManagedObjectContext:self.managedObjectContext];
+        [self modifyBirthRemind:birthRemind from:zdBirthRemind];
+    }
+    return [self.managedObjectContext save:error];
+}
+
+- (void)modifyBirthRemind:(BirthRemind *)birthRemind from:(ZDBirthRemind *)zdBirthRemind
+{
+    birthRemind.dataOfBirth = zdBirthRemind.dateOfBirth;
+    birthRemind.birthOfCustomer = [self queryCustomerWithCustomerId:zdBirthRemind.customerId];
+}
+
+//save much birthReminds
+- (BOOL)saveBirthReminds:(NSArray *)zdBirthReminds error:(NSError *__autoreleasing *)error
+{
+    if (!zdBirthReminds.count) return NO;
+    
+    for (ZDBirthRemind * zdBirthRemind in zdBirthReminds) {
+        if (![self saveBirthRemind:zdBirthRemind error:error]) return NO;
     }
     return YES;
 }

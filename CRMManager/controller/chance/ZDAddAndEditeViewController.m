@@ -95,11 +95,11 @@
     hud.mode = MBProgressHUDModeIndeterminate;
     NSDictionary * infoDictionary = @{
                                       @"customerName": self.nameTextField.text,
-                                      @"sex": [NSString stringWithFormat:@"%d",self.sexNum],
+                                      @"sex": [NSString stringWithFormat:@"%ld",(long)self.sexNum],
                                       @"managerId": [ZDModeClient sharedModeClient].zdManagerUser.userid,
                                       @"mobile": self.mobileTextField.text,
                                       @"memo": self.textView.text,
-                                      @"hope": [NSString stringWithFormat:@"%d",self.hopeNum],
+                                      @"hope": [NSString stringWithFormat:@"%ld",(long)self.hopeNum],
                                       @"source": @"13"//13代表ios
                                       };
     

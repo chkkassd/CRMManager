@@ -212,7 +212,10 @@
 //        
 //    }];
     
-    [[ZDWebService sharedWebViewService] fetchBirthRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//    [[ZDWebService sharedWebViewService] fetchBirthRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+//        
+//    }];
+    [[ZDWebService sharedWebViewService] fetchCreditRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
         
     }];
 }

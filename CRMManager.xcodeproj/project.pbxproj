@@ -70,6 +70,9 @@
 		7C05ABE619B9FC8D00584860 /* ZDExhibition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C05ABE519B9FC8D00584860 /* ZDExhibition.m */; };
 		7C05ABE819BA00F000584860 /* tabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C05ABE719BA00F000584860 /* tabBar.plist */; };
 		7C05ABEB19BA017F00584860 /* ZDTabBarStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C05ABEA19BA017F00584860 /* ZDTabBarStore.m */; };
+		81BC635A19C67F98006E3744 /* InvestmentRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC635919C67F98006E3744 /* InvestmentRemind.m */; };
+		81BC635D19C67F99006E3744 /* BirthRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC635C19C67F99006E3744 /* BirthRemind.m */; };
+		81BC636219C697F0006E3744 /* ZDBirthRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC636119C697F0006E3744 /* ZDBirthRemind.m */; };
 		FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */; };
 		FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */; };
 		FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59828819A10FC50031D575 /* SSFSegmentControl.m */; };
@@ -78,16 +81,12 @@
 		FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A8F199604BC0062B71C /* ZDWebService.m */; };
 		FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A92199604BC0062B71C /* ZDModeClient.m */; };
 		FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A961996051F0062B71C /* ZDModel.xcdatamodeld */; };
-		FF8F1A9B199611B40062B71C /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A9A199611B40062B71C /* Product.m */; };
 		FF8F1A9E199611B50062B71C /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1A9D199611B50062B71C /* Customer.m */; };
 		FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA0199611B50062B71C /* ManagerUser.m */; };
-		FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA3199611B50062B71C /* ProductDetail.m */; };
 		FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA61996121D0062B71C /* ZDLocalDB.m */; };
 		FF8F1AAA199618850062B71C /* ZDCachePathUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AA9199618850062B71C /* ZDCachePathUtility.m */; };
 		FF8F1AAD199755520062B71C /* ZDManagerUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AAC199755520062B71C /* ZDManagerUser.m */; };
 		FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AAF199755A10062B71C /* ZDCustomer.m */; };
-		FF8F1AB3199755D10062B71C /* ZDCurrentProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AB2199755D10062B71C /* ZDCurrentProduct.m */; };
-		FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8F1AB5199756320062B71C /* ZDProductDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +211,12 @@
 		7C05ABE719BA00F000584860 /* tabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tabBar.plist; sourceTree = "<group>"; };
 		7C05ABE919BA017F00584860 /* ZDTabBarStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDTabBarStore.h; sourceTree = "<group>"; };
 		7C05ABEA19BA017F00584860 /* ZDTabBarStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDTabBarStore.m; sourceTree = "<group>"; };
+		81BC635819C67F98006E3744 /* InvestmentRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvestmentRemind.h; sourceTree = "<group>"; };
+		81BC635919C67F98006E3744 /* InvestmentRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvestmentRemind.m; sourceTree = "<group>"; };
+		81BC635B19C67F99006E3744 /* BirthRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthRemind.h; sourceTree = "<group>"; };
+		81BC635C19C67F99006E3744 /* BirthRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthRemind.m; sourceTree = "<group>"; };
+		81BC636019C697F0006E3744 /* ZDBirthRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBirthRemind.h; sourceTree = "<group>"; };
+		81BC636119C697F0006E3744 /* ZDBirthRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBirthRemind.m; sourceTree = "<group>"; };
 		FF598229199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFLeftRightSwipeTableViewCell.h; sourceTree = "<group>"; };
 		FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFLeftRightSwipeTableViewCell.m; sourceTree = "<group>"; };
 		FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFLeftRightSwipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -225,14 +230,10 @@
 		FF8F1A91199604BC0062B71C /* ZDModeClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDModeClient.h; sourceTree = "<group>"; };
 		FF8F1A92199604BC0062B71C /* ZDModeClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDModeClient.m; sourceTree = "<group>"; };
 		FF8F1A971996051F0062B71C /* ZDModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZDModel.xcdatamodel; sourceTree = "<group>"; };
-		FF8F1A99199611B40062B71C /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		FF8F1A9A199611B40062B71C /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
 		FF8F1A9C199611B50062B71C /* Customer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
 		FF8F1A9D199611B50062B71C /* Customer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		FF8F1A9F199611B50062B71C /* ManagerUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagerUser.h; sourceTree = "<group>"; };
 		FF8F1AA0199611B50062B71C /* ManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagerUser.m; sourceTree = "<group>"; };
-		FF8F1AA2199611B50062B71C /* ProductDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetail.h; sourceTree = "<group>"; };
-		FF8F1AA3199611B50062B71C /* ProductDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetail.m; sourceTree = "<group>"; };
 		FF8F1AA51996121D0062B71C /* ZDLocalDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLocalDB.h; sourceTree = "<group>"; };
 		FF8F1AA61996121D0062B71C /* ZDLocalDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDLocalDB.m; sourceTree = "<group>"; };
 		FF8F1AA8199618850062B71C /* ZDCachePathUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCachePathUtility.h; sourceTree = "<group>"; };
@@ -241,10 +242,6 @@
 		FF8F1AAC199755520062B71C /* ZDManagerUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDManagerUser.m; sourceTree = "<group>"; };
 		FF8F1AAE199755A10062B71C /* ZDCustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCustomer.h; sourceTree = "<group>"; };
 		FF8F1AAF199755A10062B71C /* ZDCustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCustomer.m; sourceTree = "<group>"; };
-		FF8F1AB1199755D10062B71C /* ZDCurrentProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDCurrentProduct.h; sourceTree = "<group>"; };
-		FF8F1AB2199755D10062B71C /* ZDCurrentProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDCurrentProduct.m; sourceTree = "<group>"; };
-		FF8F1AB4199756320062B71C /* ZDProductDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDProductDetail.h; sourceTree = "<group>"; };
-		FF8F1AB5199756320062B71C /* ZDProductDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDProductDetail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -580,10 +577,10 @@
 				67C39A651998A89E00D796EA /* Business.m */,
 				67984DF619AAD2F400F24D3E /* BusinessList.h */,
 				67984DF719AAD2F400F24D3E /* BusinessList.m */,
-				FF8F1A99199611B40062B71C /* Product.h */,
-				FF8F1A9A199611B40062B71C /* Product.m */,
-				FF8F1AA2199611B50062B71C /* ProductDetail.h */,
-				FF8F1AA3199611B50062B71C /* ProductDetail.m */,
+				81BC635B19C67F99006E3744 /* BirthRemind.h */,
+				81BC635C19C67F99006E3744 /* BirthRemind.m */,
+				81BC635819C67F98006E3744 /* InvestmentRemind.h */,
+				81BC635919C67F98006E3744 /* InvestmentRemind.m */,
 			);
 			path = localDB;
 			sourceTree = "<group>";
@@ -612,14 +609,12 @@
 				FF8F1AAF199755A10062B71C /* ZDCustomer.m */,
 				67B7013F199B61970061C345 /* ZDContactRecord.h */,
 				67B70140199B61970061C345 /* ZDContactRecord.m */,
-				FF8F1AB1199755D10062B71C /* ZDCurrentProduct.h */,
-				FF8F1AB2199755D10062B71C /* ZDCurrentProduct.m */,
-				FF8F1AB4199756320062B71C /* ZDProductDetail.h */,
-				FF8F1AB5199756320062B71C /* ZDProductDetail.m */,
 				67984DF919AAD8BA00F24D3E /* ZDBusiness.h */,
 				67984DFA19AAD8BA00F24D3E /* ZDBusiness.m */,
 				67984DFC19AAD99300F24D3E /* ZDBusinessList.h */,
 				67984DFD19AAD99300F24D3E /* ZDBusinessList.m */,
+				81BC636019C697F0006E3744 /* ZDBirthRemind.h */,
+				81BC636119C697F0006E3744 /* ZDBirthRemind.m */,
 			);
 			path = ZDCommonMode;
 			sourceTree = "<group>";
@@ -743,6 +738,7 @@
 				67BAA92B19A34059005671A8 /* MBProgressHUD.m in Sources */,
 				FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */,
 				FF8F1AB0199755A10062B71C /* ZDCustomer.m in Sources */,
+				81BC636219C697F0006E3744 /* ZDBirthRemind.m in Sources */,
 				67BBE06E19A19D11006BE12C /* ZDChanceViewController.m in Sources */,
 				67BBE07119A1EA0B006BE12C /* ZDChanceCustomerDetailViewController.m in Sources */,
 				67C39A6319985FBA00D796EA /* SSFPathLineLayer.m in Sources */,
@@ -751,22 +747,21 @@
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				671828CB19B9541B00432505 /* ZDScanBarCodeViewController.m in Sources */,
 				67CD594B19ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.m in Sources */,
-				FF8F1AB6199756320062B71C /* ZDProductDetail.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
+				81BC635A19C67F98006E3744 /* InvestmentRemind.m in Sources */,
 				67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */,
 				1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */,
 				67BD1F8519AF252B00125917 /* ZDFilterdAddressBookTableViewCell.m in Sources */,
-				FF8F1AA4199611B50062B71C /* ProductDetail.m in Sources */,
 				67BD1F7719AEB7A500125917 /* ZDProductCell.m in Sources */,
 				67BD1F7019AEB78600125917 /* ZDCustomerBusinessTableViewController.m in Sources */,
 				18E9F9A51995B6F000E6DC8F /* ZDProductDetailViewController.m in Sources */,
 				18E9F9A81995B6F000E6DC8F /* ZDSettingViewController.m in Sources */,
 				7C05ABEB19BA017F00584860 /* ZDTabBarStore.m in Sources */,
-				FF8F1A9B199611B40062B71C /* Product.m in Sources */,
 				7C05ABE119B9F70100584860 /* ZDExhibitionStore.m in Sources */,
 				FF8F1A9E199611B50062B71C /* Customer.m in Sources */,
 				67984DFE19AAD99300F24D3E /* ZDBusinessList.m in Sources */,
 				FF8F1AA1199611B50062B71C /* ManagerUser.m in Sources */,
+				81BC635D19C67F99006E3744 /* BirthRemind.m in Sources */,
 				67CD594E19ADBCB100303317 /* ZDCustomerBusinessTableViewCellUnfold.m in Sources */,
 				67BD1F8119AF044900125917 /* ZDAddressBookTableViewCell.m in Sources */,
 				67B457D819A5E30000C89859 /* GSReachability.m in Sources */,
@@ -787,7 +782,6 @@
 				18861913199C0B09007635FC /* UIImage+Tab.m in Sources */,
 				67BD1F7119AEB78600125917 /* ZDCustomerDetailViewController.m in Sources */,
 				67984DFB19AAD8BA00F24D3E /* ZDBusiness.m in Sources */,
-				FF8F1AB3199755D10062B71C /* ZDCurrentProduct.m in Sources */,
 				18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */,
 				FF8F1AA71996121D0062B71C /* ZDLocalDB.m in Sources */,
 				6724CBA21994BD6A00E1C058 /* NSString+Tony.m in Sources */,

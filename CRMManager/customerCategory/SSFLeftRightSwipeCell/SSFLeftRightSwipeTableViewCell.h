@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UILabel * interestLabel;
 @property (weak, nonatomic) IBOutlet UIImageView * headImageView;
+@property (weak, nonatomic) IBOutlet UIImageView * alertImageView;
 @property (nonatomic) BOOL isEditMode;
 @property (nonatomic) BOOL startGesture;//yes,手势开启，no，手势关闭
 @property (weak, nonatomic) id <SSFLeftRightSwipeTableViewCellDelegate> delegate;

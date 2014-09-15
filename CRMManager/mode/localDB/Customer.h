@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Product;
+@class BirthRemind;
+@class InvestmentRemind;
 @class Business;
 
 @interface Customer : NSManagedObject
@@ -26,6 +27,9 @@
 @property (nonatomic, retain) NSManagedObject * belongManager;
 @property (nonatomic, retain) NSSet * allContactRecords;
 @property (nonatomic, retain) Business * business;
+@property (nonatomic, retain) BirthRemind * birthRemind;
+@property (nonatomic, retain) NSSet * allInvestmentReminds;
+
 @end
 
 @interface Customer (CoreDataGeneratedAccessors)

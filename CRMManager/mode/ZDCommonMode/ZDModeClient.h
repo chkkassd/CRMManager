@@ -13,11 +13,10 @@
 #import "ZDCachePathUtility.h"
 #import "ZDManagerUser.h"
 #import "ZDCustomer.h"
-#import "ZDCurrentProduct.h"
-#import "ZDProductDetail.h"
 #import "AllCustomerCategoryHeaders.h"
 #import "ZDBusiness.h"
 #import "ZDBusinessList.h"
+#import "ZDBirthRemind.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
 #define DefaultClientName   @"DefaultClientName"
@@ -26,6 +25,7 @@
 #define ZDUpdateCustomersNotification  @"UpdateCustomersNotification"
 #define ZDUpdateContactRecordsNotification  @"UpdateContactRecordsNotification"
 #define ZDUpdateBusinessAndBusinessListsNotification  @"UpdateBusinessAndBusinessListsNotification"
+#define ZDUpdateBirthRemindsNotification  @"updateBirthRemindsNotification"
 
 @interface ZDModeClient : NSObject
 
@@ -46,6 +46,8 @@
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;
 //得到一个客户所有的businessList产品
 - (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid;
+//得到一个客户的生日提醒
+- (NSString *)birthRemindWithCustomerId:(NSString *)customerid;
 
 //保存manageruser
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
