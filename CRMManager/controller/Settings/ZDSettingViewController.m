@@ -11,18 +11,9 @@
 
 @interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UISwitch * gesturePasswordSwitch;
-
 @end
 
 @implementation ZDSettingViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    ZDManagerUser * zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
-    [self.gesturePasswordSwitch setOn:zdManagerUser.gesturePasswordSwitch];
-}
 
 #pragma mark - Action
 
@@ -36,14 +27,6 @@
                                   otherButtonTitles:nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     [actionSheet showInView:self.view];
-}
-
-- (IBAction)gesturePasswordSwitchPressed:(id)sender
-{
-    BOOL flag = self.gesturePasswordSwitch.on;
-    ZDManagerUser * zdManagerUser = [ZDModeClient sharedModeClient].zdManagerUser;
-    zdManagerUser.gesturePasswordSwitch = flag;
-    [[ZDModeClient sharedModeClient] saveZDManagerUser:zdManagerUser];
 }
 
 #pragma mark - UITableViewDatasource

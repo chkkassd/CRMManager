@@ -11,6 +11,6 @@
 #import "AllCustomerCategoryHeaders.h"
 #import "ZDModeClient.h"
 
-@interface ZDGesturePasswordSettingViewController : UIViewController<UIAlertViewDelegate>
+@interface ZDGesturePasswordSettingViewController : UIViewController
 
 @end

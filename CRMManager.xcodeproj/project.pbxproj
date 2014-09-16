@@ -73,6 +73,8 @@
 		81BC635A19C67F98006E3744 /* InvestmentRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC635919C67F98006E3744 /* InvestmentRemind.m */; };
 		81BC635D19C67F99006E3744 /* BirthRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC635C19C67F99006E3744 /* BirthRemind.m */; };
 		81BC636219C697F0006E3744 /* ZDBirthRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BC636119C697F0006E3744 /* ZDBirthRemind.m */; };
+		81C071D619C7C947006BA8E7 /* ZDInvestmentRemind.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C071D519C7C947006BA8E7 /* ZDInvestmentRemind.m */; };
+		81C071DC19C8071D006BA8E7 /* ZDScanWebLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C071DB19C8071D006BA8E7 /* ZDScanWebLoginViewController.m */; };
 		FF59822C199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */; };
 		FF59822D199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */; };
 		FF59828A19A10FC50031D575 /* SSFSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FF59828819A10FC50031D575 /* SSFSegmentControl.m */; };
@@ -217,6 +219,10 @@
 		81BC635C19C67F99006E3744 /* BirthRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthRemind.m; sourceTree = "<group>"; };
 		81BC636019C697F0006E3744 /* ZDBirthRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDBirthRemind.h; sourceTree = "<group>"; };
 		81BC636119C697F0006E3744 /* ZDBirthRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDBirthRemind.m; sourceTree = "<group>"; };
+		81C071D419C7C947006BA8E7 /* ZDInvestmentRemind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDInvestmentRemind.h; sourceTree = "<group>"; };
+		81C071D519C7C947006BA8E7 /* ZDInvestmentRemind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDInvestmentRemind.m; sourceTree = "<group>"; };
+		81C071DA19C8071D006BA8E7 /* ZDScanWebLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDScanWebLoginViewController.h; sourceTree = "<group>"; };
+		81C071DB19C8071D006BA8E7 /* ZDScanWebLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDScanWebLoginViewController.m; sourceTree = "<group>"; };
 		FF598229199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFLeftRightSwipeTableViewCell.h; sourceTree = "<group>"; };
 		FF59822A199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFLeftRightSwipeTableViewCell.m; sourceTree = "<group>"; };
 		FF59822B199CFC360031D575 /* SSFLeftRightSwipeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFLeftRightSwipeTableViewCell.xib; sourceTree = "<group>"; };
@@ -493,6 +499,8 @@
 				67BD1F6F19AEB78600125917 /* ZDCustomerTableViewController.m */,
 				671828C919B9541B00432505 /* ZDScanBarCodeViewController.h */,
 				671828CA19B9541B00432505 /* ZDScanBarCodeViewController.m */,
+				81C071DA19C8071D006BA8E7 /* ZDScanWebLoginViewController.h */,
+				81C071DB19C8071D006BA8E7 /* ZDScanWebLoginViewController.m */,
 			);
 			path = customer;
 			sourceTree = "<group>";
@@ -615,6 +623,8 @@
 				67984DFD19AAD99300F24D3E /* ZDBusinessList.m */,
 				81BC636019C697F0006E3744 /* ZDBirthRemind.h */,
 				81BC636119C697F0006E3744 /* ZDBirthRemind.m */,
+				81C071D419C7C947006BA8E7 /* ZDInvestmentRemind.h */,
+				81C071D519C7C947006BA8E7 /* ZDInvestmentRemind.m */,
 			);
 			path = ZDCommonMode;
 			sourceTree = "<group>";
@@ -766,6 +776,8 @@
 				67BD1F8119AF044900125917 /* ZDAddressBookTableViewCell.m in Sources */,
 				67B457D819A5E30000C89859 /* GSReachability.m in Sources */,
 				FF8F1A93199604BC0062B71C /* ZDWebService+URL.m in Sources */,
+				81C071DC19C8071D006BA8E7 /* ZDScanWebLoginViewController.m in Sources */,
+				81C071D619C7C947006BA8E7 /* ZDInvestmentRemind.m in Sources */,
 				FF8F1A981996051F0062B71C /* ZDModel.xcdatamodeld in Sources */,
 				FF8F1A94199604BC0062B71C /* ZDWebService.m in Sources */,
 				7C05ABE619B9FC8D00584860 /* ZDExhibition.m in Sources */,

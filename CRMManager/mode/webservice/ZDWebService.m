@@ -297,12 +297,89 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+//二维码扫描登录
+- (void)CRMLoginOnWebWithUserName:(NSString *)userName
+                         dimeCode:(NSString *)dimeCode
+                completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"userName":userName,
+                           @"dimeCode":dimeCode
+                           };
+    NSURL * url = [self URLForLoginOnWebByDimeCode];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+//二维码扫描确认登录
+- (void)confirmCRMLoginOnWebWithdimeCode:(NSString *)dimeCode
+                       completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"dimeCode":dimeCode};
+    
+    NSURL * url = [self URLForLoginOnWebByDimeCodeConfirm];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+//二维码扫描取消登录
+- (void)cancleCRMLoginOnWebWithdimeCode:(NSString *)dimeCode
+                      completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+{
+    NSDictionary * dic = @{@"dimeCode":dimeCode};
+    
+    NSURL * url = [self URLForLoginOnWebByDimeCodeCancle];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+//获取参数
+- (void)fetchParamsWithParams:(NSString *)params
+            completionHandler:(void(^)(NSError * error))handler
+{
+    NSDictionary * dic = @{@"params": @[params]};
+    
+    NSURL * url = [self URLForqueryParams];
+}
+
 #pragma mark - 共用请求方法
 
 // webservice的接口请求设置
 - (void)fetchByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
 {
     NSString *jsonString = [self translateToJsonStringWithDictionary:dict];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+    NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
+    
+    [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
+    [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
+    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
+    [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
+    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
+    [req setHTTPMethod:@"POST"];
+    [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //ios5之后新增异步发送接口，无需再调用connectiondelegate
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!connectionError) {
+            //解析得到的json数据
+            NSError *error = nil;
+            NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            NSLog(@"%@",responseDic);
+            if ([responseDic[@"status"] isEqualToString:@"0"]) {
+                handler(nil, responseDic);
+            } else {
+                NSError *error = [[NSError alloc] init];
+                handler(error, nil);
+            }
+        } else {
+            NSLog(@"Http error:%@", connectionError.localizedDescription);
+            handler(connectionError, nil);
+        }
+    }];
+}
+
+- (void)fetchParamsByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSString *jsonString = [self translateParamsToJsonStringWithDictionary:dict];
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
     NSString *msgLength = [NSString stringWithFormat:@"%lu", (unsigned long)[jsonString length]];
     
@@ -348,6 +425,22 @@
             jsonString = [jsonString stringByAppendingString:[NSString stringWithFormat:@"\"%@\":\"%@\",",keys[i],values[i]]];
         } else {
             jsonString = [jsonString stringByAppendingString:[NSString stringWithFormat:@"\"%@\":\"%@\"",keys[i],values[i]]];
+        }
+    }
+    jsonString = [jsonString stringByAppendingString:@"}"];
+    return jsonString;
+}
+
+- (NSString *)translateParamsToJsonStringWithDictionary:(NSDictionary *)dic
+{
+    NSArray *keys = [dic allKeys];
+    NSArray *values = [dic allValues];
+    NSString *jsonString = @"json={";
+    for (int i = 0; i < keys.count; i ++) {
+        if (i != (keys.count - 1)) {
+            jsonString = [jsonString stringByAppendingString:[NSString stringWithFormat:@"\"%@\":\"%@\",",keys[i],values[i]]];
+        } else {
+            jsonString = [jsonString stringByAppendingString:[NSString stringWithFormat:@"\"%@\":[\"%@\"]",keys[i],[values[i] firstObject]]];
         }
     }
     jsonString = [jsonString stringByAppendingString:@"}"];

@@ -8,12 +8,15 @@
 
 #import "ZDScanBarCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZDScanWebLoginViewController.h"
 
 @interface ZDScanBarCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView * viewPreview;
+@property (weak, nonatomic) IBOutlet UIView * movingLineView;
 @property (strong, nonatomic) AVCaptureSession * captureSession;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer * videoPreviewLayer;
+@property (strong, nonatomic) NSString * qrCode;
 
 @end
 
@@ -25,6 +28,12 @@
     [self startCaptureBarCode];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+//    [self startScanAnimation];
+}
+
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -32,6 +41,17 @@
 }
 
 #pragma mark - methods
+
+- (void)startScanAnimation
+{
+    [UIView animateWithDuration:3.0 delay:0.0 options:(UIViewAnimationOptionCurveLinear | UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse) animations:^{
+        CGPoint center = self.movingLineView.center;
+        center.y -= 50;
+        self.movingLineView.center = center;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
 
 - (void)startCaptureBarCode
 {
@@ -78,6 +98,11 @@
     [self.videoPreviewLayer removeFromSuperlayer];
 }
 
+- (void)presentToScanWebLoginView
+{
+    [self performSegueWithIdentifier:@"showScanWebLoginView" sender:self];
+}
+
 #pragma mark - properties
 
 - (AVCaptureSession *)captureSession
@@ -86,6 +111,16 @@
         _captureSession = [[AVCaptureSession alloc] init];
     }
     return _captureSession;
+}
+
+#pragma makr - segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showScanWebLoginView"]) {
+        ZDScanWebLoginViewController * swlvc = segue.destinationViewController;
+        swlvc.qrCode = self.qrCode;
+    }
 }
 
 #pragma mark - AVCaptureMeatadataOutputObjectsDelegate
@@ -98,7 +133,19 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //回到主线程做主线程操作
                 [self stopCaptureBarCode];
-                NSLog(@"%@",[metaobj stringValue]);
+                self.qrCode = [metaobj stringValue];
+                
+                MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+                hud.labelText = @"请稍候";
+                [[ZDModeClient sharedModeClient] scanToLoginOnWebByUserName:[[NSUserDefaults standardUserDefaults] objectForKey:DefaultClientName] dimeCode:self.qrCode completionHandler:^(NSError *error) {
+                    if (!error) {
+                        [hud hide:YES afterDelay:1];
+                        [self presentToScanWebLoginView];
+                    } else {
+                        hud.labelText = @"登录失败，请稍候再试";
+                        [hud hide:YES afterDelay:1];
+                    }
+                }];
             });
         }
     }

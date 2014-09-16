@@ -316,11 +316,30 @@
                                                                      pageNo:pageNo
                                                           completionHandler:^(NSError *error, NSDictionary *resultDic) {
                                                               if (!error) {
-                                                                  
+                                                                  NSArray * infosArr = resultDic[@"infos"];
+                                                                  if (infosArr.count) {
+                                                                      NSArray * investmentReminds = [self investmentRemindsForInfos:infosArr];
+                                                                      
+                                                                  }
                                                               } else {
                                                                   NSLog(@"fail to fetch investmentRemind");
                                                               }
     }];
+}
+
+- (NSArray *)investmentRemindsForInfos:(NSArray *)infosArr
+{
+    if (!infosArr.count) return nil;
+    NSMutableArray * investmentReminds = [[NSMutableArray alloc] init];
+    for (NSDictionary * dic in infosArr) {
+        ZDInvestmentRemind * zdInvestmentRemind = [[ZDInvestmentRemind alloc] init];
+        zdInvestmentRemind.endDate = dic[@"endDate"];
+        zdInvestmentRemind.investAmt = dic[@"investAmt"];
+        zdInvestmentRemind.pattern = dic[@"pattern"];
+        zdInvestmentRemind.customerId = dic[@"customerId"];
+        [investmentReminds addObject:zdInvestmentRemind];
+    }
+    return investmentReminds;
 }
 
 - (ZDBusiness *)modifyZDBusinessFromInfoDic:(NSDictionary *)resultDic
@@ -580,6 +599,49 @@
             //失败
             handler(error);
         }
+    }];
+}
+
+#pragma mark - 二维码扫描登录相关
+
+- (void)scanToLoginOnWebByUserName:(NSString *)userName
+                          dimeCode:(NSString *)dimeCode
+                 completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] CRMLoginOnWebWithUserName:userName
+                                                          dimeCode:dimeCode
+                                                 completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                     if (!error) {
+                                                         handler(nil);
+                                                     } else {
+                                                         handler(error);
+                                                     }
+    }];
+}
+
+- (void)scanToLoginOnWebConfirmByDimeCode:(NSString *)dimeCode
+                        completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] confirmCRMLoginOnWebWithdimeCode:dimeCode
+                                                        completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                            if (!error) {
+                                                                handler(nil);
+                                                            } else {
+                                                                handler(error);
+                                                            }
+    }];
+}
+
+- (void)scanToLoginOnWebCancleByDimeCode:(NSString *)dimeCode
+                       completionHandler:(void(^)(NSError * error))handler
+{
+    [[ZDWebService sharedWebViewService] cancleCRMLoginOnWebWithdimeCode:dimeCode
+                                                       completionHandler:^(NSError *error, NSDictionary *resultDic) {
+                                                           if (!error) {
+                                                               handler(nil);
+                                                           } else {
+                                                               handler(error);
+                                                           }
     }];
 }
 

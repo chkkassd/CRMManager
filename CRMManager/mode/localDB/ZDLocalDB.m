@@ -121,7 +121,6 @@
     zdManager.userid = managerUser.userid;
     zdManager.password = managerUser.password;
     zdManager.gesturePassword = managerUser.gesturePassword;
-    zdManager.gesturePasswordSwitch = managerUser.gesturePasswordSwitch;
     zdManager.director = managerUser.director;
     zdManager.area = managerUser.area;
 }
@@ -334,6 +333,13 @@
     return customer.birthRemind;
 }
 
+//查找一个investmentRemind
+//
+//- (InvestmentRemind *)queryInvestmentRemindWithCustomerId:(NSString *)customerId
+//{
+//    
+//}
+
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
 
 //save managerUser for login
@@ -385,7 +391,6 @@
     managerUser.userid = zdManagerUser.userid;
     managerUser.password = zdManagerUser.password;
     managerUser.gesturePassword = zdManagerUser.gesturePassword;
-    managerUser.gesturePasswordSwitch = zdManagerUser.gesturePasswordSwitch;
     managerUser.director = zdManagerUser.director;
     managerUser.area = zdManagerUser.area;
 }

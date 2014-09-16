@@ -29,5 +29,9 @@
 - (NSURL *)URLForGetRemindInfos;
 - (NSURL *)URLForGetCreditRemindList;
 - (NSURL *)URLForGetBirthRemindList;
+- (NSURL *)URLForLoginOnWebByDimeCode;
+- (NSURL *)URLForLoginOnWebByDimeCodeConfirm;
+- (NSURL *)URLForLoginOnWebByDimeCodeCancle;
+- (NSURL *)URLForqueryParams;
 
 @end

@@ -17,6 +17,7 @@
 #import "ZDBusiness.h"
 #import "ZDBusinessList.h"
 #import "ZDBirthRemind.h"
+#import "ZDInvestmentRemind.h"
 
 #define DefaultCurrentUserId    @"DefaultCurrentUserId"
 #define DefaultClientName   @"DefaultClientName"
@@ -49,6 +50,7 @@
 //得到一个客户的生日提醒
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid;
 
+#pragma makr - 修改manager和customer
 //保存manageruser
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser;
 //新增机会客户
@@ -77,6 +79,18 @@
                 completionHandler:(void(^)(NSError * error))handler;
 //刷新customer数据
 - (void)refreshCustomersCompletionHandler:(void(^)(NSError * error))handler;
+
+#pragma mark - 扫描二维码相关
+- (void)scanToLoginOnWebByUserName:(NSString *)userName
+                          dimeCode:(NSString *)dimeCode
+                 completionHandler:(void(^)(NSError * error))handler;
+
+- (void)scanToLoginOnWebConfirmByDimeCode:(NSString *)dimeCode
+                        completionHandler:(void(^)(NSError * error))handler;
+
+- (void)scanToLoginOnWebCancleByDimeCode:(NSString *)dimeCode
+                       completionHandler:(void(^)(NSError * error))handler;
+
 //单例
 + (ZDModeClient *)sharedModeClient;
 

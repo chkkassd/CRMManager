@@ -31,11 +31,6 @@
     passwordGestureView.center = CGPointMake(self.view.center.x, self.view.center.y + 20);
     [self.view addSubview:passwordGestureView];
     self.alertLabel.text = @"绘制解锁图案";
-    
-    if (!self.zdManagerUser.gesturePasswordSwitch) {
-        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:@"你好" message:@"手势密码已关闭" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        [alertView show];
-    }
 }
 
 #pragma mark - properties
@@ -71,15 +66,6 @@
 {
     self.alertLabel.text = @"两次绘制不同,请重绘手势图案";
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
-}
-
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == alertView.cancelButtonIndex) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
 }
 
 @end

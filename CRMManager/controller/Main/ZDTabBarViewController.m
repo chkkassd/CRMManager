@@ -89,13 +89,10 @@
 
 - (void)enterForeground
 {
-    if (self.zdManagerUser.gesturePasswordSwitch) {
-        //手势密码开启
-        self.enterForegroundDate = [NSDate date];
-        NSTimeInterval time = [self.enterForegroundDate timeIntervalSinceDate:self.enterBackgroundDate];
-        if (time >= DefaultEnterBackgroundTime) {
-            [self presentToGesturePasswordView];
-        }
+    self.enterForegroundDate = [NSDate date];
+    NSTimeInterval time = [self.enterForegroundDate timeIntervalSinceDate:self.enterBackgroundDate];
+    if (time >= DefaultEnterBackgroundTime) {
+        [self presentToGesturePasswordView];
     }
     
 }

@@ -122,4 +122,27 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"birthList"]];
 }
 
+//二维码扫描登录
+- (NSURL *)URLForLoginOnWebByDimeCode
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"validateAccount"]];
+}
+
+//二维码扫描登录确认
+- (NSURL *)URLForLoginOnWebByDimeCodeConfirm
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"confirm"]];
+}
+
+//二维码扫描登录取消
+- (NSURL *)URLForLoginOnWebByDimeCodeCancle
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"cancelLogin"]];
+}
+
+//获取系统参数列表
+- (NSURL *)URLForqueryParams
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"queryParams"]];
+}
 @end

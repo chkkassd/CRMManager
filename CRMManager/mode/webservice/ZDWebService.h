@@ -122,6 +122,19 @@
                                    pageNo:(NSString *)pageNo
                         completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
+//二维码扫描登录
+- (void)CRMLoginOnWebWithUserName:(NSString *)userName
+                         dimeCode:(NSString *)dimeCode
+                completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
+//二维码扫描确认登录
+- (void)confirmCRMLoginOnWebWithdimeCode:(NSString *)dimeCode
+                       completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
+//二维码扫描取消登录
+- (void)cancleCRMLoginOnWebWithdimeCode:(NSString *)dimeCode
+                      completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+
 //单例
 +(ZDWebService *)sharedWebViewService;
 

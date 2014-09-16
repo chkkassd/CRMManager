@@ -962,6 +962,10 @@
                                     <constraint firstAttribute="width" constant="230" id="NE1-58-ecL"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mf4-t8-ofB" userLabel="move line view">
+                                <rect key="frame" x="45" y="142" width="230" height="2"/>
+                                <color key="backgroundColor" red="0.32156863810000003" green="0.84313732389999996" blue="0.40784317260000003" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -972,7 +976,9 @@
                     <navigationItem key="navigationItem" title="扫描二维码" id="VkU-Um-uy3"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="movingLineView" destination="Mf4-t8-ofB" id="E0d-WC-Hcg"/>
                         <outlet property="viewPreview" destination="kyr-5c-Rxi" id="uEE-bw-Zqi"/>
+                        <segue destination="wTG-pu-wkR" kind="modal" identifier="showScanWebLoginView" id="xzJ-5E-2ES"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzZ-hK-JPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1029,36 +1035,6 @@
                         <sections>
                             <tableViewSection id="UPa-1u-KLj">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="c3c-oG-EUL">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c3c-oG-EUL" id="Gly-PS-6jk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手势密码启用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naI-2H-WXz">
-                                                    <rect key="frame" x="20" y="0.0" width="144" height="43"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="144" id="T1r-0j-Mrf"/>
-                                                        <constraint firstAttribute="height" constant="43" id="h0K-4H-9Z5"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTI-hG-7dx">
-                                                    <rect key="frame" x="251" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="gesturePasswordSwitchPressed:" destination="orw-34-dL9" eventType="valueChanged" id="8Q4-jl-zxC"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="naI-2H-WXz" secondAttribute="centerY" id="NzN-Ml-tkB"/>
-                                                <constraint firstItem="naI-2H-WXz" firstAttribute="leading" secondItem="Gly-PS-6jk" secondAttribute="leading" constant="20" id="yeQ-3E-oIs"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vnb-D5-7oU">
                                         <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1210,9 +1186,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="fgv-lQ-c8Z"/>
-                    <connections>
-                        <outlet property="gesturePasswordSwitch" destination="kTI-hG-7dx" id="h08-Fm-aPL"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4z2-kn-Oyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1468,6 +1441,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r0d-OT-GKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1486" y="1847"/>
+        </scene>
+        <!--Scan Web Login View Controller-->
+        <scene sceneID="5m5-vk-c1q">
+            <objects>
+                <viewController storyboardIdentifier="ZDScanWebLoginViewController" id="wTG-pu-wkR" customClass="ZDScanWebLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qfm-Yb-drb"/>
+                        <viewControllerLayoutGuide type="bottom" id="rMZ-7A-veB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v34-7R-usT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic_scan" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-3G-YyJ">
+                                <rect key="frame" x="80" y="50" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="bt8-Qv-yEr"/>
+                                    <constraint firstAttribute="height" constant="160" id="s1Q-Hn-QiE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs6-1z-P8l">
+                                <rect key="frame" x="16" y="440" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.32156863808631897" green="0.84313732385635376" blue="0.40784317255020142" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="W6x-DC-FlQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="确认本人登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButtonPressed:" destination="wTG-pu-wkR" eventType="touchUpInside" id="SdT-zf-IEx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-Oy-Pti">
+                                <rect key="frame" x="16" y="498" width="288" height="50"/>
+                                <color key="backgroundColor" red="0.92156869173049927" green="0.42352944612503052" blue="0.43137258291244507" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7SW-6N-OUk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancleButtonPressed:" destination="wTG-pu-wkR" eventType="touchUpInside" id="Ji4-Aj-I5b"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="即将在电脑上登录CRM系统，请确认是否是本人操作" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LJ-WG-p9u">
+                                <rect key="frame" x="16" y="246" width="288" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="pzv-1n-v34"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rMZ-7A-veB" firstAttribute="top" secondItem="Pcf-Oy-Pti" secondAttribute="bottom" constant="20" id="5oy-5f-IXl"/>
+                            <constraint firstItem="7LJ-WG-p9u" firstAttribute="leading" secondItem="v34-7R-usT" secondAttribute="leadingMargin" id="69h-CS-dYI"/>
+                            <constraint firstItem="Fs6-1z-P8l" firstAttribute="leading" secondItem="v34-7R-usT" secondAttribute="leadingMargin" id="Ntg-3F-6VQ"/>
+                            <constraint firstAttribute="centerX" secondItem="Xbw-3G-YyJ" secondAttribute="centerX" id="U1B-mw-y8e"/>
+                            <constraint firstItem="Pcf-Oy-Pti" firstAttribute="trailing" secondItem="v34-7R-usT" secondAttribute="trailingMargin" id="UX5-j5-ieF"/>
+                            <constraint firstItem="7LJ-WG-p9u" firstAttribute="trailing" secondItem="v34-7R-usT" secondAttribute="trailingMargin" id="bqS-Xs-nJr"/>
+                            <constraint firstItem="Pcf-Oy-Pti" firstAttribute="top" secondItem="Fs6-1z-P8l" secondAttribute="bottom" constant="8" id="f9c-CN-s7d"/>
+                            <constraint firstItem="Xbw-3G-YyJ" firstAttribute="top" secondItem="qfm-Yb-drb" secondAttribute="bottom" constant="30" id="fRO-9Q-Mtx"/>
+                            <constraint firstAttribute="centerY" secondItem="7LJ-WG-p9u" secondAttribute="centerY" id="lT9-AH-5BJ"/>
+                            <constraint firstItem="Fs6-1z-P8l" firstAttribute="trailing" secondItem="v34-7R-usT" secondAttribute="trailingMargin" id="uM5-9m-pFQ"/>
+                            <constraint firstItem="Pcf-Oy-Pti" firstAttribute="leading" secondItem="v34-7R-usT" secondAttribute="leadingMargin" id="y9Y-Zu-yzH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GpY-8v-vPy"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cancleButton" destination="Pcf-Oy-Pti" id="0S7-WQ-Vo0"/>
+                        <outlet property="confirmButton" destination="Fs6-1z-P8l" id="9ig-99-INV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHx-nz-wQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2024" y="1818"/>
         </scene>
         <!--意见反馈-->
         <scene sceneID="1w3-t8-tMB">
@@ -2490,6 +2548,7 @@
         <image name="ico_product_01" width="58" height="58"/>
         <image name="ico_product_income" width="15" height="15"/>
         <image name="ico_unlock_man" width="67" height="67"/>
+        <image name="pic_scan" width="160" height="160"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

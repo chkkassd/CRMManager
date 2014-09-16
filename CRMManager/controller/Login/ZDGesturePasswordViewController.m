@@ -91,7 +91,6 @@
     if (buttonIndex != alertView.cancelButtonIndex) {
         //将手势密码置空
         self.zdManagerUser.gesturePassword = @"";
-        self.zdManagerUser.gesturePasswordSwitch = YES;
         [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
         //置空，忘记密码默认为安全推出
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
@@ -115,7 +114,6 @@
     self.alertLabel.textColor = [UIColor colorWithRed:197/255.0 green:237/255.0 blue:255/255.0 alpha:1.0];
     
     self.zdManagerUser.gesturePassword = password;
-    self.zdManagerUser.gesturePasswordSwitch = YES;
     [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
     [self.delegate gesturePasswordViewControllerDidFinish:self];
 }
