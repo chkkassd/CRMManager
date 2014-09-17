@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSString * password;
 @property (nonatomic, retain) NSString * gesturePassword;
 @property (nonatomic, retain) NSString * area;
+@property (nonatomic, retain) NSString * areaid;
 @property (nonatomic, retain) NSString * director;
 
 @end

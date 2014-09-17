@@ -9,41 +9,87 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/controller/customer/ZDScanBarCodeViewController.m"
-            timestampString = "432546966.950649"
+            filePath = "CRMManager/controller/Login/ZDGesturePasswordViewController.m"
+            timestampString = "432628126.272624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-selectAreaTableViewControllerDidFinishSelectArea:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__85-[ZDScanBarCodeViewController captureOutput:didOutputMetadataObjects:fromConnection:]_block_invoke"
+                  symbolName = "-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]"
                   moduleName = "CRMManager"
-                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/customer/ZDScanBarCodeViewController.m"
-                  timestampString = "432546966.958192"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
+                  timestampString = "432633885.030267"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
-                  offsetFromSymbolStart = "372">
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__85-[ZDScanBarCodeViewController captureOutput:didOutputMetadataObjects:fromConnection:]_block_invoke_2"
+                  symbolName = "__84-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]_block_invoke"
                   moduleName = "CRMManager"
-                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/customer/ZDScanBarCodeViewController.m"
-                  timestampString = "432546966.958383"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
+                  timestampString = "432633885.030405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "140"
-                  endingLineNumber = "140"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CRMManager/controller/chance/ZDAddAndEditeViewController.m"
+            timestampString = "432631875.716528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-finishButtonPressed:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZDAddAndEditeViewController finishButtonPressed:]"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/chance/ZDAddAndEditeViewController.m"
+                  timestampString = "432633885.066467"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "2318">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__51-[ZDAddAndEditeViewController finishButtonPressed:]_block_invoke152"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/chance/ZDAddAndEditeViewController.m"
+                  timestampString = "432633885.066589"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
                   offsetFromSymbolStart = "40">
                </Location>
             </Locations>
@@ -55,13 +101,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/controller/customer/ZDScanBarCodeViewController.m"
-            timestampString = "432546966.950649"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "432631888.459062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-captureOutput:didOutputMetadataObjects:fromConnection:"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-addPotentialCustomerWithCustomerName:sex:managerId:mobile:memo:hope:source:area:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -71,13 +117,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432541111.336678"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "432632290.17064"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "614"
-            endingLineNumber = "614"
-            landmarkName = "-scanToLoginOnWebByUserName:dimeCode:completionHandler:"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "-CRMLoginOnWebWithUserName:dimeCode:completionHandler:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "432633527.660214"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "-confirmCRMLoginOnWebWithdimeCode:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

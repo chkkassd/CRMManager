@@ -91,16 +91,18 @@
         return;
     }
     
+    ZDManagerUser * zdManager = [ZDModeClient sharedModeClient].zdManagerUser;
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeIndeterminate;
     NSDictionary * infoDictionary = @{
                                       @"customerName": self.nameTextField.text,
                                       @"sex": [NSString stringWithFormat:@"%ld",(long)self.sexNum],
-                                      @"managerId": [ZDModeClient sharedModeClient].zdManagerUser.userid,
+                                      @"managerId": zdManager.userid,
                                       @"mobile": self.mobileTextField.text,
                                       @"memo": self.textView.text,
                                       @"hope": [NSString stringWithFormat:@"%ld",(long)self.hopeNum],
-                                      @"source": @"13"//13代表ios
+                                      @"source": @"13",//13代表ios
+                                      @"area":zdManager.areaid
                                       };
     
     if (self.mode == ZDAddAndEditeViewControllerModeEdit && self.editedCustomer) {

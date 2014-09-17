@@ -47,6 +47,7 @@
                         memo:(NSString *)memo
                         hope:(NSString *)hope
                       source:(NSString *)source
+                        area:(NSString *)areaValue
            completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
 
 // 更改储备客户
@@ -134,6 +135,9 @@
 //二维码扫描取消登录
 - (void)cancleCRMLoginOnWebWithdimeCode:(NSString *)dimeCode
                       completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+//获取参数
+- (void)fetchParamsWithParams:(NSString *)params
+            completionHandler:(void(^)(NSError * error,NSDictionary * resultDic))handler;
 
 //单例
 +(ZDWebService *)sharedWebViewService;

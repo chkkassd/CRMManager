@@ -10,6 +10,16 @@
 #import "ZDModeClient.h"
 #import "AllCustomerCategoryHeaders.h"
 
+@protocol ZDScanBarCodeViewControllerDelegate;
 @interface ZDScanBarCodeViewController : UIViewController
+
+@property (weak, nonatomic) id <ZDScanBarCodeViewControllerDelegate> delegate;
+
+@end
+
+@protocol ZDScanBarCodeViewControllerDelegate <NSObject>
+
+- (void)scanBarCodeViewControllerDidConfirmLoginOnWeb:(ZDScanBarCodeViewController *)controller;
+- (void)scanBarCodeViewControllerDidCancleLoginOnWeb:(ZDScanBarCodeViewController *)controller;
 
 @end

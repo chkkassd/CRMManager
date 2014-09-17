@@ -18,7 +18,9 @@
 @property (nonatomic, retain) NSString * gesturePassword;
 @property (nonatomic, retain) NSString * area;
 @property (nonatomic, retain) NSString * director;
+@property (nonatomic, retain) NSString * areaid;
 @property (nonatomic, retain) NSSet *allCustomers;
+
 @end
 
 @interface ManagerUser (CoreDataGeneratedAccessors)

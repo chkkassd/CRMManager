@@ -91,6 +91,9 @@
 - (void)scanToLoginOnWebCancleByDimeCode:(NSString *)dimeCode
                        completionHandler:(void(^)(NSError * error))handler;
 
+#pragma mark - 地区参数
+- (void)fetchAreaParamsCompletionHandler:(void(^)(NSError * error, NSArray * areas))handler;
+
 //单例
 + (ZDModeClient *)sharedModeClient;
 

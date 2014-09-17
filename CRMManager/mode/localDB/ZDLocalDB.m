@@ -123,6 +123,7 @@
     zdManager.gesturePassword = managerUser.gesturePassword;
     zdManager.director = managerUser.director;
     zdManager.area = managerUser.area;
+    zdManager.areaid = managerUser.areaid;
 }
 
 - (void)modifyZDCustomer:(ZDCustomer *)zdCustomer from:(Customer *)customer
@@ -365,6 +366,7 @@
     managerUser.password = zdManagerUser.password;
     managerUser.director = zdManagerUser.director;
     managerUser.area = zdManagerUser.area;
+    managerUser.areaid = zdManagerUser.areaid;
 }
 
 #pragma mark - modify and save
@@ -393,6 +395,7 @@
     managerUser.gesturePassword = zdManagerUser.gesturePassword;
     managerUser.director = zdManagerUser.director;
     managerUser.area = zdManagerUser.area;
+    managerUser.areaid = zdManagerUser.areaid;
 }
 
 //save much customers

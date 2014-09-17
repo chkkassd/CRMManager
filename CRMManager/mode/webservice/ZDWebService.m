@@ -96,6 +96,7 @@
                         memo:(NSString *)memo
                         hope:(NSString *)hope
                       source:(NSString *)source
+                        area:(NSString *)areaValue
            completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
 {
     NSDictionary * dic = @{
@@ -106,7 +107,7 @@
                            @"memo": memo,
                            @"hope": hope,
                            @"source": source,
-                           
+                           @"area":areaValue
                            };
     NSURL * url = [self URLForAddPotentialCustomer];
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
@@ -331,11 +332,12 @@
 
 //获取参数
 - (void)fetchParamsWithParams:(NSString *)params
-            completionHandler:(void(^)(NSError * error))handler
+            completionHandler:(void(^)(NSError * error,NSDictionary * resultDic))handler
 {
     NSDictionary * dic = @{@"params": @[params]};
     
     NSURL * url = [self URLForqueryParams];
+    [self fetchParamsByWebserviceURL:url dictionary:dic handler:handler];
 }
 
 #pragma mark - 共用请求方法

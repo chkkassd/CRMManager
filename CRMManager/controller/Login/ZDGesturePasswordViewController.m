@@ -7,8 +7,9 @@
 //
 
 #import "ZDGesturePasswordViewController.h"
+#import "ZDSelectAreaTableViewController.h"
 
-@interface ZDGesturePasswordViewController ()<SSFPasswordGestureViewDelegate>
+@interface ZDGesturePasswordViewController ()<SSFPasswordGestureViewDelegate,ZDSelectAreaTableViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView * gestureContainView;
 @property (weak, nonatomic) IBOutlet UIImageView * headImageView;
@@ -56,6 +57,14 @@
         self.passwordGestureView.frame = CGRectMake(0, 0, self.gestureContainView.frame.size.width, self.gestureContainView.frame.size.width);
     }
     self.passwordGestureView.center = CGPointMake(self.gestureContainView.frame.size.width/2, self.gestureContainView.frame.size.height/2);
+}
+
+- (void)presentToSelectAreaView
+{
+    ZDSelectAreaTableViewController * savc = [self.storyboard instantiateViewControllerWithIdentifier:@"ZDSelectAreaTableViewController"];
+    savc.delegate = self;
+    UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:savc];
+    [self presentViewController:nav animated:YES completion:NULL];
 }
 
 #pragma mark - action
@@ -115,7 +124,8 @@
     
     self.zdManagerUser.gesturePassword = password;
     [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
-    [self.delegate gesturePasswordViewControllerDidFinish:self];
+    
+    [self presentToSelectAreaView];
 }
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
@@ -133,6 +143,16 @@
 {
     self.alertLabel.text = @"手势密码错误,请重试";
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
+}
+
+#pragma mark - Select area view delegate
+
+- (void)selectAreaTableViewControllerDidFinishSelectArea:(ZDSelectAreaTableViewController *)controller
+{
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
+        [self.delegate gesturePasswordViewControllerDidFinish:self];
+    }];
+    
 }
 
 @end

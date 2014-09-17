@@ -9,10 +9,11 @@
 #import "ZDCustomerTableViewController.h"
 #import "AllCustomerCategoryHeaders.h"
 #import "ZDCustomerListViewController.h"
+#import "ZDScanBarCodeViewController.h"
 
 #define SSFLeftRightSwipe_TableViewCell @"SSFLeftRightSwipeTableViewCell"
 
-@interface ZDCustomerTableViewController () <SSFLeftRightSwipeTableViewCellDelegate>
+@interface ZDCustomerTableViewController () <SSFLeftRightSwipeTableViewCellDelegate,ZDScanBarCodeViewControllerDelegate>
 
 @property (nonatomic, strong) NSArray * allCurrentCustomers;
 @property (nonatomic, strong) NSArray * filterdCurrentCustomers;
@@ -192,6 +193,9 @@
     if ([segue.identifier isEqualToString:@"Show List"]) {
         ZDCustomerListViewController * listViewController = segue.destinationViewController;
         listViewController.customer = self.selectedZDCustomer;
+    } else if ([segue.identifier isEqualToString:@"show scanView"]) {
+        ZDScanBarCodeViewController * sbvc = segue.destinationViewController;
+        sbvc.delegate = self;
     }
 }
 
@@ -202,6 +206,26 @@
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
     self.filterdCurrentCustomers = [self.allCurrentCustomers filteredArrayUsingPredicate:predicate];
     return YES;
+}
+
+#pragma mark - scan barcode view delegate
+
+- (void)scanBarCodeViewControllerDidConfirmLoginOnWeb:(ZDScanBarCodeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"登陆CRM Web系统成功";
+    [hud hide:YES afterDelay:2];
+}
+
+- (void)scanBarCodeViewControllerDidCancleLoginOnWeb:(ZDScanBarCodeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"取消登陆CRM Web系统";
+    [hud hide:YES afterDelay:2];
 }
 
 @end

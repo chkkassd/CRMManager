@@ -8,8 +8,9 @@
 
 #import "ZDSettingViewController.h"
 #import "ZDSuggestionViewController.h"
+#import "ZDSelectAreaTableViewController.h"
 
-@interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate>
+@interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate,ZDSelectAreaTableViewControllerDelegate>
 
 @end
 
@@ -56,6 +57,9 @@
     if ([segue.identifier isEqualToString:@"setting To Suggsetion"]) {
         ZDSuggestionViewController * suggestionViewController = segue.destinationViewController;
         suggestionViewController.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"showSelectAreaView"]) {
+        ZDSelectAreaTableViewController * savc = segue.destinationViewController;
+        savc.delegate = self;
     }
 }
 
@@ -68,6 +72,17 @@
     hud.mode = MBProgressHUDModeText;
     hud.labelText = @"提交成功";
     [hud hide:YES afterDelay:1];
+}
+
+#pragma mark - select area view delegate
+
+- (void)selectAreaTableViewControllerDidFinishSelectArea:(ZDSelectAreaTableViewController *)controller
+{
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"修改地区成功";
+    [hud hide:YES afterDelay:1];
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 #pragma mark - UIActionSheetDelegate

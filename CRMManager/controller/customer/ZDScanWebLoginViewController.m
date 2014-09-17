@@ -43,10 +43,10 @@
     hud.labelText = @"正在登陆CRM Web系统,请稍候";
     [[ZDModeClient sharedModeClient] scanToLoginOnWebConfirmByDimeCode:self.qrCode completionHandler:^(NSError *error) {
         if (!error) {
-            hud.labelText = @"chenggong";
             [hud hide:YES];
+            [self.delegate scanWebLoginViewControllerDidConfirmLogin:self];
         } else {
-            hud.labelText = @"fail";
+            hud.labelText = @"登陆失败,请稍候再试";
             [hud hide:YES];
         }
     }];
@@ -58,13 +58,18 @@
     hud.labelText = @"正在取消登陆CRM Web系统,请稍候";
     [[ZDModeClient sharedModeClient] scanToLoginOnWebCancleByDimeCode:self.qrCode completionHandler:^(NSError *error) {
         if (!error) {
-            hud.labelText = @"chenggong";
             [hud hide:YES];
+            [self.delegate scanWebLoginViewControllerDidCancleLogin:self];
         } else {
-            hud.labelText = @"fail";
+            hud.labelText = @"取消失败,请稍候再试";
             [hud hide:YES];
         }
     }];
+}
+
+- (IBAction)backButtonPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end

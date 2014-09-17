@@ -65,6 +65,7 @@
     </entity>
     <entity name="ManagerUser" representedClassName="ManagerUser" syncable="YES">
         <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="areaid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="director" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gesturePassword" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
@@ -78,6 +79,6 @@
         <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
         <element name="Customer" positionX="-531" positionY="-736" width="128" height="238"/>
         <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="103"/>
-        <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="133"/>
+        <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="148"/>
     </elements>
 </model>

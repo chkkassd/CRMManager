@@ -299,7 +299,7 @@
     for (NSDictionary * dic in infosArr) {
         ZDBirthRemind * zdBirthRemind = [[ZDBirthRemind alloc] init];
         zdBirthRemind.dateOfBirth = dic[@"dataOfBirth"];
-        zdBirthRemind.customerId = dic[@"customerId"];
+        zdBirthRemind.customerId = dic[@"custId"];
         [birthReminds addObject:zdBirthRemind];
         NSLog(@"pp%@,%@",dic[@"customerId"],dic[@"customerName"]);
     }
@@ -414,6 +414,7 @@
                                                                          memo:infoDictionary[@"memo"]
                                                                          hope:infoDictionary[@"hope"]
                                                                        source:infoDictionary[@"source"]
+                                                                         area:infoDictionary[@"area"]
                                                             completionHandler:^(NSError *error, NSDictionary *resultDic) {
         if (!error) {
             //添加成功,存入coredata
@@ -642,6 +643,21 @@
                                                            } else {
                                                                handler(error);
                                                            }
+    }];
+}
+
+#pragma mark - 地区参数
+
+- (void)fetchAreaParamsCompletionHandler:(void(^)(NSError * error, NSArray * areas))handler
+{
+    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"OrganFortune" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            NSDictionary * dic = resultDic[@"infos"];
+            NSArray * array = dic[@"OrganFortune"];
+            handler(nil,array);
+        } else {
+            handler(error,nil);
+        }
     }];
 }
 
