@@ -38,6 +38,7 @@
 - (NSArray *)queryZDContactRecordsWithCustomerId:(NSString *)customerid;
 - (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid;
 - (BirthRemind *)queryBirthRemindByRelationshipWithCustomerId:(NSString *)customerId;
+- (NSArray *)queryAllZDInvestmentRemindsWithCustomerId:(NSString *)customerid;
 //modify and save
 - (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;

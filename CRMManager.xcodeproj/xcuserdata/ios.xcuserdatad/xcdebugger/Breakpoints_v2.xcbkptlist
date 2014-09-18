@@ -25,7 +25,7 @@
                   symbolName = "-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
-                  timestampString = "432704481.810928"
+                  timestampString = "432715041.494993"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "152"
@@ -39,7 +39,7 @@
                   symbolName = "__84-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]_block_invoke"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
-                  timestampString = "432704481.811076"
+                  timestampString = "432715041.49514"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "152"
@@ -103,38 +103,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432697083.838229"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432697134.218498"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "273"
-            endingLineNumber = "273"
-            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/webservice/ZDWebService.m"
             timestampString = "432697150.685766"
             startingColumnNumber = "9223372036854775807"
@@ -152,12 +120,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432704475.765411"
+            timestampString = "432715007.29314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "-fetchAndSaveCustomersWithManagerUserId:completionHandler:"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "432715059.81562"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ZDWebService fetchByWebserviceURL:dictionary:handler:]"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/mode/webservice/ZDWebService.m"
+                  timestampString = "432715059.819895"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "363"
+                  endingLineNumber = "363"
+                  offsetFromSymbolStart = "782">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__56-[ZDWebService fetchByWebserviceURL:dictionary:handler:]_block_invoke"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/mode/webservice/ZDWebService.m"
+                  timestampString = "432715059.820045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "363"
+                  endingLineNumber = "363"
+                  offsetFromSymbolStart = "74">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "432715078.438673"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -168,12 +198,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432704496.564555"
+            timestampString = "432715126.611733"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-fetchAndSaveCustomersWithManagerUserId:completionHandler:"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
+            timestampString = "432715134.39687"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

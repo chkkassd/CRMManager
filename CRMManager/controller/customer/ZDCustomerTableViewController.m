@@ -101,7 +101,9 @@
         customer = self.allCurrentCustomers[indexPath.row];
     }
     
-    if ([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer.customerId].length) {
+    if ([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer.customerId].length && [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer.customerId].count) {
+        cell.alertImageView.image = [UIImage imageNamed:@"ico_client_new2"];
+    } else if([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer.customerId].length || [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer.customerId].count) {
         cell.alertImageView.image = [UIImage imageNamed:@"ico_client_new1"];
     } else {
         cell.alertImageView.image = nil;

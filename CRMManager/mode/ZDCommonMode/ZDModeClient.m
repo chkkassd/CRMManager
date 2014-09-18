@@ -27,6 +27,8 @@
 //            [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
             //6.获取生日提醒信息
             [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
+            //7.获取投资提醒信息
+//            [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
         } else {
             NSLog(@"保存customers失败");
         }
@@ -65,7 +67,9 @@
                             //5.获取并保存所有客户的business
                             [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
                             //6.获取生日提醒信息
-                            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
+                            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
+                            //7.获取投资提醒信息
+                            [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
                         } else {
                             NSLog(@"保存customers失败");
                         }
@@ -319,7 +323,11 @@
                                                                   NSArray * infosArr = resultDic[@"infos"];
                                                                   if (infosArr.count) {
                                                                       NSArray * investmentReminds = [self investmentRemindsForInfos:infosArr];
-                                                                      
+                                                                      if ([[ZDLocalDB sharedLocalDB] saveInvestmentReminds:investmentReminds error:NULL]) {
+                                                                          [[NSNotificationCenter defaultCenter] postNotificationName:ZDUpdateInvestmentRemindsNotification object:self];
+                                                                      } else {
+                                                                          NSLog(@"fail ti save investmentRemind");
+                                                                      }
                                                                   }
                                                               } else {
                                                                   NSLog(@"fail to fetch investmentRemind");
@@ -682,6 +690,12 @@
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid
 {
     return [[[ZDLocalDB sharedLocalDB] queryBirthRemindByRelationshipWithCustomerId:customerid] dataOfBirth];
+}
+
+#pragma mark - 客户投资到期提醒
+- (NSArray *)investmentRemindWithCustomerId:(NSString *)customerid
+{
+    return [[ZDLocalDB sharedLocalDB] queryAllZDInvestmentRemindsWithCustomerId:customerid];
 }
 
 - (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid

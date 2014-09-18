@@ -12,5 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView * imageViewFirst;
 @property (weak, nonatomic) IBOutlet UILabel * label;
+@property (weak, nonatomic) IBOutlet UIView * birthView;
+@property (weak, nonatomic) IBOutlet UILabel * birthLabel;
+@property (weak, nonatomic) IBOutlet UIImageView * investmentImageView;
 
 @end

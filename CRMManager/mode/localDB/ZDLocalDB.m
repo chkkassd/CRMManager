@@ -356,6 +356,32 @@
 
 //查找一个客户的所有投资提醒
 
+- (NSArray *)queryAllZDInvestmentRemindsWithCustomerId:(NSString *)customerid
+{
+    if (!customerid.length) return nil;
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        NSArray * allInvestmentReminds = [customer.allInvestmentReminds allObjects];
+        NSMutableArray * allZDInvestmentReminds = [[NSMutableArray alloc] init];
+        for (InvestmentRemind * investmentRemind in allInvestmentReminds) {
+            ZDInvestmentRemind * zdInvestmentRemind = [[ZDInvestmentRemind alloc] init];
+            [self modifyZDInvestmentRemind:zdInvestmentRemind from:investmentRemind];
+            [allZDInvestmentReminds addObject:zdInvestmentRemind];
+        }
+        return allZDInvestmentReminds;
+    }
+    return nil;
+}
+
+- (void)modifyZDInvestmentRemind:(ZDInvestmentRemind *)zdInvestmentRemind from:(InvestmentRemind *)investmentRemind
+{
+    zdInvestmentRemind.feLendNo = investmentRemind.feLendNo;
+    zdInvestmentRemind.customerId = investmentRemind.investmentRemindOfCustomer.customerId;
+    zdInvestmentRemind.investAmt = investmentRemind.investAmt;
+    zdInvestmentRemind.endDate = investmentRemind.endDate;
+    zdInvestmentRemind.pattern = investmentRemind.pattern;
+}
+
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
 
 //save managerUser for login

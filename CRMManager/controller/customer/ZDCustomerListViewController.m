@@ -99,6 +99,15 @@
     cell.label.text = self.listItem[indexPath.row][@"labelName"];
     cell.imageViewFirst.image = [UIImage imageNamed:self.listItem[indexPath.row][@"image"]];
     
+    NSString * birthString = [[ZDModeClient sharedModeClient] birthRemindWithCustomerId:self.customer.customerId];
+    if (birthString.length && indexPath.row == 0) {
+        cell.birthView.hidden = NO;
+        cell.birthLabel.text = [birthString substringFromIndex:5];
+    }
+    if ([[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:self.customer.customerId].count && indexPath.row == 1) {
+        cell.investmentImageView.hidden = NO;
+    }
+    
     return cell;
 }
 

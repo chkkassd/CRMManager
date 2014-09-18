@@ -27,6 +27,7 @@
 #define ZDUpdateContactRecordsNotification  @"UpdateContactRecordsNotification"
 #define ZDUpdateBusinessAndBusinessListsNotification  @"UpdateBusinessAndBusinessListsNotification"
 #define ZDUpdateBirthRemindsNotification  @"updateBirthRemindsNotification"
+#define ZDUpdateInvestmentRemindsNotification  @"updateInvestmentRemindsNotification"
 
 @interface ZDModeClient : NSObject
 
@@ -49,6 +50,8 @@
 - (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid;
 //得到一个客户的生日提醒
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid;
+//得到一个客户的所有投资到期提醒
+- (NSArray *)investmentRemindWithCustomerId:(NSString *)customerid;
 
 #pragma makr - 修改manager和customer
 //保存manageruser
