@@ -22,9 +22,9 @@
     [self fetchAndSaveCustomersWithManagerUserId:userid completionHandler:^(NSError *error) {
         if (!error) {
             //4.获取并保存所有客户的联系记录
-            [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
+//            [self fetchAndSaveAllContractRecordsWithAllCustomers:self.allZDCustomers];
             //5.获取并保存所有客户的business
-            [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
+//            [self fetchAndSaveAllBusinessAndBusinessListWithAllCustomers:self.allZDCustomers];
             //6.获取生日提醒信息
             [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
         } else {
@@ -337,6 +337,7 @@
         zdInvestmentRemind.investAmt = dic[@"investAmt"];
         zdInvestmentRemind.pattern = dic[@"pattern"];
         zdInvestmentRemind.customerId = dic[@"customerId"];
+        zdInvestmentRemind.feLendNo = dic[@"feLendNo"];
         [investmentReminds addObject:zdInvestmentRemind];
     }
     return investmentReminds;

@@ -12,6 +12,7 @@
 
 @implementation InvestmentRemind
 
+@dynamic feLendNo;
 @dynamic endDate;
 @dynamic investAmt;
 @dynamic pattern;

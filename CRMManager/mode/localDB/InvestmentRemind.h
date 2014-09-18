@@ -13,6 +13,7 @@
 
 @interface InvestmentRemind : NSManagedObject
 
+@property (nonatomic, retain) NSString * feLendNo;
 @property (nonatomic, retain) NSString * endDate;
 @property (nonatomic, retain) NSString * investAmt;
 @property (nonatomic, retain) NSString * pattern;

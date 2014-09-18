@@ -335,11 +335,24 @@
 }
 
 //查找一个investmentRemind
-//
-//- (InvestmentRemind *)queryInvestmentRemindWithCustomerId:(NSString *)customerId
-//{
-//    
-//}
+
+- (InvestmentRemind *)queryInvestmentRemindWithCustomerId:(NSString *)customerId andFeLendNo:(NSString *)feLendNo
+{
+    if (!customerId.length || !feLendNo) return nil;
+    
+    InvestmentRemind * investmentRemind = nil;
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"InvestmentRemind"];
+    request.predicate = [NSPredicate predicateWithFormat:@"investmentRemindOfCustomer.customerId == %@ && feLendNo == %@",customerId,feLendNo];
+    
+    NSError * error = nil;
+    NSArray * fetchResults = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (fetchResults.count) {
+        investmentRemind = fetchResults[0];
+    } else {
+        NSLog(@"fail to fetch investmentRemind of customer:%@",customerId);
+    }
+    return investmentRemind;
+}
 
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
 
@@ -593,6 +606,33 @@
         if (![self saveBirthRemind:zdBirthRemind error:error]) return NO;
     }
     return YES;
+}
+
+//save one investmentRemind
+- (BOOL)saveInvestmentRemind:(ZDInvestmentRemind *)zdInvestmentRemind error:(NSError *__autoreleasing *)error
+{
+    if (!zdInvestmentRemind) return NO;
+    
+    InvestmentRemind * investmentRemind = [self queryInvestmentRemindWithCustomerId:zdInvestmentRemind.customerId andFeLendNo:zdInvestmentRemind.feLendNo];
+    
+    if (investmentRemind) {
+        //存在，修改并保存
+        [self modifyInvestmentRemind:investmentRemind from:zdInvestmentRemind];
+    } else {
+        //不存在，插入一条
+        investmentRemind = [NSEntityDescription insertNewObjectForEntityForName:@"InvestmentRemind" inManagedObjectContext:self.managedObjectContext];
+        [self modifyInvestmentRemind:investmentRemind from:zdInvestmentRemind];
+    }
+    return [self.managedObjectContext save:error];
+}
+
+- (void)modifyInvestmentRemind:(InvestmentRemind *)investmentRemind from:(ZDInvestmentRemind *)zdInvestmentRemind
+{
+    investmentRemind.feLendNo = zdInvestmentRemind.feLendNo;
+    investmentRemind.investAmt = zdInvestmentRemind.investAmt;
+    investmentRemind.endDate = zdInvestmentRemind.endDate;
+    investmentRemind.pattern = zdInvestmentRemind.pattern;
+    investmentRemind.investmentRemindOfCustomer = [self queryCustomerWithCustomerId:zdInvestmentRemind.customerId];
 }
 
 #pragma mark - delete

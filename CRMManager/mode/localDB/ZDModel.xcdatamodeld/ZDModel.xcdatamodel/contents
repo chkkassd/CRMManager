@@ -59,6 +59,7 @@
     </entity>
     <entity name="InvestmentRemind" representedClassName="InvestmentRemind" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feLendNo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="investAmt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pattern" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="investmentRemindOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allInvestmentReminds" inverseEntity="Customer" syncable="YES"/>
@@ -78,7 +79,7 @@
         <element name="BusinessList" positionX="-272" positionY="-459" width="128" height="238"/>
         <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
         <element name="Customer" positionX="-531" positionY="-736" width="128" height="238"/>
-        <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="103"/>
+        <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="118"/>
         <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="148"/>
     </elements>
 </model>

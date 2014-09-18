@@ -10,6 +10,7 @@
 
 @interface ZDInvestmentRemind : NSObject
 
+@property (nonatomic, strong) NSString * feLendNo;
 @property (nonatomic, strong) NSString * endDate;
 @property (nonatomic, strong) NSString * investAmt;
 @property (nonatomic, strong) NSString * pattern;
