@@ -354,6 +354,8 @@
     return investmentRemind;
 }
 
+//查找一个客户的所有投资提醒
+
 #pragma mark - special for login to save managerUser,为了不影响本地手势密码的存储
 
 //save managerUser for login
@@ -633,6 +635,18 @@
     investmentRemind.endDate = zdInvestmentRemind.endDate;
     investmentRemind.pattern = zdInvestmentRemind.pattern;
     investmentRemind.investmentRemindOfCustomer = [self queryCustomerWithCustomerId:zdInvestmentRemind.customerId];
+}
+
+//save much investmentReminds
+
+- (BOOL)saveInvestmentReminds:(NSArray *)zdInvestmentReminds error:(NSError *__autoreleasing *)error
+{
+    if (!zdInvestmentReminds.count) return NO;
+    
+    for (ZDInvestmentRemind * zdInvestmentRemind in zdInvestmentReminds) {
+        if (![self saveInvestmentRemind:zdInvestmentRemind error:error]) return NO;
+    }
+    return YES;
 }
 
 #pragma mark - delete

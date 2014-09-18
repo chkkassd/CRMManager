@@ -49,6 +49,7 @@
 - (BOOL)saveBusinessList:(ZDBusinessList *)zdBusinessList error:(NSError *__autoreleasing *)error;
 - (BOOL)saveMuchBusinessList:(NSArray *)zdBusinessLists error:(NSError *__autoreleasing *)error;
 - (BOOL)saveBirthReminds:(NSArray *)zdBirthReminds error:(NSError *__autoreleasing *)error;
+- (BOOL)saveInvestmentReminds:(NSArray *)zdInvestmentReminds error:(NSError *__autoreleasing *)error;
 //delete
 - (BOOL)deleteOneCustomerWithCustomerId:(NSString *)customerid error:(NSError **)error;
 - (BOOL)deleteOneContactRecordWithReocrdId:(NSString *)recordid error:(NSError **)error;
