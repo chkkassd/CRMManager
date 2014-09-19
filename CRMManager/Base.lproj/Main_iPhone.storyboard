@@ -275,7 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-WX-gLo">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-63-glM" userLabel="contain view">
@@ -761,7 +761,7 @@
                                                     <rect key="frame" x="15" y="28" width="32" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1643,10 +1643,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Q8-Mr-Rfz" firstAttribute="bottom" secondItem="JLQ-wO-Kfw" secondAttribute="bottomMargin" id="4WM-or-8bh"/>
                             <constraint firstItem="6Q8-Mr-Rfz" firstAttribute="leading" secondItem="JLQ-wO-Kfw" secondAttribute="leadingMargin" constant="-16" id="JLB-U2-ijK"/>
                             <constraint firstItem="6Q8-Mr-Rfz" firstAttribute="top" secondItem="JLQ-wO-Kfw" secondAttribute="topMargin" id="MA3-1N-IVZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6Q8-Mr-Rfz" secondAttribute="trailing" constant="-16" id="Pqc-LE-0T9"/>
-                            <constraint firstItem="gRs-FV-t8Y" firstAttribute="top" secondItem="6Q8-Mr-Rfz" secondAttribute="bottom" id="QM4-UA-km0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="软件许可使用协议" id="Cqu-cA-rz9"/>
@@ -2475,7 +2475,7 @@
                                             <rect key="frame" x="241" y="11" width="44" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -2838,7 +2838,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="OnM-he-V73"/>
         <segue reference="gge-O5-JOg"/>
-        <segue reference="VYf-II-zpB"/>
     </inferredMetricsTieBreakers>
 </document>
