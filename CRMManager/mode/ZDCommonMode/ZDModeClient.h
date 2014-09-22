@@ -83,6 +83,10 @@
 //刷新customer数据
 - (void)refreshCustomersCompletionHandler:(void(^)(NSError * error))handler;
 
+//刷新one customer record数据
+- (void)refreshContactRecordsWithCustomerId:(NSString *)customerId
+                          CompletionHandler:(void(^)(NSError * error))handler;
+
 #pragma mark - 扫描二维码相关
 - (void)scanToLoginOnWebByUserName:(NSString *)userName
                           dimeCode:(NSString *)dimeCode

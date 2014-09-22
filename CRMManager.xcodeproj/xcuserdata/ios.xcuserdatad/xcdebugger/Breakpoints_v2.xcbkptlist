@@ -25,7 +25,7 @@
                   symbolName = "-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
-                  timestampString = "432788154.704974"
+                  timestampString = "433050365.820182"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "152"
@@ -39,7 +39,7 @@
                   symbolName = "__84-[ZDGesturePasswordViewController selectAreaTableViewControllerDidFinishSelectArea:]_block_invoke"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDGesturePasswordViewController.m"
-                  timestampString = "432788154.705173"
+                  timestampString = "433050365.820331"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "152"
@@ -103,13 +103,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432715007.29314"
+            filePath = "CRMManager/controller/chance/ZDChanceViewController.m"
+            timestampString = "433050010.894346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
-            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "-scrollViewWillEndDragging:withVelocity:targetContentOffset:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -119,14 +119,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432715126.611733"
+            filePath = "CRMManager/controller/chance/ZDChanceViewController.m"
+            timestampString = "433050025.658664"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "-scrollViewWillEndDragging:withVelocity:targetContentOffset:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__85-[ZDChanceViewController scrollViewWillEndDragging:withVelocity:targetContentOffset:]_block_invoke_2"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/chance/ZDChanceViewController.m"
+                  timestampString = "433050365.84973"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "310"
+                  endingLineNumber = "310"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__85-[ZDChanceViewController scrollViewWillEndDragging:withVelocity:targetContentOffset:]_block_invoke_3"
+                  moduleName = "CRMManager"
+                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/chance/ZDChanceViewController.m"
+                  timestampString = "433050365.849865"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "311"
+                  endingLineNumber = "311"
+                  offsetFromSymbolStart = "10">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -135,13 +165,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/mode/ZDCommonMode/ZDModeClient.m"
-            timestampString = "432715134.39687"
+            filePath = "CRMManager/controller/chance/ZDChanceViewController.m"
+            timestampString = "433050365.763584"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-fetchAndSaveBirthRemindInfoWithManagerId:pageSize:pageNo:"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "-scrollViewWillEndDragging:withVelocity:targetContentOffset:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -12,12 +12,15 @@
 
 @interface ZDChanceCustomerDetailViewController ()<ZDRecordAddOrEditViewControllerDelegate,ZDAddAndEditeViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView * loadingView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView * activityIndicatory;
 @property (weak, nonatomic) IBOutlet UIImageView *headImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray * allRecords;
 @property (strong, nonatomic) ZDContactRecord * selectedRecord;
+@property (nonatomic) CGFloat defaultY;
 
 @end
 
@@ -29,6 +32,7 @@
     [self configureView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upadteContactRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
+    self.defaultY = self.loadingView.center.y;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -133,6 +137,55 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     self.selectedRecord = self.allRecords[indexPath.row];
     [self performSegueWithIdentifier:@"recordAddOrEdit Display" sender:self];
+}
+
+#pragma mark - scrollview delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y < 0) {
+        self.loadingView.center = CGPointMake(self.loadingView.center.x, self.defaultY + fabsf(scrollView.contentOffset.y));
+        if (scrollView.contentOffset.y < -30) {
+            [self.activityIndicatory startAnimating];
+        }
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (scrollView.contentOffset.y < -30) {
+        
+        [UIView animateWithDuration:0.2 animations:^{
+            scrollView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+            self.loadingView.center = CGPointMake(self.loadingView.center.x, self.defaultY + 30.0);
+        } completion:NULL];
+        
+        [[ZDModeClient sharedModeClient] refreshContactRecordsWithCustomerId:self.zdCustomer.customerId CompletionHandler:^(NSError *error) {
+            MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            if (!error) {
+                hud.labelText = @"刷新成功";
+                [hud hide:YES afterDelay:1];
+                self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
+            } else {
+                hud.labelText = @"刷新失败,请稍候再试";
+                [hud hide:YES afterDelay:1];
+            }
+            
+            sleep(1);
+            [UIView animateWithDuration:0.2 animations:^{
+                self.loadingView.center = CGPointMake(self.loadingView.center.x, self.defaultY);
+                scrollView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+            } completion:^(BOOL finished) {
+                [self.activityIndicatory stopAnimating];
+            }];
+            
+        }];
+    } else if (scrollView.contentOffset.y < 0 && scrollView.contentOffset.y > -30) {
+        [UIView animateWithDuration:0.1 animations:^{
+            self.loadingView.center = CGPointMake(self.loadingView.center.x, self.defaultY);
+        } completion:NULL];
+    }
 }
 
 #pragma mark - Action

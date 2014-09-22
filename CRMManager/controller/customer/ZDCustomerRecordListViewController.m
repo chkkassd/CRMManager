@@ -24,7 +24,7 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateRecords:) name:ZDUpdateContactRecordsNotification object:[ZDModeClient sharedModeClient]];
-    self.title = self.zdCustomer.customerName;
+    [self configureView];
 }
 
 - (void)dealloc
@@ -33,6 +33,30 @@
 }
 
 #pragma mark - methods
+
+- (void)configureView
+{
+    self.title = self.zdCustomer.customerName;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshContactRecords) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)refreshContactRecords
+{
+    [[ZDModeClient sharedModeClient] refreshContactRecordsWithCustomerId:self.zdCustomer.customerId CompletionHandler:^(NSError *error) {
+        [self.refreshControl endRefreshing];
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        if (!error) {
+            hud.labelText = @"刷新成功";
+            [hud hide:YES afterDelay:1];
+            self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
+        } else {
+            hud.labelText = @"刷新失败";
+            [hud hide:YES afterDelay:1];
+        }
+    }];
+}
 
 - (void)updateRecords:(NSNotification *)noti
 {

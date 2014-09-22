@@ -401,6 +401,19 @@
     }];
 }
 
+//刷新one customer contactrecord数据
+- (void)refreshContactRecordsWithCustomerId:(NSString *)customerId
+                          CompletionHandler:(void (^)(NSError *))handler
+{
+    [self fetchAndSaveAllContactRecordWithManagerUserId:self.zdManagerUser.userid CustomerId:customerId completionHandler:^(NSError *error) {
+        if (!error) {
+            handler(nil);
+        } else {
+            handler(error);
+        }
+    }];
+}
+
 #pragma mark - 修改数据后保存
 
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser
