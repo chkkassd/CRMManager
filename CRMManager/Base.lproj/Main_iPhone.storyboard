@@ -1677,85 +1677,172 @@
         <scene sceneID="PLw-0y-fib">
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="SAO-NC-LzO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p9P-1W-2id">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p9P-1W-2id">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="neo-Cc-xLT">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="83" id="hU5-M0-ZII">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="243" id="hU5-M0-ZII">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hU5-M0-ZII" id="avz-xB-AYC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ufM-5V-ygL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="func1" translatesAutoresizingMaskIntoConstraints="NO" id="koW-rO-XMg">
+                                                    <rect key="frame" x="5" y="88" width="310" height="160"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="160" id="sti-qa-DZd"/>
+                                                        <constraint firstAttribute="width" constant="310" id="xYE-rw-FDp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufM-5V-ygL">
+                                                    <rect key="frame" x="8" y="8" width="304" height="80"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="kCY-sb-Afe"/>
+                                                    </constraints>
                                                     <string key="text">1.机会
 可手工添加或通讯录导入潜在的客户资源，按意愿有序分类，并可记录整理历次客户理财意愿，一键联系客户。</string>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ufM-5V-ygL" firstAttribute="leading" secondItem="avz-xB-AYC" secondAttribute="leadingMargin" id="0W5-7D-qYp"/>
+                                                <constraint firstItem="ufM-5V-ygL" firstAttribute="top" secondItem="avz-xB-AYC" secondAttribute="topMargin" id="33M-ir-tox"/>
+                                                <constraint firstItem="koW-rO-XMg" firstAttribute="top" secondItem="ufM-5V-ygL" secondAttribute="bottom" id="4Pg-XH-mww"/>
+                                                <constraint firstAttribute="centerX" secondItem="koW-rO-XMg" secondAttribute="centerX" id="D48-sw-b3l"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ufM-5V-ygL" secondAttribute="trailing" id="Rot-Aa-2ac"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="bc1-GG-yNO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="280" id="bc1-GG-yNO">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bc1-GG-yNO" id="212-9g-ip7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="81O-4e-fPW">
-                                                    <rect key="frame" x="0.0" y="1" width="320" height="86"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81O-4e-fPW">
+                                                    <rect key="frame" x="8" y="8" width="304" height="86"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="86" id="29H-HY-b3o"/>
+                                                    </constraints>
                                                     <string key="text">2.业务
 展示归属当前登录账号的客户经理所有签约客户信息。了解客户的多次理财情况，提醒定期维护客户关系，并可记录管理历次联系情况。</string>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="func2" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-2f-tS8">
+                                                    <rect key="frame" x="5" y="94" width="310" height="185"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="310" id="7AM-gx-ZWh"/>
+                                                        <constraint firstAttribute="height" constant="185" id="tWk-Me-e6Y"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ufk-2f-tS8" firstAttribute="top" secondItem="81O-4e-fPW" secondAttribute="bottom" id="1G2-vp-XtG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="81O-4e-fPW" secondAttribute="trailing" id="8OO-nJ-m4c"/>
+                                                <constraint firstItem="81O-4e-fPW" firstAttribute="leading" secondItem="212-9g-ip7" secondAttribute="leadingMargin" id="ReL-xq-OmE"/>
+                                                <constraint firstAttribute="centerX" secondItem="Ufk-2f-tS8" secondAttribute="centerX" id="htz-Vk-PyN"/>
+                                                <constraint firstItem="81O-4e-fPW" firstAttribute="top" secondItem="212-9g-ip7" secondAttribute="topMargin" id="oa9-pI-J96"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="72" id="Arh-Tr-iA8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="262" id="Arh-Tr-iA8">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Arh-Tr-iA8" id="PZ8-vH-0QG">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="3.规划。对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-Sb-dd7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6XL-Sb-dd7">
+                                                    <rect key="frame" x="8" y="8" width="304" height="71"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="71" id="GSo-wE-4o8"/>
+                                                    </constraints>
+                                                    <string key="text">3.规划
+对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫。</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="func3" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-aE-240">
+                                                    <rect key="frame" x="5" y="79" width="310" height="172"/>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6XL-Sb-dd7" secondAttribute="trailing" id="JWX-qK-Kk8"/>
+                                                <constraint firstItem="6XL-Sb-dd7" firstAttribute="top" secondItem="PZ8-vH-0QG" secondAttribute="topMargin" id="KRi-0v-ePk"/>
+                                                <constraint firstItem="K2v-aE-240" firstAttribute="centerX" secondItem="6XL-Sb-dd7" secondAttribute="centerX" id="T2z-N8-ghO"/>
+                                                <constraint firstItem="6XL-Sb-dd7" firstAttribute="leading" secondItem="PZ8-vH-0QG" secondAttribute="leadingMargin" id="YIE-KM-B2t"/>
+                                                <constraint firstItem="K2v-aE-240" firstAttribute="top" secondItem="6XL-Sb-dd7" secondAttribute="bottom" id="fee-Wk-64W"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="122" id="UDt-dl-wJY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="272" id="UDt-dl-wJY">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UDt-dl-wJY" id="Xfa-Ry-yO2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="4.扫一扫。支持客户经理扫码登录CRM系统，或扫码绑定自己的客户" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-bR-tmH">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-bR-tmH">
+                                                    <rect key="frame" x="8" y="8" width="304" height="70"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="LD5-0Z-iHu"/>
+                                                    </constraints>
+                                                    <string key="text">4.扫一扫
+支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="func4" translatesAutoresizingMaskIntoConstraints="NO" id="jzK-aJ-ddw">
+                                                    <rect key="frame" x="5" y="78" width="310" height="184"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="184" id="Qai-sN-Fk3"/>
+                                                        <constraint firstAttribute="width" constant="310" id="mH8-IG-MpL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CC6-bR-tmH" firstAttribute="top" secondItem="Xfa-Ry-yO2" secondAttribute="topMargin" id="NMw-l2-6rJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CC6-bR-tmH" secondAttribute="trailing" id="e9G-Dh-3Db"/>
+                                                <constraint firstAttribute="centerX" secondItem="jzK-aJ-ddw" secondAttribute="centerX" id="heD-3A-Zdm"/>
+                                                <constraint firstItem="CC6-bR-tmH" firstAttribute="leading" secondItem="Xfa-Ry-yO2" secondAttribute="leadingMargin" id="qPe-I2-Whx"/>
+                                                <constraint firstItem="jzK-aJ-ddw" firstAttribute="top" secondItem="CC6-bR-tmH" secondAttribute="bottom" id="u9J-iO-qbm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="78" id="94z-Gg-kv9">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="94z-Gg-kv9">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="94z-Gg-kv9" id="xNf-il-qMG">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="5.设置。提供手势密码，常见问题解读，意见反馈收集等功能" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-h4-zOo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1c-h4-zOo">
+                                                    <rect key="frame" x="8" y="8" width="304" height="77"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="77" id="b0L-8Z-Rhb"/>
+                                                    </constraints>
+                                                    <string key="text">5.设置
+提供手势密码，常见问题解读，意见反馈收集等功能。</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="func5" translatesAutoresizingMaskIntoConstraints="NO" id="ahl-bR-RFw">
+                                                    <rect key="frame" x="5" y="85" width="310" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="310" id="brr-Xb-gKP"/>
+                                                        <constraint firstAttribute="height" constant="200" id="xOJ-g2-Jad"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="h1c-h4-zOo" firstAttribute="leading" secondItem="xNf-il-qMG" secondAttribute="leadingMargin" id="1Gs-xz-FpQ"/>
+                                                <constraint firstItem="ahl-bR-RFw" firstAttribute="top" secondItem="h1c-h4-zOo" secondAttribute="bottom" id="8iO-sf-WW8"/>
+                                                <constraint firstItem="h1c-h4-zOo" firstAttribute="top" secondItem="xNf-il-qMG" secondAttribute="topMargin" id="IiH-vV-V9q"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="h1c-h4-zOo" secondAttribute="trailing" id="Xwx-Wq-0ZB"/>
+                                                <constraint firstAttribute="centerX" secondItem="ahl-bR-RFw" secondAttribute="centerX" id="sKn-C5-h7I"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1767,10 +1854,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="功能介绍" id="LzR-cl-w8v"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7b-y9-VWA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2156" y="2571"/>
+            <point key="canvasLocation" x="2156" y="2570"/>
         </scene>
         <!--意见反馈-->
         <scene sceneID="1w3-t8-tMB">
@@ -2828,6 +2916,11 @@
         <image name="bg_fortune" width="300" height="166"/>
         <image name="bg_product" width="320" height="230"/>
         <image name="customer_call" width="44" height="44"/>
+        <image name="func1" width="310" height="160"/>
+        <image name="func2" width="310" height="185"/>
+        <image name="func3" width="310" height="172"/>
+        <image name="func4" width="310" height="187"/>
+        <image name="func5" width="310" height="200"/>
         <image name="ico_addressList_plus" width="14" height="14"/>
         <image name="ico_currentClient_add" width="25" height="25"/>
         <image name="ico_currentClient_go" width="15" height="15"/>
