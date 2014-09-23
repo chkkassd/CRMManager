@@ -44,6 +44,18 @@
     return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getCustomerProductDetail"]];
 }
 
+#pragma mark - 客户经理获取业务
+
+- (NSURL *)URLForGetBusinessesWithManagerId
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getBusiByManager"]];
+}
+
+- (NSURL *)URLForGetBusinessesWithCustomerId
+{
+    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_Chance,@"getBusiByCustomer"]];
+}
+
 - (NSURL *)URLForGetAllBusinessWithCustomer
 {
 //    return [NSURL URLWithString:@"http://172.16.6.108:8060/hera/credit/queryBusiness"];//172.16.55.241.

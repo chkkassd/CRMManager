@@ -699,6 +699,11 @@
     return [[ZDLocalDB sharedLocalDB] queryAllZDBusinessListsWithCustomerId:customerid];
 }
 
+- (NSArray *)zdBusinessesWithCustomerId:(NSString *)customerId
+{
+    return nil;
+}
+
 #pragma mark - 客户的生日提醒
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid
 {

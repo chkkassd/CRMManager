@@ -48,6 +48,7 @@
 - (NSArray *)zdContactRecordsWithCustomerId:(NSString *)customerid;
 //得到一个客户所有的businessList产品
 - (NSArray *)zdBusinessListsWithCustomerId:(NSString *)customerid;
+- (NSArray *)zdBusinessesWithCustomerId:(NSString *)customerId;
 //得到一个客户的生日提醒
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid;
 //得到一个客户的所有投资到期提醒

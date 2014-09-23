@@ -29,6 +29,9 @@
 
 //根据customer的mobile查询其业务
 - (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler;
+- (void)fetchBusinessesWithCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler;
+- (void)fetchBusinessesWithManagerId:(NSString *)managerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler;
+
 
 //新接口
 //获取所有客户列表，用于机会页面

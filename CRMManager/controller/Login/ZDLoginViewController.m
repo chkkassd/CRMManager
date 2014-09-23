@@ -176,49 +176,8 @@
 
 - (IBAction)test:(id)sender
 {
-//    [[ZDWebService sharedWebViewService] fetchProductsWithCustomerId:@"1000248706" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        NSLog(@"resultDic = %@",resultDic);
-//    }];
-    
-//    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13322343432" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        NSLog(@"resultDic = %@",resultDic);
-//    }];
-//    Customer * customer = [[ZDLocalDB sharedLocalDB] queryCustomerWithCustomerId:@"1000248706"];
-//    NSLog(@"name = %@",customer.customerName);
-//    [[ZDWebService sharedWebViewService] updatePotentialCustomer:@"chenjian" sex:@"1" managerId:@"507305" mobile:@"13564442916" memo:@"beizhu" hope:@"3" source:@"13" andCustomerId:@"1000541601" completionHandler:NULL];
-//        [[ZDWebService sharedWebViewService] addPotentialCustomer:@"chenjian" sex:@"1" managerId:@"507305" mobile:@"13564442916" memo:@"beizhu" hope:@"3" source:@"13" completionHandler:NULL];
-    
-//    [[ZDWebService sharedWebViewService] deletePotentialCustomer:@"1000541601" completionHandler:NULL];
-//    [[ZDWebService sharedWebViewService] updateContactRecord:@"507305" customerId:@"1000541602" contactType:@"1" contactNum:@"123" content:@"iloveyou" hope:@"3" contactTime:@"2012-07-12 12:12:12" inputDate:@"2012-07-12 12:12:12" inputId:@"987" memo:@"789" recordId:@"1000541850" handler:NULL];
-    
-//    [[ZDWebService sharedWebViewService] deleteContactRecord:@"1000541602" recordId:@"1000541850" completionHandler:NULL];
-    
-//    [[ZDWebService sharedWebViewService] fetchCustomersWithManagerUserId:@"507305" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-//    [[ZDWebService sharedWebViewService] fetchAllChanceCustomersWithManagerUserId:@"507305" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-//    [[ZDWebService sharedWebViewService] commitFeedbackWithManagerId:@"1026" Context:@"ahhahahahahahahaha" OperDate:@"2014-05-23 12:34:45" AppType:@"iphone" AppVersion:@"1.0" System:@"ios" SystemVersion:@"7.1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        NSLog(@"hahahah");
-//    }];
-//    [[ZDWebService sharedWebViewService] fetchCustomerContactListWithManagerUserId:@"507305" andCustomerId:@"1000539807" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-//    [[ZDWebService sharedWebViewService] fetchBusinessWithCustomerMobile:@"13339313631" andBusinessType:@"0" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-//    [[ZDWebService sharedWebViewService] fetchRemindInfosWithManagerId:@"20109601" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-    
-//    [[ZDWebService sharedWebViewService] fetchBirthRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-//    [[ZDWebService sharedWebViewService] fetchCreditRemindListWithManagerId:@"20109601" pageSize:@"20" pageNo:@"1" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-//        
-//    }];
-    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"OrganFortune" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+
+    [[ZDWebService sharedWebViewService] fetchBusinessesWithManagerId:@"20553013" completionHandler:^(NSError *error, NSDictionary *resultDic) {
         
     }];
 }

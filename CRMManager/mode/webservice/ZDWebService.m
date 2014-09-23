@@ -71,6 +71,20 @@
     [self fetchByWebserviceURL:url dictionary:dic handler:handler];
 }
 
+- (void)fetchBusinessesWithCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary *dic = @{@"id":customerid};
+    NSURL *url = [self URLForGetBusinessesWithCustomerId];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
+- (void)fetchBusinessesWithManagerId:(NSString *)managerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
+{
+    NSDictionary *dic = @{@"managerId":managerid};
+    NSURL *url = [self URLForGetBusinessesWithManagerId];
+    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+}
+
 #pragma mark - 储备客户相关
 
 //获取所有客户列表，用于机会页面,type:0-all、1-储备客户、2-客户、3-老客户
