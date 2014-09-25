@@ -29,6 +29,20 @@
     return [[self pathForCacheDirectory] stringByAppendingPathComponent:@"MySqlite.sqlite"];
 }
 
+#pragma mark - path for CRMState
+
+- (NSString *)pathForCRMState
+{
+    return [[self pathForCacheDirectory] stringByAppendingPathComponent:@"CRMState.plist"];
+}
+
+#pragma mark - path for ForturnState
+
+- (NSString *)pathForFortuneState
+{
+    return [[self pathForCacheDirectory] stringByAppendingPathComponent:@"FortuneState.plist"];
+}
+
 #pragma mark - sharedInstance
 
 + (ZDCachePathUtility *)sharedCachePathUtility

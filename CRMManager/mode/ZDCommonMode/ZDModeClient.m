@@ -29,6 +29,9 @@
             [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
             //7.获取投资提醒信息
             [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
+            //8.获取CRMstate和fortuneState
+            [self fetchAndSaveCRMState];
+            [self fetchAndSaveFortuneState];
         } else {
             NSLog(@"保存customers失败");
         }
@@ -70,6 +73,9 @@
                             [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
                             //7.获取投资提醒信息
                             [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
+                            //8.获取CRMstate和fortuneState
+                            [self fetchAndSaveCRMState];
+                            [self fetchAndSaveFortuneState];
                         } else {
                             NSLog(@"保存customers失败");
                         }
@@ -258,6 +264,60 @@
             }
         }
     }
+}
+
+//get and save crmState
+- (void)fetchAndSaveCRMState
+{
+    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"requestState" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            NSDictionary * dic = resultDic[@"infos"];
+            NSArray * arr = dic[@"requestState"];
+            NSMutableDictionary * plistDic = [[NSMutableDictionary alloc] init];
+            for (NSDictionary * stateDic in arr) {
+                [plistDic setObject:stateDic[@"prValue"] forKey:stateDic[@"prName"]];
+            }
+            NSString * crmStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForCRMState];
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:crmStatePath]) {
+                if ([[NSFileManager defaultManager] removeItemAtPath:crmStatePath error:nil]) {
+                    [plistDic writeToFile:crmStatePath atomically:YES];
+                };
+            } else {
+                [plistDic writeToFile:crmStatePath atomically:YES];
+            }
+            
+        } else {
+            NSLog(@"fail to fetch CRMState from web");
+        }
+    }];
+}
+
+//get and save fortuneState
+- (void)fetchAndSaveFortuneState
+{
+    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"FortuneState" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            NSDictionary * dic = resultDic[@"infos"];
+            NSArray * arr = dic[@"FortuneState"];
+            NSMutableDictionary * plistDic = [[NSMutableDictionary alloc] init];
+            for (NSDictionary * stateDic in arr) {
+                [plistDic setObject:stateDic[@"prValue"] forKey:stateDic[@"prName"]];
+            }
+            NSString * fortuneStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForFortuneState];
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:fortuneStatePath]) {
+                if ([[NSFileManager defaultManager] removeItemAtPath:fortuneStatePath error:nil]) {
+                    [plistDic writeToFile:fortuneStatePath atomically:YES];
+                };
+            } else {
+                [plistDic writeToFile:fortuneStatePath atomically:YES];
+            }
+            
+        } else {
+            NSLog(@"fail to fetch fortuneState from web");
+        }
+    }];
 }
 
 //get and save birthRemind info

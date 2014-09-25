@@ -12,6 +12,8 @@
 @interface ZDCachePathUtility : NSObject
 
 - (NSString *)pathForSqlite;
+- (NSString *)pathForCRMState;
+- (NSString *)pathForFortuneState;
 + (ZDCachePathUtility *)sharedCachePathUtility;
 
 @end

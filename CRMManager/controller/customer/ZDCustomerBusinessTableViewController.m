@@ -86,6 +86,7 @@
 - (void)setDataBusinessLists:(NSMutableArray *)dataBusinessLists
 {
     _dataBusinessLists = [dataBusinessLists mutableCopy];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -111,13 +112,13 @@
     if ([[self.dataBusinessLists[indexPath.row] objectForKey:@"cell"] isEqualToString:@"normal"]) {
         ZDCustomerBusinessTableViewCellNormal * cell = [tableView dequeueReusableCellWithIdentifier:@"businessNomalCell" forIndexPath:indexPath];
         cell.productNameLabel.text = zdBusinessList.pattern;
-        cell.numberLabel.text = zdBusinessList.lendingNo;
+        cell.numberLabel.text = zdBusinessList.feLendNo;
         cell.backGroundView.backgroundColor = [self backgroundColorForNormalCellWithIndex:indexPath.row];
         return cell;
     } else {
         ZDCustomerBusinessTableViewCellUnfold * cell = [tableView dequeueReusableCellWithIdentifier:@"businessUnfoldCell" forIndexPath:indexPath];
         cell.moneyLabel.text = zdBusinessList.investAmt;
-        cell.stateLabel.text = zdBusinessList.status;
+//        cell.stateLabel.text = zdBusinessList.status;
         cell.dateLabel.text = zdBusinessList.endDate;
         return cell;
     }

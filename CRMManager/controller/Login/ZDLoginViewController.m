@@ -177,7 +177,7 @@
 - (IBAction)test:(id)sender
 {
 
-    [[ZDWebService sharedWebViewService] fetchBusinessesWithManagerId:@"20553013" completionHandler:^(NSError *error, NSDictionary *resultDic) {
+    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"FortuneState" completionHandler:^(NSError *error, NSDictionary *resultDic) {
         
     }];
 }
