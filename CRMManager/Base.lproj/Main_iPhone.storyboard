@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="guK-TN-hfS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--New Feature View Controller-->
+        <scene sceneID="zzs-If-RkU">
+            <objects>
+                <viewController storyboardIdentifier="newFeature" id="kEU-oL-bOv" customClass="ZDNewFeatureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kYT-bY-igz"/>
+                        <viewControllerLayoutGuide type="bottom" id="zMs-6o-OMJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aaf-eJ-QMe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5p-iR-04G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1109" y="-19"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="Dpn-du-NPe">
             <objects>
-                <viewController id="guK-TN-hfS" customClass="ZDLoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="guK-TN-hfS" customClass="ZDLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Qh-ET-GM7"/>
                         <viewControllerLayoutGuide type="bottom" id="laz-nq-UHd"/>

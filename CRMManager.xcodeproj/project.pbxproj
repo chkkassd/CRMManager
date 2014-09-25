@@ -10,6 +10,7 @@
 		1805578719A51F5600A76AE2 /* UIView+CCPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = 1805578619A51F5600A76AE2 /* UIView+CCPlus.m */; };
 		18861913199C0B09007635FC /* UIImage+Tab.m in Sources */ = {isa = PBXBuildFile; fileRef = 18861912199C0B09007635FC /* UIImage+Tab.m */; };
 		18BFEED119A50A5700644953 /* ZDAboutUsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */; };
+		18D1D54B19D3E85D005A576C /* ZDNewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D1D54A19D3E85D005A576C /* ZDNewFeatureViewController.m */; };
 		18E9F9A21995B6F000E6DC8F /* ZDGesturePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */; };
 		18E9F9A31995B6F000E6DC8F /* ZDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9941995B6F000E6DC8F /* ZDLoginViewController.m */; };
 		18E9F9A41995B6F000E6DC8F /* ZDTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E9F9971995B6F000E6DC8F /* ZDTabBarViewController.m */; };
@@ -110,6 +111,8 @@
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
 		18BFEECF19A50A5700644953 /* ZDAboutUsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutUsTableViewController.h; sourceTree = "<group>"; };
 		18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAboutUsTableViewController.m; sourceTree = "<group>"; };
+		18D1D54919D3E85D005A576C /* ZDNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewFeatureViewController.h; sourceTree = "<group>"; };
+		18D1D54A19D3E85D005A576C /* ZDNewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDNewFeatureViewController.m; sourceTree = "<group>"; };
 		18E9F9911995B6F000E6DC8F /* ZDGesturePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDGesturePasswordViewController.h; sourceTree = "<group>"; };
 		18E9F9921995B6F000E6DC8F /* ZDGesturePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDGesturePasswordViewController.m; sourceTree = "<group>"; };
 		18E9F9931995B6F000E6DC8F /* ZDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDLoginViewController.h; sourceTree = "<group>"; };
@@ -283,6 +286,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D1D54819D3E84E005A576C /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				18D1D54919D3E85D005A576C /* ZDNewFeatureViewController.h */,
+				18D1D54A19D3E85D005A576C /* ZDNewFeatureViewController.m */,
+			);
+			path = NewFeature;
+			sourceTree = "<group>";
+		};
 		18E9F9901995B6F000E6DC8F /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +425,7 @@
 		6724CB8A1994B50200E1C058 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				18D1D54819D3E84E005A576C /* NewFeature */,
 				67BD1F6519AEB78600125917 /* customer */,
 				FF59822E199CFE760031D575 /* chance */,
 				18E9F9901995B6F000E6DC8F /* Login */,
@@ -768,6 +781,7 @@
 				FF8F1A95199604BC0062B71C /* ZDModeClient.m in Sources */,
 				671828CB19B9541B00432505 /* ZDScanBarCodeViewController.m in Sources */,
 				67CD594B19ADBC6000303317 /* ZDCustomerBusinessTableViewCellNormal.m in Sources */,
+				18D1D54B19D3E85D005A576C /* ZDNewFeatureViewController.m in Sources */,
 				67BDCB2E199DF83B00853285 /* ZDSuggestionViewController.m in Sources */,
 				81BC635A19C67F98006E3744 /* InvestmentRemind.m in Sources */,
 				67BD1F7319AEB78600125917 /* ZDCustomerRecordListViewController.m in Sources */,
