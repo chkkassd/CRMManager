@@ -135,6 +135,7 @@
     zdCustomer.cdHope = customer.cdHope;
     zdCustomer.sex = customer.sex;
     zdCustomer.memo = customer.memo;
+    zdCustomer.businessCount = customer.businessCount;
     zdCustomer.customerType = customer.customerType;
 }
 
@@ -232,25 +233,12 @@
     return nil;
 }
 
-//查找business
-- (Business *)queryBusinessWithCustomerId:(NSString *)customerid
-{
-    Customer * customer = [self queryCustomerWithCustomerId:customerid];
-    if (customer) {
-        if (customer.business) {
-            return customer.business;
-        }
-        return nil;
-    }
-    return nil;
-}
-
 //查找businessList
 - (BusinessList *)queryBusinessListWithCustomerId:(NSString *)customerid andLendingNo:(NSString *)lendingNo
 {
     BusinessList * businessList = nil;
     NSFetchRequest * fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"BusinessList"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"belongBusiness.businessBelongCustomer.customerId == %@ && lendingNo == %@",customerid,lendingNo];
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"businessListBelongToCustomer.customerId == %@ && feLendNo == %@",customerid,lendingNo];
     
     NSError * error = nil;
     NSArray * fetchResult = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
@@ -265,12 +253,9 @@
 //查找一个客户的所有businessLists
 - (NSArray *)queryAllBusinessListsWithCustomerId:(NSString *)customerid
 {
-    Business * business = [self queryBusinessWithCustomerId:customerid];
-    if (business) {
-        if ([[business.allBusinessLists allObjects] count]) {
-            return [business.allBusinessLists allObjects];
-        }
-        return nil;
+    Customer * customer = [self queryCustomerWithCustomerId:customerid];
+    if (customer) {
+        return [customer.allBusinessLists allObjects];
     }
     return nil;
 }
@@ -293,19 +278,14 @@
 
 - (void)modifyZDBusinessList:(ZDBusinessList *)zdBusinessList fromBusinessList:(BusinessList *)businessList
 {
-    zdBusinessList.customerId = businessList.belongBusiness.businessBelongCustomer.customerId;
-    zdBusinessList.status = businessList.status;
-    zdBusinessList.managementFeeDiscount = businessList.managementFeeDiscount;
-    zdBusinessList.billDate = businessList.billDate;
-    zdBusinessList.startDate = businessList.startDate;
-    zdBusinessList.loanValue = businessList.loanValue;
+    zdBusinessList.customerId = businessList.businessListBelongToCustomer.customerId;
     zdBusinessList.pattern = businessList.pattern;
-    zdBusinessList.managementFeeRate = businessList.managementFeeRate;
-    zdBusinessList.incomeTotal = businessList.incomeTotal;
     zdBusinessList.endDate = businessList.endDate;
     zdBusinessList.investAmt = businessList.investAmt;
-    zdBusinessList.lendingNo = businessList.lendingNo ;
-    zdBusinessList.contractNo = businessList.contractNo;
+    zdBusinessList.crmState = businessList.crmState;
+    zdBusinessList.fortuneState = businessList.fortuneState;
+    zdBusinessList.customerName = businessList.customerName;
+    zdBusinessList.feLendNo = businessList.feLendNo;
 }
 
 //查找一个birthRemind
@@ -479,6 +459,7 @@
     customer.sex = zdCustomer.sex;
     customer.memo = zdCustomer.memo;
     customer.customerType = zdCustomer.customerType;
+    customer.businessCount = zdCustomer.businessCount;
     customer.belongManager = [self queryManagerUserWithUserId:self.defaultCurrentUserId];
 }
 
@@ -527,40 +508,12 @@
     contractRecord.recordBelongCustomer = [self queryCustomerWithCustomerId:zdContractRecord.customerId];
 }
 
-//save business
-- (BOOL)saveBusinessWith:(ZDBusiness *)zdBusiness error:(NSError *__autoreleasing *)error
-{
-    if (!zdBusiness) return NO;
-    
-    Business * business = [self queryBusinessWithCustomerId:zdBusiness.customerId];
-    if (business) {
-        //存在，修改并保存
-        [self modifyBusiness:business from:zdBusiness];
-    } else {
-        //不存在，插入一条
-        business = [NSEntityDescription insertNewObjectForEntityForName:@"Business" inManagedObjectContext:self.managedObjectContext];
-        [self modifyBusiness:business from:zdBusiness];
-    }
-    return [self.managedObjectContext save:error];
-}
-
-- (void)modifyBusiness:(Business *)business from:(ZDBusiness *)zdBusiness
-{
-    business.incomeTotal = zdBusiness.incomeTotal;
-    business.customerName = zdBusiness.customerName;
-    business.applyDate = zdBusiness.applyDate;
-    business.productType = zdBusiness.productType;
-    business.accountTotal = zdBusiness.accountTotal;
-    business.recoverableAmount = zdBusiness.recoverableAmount;
-    business.businessBelongCustomer = [self queryCustomerWithCustomerId:zdBusiness.customerId];
-}
-
 //save one businessList
 - (BOOL)saveBusinessList:(ZDBusinessList *)zdBusinessList error:(NSError *__autoreleasing *)error
 {
     if (!zdBusinessList) return NO;
     
-    BusinessList * businessList = [self queryBusinessListWithCustomerId:zdBusinessList.customerId andLendingNo:zdBusinessList.lendingNo];
+    BusinessList * businessList = [self queryBusinessListWithCustomerId:zdBusinessList.customerId andLendingNo:zdBusinessList.feLendNo];
     if (businessList) {
         // 存在，修改并保存
         [self modifyBusinessList:businessList from:zdBusinessList];
@@ -575,19 +528,14 @@
 
 - (void)modifyBusinessList:(BusinessList *)businessList from:(ZDBusinessList *)zdBusinessList
 {
-    businessList.status = zdBusinessList.status;
-    businessList.managementFeeDiscount = zdBusinessList.managementFeeDiscount;
-    businessList.billDate = zdBusinessList.billDate;
-    businessList.startDate = zdBusinessList.startDate;
-    businessList.loanValue = zdBusinessList.loanValue;
     businessList.pattern = zdBusinessList.pattern;
-    businessList.managementFeeRate = zdBusinessList.managementFeeRate;
-    businessList.incomeTotal = zdBusinessList.incomeTotal;
     businessList.endDate = zdBusinessList.endDate;
     businessList.investAmt = zdBusinessList.investAmt;
-    businessList.lendingNo = zdBusinessList.lendingNo ;
-    businessList.contractNo = zdBusinessList.contractNo;
-    businessList.belongBusiness = [self queryBusinessWithCustomerId:zdBusinessList.customerId];
+    businessList.feLendNo = zdBusinessList.feLendNo ;
+    businessList.customerName = zdBusinessList.customerName;
+    businessList.crmState = zdBusinessList.crmState;
+    businessList.fortuneState = zdBusinessList.fortuneState;
+    businessList.businessListBelongToCustomer = [self queryCustomerWithCustomerId:zdBusinessList.customerId];
 }
 
 // Save much businessLists

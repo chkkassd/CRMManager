@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * sex;
 @property (nonatomic, retain) NSString * customerType;
 @property (nonatomic, retain) NSString * memo;
+@property (nonatomic, retain) NSString * businessCount;
 
 @end

@@ -7,23 +7,16 @@
 //
 
 #import "BusinessList.h"
-#import "Business.h"
-
 
 @implementation BusinessList
 
-@dynamic lendingNo;
-@dynamic pattern;
-@dynamic incomeTotal;
-@dynamic investAmt;
-@dynamic contractNo;
-@dynamic status;
-@dynamic startDate;
+@dynamic customerName;
 @dynamic endDate;
-@dynamic billDate;
-@dynamic loanValue;
-@dynamic managementFeeDiscount;
-@dynamic managementFeeRate;
-@dynamic belongBusiness;
+@dynamic feLendNo;
+@dynamic crmState;
+@dynamic fortuneState;
+@dynamic investAmt;
+@dynamic pattern;
+@dynamic businessListBelongToCustomer;
 
 @end

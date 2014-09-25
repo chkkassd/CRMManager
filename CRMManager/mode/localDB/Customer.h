@@ -11,7 +11,6 @@
 
 @class BirthRemind;
 @class InvestmentRemind;
-@class Business;
 
 @interface Customer : NSManagedObject
 
@@ -23,10 +22,11 @@
 @property (nonatomic, retain) NSString * customerType;//1-储备客户、2-客户、3-老客户
 @property (nonatomic, retain) NSString * sex;//1-男、0-女
 @property (nonatomic, retain) NSString * memo;//备注
+@property (nonatomic, retain) NSString * businessCount;
 
 @property (nonatomic, retain) NSManagedObject * belongManager;
+@property (nonatomic, retain) NSSet * allBusinessLists;
 @property (nonatomic, retain) NSSet * allContactRecords;
-@property (nonatomic, retain) Business * business;
 @property (nonatomic, retain) BirthRemind * birthRemind;
 @property (nonatomic, retain) NSSet * allInvestmentReminds;
 

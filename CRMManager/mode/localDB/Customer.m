@@ -19,9 +19,10 @@
 @dynamic sex;
 @dynamic belongManager;
 @dynamic allContactRecords;
-@dynamic business;
 @dynamic memo;
 @dynamic birthRemind;
 @dynamic allInvestmentReminds;
+@dynamic allBusinessLists;
+@dynamic businessCount;
 
 @end

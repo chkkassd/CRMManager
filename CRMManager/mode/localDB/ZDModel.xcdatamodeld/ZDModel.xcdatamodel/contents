@@ -4,30 +4,15 @@
         <attribute name="dataOfBirth" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="birthOfCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="birthRemind" inverseEntity="Customer" syncable="YES"/>
     </entity>
-    <entity name="Business" representedClassName="Business" syncable="YES">
-        <attribute name="accountTotal" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="applyDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="productType" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="recoverableAmount" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="allBusinessLists" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BusinessList" inverseName="belongBusiness" inverseEntity="BusinessList" syncable="YES"/>
-        <relationship name="businessBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="business" inverseEntity="Customer" syncable="YES"/>
-    </entity>
     <entity name="BusinessList" representedClassName="BusinessList" syncable="YES">
-        <attribute name="billDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="contractNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="crmState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="incomeTotal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="feLendNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fortuneState" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="investAmt" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lendingNo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="loanValue" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="managementFeeDiscount" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="managementFeeRate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pattern" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="startDate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="belongBusiness" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Business" inverseName="allBusinessLists" inverseEntity="Business" syncable="YES"/>
+        <relationship name="businessListBelongToCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allBusinessLists" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="ContactRecord" representedClassName="ContactRecord" syncable="YES">
         <attribute name="contactNum" optional="YES" attributeType="String" syncable="YES"/>
@@ -43,6 +28,7 @@
         <relationship name="recordBelongCustomer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Customer" inverseName="allContactRecords" inverseEntity="Customer" syncable="YES"/>
     </entity>
     <entity name="Customer" representedClassName="Customer" syncable="YES">
+        <attribute name="businessCount" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="cdHope" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="customerName" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,11 +37,11 @@
         <attribute name="memo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mobile" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="allBusinessLists" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BusinessList" inverseName="businessListBelongToCustomer" inverseEntity="BusinessList" syncable="YES"/>
         <relationship name="allContactRecords" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ContactRecord" inverseName="recordBelongCustomer" inverseEntity="ContactRecord" syncable="YES"/>
         <relationship name="allInvestmentReminds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="InvestmentRemind" inverseName="investmentRemindOfCustomer" inverseEntity="InvestmentRemind" syncable="YES"/>
         <relationship name="belongManager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagerUser" inverseName="allCustomers" inverseEntity="ManagerUser" syncable="YES"/>
         <relationship name="birthRemind" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="BirthRemind" inverseName="birthOfCustomer" inverseEntity="BirthRemind" syncable="YES"/>
-        <relationship name="business" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Business" inverseName="businessBelongCustomer" inverseEntity="Business" syncable="YES"/>
     </entity>
     <entity name="InvestmentRemind" representedClassName="InvestmentRemind" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="String" syncable="YES"/>
@@ -75,10 +61,9 @@
     </entity>
     <elements>
         <element name="BirthRemind" positionX="-873" positionY="-486" width="128" height="73"/>
-        <element name="Business" positionX="-513" positionY="-468" width="128" height="163"/>
-        <element name="BusinessList" positionX="-272" positionY="-459" width="128" height="238"/>
+        <element name="BusinessList" positionX="-495" positionY="-415" width="128" height="163"/>
         <element name="ContactRecord" positionX="-270" positionY="-720" width="128" height="208"/>
-        <element name="Customer" positionX="-531" positionY="-736" width="128" height="238"/>
+        <element name="Customer" positionX="-531" positionY="-736" width="128" height="253"/>
         <element name="InvestmentRemind" positionX="-693" positionY="-394" width="128" height="118"/>
         <element name="ManagerUser" positionX="-792" positionY="-742" width="128" height="148"/>
     </elements>

@@ -64,12 +64,12 @@
 }
 
 //根据customer的mobile查询其业务,”0”:理财, ”1”:借贷
-- (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
-{
-    NSDictionary * dic = @{@"mobile": mobile, @"businessType":@"0"};//0，理财，1，借贷，现阶段只有理财
-    NSURL *url = [self URLForGetAllBusinessWithCustomer];
-    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
-}
+//- (void)fetchBusinessWithCustomerMobile:(NSString *)mobile andBusinessType:(NSString *)type completionHandler:(void(^)(NSError * error, NSDictionary * resultDic))handler
+//{
+//    NSDictionary * dic = @{@"mobile": mobile, @"businessType":@"0"};//0，理财，1，借贷，现阶段只有理财
+//    NSURL *url = [self URLForGetAllBusinessWithCustomer];
+//    [self fetchByWebserviceURL:url dictionary:dic handler:handler];
+//}
 
 - (void)fetchBusinessesWithCustomerId:(NSString *)customerid completionHandler:(void(^)(NSError *error, NSDictionary *resultDic))handler
 {
