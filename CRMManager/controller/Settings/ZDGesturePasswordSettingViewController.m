@@ -43,6 +43,15 @@
     return _zdManagerUser;
 }
 
+#pragma mark - alert view delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.cancelButtonIndex == buttonIndex) {
+        [self.delegate gesturePasswordSettingViewControllerDidFinishPassword:self];
+    }
+}
+
 #pragma mark - SSFPasswordGestureViewDelegate
 
 - (void)passwordGestureViewFinishFirstTimePassword:(SSFPasswordGestureView *)passwordView

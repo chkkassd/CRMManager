@@ -275,7 +275,7 @@
             NSArray * arr = dic[@"requestState"];
             NSMutableDictionary * plistDic = [[NSMutableDictionary alloc] init];
             for (NSDictionary * stateDic in arr) {
-                [plistDic setObject:stateDic[@"prValue"] forKey:stateDic[@"prName"]];
+                [plistDic setObject:stateDic[@"prName"] forKey:stateDic[@"prValue"]];
             }
             NSString * crmStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForCRMState];
             
@@ -302,7 +302,7 @@
             NSArray * arr = dic[@"FortuneState"];
             NSMutableDictionary * plistDic = [[NSMutableDictionary alloc] init];
             for (NSDictionary * stateDic in arr) {
-                [plistDic setObject:stateDic[@"prValue"] forKey:stateDic[@"prName"]];
+                [plistDic setObject:stateDic[@"prName"] forKey:stateDic[@"prValue"]];
             }
             NSString * fortuneStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForFortuneState];
             

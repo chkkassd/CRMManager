@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSArray * businessLists;
 @property (strong, nonatomic) NSMutableArray * dataBusinessLists;
+@property (strong, nonatomic) NSDictionary * CRMStateDictionary;
+@property (strong, nonatomic) NSDictionary * fortuneStateDictionary;
 
 @end
 
@@ -63,6 +65,35 @@
     return colors[0];//默认色
 }
 
+- (NSString *)stateStringWithBusinessList:(ZDBusinessList *)zdBusinessList andStateType:(NSString *)type
+{
+    if ([type isEqualToString:@"CRM"]) {
+        if (zdBusinessList.crmState.length) {
+            return self.CRMStateDictionary[zdBusinessList.crmState];
+        }
+        return nil;
+    } else {
+        if (zdBusinessList.fortuneState.length) {
+            return self.fortuneStateDictionary[zdBusinessList.fortuneState];
+        }
+        return nil;
+    }
+}
+
+- (NSString *)reciprocalDateStringwithTime:(NSTimeInterval)time
+{
+    if (time <= 60 * 60) {
+        return nil;
+    } else if (time > 60 * 60 && time <= 60 * 60 * 24) {
+        int hour = floor(time/3600);
+        return [NSString stringWithFormat:@"%d小时",hour];
+    } else {
+        int day = floor(time/(24 * 60 * 60));
+        int hour = floor((time - day * 24 * 60 * 60)/(60 * 60));
+        return [NSString stringWithFormat:@"%d天%d小时",day,hour];
+    }
+}
+
 #pragma mark - properties
 
 - (void)setCustomer:(ZDCustomer *)customer
@@ -81,12 +112,35 @@
                                @"object": obj};
         [self.dataBusinessLists addObject:dic];
     }
+    [self.tableView reloadData];
 }
 
-- (void)setDataBusinessLists:(NSMutableArray *)dataBusinessLists
+//- (void)setDataBusinessLists:(NSMutableArray *)dataBusinessLists
+//{
+//    _dataBusinessLists = [dataBusinessLists mutableCopy];
+//    [self.tableView reloadData];
+//}
+
+- (NSDictionary *)CRMStateDictionary
 {
-    _dataBusinessLists = [dataBusinessLists mutableCopy];
-    [self.tableView reloadData];
+    if (!_CRMStateDictionary) {
+        NSString * crmStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForCRMState];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:crmStatePath]) {
+            _CRMStateDictionary = [NSDictionary dictionaryWithContentsOfFile:crmStatePath];
+        }
+    }
+    return _CRMStateDictionary;
+}
+
+- (NSDictionary *)fortuneStateDictionary
+{
+    if (!_fortuneStateDictionary) {
+        NSString * fortuneStatePath = [[ZDCachePathUtility sharedCachePathUtility] pathForFortuneState];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:fortuneStatePath]) {
+            _fortuneStateDictionary = [NSDictionary dictionaryWithContentsOfFile:fortuneStatePath];
+        }
+    }
+    return _fortuneStateDictionary;
 }
 
 #pragma mark - Table view data source
@@ -118,8 +172,25 @@
     } else {
         ZDCustomerBusinessTableViewCellUnfold * cell = [tableView dequeueReusableCellWithIdentifier:@"businessUnfoldCell" forIndexPath:indexPath];
         cell.moneyLabel.text = zdBusinessList.investAmt;
-//        cell.stateLabel.text = zdBusinessList.status;
-        cell.dateLabel.text = zdBusinessList.endDate;
+        
+        NSString * crmState = [self stateStringWithBusinessList:zdBusinessList andStateType:@"CRM"];
+        NSString * fortuneState = [self stateStringWithBusinessList:zdBusinessList andStateType:@"Fortune"];
+        cell.stateLabel.text = [NSString stringWithFormat:@"%@ %@",crmState.length ? crmState : @"",fortuneState.length ? fortuneState : @""];
+        cell.dateLabel.text = zdBusinessList.endDate.length ? [zdBusinessList.endDate substringToIndex:10] : @"";
+        
+        if (zdBusinessList.endDate.length) {
+            cell.reciprocalDateLabel.hidden = NO;
+            NSDate * endate = [NSString convertDateFromString:zdBusinessList.endDate];
+            NSTimeInterval reciprocalDate = [endate timeIntervalSinceNow];
+            NSString * reciprocalString = [self reciprocalDateStringwithTime:reciprocalDate];
+            if (!reciprocalString) {
+                cell.reciprocalDateLabel.text = @"即将到期";
+            } else {
+                cell.reciprocalDateLabel.text = [NSString stringWithFormat:@"倒数%@",reciprocalString];
+            }
+        } else {
+            cell.reciprocalDateLabel.hidden = YES;
+        }
         return cell;
     }
 }

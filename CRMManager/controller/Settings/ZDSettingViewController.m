@@ -9,8 +9,9 @@
 #import "ZDSettingViewController.h"
 #import "ZDSuggestionViewController.h"
 #import "ZDSelectAreaTableViewController.h"
+#import "ZDGesturePasswordSettingViewController.h"
 
-@interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate,ZDSelectAreaTableViewControllerDelegate>
+@interface ZDSettingViewController () <UIAlertViewDelegate,ZDSuggestionViewControllerDelegate,ZDSelectAreaTableViewControllerDelegate,ZDGesturePasswordSettingViewControllerDelegate>
 
 @end
 
@@ -60,6 +61,9 @@
     } else if ([segue.identifier isEqualToString:@"showSelectAreaView"]) {
         ZDSelectAreaTableViewController * savc = segue.destinationViewController;
         savc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"setting to gesturePassword"]) {
+        ZDGesturePasswordSettingViewController * gpvc = segue.destinationViewController;
+        gpvc.delegate = self;
     }
 }
 
@@ -83,6 +87,17 @@
     hud.labelText = @"修改地区成功";
     [hud hide:YES afterDelay:1];
     [self.navigationController popToViewController:self animated:YES];
+}
+
+#pragma mark - gesturePasswordSettingView delegate
+
+- (void)gesturePasswordSettingViewControllerDidFinishPassword:(ZDGesturePasswordSettingViewController *)controller
+{
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = @"修改手势密码成功";
+    [self.navigationController popToViewController:self animated:YES];
+    [hud hide:YES afterDelay:1];
 }
 
 #pragma mark - UIActionSheetDelegate

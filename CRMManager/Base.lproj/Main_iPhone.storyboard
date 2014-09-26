@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5p-iR-04G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1109" y="-19"/>
+            <point key="canvasLocation" x="-1491" y="640"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Dpn-du-NPe">
@@ -1094,7 +1094,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Stb-zg-pkS" kind="push" id="TH6-Cv-qnp"/>
+                                            <segue destination="Stb-zg-pkS" kind="push" identifier="setting to gesturePassword" id="TH6-Cv-qnp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JtB-xf-d9g">
@@ -2721,7 +2721,7 @@
                                                 <constraint firstAttribute="height" constant="23" id="Isf-c7-vUf"/>
                                                 <constraint firstAttribute="width" constant="134" id="TwQ-zV-8cf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.39607846740000002" green="0.39607846740000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2755,9 +2755,20 @@
                                             <color key="textColor" red="0.39607846740000002" green="0.39607846740000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1B-Ut-FYv">
+                                            <rect key="frame" x="166" y="142" width="134" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Kaa-ol-DOY"/>
+                                                <constraint firstAttribute="width" constant="134" id="xFy-jh-biY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.39607846740000002" green="0.39607846740000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="hH0-YO-eCx" firstAttribute="top" secondItem="fbY-G2-8tV" secondAttribute="bottom" constant="8" id="09W-BG-2Kh"/>
+                                        <constraint firstItem="L1B-Ut-FYv" firstAttribute="top" secondItem="Xkn-O3-pqR" secondAttribute="bottom" constant="8" id="2ug-55-IUt"/>
                                         <constraint firstItem="3H9-Vn-rdv" firstAttribute="top" secondItem="1b0-ze-e6V" secondAttribute="top" constant="20" id="95d-yh-f6v"/>
                                         <constraint firstItem="fbY-G2-8tV" firstAttribute="leading" secondItem="1b0-ze-e6V" secondAttribute="leading" constant="59" id="BBh-IM-coy"/>
                                         <constraint firstItem="UTx-ai-bK4" firstAttribute="top" secondItem="hH0-YO-eCx" secondAttribute="bottom" constant="37" id="EJg-oj-XIb"/>
@@ -2769,6 +2780,7 @@
                                         <constraint firstAttribute="bottom" secondItem="Yyn-RZ-5jk" secondAttribute="bottom" id="aH0-Fj-2JG"/>
                                         <constraint firstAttribute="trailing" secondItem="3H9-Vn-rdv" secondAttribute="trailing" constant="20" id="bha-E1-aLA"/>
                                         <constraint firstItem="Yyn-RZ-5jk" firstAttribute="leading" secondItem="1b0-ze-e6V" secondAttribute="leading" constant="10" id="gSU-Kt-bi0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="L1B-Ut-FYv" secondAttribute="trailing" constant="12" id="iAi-3D-bg4"/>
                                         <constraint firstAttribute="trailing" secondItem="Yyn-RZ-5jk" secondAttribute="trailing" constant="10" id="lzu-Ep-Gdd"/>
                                         <constraint firstItem="Xkn-O3-pqR" firstAttribute="top" secondItem="ckw-iM-yOw" secondAttribute="bottom" constant="37" id="oHr-qd-fTF"/>
                                         <constraint firstItem="hH0-YO-eCx" firstAttribute="leading" secondItem="1b0-ze-e6V" secondAttribute="leading" constant="59" id="r2Y-AX-Z9T"/>
@@ -2778,6 +2790,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="Xkn-O3-pqR" id="SR0-ey-p1d"/>
                                     <outlet property="moneyLabel" destination="3H9-Vn-rdv" id="okh-BX-ugr"/>
+                                    <outlet property="reciprocalDateLabel" destination="L1B-Ut-FYv" id="X6f-nt-qIp"/>
                                     <outlet property="stateLabel" destination="ckw-iM-yOw" id="H5L-dQ-iBE"/>
                                 </connections>
                             </tableViewCell>
