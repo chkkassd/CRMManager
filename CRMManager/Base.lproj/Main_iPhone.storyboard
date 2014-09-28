@@ -2910,24 +2910,35 @@
         <scene sceneID="bOb-Ks-f1h">
             <objects>
                 <tableViewController storyboardIdentifier="ZDSelectAreaTableViewController" id="I9Q-PW-CeD" customClass="ZDSelectAreaTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="w7a-NO-E59">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="w7a-NO-E59">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectAreaCell" textLabel="Pcs-Et-chj" rowHeight="60" style="IBUITableViewCellStyleDefault" id="Ktu-BF-cGu" customClass="ZDSelectAreaTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectAreaCell" rowHeight="60" id="Ktu-BF-cGu" customClass="ZDSelectAreaTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ktu-BF-cGu" id="dz8-a8-J9q">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pcs-Et-chj">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Du-24-FNQ">
+                                            <rect key="frame" x="8" y="8" width="116" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="116" id="Zlj-yT-0mA"/>
+                                                <constraint firstAttribute="height" constant="44" id="bkC-EF-ZHk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Du-24-FNQ" firstAttribute="leading" secondItem="dz8-a8-J9q" secondAttribute="leading" constant="8" id="fJr-ok-3JR"/>
+                                        <constraint firstAttribute="centerY" secondItem="1Du-24-FNQ" secondAttribute="centerY" id="kUt-Md-Kd9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textLab" destination="1Du-24-FNQ" id="ggc-Hb-97V"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2939,7 +2950,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETR-Lw-vx8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-24" y="2572"/>
+            <point key="canvasLocation" x="-24" y="2568"/>
         </scene>
     </scenes>
     <resources>

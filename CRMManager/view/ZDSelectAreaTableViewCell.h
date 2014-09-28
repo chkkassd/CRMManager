@@ -10,4 +10,6 @@
 
 @interface ZDSelectAreaTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel * textLab;
+
 @end

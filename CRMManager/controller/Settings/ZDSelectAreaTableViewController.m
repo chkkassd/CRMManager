@@ -12,6 +12,7 @@
 @interface ZDSelectAreaTableViewController ()
 
 @property (strong, nonatomic) NSArray * areaArr;
+@property (strong, nonatomic) NSMutableArray * checkArr;
 @property (strong, nonatomic) ZDManagerUser * zdManager;
 
 @end
@@ -45,6 +46,15 @@
     return _zdManager;
 }
 
+- (void)setAreaArr:(NSArray *)areaArr
+{
+    _areaArr = areaArr;
+    self.checkArr = [[NSMutableArray alloc] init];
+    for (int i = 0;i < areaArr.count; i++) {
+        [self.checkArr addObject:@"0"];
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -55,7 +65,18 @@
 {
     ZDSelectAreaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"selectAreaCell" forIndexPath:indexPath];
     NSDictionary *dic = self.areaArr[indexPath.row];
-    cell.textLabel.text = dic[@"prName"];
+    cell.textLab.text = dic[@"prName"];
+    
+    if ([self.checkArr[indexPath.row] isEqualToString:@"1"]) {
+        UIView * view = [[UIView alloc] initWithFrame:cell.contentView.frame];
+        UIImageView * checkImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ico_check"]];
+        checkImageView.frame = CGRectMake(280, 20, 20, 20);
+        [view addSubview:checkImageView];
+        cell.backgroundView = view;
+    } else {
+        cell.backgroundView = nil;
+    }
+    
     return cell;
 }
 
@@ -64,6 +85,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.checkArr[indexPath.row] = @"1";
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
     NSDictionary *dic = self.areaArr[indexPath.row];
     self.zdManager.area = dic[@"prName"];
     self.zdManager.areaid = dic[@"prValue"];
