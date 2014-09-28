@@ -427,6 +427,41 @@
     }];
 }
 
+//刷新所有businesslist数据
+
+- (void)fetchAndSaveAllBusinessListsWithManagerId:(NSString *)managerid
+                                completionHandler:(void(^)(NSError * error))handler
+{
+    if (!managerid.length) return;
+    
+    [[ZDWebService sharedWebViewService] fetchBusinessesWithManagerId:self.zdManagerUser.userid completionHandler:^(NSError *error, NSDictionary *resultDic) {
+        if (!error) {
+            NSArray * infos = resultDic[@"infos"];
+            NSMutableArray * zdBusinessLists = [[NSMutableArray alloc] init];
+            NSMutableArray * businessCountArr = [[NSMutableArray alloc] init];
+            NSMutableArray * zdCustomers = [[NSMutableArray alloc] init];
+            [self modifyzdBusinessLists:zdBusinessLists andCountArr:businessCountArr FromInfosArr:infos];
+            
+            for (NSDictionary * dic in businessCountArr) {
+                ZDCustomer * zdCustomer = [self zdCustomerWithCustomerId:dic[@"customerId"]];
+                if (zdCustomer) {
+                    zdCustomer.businessCount = dic[@"count"];
+                    [zdCustomers addObject:zdCustomer];
+                }
+            }
+            
+            if ([[ZDLocalDB sharedLocalDB] saveMuchCustomersWith:zdCustomers error:NULL]) {
+                [[ZDLocalDB sharedLocalDB] saveMuchBusinessList:zdBusinessLists error:NULL];
+                handler(nil);
+            }
+            
+        } else {
+            handler(error);
+            NSLog(@"fail to fetch business from web");
+        }
+    }];
+}
+
 #pragma mark - 修改数据后保存
 
 - (BOOL)saveZDManagerUser:(ZDManagerUser *)zdManageruser

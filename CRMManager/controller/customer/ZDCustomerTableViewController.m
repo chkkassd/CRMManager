@@ -28,6 +28,8 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCurrentCustomers:) name:ZDUpdateCustomersNotification object:[ZDModeClient sharedModeClient]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBrithReminds:) name:ZDUpdateBirthRemindsNotification object:[ZDModeClient sharedModeClient]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateInvestmentReminds:) name:ZDUpdateInvestmentRemindsNotification object:[ZDModeClient sharedModeClient]];
     
     [self.tableView registerNib:[UINib nibWithNibName:SSFLeftRightSwipe_TableViewCell bundle:nil] forCellReuseIdentifier:SSFLeftRightSwipe_TableViewCell];
     [self.searchDisplayController.searchResultsTableView registerNib:[UINib nibWithNibName:SSFLeftRightSwipe_TableViewCell bundle:nil] forCellReuseIdentifier:SSFLeftRightSwipe_TableViewCell];
@@ -46,6 +48,16 @@
 - (void)updateCurrentCustomers:(NSNotification *)noti
 {
     self.allCurrentCustomers = [ZDModeClient sharedModeClient].allZDCurrentCustomers;
+}
+
+- (void)updateBrithReminds:(NSNotification *)noti
+{
+    [self.tableView reloadData];
+}
+
+- (void)updateInvestmentReminds:(NSNotification *)noti
+{
+    [self.tableView reloadData];
 }
 
 - (void)configureRefreshController

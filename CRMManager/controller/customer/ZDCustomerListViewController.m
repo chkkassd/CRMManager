@@ -39,10 +39,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBrithReminds:) name:ZDUpdateBirthRemindsNotification object:[ZDModeClient sharedModeClient]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateInvestmentReminds:) name:ZDUpdateInvestmentRemindsNotification object:[ZDModeClient sharedModeClient]];
+    
     [self configureView];
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #pragma mark - methods
+
+- (void)updateBrithReminds:(NSNotification *)noti
+{
+    [self.tableView reloadData];
+}
+
+- (void)updateInvestmentReminds:(NSNotification *)noti
+{
+    [self.tableView reloadData];
+}
 
 - (void)configureView
 {

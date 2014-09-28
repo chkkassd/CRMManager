@@ -86,6 +86,20 @@
 - (void)refreshContactRecordsWithCustomerId:(NSString *)customerId
                           CompletionHandler:(void(^)(NSError * error))handler;
 
+//刷新所有businesslist数据
+- (void)fetchAndSaveAllBusinessListsWithManagerId:(NSString *)managerid
+                                completionHandler:(void(^)(NSError * error))handler;
+
+- (void)fetchAndSaveAllBusinessListsWithManagerId:(NSString *)managerid;
+
+- (void)fetchAndSaveBirthRemindInfoWithManagerId:(NSString *)managerId
+                                        pageSize:(NSString *)pageSize
+                                          pageNo:(NSString *)pageNo;
+
+- (void)fetchAndSaveInvestmentRemindInfoWithManagerId:(NSString *)managerId
+                                             pageSize:(NSString *)pageSize
+                                               pageNo:(NSString *)pageNo;
+
 #pragma mark - 扫描二维码相关
 - (void)scanToLoginOnWebByUserName:(NSString *)userName
                           dimeCode:(NSString *)dimeCode

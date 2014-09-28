@@ -25,6 +25,9 @@
 {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBusinessLists:) name:ZDUpdateBusinessAndBusinessListsNotification object:[ZDModeClient sharedModeClient]];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshBusinessListView) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)dealloc
@@ -37,6 +40,23 @@
 - (void)updateBusinessLists:(NSNotification *)noti
 {
     self.businessLists = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:_customer.customerId];
+}
+
+- (void)refreshBusinessListView
+{
+    [[ZDModeClient sharedModeClient] fetchAndSaveAllBusinessListsWithManagerId:[ZDModeClient sharedModeClient].zdManagerUser.userid completionHandler:^(NSError *error) {
+        [self.refreshControl endRefreshing];
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        if (!error) {
+            hud.labelText = @"刷新成功";
+            self.businessLists = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:_customer.customerId];
+            [hud hide:YES afterDelay:1];
+        } else {
+            hud.labelText = @"刷新失败";
+            [hud hide:YES afterDelay:1];
+        }
+    }];
 }
 
 - (UIColor *)backgroundColorForNormalCellWithIndex:(NSInteger)index
