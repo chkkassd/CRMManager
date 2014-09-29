@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -15,9 +14,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx2-Ls-4IV">
-                        <rect key="frame" x="202" y="0.0" width="59" height="68"/>
+                        <rect key="frame" x="261" y="0.0" width="59" height="68"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="59" id="VEm-oZ-DsU"/>
+                            <constraint firstAttribute="width" constant="59" id="udG-zG-IsL"/>
                         </constraints>
                         <state key="normal" title="编辑" image="customer_edit">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,19 +24,6 @@
                         </state>
                         <connections>
                             <action selector="editeButtonPressed:" destination="JsK-fM-DtV" eventType="touchUpInside" id="iiy-1F-B8G"/>
-                        </connections>
-                    </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyW-b5-fkn">
-                        <rect key="frame" x="261" y="0.0" width="59" height="68"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="59" id="Tfk-pi-css"/>
-                        </constraints>
-                        <state key="normal" image="customer_delete">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="deleteButtonPressed:" destination="JsK-fM-DtV" eventType="touchUpInside" id="BvC-3h-LWF"/>
                         </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PO-BD-OV8" userLabel="realContentView">
@@ -102,20 +88,16 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="1PO-BD-OV8" firstAttribute="leading" secondItem="zEk-4P-dXx" secondAttribute="leading" id="1hN-FV-WsN"/>
-                    <constraint firstItem="nyW-b5-fkn" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="88h-Bv-Qlh"/>
-                    <constraint firstItem="nyW-b5-fkn" firstAttribute="leading" secondItem="qx2-Ls-4IV" secondAttribute="trailing" id="B0K-p2-WzD"/>
+                    <constraint firstAttribute="bottom" secondItem="qx2-Ls-4IV" secondAttribute="bottom" id="FKl-Nr-Grw"/>
+                    <constraint firstAttribute="trailing" secondItem="qx2-Ls-4IV" secondAttribute="trailing" id="FMP-f1-wak"/>
                     <constraint firstAttribute="bottom" secondItem="1PO-BD-OV8" secondAttribute="bottom" id="QtN-NF-Y4A"/>
-                    <constraint firstAttribute="bottom" secondItem="nyW-b5-fkn" secondAttribute="bottom" id="TmS-yF-N7W"/>
+                    <constraint firstItem="qx2-Ls-4IV" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="Tjl-ND-NqO"/>
                     <constraint firstAttribute="trailing" secondItem="1PO-BD-OV8" secondAttribute="trailing" id="WAI-bU-Ok4"/>
-                    <constraint firstAttribute="bottom" secondItem="qx2-Ls-4IV" secondAttribute="bottom" id="abo-mi-vxe"/>
-                    <constraint firstAttribute="trailing" secondItem="nyW-b5-fkn" secondAttribute="trailing" id="ook-34-Z2U"/>
-                    <constraint firstItem="qx2-Ls-4IV" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="pAC-P1-0I9"/>
                     <constraint firstItem="1PO-BD-OV8" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="zCy-hs-4n5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="alertImageView" destination="rjd-41-dFc" id="KHe-12-xgg"/>
-                <outlet property="deleteButton" destination="nyW-b5-fkn" id="SGs-vk-WdV"/>
                 <outlet property="editeButton" destination="qx2-Ls-4IV" id="yf8-jn-sRM"/>
                 <outlet property="headImageView" destination="pnm-MS-e1E" id="jOY-68-5wD"/>
                 <outlet property="interestLabel" destination="exB-ZF-H9d" id="U9b-dw-lag"/>
@@ -126,7 +108,6 @@
     </objects>
     <resources>
         <image name="customer_call" width="44" height="44"/>
-        <image name="customer_delete" width="59" height="68"/>
         <image name="customer_edit" width="59" height="68"/>
         <image name="ico_man_small" width="32" height="32"/>
     </resources>

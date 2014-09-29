@@ -13,6 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel * productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel * numberLabel;
 @property (weak, nonatomic) IBOutlet UIView * backGroundView;
-@property (nonatomic) BOOL isUnFold;//yes为已展开,no没有展开
 
 @end

@@ -980,7 +980,7 @@
         <!--扫描二维码-->
         <scene sceneID="MVK-pB-3FU">
             <objects>
-                <viewController id="smV-Xh-UUY" customClass="ZDScanBarCodeViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="smV-Xh-UUY" customClass="ZDScanBarCodeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xyf-JO-vQK"/>
                         <viewControllerLayoutGuide type="bottom" id="aof-ZU-SK3"/>
@@ -989,23 +989,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-5c-Rxi">
-                                <rect key="frame" x="45" y="142" width="230" height="230"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_scan" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-fD-7jR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_scan" translatesAutoresizingMaskIntoConstraints="NO" id="7W7-B7-UyG">
+                                <rect key="frame" x="51" y="150" width="219" height="219"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Cek-jQ-78m"/>
-                                    <constraint firstAttribute="width" constant="230" id="NE1-58-ecL"/>
+                                    <constraint firstAttribute="height" constant="219" id="Sqv-O1-Ypy"/>
+                                    <constraint firstAttribute="width" constant="219" id="VRf-Cu-oye"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mf4-t8-ofB" userLabel="move line view">
+                            </imageView>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mf4-t8-ofB" userLabel="move line view">
                                 <rect key="frame" x="45" y="142" width="230" height="2"/>
                                 <color key="backgroundColor" red="0.32156863810000003" green="0.84313732389999996" blue="0.40784317260000003" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="将二维码放入框中,即可扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJe-8U-mDc">
+                                <rect key="frame" x="16" y="432" width="288" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-5c-Rxi">
+                                <rect key="frame" x="53" y="152" width="215" height="215"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="6Ry-xU-yaJ"/>
+                                    <constraint firstAttribute="width" constant="215" id="L4W-bx-yME"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kyr-5c-Rxi" firstAttribute="top" secondItem="Xyf-JO-vQK" secondAttribute="bottom" constant="78" id="Jnv-rj-ZTE"/>
-                            <constraint firstAttribute="centerX" secondItem="kyr-5c-Rxi" secondAttribute="centerX" id="NCL-3z-dHT"/>
+                            <constraint firstItem="dh3-fD-7jR" firstAttribute="leading" secondItem="bcK-9o-3kQ" secondAttribute="leading" id="27f-zb-l1U"/>
+                            <constraint firstItem="dh3-fD-7jR" firstAttribute="top" secondItem="bcK-9o-3kQ" secondAttribute="top" id="G1h-3y-QOC"/>
+                            <constraint firstItem="7W7-B7-UyG" firstAttribute="top" secondItem="bcK-9o-3kQ" secondAttribute="topMargin" constant="150" id="JLG-Fi-Ybz"/>
+                            <constraint firstItem="kyr-5c-Rxi" firstAttribute="top" secondItem="bcK-9o-3kQ" secondAttribute="top" constant="152" id="MLb-kG-K3Y"/>
+                            <constraint firstAttribute="centerX" secondItem="7W7-B7-UyG" secondAttribute="centerX" id="Pu0-YH-pt6"/>
+                            <constraint firstAttribute="trailing" secondItem="dh3-fD-7jR" secondAttribute="trailing" id="deh-7p-5ve"/>
+                            <constraint firstAttribute="centerX" secondItem="kyr-5c-Rxi" secondAttribute="centerX" id="r0v-gg-qcS"/>
+                            <constraint firstItem="aof-ZU-SK3" firstAttribute="top" secondItem="dh3-fD-7jR" secondAttribute="bottom" id="x4x-Bb-BSi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="扫描二维码" id="VkU-Um-uy3"/>
@@ -2721,7 +2743,7 @@
                                                 <constraint firstAttribute="height" constant="23" id="Isf-c7-vUf"/>
                                                 <constraint firstAttribute="width" constant="134" id="TwQ-zV-8cf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.39607846740000002" green="0.39607846740000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2957,6 +2979,7 @@
         <image name="bg_client" width="320" height="265"/>
         <image name="bg_fortune" width="300" height="166"/>
         <image name="bg_product" width="320" height="230"/>
+        <image name="bg_scan" width="320" height="568"/>
         <image name="customer_call" width="44" height="44"/>
         <image name="func1" width="310" height="160"/>
         <image name="func2" width="310" height="185"/>
@@ -2981,6 +3004,7 @@
         <image name="ico_man_big" width="93" height="93"/>
         <image name="ico_product_01" width="58" height="58"/>
         <image name="ico_product_income" width="15" height="15"/>
+        <image name="ico_scan" width="219" height="219"/>
         <image name="ico_unlock_man" width="67" height="67"/>
         <image name="pic_scan" width="160" height="160"/>
     </resources>

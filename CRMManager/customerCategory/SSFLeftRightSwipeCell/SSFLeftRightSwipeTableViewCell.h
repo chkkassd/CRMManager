@@ -12,7 +12,6 @@
 
 @interface SSFLeftRightSwipeTableViewCell : UITableViewCell<UIGestureRecognizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *editeButton;
 @property (weak, nonatomic) IBOutlet UIView *realContentView;
 @property (weak, nonatomic) IBOutlet UILabel *label;

@@ -103,9 +103,15 @@
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"record Cell" forIndexPath:indexPath];
     ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
     cell.textLabel.text = zdContactRecord.content;
-    NSString * time1 = [zdContactRecord.contactTime substringToIndex:10];
-    NSString * time2 = [zdContactRecord.contactTime substringWithRange:NSMakeRange(11, 5)];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@    %@",time1,time2];
+    
+    if (zdContactRecord.contactTime.length) {
+        NSString * time1 = [zdContactRecord.contactTime substringToIndex:10];
+        NSString * time2 = [zdContactRecord.contactTime substringWithRange:NSMakeRange(11, 5)];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@    %@",time1,time2];
+    } else {
+        cell.detailTextLabel.text = nil;
+    }
+    
     return cell;
 }
 

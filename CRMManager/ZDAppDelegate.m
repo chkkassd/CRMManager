@@ -116,14 +116,14 @@
     [fireDateComponts setYear:[dateComponents year]];
     [fireDateComponts setMonth:[dateComponents month]];
     [fireDateComponts setDay:[dateComponents day]];
-    [fireDateComponts setHour:14];
-    [fireDateComponts setMinute:25];
+    [fireDateComponts setHour:1];
+    [fireDateComponts setMinute:11];
     [fireDateComponts setSecond:11];
     NSDate * fireDate = [calendar dateFromComponents:fireDateComponts];
     
     localNotification.fireDate = fireDate;
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
-    localNotification.repeatInterval = NSCalendarUnitHour;
+    localNotification.repeatInterval = NSCalendarUnitDay;
     localNotification.alertBody = @"投资,生日,理财记录更新";
     localNotification.alertAction = @"打开";
     localNotification.userInfo = @{@"key" : @"remindAndBusiness"};

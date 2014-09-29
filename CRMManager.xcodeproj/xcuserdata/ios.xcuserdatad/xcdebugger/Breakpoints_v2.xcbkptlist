@@ -41,7 +41,7 @@
                   symbolName = "-[ZDLoginViewController test:]"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDLoginViewController.m"
-                  timestampString = "433585016.758421"
+                  timestampString = "433670244.207521"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -55,7 +55,7 @@
                   symbolName = "__30-[ZDLoginViewController test:]_block_invoke"
                   moduleName = "CRMManager"
                   urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDLoginViewController.m"
-                  timestampString = "433585016.758554"
+                  timestampString = "433670244.207648"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "180"
@@ -77,38 +77,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
             endingLineNumber = "58"
-            landmarkName = "-updateBrithReminds:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/ZDAppDelegate.m"
-            timestampString = "433578037.127103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-application:didReceiveLocalNotification:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CRMManager/controller/customer/ZDCustomerTableViewController.m"
-            timestampString = "433578360.893674"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
             landmarkName = "-updateBrithReminds:"
             landmarkType = "5">
          </BreakpointContent>

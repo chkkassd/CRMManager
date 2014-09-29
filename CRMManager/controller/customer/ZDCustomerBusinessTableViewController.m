@@ -85,18 +85,16 @@
     return colors[0];//默认色
 }
 
-- (NSString *)stateStringWithBusinessList:(ZDBusinessList *)zdBusinessList andStateType:(NSString *)type
+- (NSString *)stateStringWithBusinessList:(ZDBusinessList *)zdBusinessList
 {
-    if ([type isEqualToString:@"CRM"]) {
-        if (zdBusinessList.crmState.length) {
-            return self.CRMStateDictionary[zdBusinessList.crmState];
-        }
-        return nil;
+    NSString * crmState = zdBusinessList.crmState;
+    NSString * fortuneState = zdBusinessList.fortuneState;
+    if (fortuneState.length == 0) {
+        return self.CRMStateDictionary[crmState];
+    } else if (([crmState isEqualToString:@"4"] || [crmState isEqualToString:@"7"] || [crmState isEqualToString:@"8"]) && ([fortuneState isEqualToString:@"02000009"] || [fortuneState isEqualToString:@"02000010"] || [fortuneState isEqualToString:@"02000014"] || [fortuneState isEqualToString:@"02000013"])) {
+        return @"投资生效";
     } else {
-        if (zdBusinessList.fortuneState.length) {
-            return self.fortuneStateDictionary[zdBusinessList.fortuneState];
-        }
-        return nil;
+        return self.fortuneStateDictionary[fortuneState];
     }
 }
 
@@ -128,8 +126,9 @@
     
     self.dataBusinessLists = [[NSMutableArray alloc] init];
     for (ZDBusinessList * obj in _businessLists) {
-        NSDictionary * dic = @{@"cell": @"normal",
-                               @"object": obj};
+        NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"normal",@"cell",@"NO",@"isUnfold",obj,@"object", nil];//@{@"cell": @"normal",
+                               //@"isUnfold": @"NO",
+                               //@"object": obj};
         [self.dataBusinessLists addObject:dic];
     }
     [self.tableView reloadData];
@@ -193,9 +192,8 @@
         ZDCustomerBusinessTableViewCellUnfold * cell = [tableView dequeueReusableCellWithIdentifier:@"businessUnfoldCell" forIndexPath:indexPath];
         cell.moneyLabel.text = zdBusinessList.investAmt;
         
-        NSString * crmState = [self stateStringWithBusinessList:zdBusinessList andStateType:@"CRM"];
-        NSString * fortuneState = [self stateStringWithBusinessList:zdBusinessList andStateType:@"Fortune"];
-        cell.stateLabel.text = [NSString stringWithFormat:@"%@ %@",crmState.length ? crmState : @"",fortuneState.length ? fortuneState : @""];
+        NSString * stateString = [self stateStringWithBusinessList:zdBusinessList];
+        cell.stateLabel.text = stateString;
         cell.dateLabel.text = zdBusinessList.endDate.length ? [zdBusinessList.endDate substringToIndex:10] : @"";
         
         if (zdBusinessList.endDate.length) {
@@ -223,10 +221,19 @@
     ZDBusinessList * zdBusinessList = [self.dataBusinessLists[indexPath.row] objectForKey:@"object"];
     NSIndexPath * index = [NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0];
     
+    //只允许点击normalCell
     if ([[self.dataBusinessLists[indexPath.row] objectForKey:@"cell"] isEqualToString:@"normal"]) {
-        ZDCustomerBusinessTableViewCellNormal * normalCell = (ZDCustomerBusinessTableViewCellNormal *)[tableView cellForRowAtIndexPath:indexPath];
-        if (normalCell.isUnFold) {
+        //获得已展开的cell
+        NSIndexPath * isIndex = nil;
+        for (NSDictionary * dic in self.dataBusinessLists) {
+            if ([dic[@"cell"] isEqualToString:@"unfold"]) {
+                isIndex = [NSIndexPath indexPathForRow:[self.dataBusinessLists indexOfObject:dic] inSection:0];
+            }
+        }
+        
+        if ([[self.dataBusinessLists[indexPath.row] objectForKey:@"isUnfold"] isEqualToString:@"YES"]) {
             //已展开
+            [self.dataBusinessLists[indexPath.row] setObject:@"NO" forKey:@"isUnfold"];
             [self.dataBusinessLists removeObjectAtIndex:index.row];
             [tableView beginUpdates];
             [tableView deleteRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationMiddle];
@@ -235,10 +242,32 @@
             //未展开
             NSDictionary * dic = @{@"cell": @"unfold",
                                    @"object": zdBusinessList};
-            [self.dataBusinessLists insertObject:dic atIndex:index.row];
-            [tableView beginUpdates];
-            [tableView insertRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationMiddle];
-            [tableView endUpdates];
+            
+            if (isIndex) {
+                //有已展开的cell
+                [self.dataBusinessLists removeObjectAtIndex:isIndex.row];
+                if (indexPath.row > isIndex.row) {
+                    [self.dataBusinessLists insertObject:dic atIndex:index.row - 1];
+                    [self.dataBusinessLists[indexPath.row - 1] setObject:@"YES" forKey:@"isUnfold"];
+                    [self.dataBusinessLists[isIndex.row - 1] setObject:@"NO" forKey:@"isUnfold"];
+                    index = [NSIndexPath indexPathForRow:index.row - 1 inSection:0];
+                } else {
+                    [self.dataBusinessLists insertObject:dic atIndex:index.row];
+                    [self.dataBusinessLists[indexPath.row] setObject:@"YES" forKey:@"isUnfold"];
+                    [self.dataBusinessLists[isIndex.row] setObject:@"NO" forKey:@"isUnfold"];
+                }
+                [tableView beginUpdates];
+                [tableView deleteRowsAtIndexPaths:@[isIndex] withRowAnimation:UITableViewRowAnimationMiddle];
+                [tableView insertRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationMiddle];
+                [tableView endUpdates];
+            } else {
+                //没有已展开的cell
+                [self.dataBusinessLists insertObject:dic atIndex:index.row];
+                [self.dataBusinessLists[indexPath.row] setObject:@"YES" forKey:@"isUnfold"];
+                [tableView beginUpdates];
+                [tableView insertRowsAtIndexPaths:@[index] withRowAnimation:UITableViewRowAnimationMiddle];
+                [tableView endUpdates];
+            }
         }
     }
 }

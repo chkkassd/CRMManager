@@ -30,7 +30,6 @@
 - (void)handlePanGesture:(UIPanGestureRecognizer *)sender
 {
     if (sender.state == UIGestureRecognizerStateBegan) {
-        self.deleteButton.hidden = NO;
         self.editeButton.hidden = NO;
         self.originalCenterPoint = self.contentView.center;
     } else if (sender.state == UIGestureRecognizerStateChanged) {
@@ -52,9 +51,9 @@
             }];
         } else 
          */
-         if (self.xDistance <= -40) {
+         if (self.xDistance <= -30) {
             [UIView animateWithDuration:0.3 animations:^{
-                self.realContentView.center = CGPointMake(self.originalCenterPoint.x - self.deleteButton.frame.size.width - self.editeButton.frame.size.width, self.originalCenterPoint.y);
+                self.realContentView.center = CGPointMake(self.originalCenterPoint.x - self.editeButton.frame.size.width, self.originalCenterPoint.y);
             } completion:^(BOOL finished) {
                 self.isEditMode = YES;
             }];
@@ -64,7 +63,6 @@
             } completion:^(BOOL finished) {
                 if (finished) {
                     self.isEditMode = NO;
-                    self.deleteButton.hidden = YES;
                     self.editeButton.hidden = YES;
                 }
             }];
@@ -81,7 +79,6 @@
             } completion:^(BOOL finished) {
                 if (finished) {
                     self.isEditMode = NO;
-                    self.deleteButton.hidden = YES;
                     self.editeButton.hidden = YES;
                 }
             }];
@@ -90,13 +87,13 @@
 }
 
 #pragma mark - action
-- (IBAction)deleteButtonPressed:(id)sender
-{
-    [self setSelected:YES animated:YES];
-    if ([self.delegate respondsToSelector:@selector(leftRightSwipeTableViewCellDeleteButtonPressed:)]) {
-        [self.delegate leftRightSwipeTableViewCellDeleteButtonPressed:self];
-    }
-}
+//- (IBAction)deleteButtonPressed:(id)sender
+//{
+//    [self setSelected:YES animated:YES];
+//    if ([self.delegate respondsToSelector:@selector(leftRightSwipeTableViewCellDeleteButtonPressed:)]) {
+//        [self.delegate leftRightSwipeTableViewCellDeleteButtonPressed:self];
+//    }
+//}
 
 - (IBAction)editeButtonPressed:(id)sender
 {

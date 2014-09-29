@@ -19,17 +19,4 @@
     return self;
 }
 
-- (void)awakeFromNib
-{
-    self.isUnFold = YES;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-    if (selected) {
-        self.isUnFold = !self.isUnFold;
-    }
-}
-
 @end
