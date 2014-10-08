@@ -242,4 +242,9 @@
     [hud hide:YES afterDelay:2];
 }
 
+- (void)scanBarCodeViewControllerDidBack:(ZDScanBarCodeViewController *)controller
+{
+    [self.navigationController popToViewController:self animated:YES];
+}
+
 @end

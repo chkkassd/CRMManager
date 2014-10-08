@@ -20,6 +20,7 @@
 #import "ZDBusinessList.h"
 #import "BirthRemind.h"
 #import "InvestmentRemind.h"
+#import "ZDInvestmentRemind.h"
 
 @interface ZDLocalDB : NSObject
 
@@ -37,6 +38,8 @@
 - (NSArray *)queryAllZDBusinessListsWithCustomerId:(NSString *)customerid;
 - (BirthRemind *)queryBirthRemindByRelationshipWithCustomerId:(NSString *)customerId;
 - (NSArray *)queryAllZDInvestmentRemindsWithCustomerId:(NSString *)customerid;
+- (ZDInvestmentRemind *)queryZDInvestmentRemindWithCustomerId:(NSString *)customerid
+                                                  andFeLendNo:(NSString *)felendNo;
 //modify and save
 - (BOOL)loginSaveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError *__autoreleasing*)error;
 - (BOOL)saveManagerUserWithZDManagerUser:(ZDManagerUser *)zdManager error:(NSError **)error;

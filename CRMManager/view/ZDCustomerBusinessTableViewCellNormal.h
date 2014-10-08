@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel * productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel * numberLabel;
 @property (weak, nonatomic) IBOutlet UIView * backGroundView;
+@property (weak, nonatomic) IBOutlet UIImageView * alertImageView;
 
 @end

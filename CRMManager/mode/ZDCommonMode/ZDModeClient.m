@@ -759,6 +759,11 @@
     return [[ZDLocalDB sharedLocalDB] queryAllZDInvestmentRemindsWithCustomerId:customerid];
 }
 
+- (ZDInvestmentRemind *)investmentRemindWithCustomerId:(NSString *)customerid andFeLendNo:(NSString *)feLendNo
+{
+    return [[ZDLocalDB sharedLocalDB] queryZDInvestmentRemindWithCustomerId:customerid andFeLendNo:feLendNo];
+}
+
 - (ZDCustomer *)zdCustomerWithCustomerId:(NSString *)customerid
 {
     return [[ZDLocalDB sharedLocalDB] queryZDCustomerWithCustomerId:customerid];

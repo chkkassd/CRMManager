@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
@@ -1036,6 +1036,7 @@
                         <outlet property="movingLineView" destination="Mf4-t8-ofB" id="E0d-WC-Hcg"/>
                         <outlet property="viewPreview" destination="kyr-5c-Rxi" id="uEE-bw-Zqi"/>
                         <segue destination="wTG-pu-wkR" kind="modal" identifier="showScanWebLoginView" id="xzJ-5E-2ES"/>
+                        <segue destination="BXc-zX-7MN" kind="push" identifier="showScanResultView" id="Gxy-11-Tnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzZ-hK-JPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1631,7 +1632,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHx-nz-wQP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637" y="1092"/>
+            <point key="canvasLocation" x="2637" y="988"/>
+        </scene>
+        <!--扫描结果-->
+        <scene sceneID="Agl-hs-aqm">
+            <objects>
+                <viewController id="BXc-zX-7MN" customClass="ZDScanResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wUg-XC-vHw"/>
+                        <viewControllerLayoutGuide type="bottom" id="H1D-EI-QsT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gFI-tv-99C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaN-P2-iso">
+                                <rect key="frame" x="16" y="72" width="288" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="DEG-3u-w00"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aaN-P2-iso" firstAttribute="top" secondItem="wUg-XC-vHw" secondAttribute="bottom" constant="8" id="AG7-OE-L0f"/>
+                            <constraint firstItem="aaN-P2-iso" firstAttribute="leading" secondItem="gFI-tv-99C" secondAttribute="leading" constant="16" id="KRz-wI-hud"/>
+                            <constraint firstAttribute="trailing" secondItem="aaN-P2-iso" secondAttribute="trailing" constant="16" id="udy-nu-rsV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="扫描结果" id="dZQ-Z8-Ajb">
+                        <barButtonItem key="leftBarButtonItem" image="ico_header_back" id="8Og-Vn-PFy">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="BXc-zX-7MN" id="eTT-pl-fhX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="resultLabel" destination="aaN-P2-iso" id="3N6-fy-1Am"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ2-Ed-L0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2989" y="1223"/>
         </scene>
         <!--软件许可使用协议-->
         <scene sceneID="a1x-nF-m2P">
@@ -2686,10 +2731,19 @@
                                             <color key="textColor" red="0.74901962280273438" green="0.83529418706893921" blue="0.90196084976196289" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_fortune_due" translatesAutoresizingMaskIntoConstraints="NO" id="7qW-mm-vyw">
+                                            <rect key="frame" x="253" y="31" width="47" height="23"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="23" id="ePn-Nx-Fd6"/>
+                                                <constraint firstAttribute="width" constant="47" id="kHA-e0-JZB"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="fds-9q-f10" secondAttribute="bottom" constant="1" id="2RY-ph-R9S"/>
+                                        <constraint firstItem="7qW-mm-vyw" firstAttribute="top" secondItem="gbk-mP-vjd" secondAttribute="top" constant="31" id="8qb-Xh-Yzp"/>
                                         <constraint firstAttribute="trailing" secondItem="POW-Lq-EtO" secondAttribute="trailing" constant="20" id="BZY-s3-fmR"/>
+                                        <constraint firstAttribute="trailing" secondItem="7qW-mm-vyw" secondAttribute="trailing" constant="20" id="Fca-HM-Cad"/>
                                         <constraint firstItem="Jad-Xs-yvf" firstAttribute="leading" secondItem="gbk-mP-vjd" secondAttribute="leading" constant="20" id="Gef-7S-zxY"/>
                                         <constraint firstItem="POW-Lq-EtO" firstAttribute="leading" secondItem="gbk-mP-vjd" secondAttribute="leading" constant="20" id="N7D-to-Din"/>
                                         <constraint firstItem="Jad-Xs-yvf" firstAttribute="top" secondItem="gbk-mP-vjd" secondAttribute="top" constant="20" id="OdR-Py-C4Y"/>
@@ -2702,6 +2756,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="alertImageView" destination="7qW-mm-vyw" id="Mih-oP-X7c"/>
                                     <outlet property="backGroundView" destination="fds-9q-f10" id="lj6-fr-T7Q"/>
                                     <outlet property="numberLabel" destination="POW-Lq-EtO" id="j62-tB-TKb"/>
                                     <outlet property="productNameLabel" destination="Jad-Xs-yvf" id="axc-lM-asQ"/>
@@ -2784,7 +2839,7 @@
                                                 <constraint firstAttribute="width" constant="134" id="xFy-jh-biY"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.39607846740000002" green="0.39607846740000002" blue="0.39607846740000002" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="textColor" red="0.9215686917" green="0.42352944609999998" blue="0.43137258290000002" alpha="1" colorSpace="deviceRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>

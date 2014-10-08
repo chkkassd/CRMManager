@@ -97,7 +97,7 @@
         return self.fortuneStateDictionary[fortuneState];
     }
 }
-
+/*
 - (NSString *)reciprocalDateStringwithTime:(NSTimeInterval)time
 {
     if (time <= 60 * 60) {
@@ -110,6 +110,26 @@
         int hour = floor((time - day * 24 * 60 * 60)/(60 * 60));
         return [NSString stringWithFormat:@"%d天%d小时",day,hour];
     }
+}
+*/
+- (NSString *)reciprocalDateStringFromNowTime:(NSDate *)nowDate toEndTime:(NSDate *)endDate
+{
+    NSCalendar * calendar = [NSCalendar autoupdatingCurrentCalendar];
+    NSDateComponents * dateComponents = [calendar components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:nowDate toDate:endDate options:0];
+//    NSInteger year = [dateComponents year];
+    NSInteger month = [dateComponents month];
+    NSInteger day = [dateComponents day];
+        if (month > 0) {
+            if (day > 0) {
+                return [NSString stringWithFormat:@"倒数%d月%d天",month,day];
+            } else {
+                return [NSString stringWithFormat:@"倒数%d月",month];
+            }
+        } else {
+            if (day > 0) {
+                return [NSString stringWithFormat:@"倒数%d天",day];
+            } else return @"";
+        }
 }
 
 #pragma mark - properties
@@ -181,12 +201,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZDBusinessList * zdBusinessList = [self.dataBusinessLists[indexPath.row] objectForKey:@"object"];
+    ZDInvestmentRemind * zdInvestmentRemind = [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:self.customer.customerId andFeLendNo:zdBusinessList.feLendNo];
     
     if ([[self.dataBusinessLists[indexPath.row] objectForKey:@"cell"] isEqualToString:@"normal"]) {
         ZDCustomerBusinessTableViewCellNormal * cell = [tableView dequeueReusableCellWithIdentifier:@"businessNomalCell" forIndexPath:indexPath];
         cell.productNameLabel.text = zdBusinessList.pattern;
         cell.numberLabel.text = zdBusinessList.feLendNo;
         cell.backGroundView.backgroundColor = [self backgroundColorForNormalCellWithIndex:indexPath.row];
+        if (zdInvestmentRemind) {
+            cell.alertImageView.hidden = NO;
+        } else {
+            cell.alertImageView.hidden = YES;
+        }
+        
         return cell;
     } else {
         ZDCustomerBusinessTableViewCellUnfold * cell = [tableView dequeueReusableCellWithIdentifier:@"businessUnfoldCell" forIndexPath:indexPath];
@@ -195,20 +222,21 @@
         NSString * stateString = [self stateStringWithBusinessList:zdBusinessList];
         cell.stateLabel.text = stateString;
         cell.dateLabel.text = zdBusinessList.endDate.length ? [zdBusinessList.endDate substringToIndex:10] : @"";
-        
-        if (zdBusinessList.endDate.length) {
+       
+        if (zdInvestmentRemind) {
             cell.reciprocalDateLabel.hidden = NO;
-            NSDate * endate = [NSString convertDateFromString:zdBusinessList.endDate];
-            NSTimeInterval reciprocalDate = [endate timeIntervalSinceNow];
-            NSString * reciprocalString = [self reciprocalDateStringwithTime:reciprocalDate];
-            if (!reciprocalString) {
-                cell.reciprocalDateLabel.text = @"即将到期";
+            NSDate * endDate = [NSString convertDateFromString:zdBusinessList.endDate];
+            NSDate * nowDate = [NSDate date];
+            NSString * reciprocalString = [self reciprocalDateStringFromNowTime:nowDate toEndTime:endDate];
+            if (reciprocalString.length) {
+                cell.reciprocalDateLabel.text = reciprocalString;
             } else {
-                cell.reciprocalDateLabel.text = [NSString stringWithFormat:@"倒数%@",reciprocalString];
+                cell.reciprocalDateLabel.hidden = YES;
             }
         } else {
             cell.reciprocalDateLabel.hidden = YES;
         }
+        
         return cell;
     }
 }

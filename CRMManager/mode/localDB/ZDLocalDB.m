@@ -255,7 +255,9 @@
 {
     Customer * customer = [self queryCustomerWithCustomerId:customerid];
     if (customer) {
-        return [customer.allBusinessLists allObjects];
+        NSSortDescriptor * sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"endDate" ascending:YES];
+        
+       return [[customer.allBusinessLists allObjects] sortedArrayUsingDescriptors:@[sortDescriptor]];
     }
     return nil;
 }
@@ -332,6 +334,21 @@
         NSLog(@"fail to fetch investmentRemind of customer:%@",customerId);
     }
     return investmentRemind;
+}
+
+//根据合同编号查找特定的投资提醒
+
+- (ZDInvestmentRemind *)queryZDInvestmentRemindWithCustomerId:(NSString *)customerid
+                                                  andFeLendNo:(NSString *)felendNo
+{
+    ZDInvestmentRemind * zdInvestmentRemind = [[ZDInvestmentRemind alloc] init];
+    InvestmentRemind * investmentRemind = [self queryInvestmentRemindWithCustomerId:customerid andFeLendNo:felendNo];
+    if (investmentRemind) {
+        [self modifyZDInvestmentRemind:zdInvestmentRemind from:investmentRemind];
+    } else {
+        zdInvestmentRemind = nil;
+    }
+    return zdInvestmentRemind;
 }
 
 //查找一个客户的所有投资提醒

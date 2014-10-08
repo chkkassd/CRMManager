@@ -21,5 +21,6 @@
 
 - (void)scanBarCodeViewControllerDidConfirmLoginOnWeb:(ZDScanBarCodeViewController *)controller;
 - (void)scanBarCodeViewControllerDidCancleLoginOnWeb:(ZDScanBarCodeViewController *)controller;
+- (void)scanBarCodeViewControllerDidBack:(ZDScanBarCodeViewController *)controller;
 
 @end

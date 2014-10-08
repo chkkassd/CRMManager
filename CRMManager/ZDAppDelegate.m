@@ -103,9 +103,14 @@
 
 - (void)setLocalNotification
 {
-    UIUserNotificationSettings * settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
-    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version < 8.0) {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    } else {
+        UIUserNotificationSettings * settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+        
     UILocalNotification * localNotification = [[UILocalNotification alloc] init];
     
     //set the fire date

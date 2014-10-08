@@ -51,6 +51,9 @@
 - (NSString *)birthRemindWithCustomerId:(NSString *)customerid;
 //得到一个客户的所有投资到期提醒
 - (NSArray *)investmentRemindWithCustomerId:(NSString *)customerid;
+//查询一个特定的投资提醒
+- (ZDInvestmentRemind *)investmentRemindWithCustomerId:(NSString *)customerid
+                                           andFeLendNo:(NSString *)feLendNo;
 
 #pragma makr - 修改manager和customer
 //保存manageruser

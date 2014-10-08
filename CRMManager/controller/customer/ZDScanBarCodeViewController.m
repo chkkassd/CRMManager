@@ -9,14 +9,16 @@
 #import "ZDScanBarCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "ZDScanWebLoginViewController.h"
+#import "ZDScanResultViewController.h"
 
-@interface ZDScanBarCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate,ZDScanWebLoginViewControllerDelegate>
+@interface ZDScanBarCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate,ZDScanWebLoginViewControllerDelegate,ZDScanResultViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView * viewPreview;
 @property (weak, nonatomic) IBOutlet UIView * movingLineView;
 @property (strong, nonatomic) AVCaptureSession * captureSession;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer * videoPreviewLayer;
 @property (strong, nonatomic) NSString * qrCode;
+@property (strong, nonatomic) NSString * resultCode;
 
 @end
 
@@ -103,6 +105,11 @@
     [self performSegueWithIdentifier:@"showScanWebLoginView" sender:self];
 }
 
+- (void)presentToScanResultView
+{
+    [self performSegueWithIdentifier:@"showScanResultView" sender:self];
+}
+
 #pragma mark - properties
 
 - (AVCaptureSession *)captureSession
@@ -121,6 +128,10 @@
         ZDScanWebLoginViewController * swlvc = segue.destinationViewController;
         swlvc.qrCode = self.qrCode;
         swlvc.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"showScanResultView"]) {
+        ZDScanResultViewController * srvc = segue.destinationViewController;
+        srvc.resultString = self.resultCode;
+        srvc.delegate = self;
     }
 }
 
@@ -134,6 +145,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //回到主线程做主线程操作
                 [self stopCaptureBarCode];
+                self.resultCode = [metaobj stringValue];
                 self.qrCode = [[metaobj stringValue] substringFromIndex:5];
                 
                 MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -145,6 +157,7 @@
                     } else {
                         hud.labelText = @"登录失败，请稍候再试";
                         [hud hide:YES afterDelay:1];
+                        [self presentToScanResultView];
                     }
                 }];
             });
@@ -152,7 +165,7 @@
     }
 }
 
-#pragma makr - ScanWebLoginView delegate
+#pragma mark - ScanWebLoginView delegate
 
 - (void)scanWebLoginViewControllerDidConfirmLogin:(ZDScanWebLoginViewController *)controller
 {
@@ -166,6 +179,13 @@
     [self.presentedViewController dismissViewControllerAnimated:YES completion:^{
         [self.delegate scanBarCodeViewControllerDidCancleLoginOnWeb:self];
     }];
+}
+
+#pragma mark - scanResultView delegate
+
+- (void)scanResultViewControllerDidBack:(ZDScanResultViewController *)controller
+{
+    [self.delegate scanBarCodeViewControllerDidBack:self];
 }
 
 @end

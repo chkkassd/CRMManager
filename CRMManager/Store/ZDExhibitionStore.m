@@ -30,7 +30,7 @@
         // 2. load array
         _products = [NSArray arrayWithContentsOfFile:path];
         
-        NSLog(@"%@", _products);
+//        NSLog(@"%@", _products);
         
         
         for (NSDictionary* dic in _products) {
