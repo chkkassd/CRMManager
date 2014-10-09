@@ -8,6 +8,7 @@
 
 #import "ZDWebService.h"
 #import "ZDWebService+URL.h"
+#import "ZDWebConnection.h"
 
 @implementation ZDWebService
 
@@ -372,7 +373,8 @@
     [req setHTTPMethod:@"POST"];
     [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     
-    //ios5之后新增异步发送接口，无需再调用connectiondelegate
+    /*
+    //ios5之后新增异步发送接口，无需再调用connectiondelegate，可惜无法适用https
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
     [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!connectionError) {
@@ -391,6 +393,9 @@
             handler(connectionError, nil);
         }
     }];
+     */
+    ZDWebConnection * connection = [[ZDWebConnection alloc] initWithRequest:req completionHandler:handler];
+    [connection startConnection];
 }
 
 - (void)fetchParamsByWebserviceURL:(NSURL *)url dictionary:(NSDictionary *)dict handler:(void (^)(NSError *error, NSDictionary *resultDic))handler
@@ -408,6 +413,7 @@
     [req setHTTPMethod:@"POST"];
     [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     
+    /*
     //ios5之后新增异步发送接口，无需再调用connectiondelegate
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
     [NSURLConnection sendAsynchronousRequest:req queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
@@ -427,6 +433,9 @@
             handler(connectionError, nil);
         }
     }];
+     */
+    ZDWebConnection * connection = [[ZDWebConnection alloc] initWithRequest:req completionHandler:handler];
+    [connection startConnection];
 }
 
 #pragma mark - translateToJsonString

@@ -92,7 +92,7 @@
         }
         case 3:
         {
-            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope.length == %d",0];
+            NSPredicate * predicate = [NSPredicate predicateWithFormat:@"cdHope != %@ && cdHope != %@ && cdHope != %@",@"1",@"2",@"3"];
             return [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
             break;
         }

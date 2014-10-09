@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CRMManager/mode/webservice/ZDWebService.m"
-            timestampString = "432631888.459062"
+            timestampString = "434535852.660093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "-addPotentialCustomerWithCustomerName:sex:managerId:mobile:memo:hope:source:area:completionHandler:"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "-loginWithUserName:password:completionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,44 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CRMManager/controller/Login/ZDLoginViewController.m"
-            timestampString = "433325342.607034"
+            filePath = "CRMManager/mode/webservice/ZDWebService.m"
+            timestampString = "434535852.660093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "-test:"
+            startingLineNumber = "363"
+            endingLineNumber = "363"
+            landmarkName = "-fetchByWebserviceURL:dictionary:handler:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[ZDLoginViewController test:]"
-                  moduleName = "CRMManager"
-                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDLoginViewController.m"
-                  timestampString = "434450005.238349"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
-                  offsetFromSymbolStart = "64">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__30-[ZDLoginViewController test:]_block_invoke"
-                  moduleName = "CRMManager"
-                  urlString = "file:///Users/ios/Desktop/CRMManager/CRMManager/controller/Login/ZDLoginViewController.m"
-                  timestampString = "434450005.238496"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "180"
-                  endingLineNumber = "180"
-                  offsetFromSymbolStart = "56">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
