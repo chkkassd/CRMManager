@@ -181,6 +181,7 @@
         cell.headImageView.image = [UIImage headImageForZDCustomer:zdCustomer andIsBig:NO];
     }
     
+    cell.interestLabel.hidden = YES;
     switch (self.segmentedControl.selectedIndex) {
         case 0:
             cell.interestLabel.text = @"意愿  一般";
