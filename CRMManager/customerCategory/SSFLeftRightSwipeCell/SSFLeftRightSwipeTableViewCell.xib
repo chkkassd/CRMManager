@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
@@ -13,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx2-Ls-4IV">
-                        <rect key="frame" x="261" y="0.0" width="59" height="68"/>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx2-Ls-4IV">
+                        <rect key="frame" x="261" y="2" width="59" height="68"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="59" id="udG-zG-IsL"/>
                         </constraints>
@@ -26,28 +27,28 @@
                             <action selector="editeButtonPressed:" destination="JsK-fM-DtV" eventType="touchUpInside" id="iiy-1F-B8G"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PO-BD-OV8" userLabel="realContentView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1PO-BD-OV8" userLabel="realContentView">
+                        <rect key="frame" x="0.0" y="2" width="320" height="68"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="施赛峰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qfv-qG-bdQ">
-                                <rect key="frame" x="55" y="15" width="88" height="37"/>
+                                <rect key="frame" x="55" y="16" width="148" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="Anp-EC-2f5"/>
-                                    <constraint firstAttribute="width" constant="88" id="E54-eG-JOV"/>
+                                    <constraint firstAttribute="width" constant="148" id="E54-eG-JOV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_man_small" translatesAutoresizingMaskIntoConstraints="NO" id="pnm-MS-e1E">
-                                <rect key="frame" x="15" y="18" width="32" height="32"/>
+                                <rect key="frame" x="15" y="19" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="oKP-kG-oPs"/>
                                     <constraint firstAttribute="height" constant="32" id="wm8-IN-6SI"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-ZF-H9d" userLabel="hope label">
-                                <rect key="frame" x="151" y="15" width="117" height="37"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exB-ZF-H9d" userLabel="hope label">
+                                <rect key="frame" x="211" y="16" width="57" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="9Vt-HE-ZmH"/>
                                 </constraints>
@@ -56,7 +57,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLU-Mq-aTS">
-                                <rect key="frame" x="276" y="12" width="44" height="44"/>
+                                <rect key="frame" x="276" y="13" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="eK2-I1-PXh"/>
                                     <constraint firstAttribute="height" constant="44" id="qPz-HQ-CbS"/>
@@ -74,13 +75,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="nLU-Mq-aTS" secondAttribute="centerY" id="8dP-so-ZWV"/>
+                            <constraint firstAttribute="centerY" secondItem="nLU-Mq-aTS" secondAttribute="centerY" constant="-1" id="8dP-so-ZWV"/>
                             <constraint firstAttribute="centerY" secondItem="Qfv-qG-bdQ" secondAttribute="centerY" id="F2I-tG-eQU"/>
                             <constraint firstAttribute="trailing" secondItem="nLU-Mq-aTS" secondAttribute="trailing" id="GXr-Xy-UJp"/>
                             <constraint firstItem="nLU-Mq-aTS" firstAttribute="leading" secondItem="exB-ZF-H9d" secondAttribute="trailing" constant="8" id="GZJ-VW-BCj"/>
                             <constraint firstItem="pnm-MS-e1E" firstAttribute="leading" secondItem="1PO-BD-OV8" secondAttribute="leading" constant="15" id="Mth-2C-RTA"/>
                             <constraint firstItem="Qfv-qG-bdQ" firstAttribute="leading" secondItem="pnm-MS-e1E" secondAttribute="trailing" constant="8" id="TdU-WG-RDB"/>
-                            <constraint firstAttribute="centerY" secondItem="pnm-MS-e1E" secondAttribute="centerY" id="rD5-vu-p9v"/>
+                            <constraint firstAttribute="centerY" secondItem="pnm-MS-e1E" secondAttribute="centerY" constant="-1" id="rD5-vu-p9v"/>
                             <constraint firstAttribute="centerY" secondItem="exB-ZF-H9d" secondAttribute="centerY" id="rH8-1M-lz4"/>
                             <constraint firstItem="exB-ZF-H9d" firstAttribute="leading" secondItem="Qfv-qG-bdQ" secondAttribute="trailing" constant="8" id="wGc-jt-g8d"/>
                         </constraints>
@@ -88,12 +89,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="1PO-BD-OV8" firstAttribute="leading" secondItem="zEk-4P-dXx" secondAttribute="leading" id="1hN-FV-WsN"/>
-                    <constraint firstAttribute="bottom" secondItem="qx2-Ls-4IV" secondAttribute="bottom" id="FKl-Nr-Grw"/>
+                    <constraint firstAttribute="bottom" secondItem="qx2-Ls-4IV" secondAttribute="bottom" constant="-1" id="FKl-Nr-Grw"/>
                     <constraint firstAttribute="trailing" secondItem="qx2-Ls-4IV" secondAttribute="trailing" id="FMP-f1-wak"/>
-                    <constraint firstAttribute="bottom" secondItem="1PO-BD-OV8" secondAttribute="bottom" id="QtN-NF-Y4A"/>
-                    <constraint firstItem="qx2-Ls-4IV" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="Tjl-ND-NqO"/>
+                    <constraint firstAttribute="bottom" secondItem="1PO-BD-OV8" secondAttribute="bottom" constant="-1" id="QtN-NF-Y4A"/>
+                    <constraint firstItem="qx2-Ls-4IV" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" constant="2" id="Tjl-ND-NqO"/>
                     <constraint firstAttribute="trailing" secondItem="1PO-BD-OV8" secondAttribute="trailing" id="WAI-bU-Ok4"/>
-                    <constraint firstItem="1PO-BD-OV8" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" id="zCy-hs-4n5"/>
+                    <constraint firstItem="1PO-BD-OV8" firstAttribute="top" secondItem="zEk-4P-dXx" secondAttribute="top" constant="2" id="zCy-hs-4n5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -104,6 +105,7 @@
                 <outlet property="label" destination="Qfv-qG-bdQ" id="qcr-y5-GSm"/>
                 <outlet property="realContentView" destination="1PO-BD-OV8" id="mtX-17-TKA"/>
             </connections>
+            <point key="canvasLocation" x="139" y="151.5"/>
         </tableViewCell>
     </objects>
     <resources>
