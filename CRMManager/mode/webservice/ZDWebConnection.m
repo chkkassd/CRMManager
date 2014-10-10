@@ -7,7 +7,9 @@
 //
 
 #import "ZDWebConnection.h"
-#define API_HTTPS @"https://180.166.169.132"
+#import "ZDWebService+URL.h"
+//#define API_HTTPS @"https://180.166.169.132" //公网地址
+
 
 @implementation ZDWebConnection
 
