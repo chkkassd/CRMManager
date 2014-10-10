@@ -109,6 +109,9 @@
 		1805578619A51F5600A76AE2 /* UIView+CCPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CCPlus.m"; sourceTree = "<group>"; };
 		18861911199C0B09007635FC /* UIImage+Tab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tab.h"; sourceTree = "<group>"; };
 		18861912199C0B09007635FC /* UIImage+Tab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tab.m"; sourceTree = "<group>"; };
+		18B52F6219E7D1C2003BA167 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main_iPhone.strings"; sourceTree = "<group>"; };
+		18B52F6319E7D1C2003BA167 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		18B52F6419E7D1C2003BA167 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		18BFEECF19A50A5700644953 /* ZDAboutUsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDAboutUsTableViewController.h; sourceTree = "<group>"; };
 		18BFEED019A50A5700644953 /* ZDAboutUsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZDAboutUsTableViewController.m; sourceTree = "<group>"; };
 		18D1D54919D3E85D005A576C /* ZDNewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZDNewFeatureViewController.h; sourceTree = "<group>"; };
@@ -715,6 +718,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6724CB461994B26600E1C058;
 			productRefGroup = 6724CB501994B26600E1C058 /* Products */;
@@ -850,6 +854,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6724CB5C1994B26600E1C058 /* en */,
+				18B52F6319E7D1C2003BA167 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6724CB651994B26600E1C058 /* Base */,
+				18B52F6219E7D1C2003BA167 /* zh-Hans */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -866,6 +872,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6724CB7E1994B26600E1C058 /* en */,
+				18B52F6419E7D1C2003BA167 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

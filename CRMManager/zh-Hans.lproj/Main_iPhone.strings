@@ -1,0 +1,387 @@
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "1Du-24-FNQ"; */
+"1Du-24-FNQ.text" = "Label";
+
+/* Class = "IBUILabel"; text = "1.机会"; ObjectID = "28z-U2-pSi"; */
+"28z-U2-pSi.text" = "1.机会";
+
+/* Class = "IBUILabel"; text = "你想反馈的意见。。。"; ObjectID = "2D4-EN-kKg"; */
+"2D4-EN-kKg.text" = "你想反馈的意见。。。";
+
+/* Class = "IBUILabel"; text = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投"; ObjectID = "2YF-oI-NZa"; */
+"2YF-oI-NZa.text" = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投";
+
+/* Class = "IBUILabel"; text = "12个月"; ObjectID = "2mU-U8-fMq"; */
+"2mU-U8-fMq.text" = "12个月";
+
+/* Class = "IBUINavigationItem"; title = "机会"; ObjectID = "2yv-Gq-wl9"; */
+"2yv-Gq-wl9.title" = "机会";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "38E-mb-75G"; */
+"38E-mb-75G.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "2000"; ObjectID = "3H9-Vn-rdv"; */
+"3H9-Vn-rdv.text" = "2000";
+
+/* Class = "IBUINavigationItem"; title = "意见反馈"; ObjectID = "4rb-4Z-mSn"; */
+"4rb-4Z-mSn.title" = "意见反馈";
+
+/* Class = "IBUIButton"; normalTitle = "安全退出"; ObjectID = "598-pE-5HG"; */
+"598-pE-5HG.normalTitle" = "安全退出";
+
+/* Class = "IBUITextView"; text = "CRM APP软件许可使用协议（以下称“本协议”）是由上海证大大拇指财富管理有限公司（以下简称“本公司”）向本公司理财规划师（以下简称“您”或“用户”）提供的“CRM APP”软件系统（以下简称“本系统”）相关服务的约定。本协议由您和本公司签订。\n一、声明与承诺\n(一)  本协议已对与您的权益有或可能具有重大关系的条款，及对本公司具有或可能具有免责或限制责任的条款用粗体字予以标注，请您注意。您确认，在您使用CRM APP之前，您已充分阅读、理解并接受本协议的全部内容，一旦您使用本服务，即表示您同意遵循本协议之所有约定。\n(二)  您同意，本公司有权随时对本协议内容进行单方面的变更，并以在本网站公告的方式予以公布，无需另行单独通知您；若您在本协议内容公告变更后继续使用本服务的，表示您已充分阅读、理解并接受修改后的协议内容，也将遵循修改后的协议内容使用本服务；若您不同意修改后的协议内容，您应停止使用本服务。\n\n二、服务使用限制\n（一） 您在使用本服务时应遵守中华人民共和国相关法律法规、您所在国家或地区之法令及相关国际惯例，不将本服务用于任何非法目的（包括用于禁止或限制交易物品的交易），也不以任何非法方式使用本服务。\n（二） 您在使用本服务时应对本公司客户信息真实性负责，并配合本公司对交易真实合法性的调查工作。若您将本服务用于虚假交易或外泄本公司客户相关信息，因此导致本公司或本公司客户受损的，您应承担赔偿责任。\n（三）  您不得利用本服务从事侵害他人合法权益之行为，否则本公司有权拒绝提供本服务，且您应承担所有相关法律责任，因此导致本公司或本公司客户或其他方受损的，您应承担赔偿责任。上述行为包括但不限于：\n1.向其他第三方泄露本公司客户信息，包括但不限于客户姓名、身份证号、理财金额、期限及联系方式、沟通记录等；侵害他人名誉权、隐私权、商业秘密、商标权、著作权、专利权等合法权益；\n2.违反依法定或约定之保密义务；\n3.冒用他人名义使用本服务；\n4.从事不法交易行为，如洗钱、恐怖融资、贩卖枪支、毒品、禁药、盗版软件、黄色淫秽物品、其他本公司认为不得使用本服务进行交易的物品等；\n5.提供赌博资讯或以任何方式引诱他人参与赌博；\n6.非法使用他人银行账户（包括信用卡账户）或无效银行账号（包括信用卡账户）交易；\n7.进行与您或交易对方宣称的交易内容不符的交易，或不真实的交易；\n8.从事任何可能含有电脑病毒或是可能侵害本服务系统、资料之行为；\n9.其他本公司有正当理由认为不适当之行为。\n本条规定适用于您使用CRM APP软件期间及终止使用该软件后2年内。\n（四） 您理解并同意，存在如下情形时，本公司有权限制您所使用的软件产品或服务的部分或全部功能，并通过邮件或站内信或者客户端通知等方式通知您，您应及时予以关注：\n1) 根据本协议的约定；\n2) 根据法律法规及法律文书的规定；\n3) 根据有权机关的要求；\n4) 您使用CRM APP服务的行为涉嫌违反国家法律法规及行政规定的；\n5) 本公司基于单方面合理判断认为账户操作、资金进出等存在异常时；\n6) 本公司依据自行合理判断认为可能产生风险的；\n7) 他人或因系统错误、操作失误及自身原因等向外泄露客户相关信息资料的；\n8) 您遭到他人投诉，且对方已经提供了一定证据的；\n如您申请解除上述限制，您应按本公司要求如实提供相关资料及您的身份证明以及本公司要求的其他信息或文件，以便本公司进行核实，且本公司有权依照自行判断来决定是否同意您的申请。您应充分理解您的申请并不必然被允许。\n\n（五）在本公司认为该等异常已经得到合理解释或有效证据支持或未违反国家相关法律法规及部门规章的情况下，最晚将于限制之日起的30个日历天内解除限制。但本公司有进一步理由相信该等异常仍可能对本公司及本公司客户造成损失的情形除外，包括但不限于：\n     1)收到针对该等异常的投诉；\n2）您已经实质性违反了本协议或另行签署的协议，且我们基于保护各方利益的需要必须继续限制；\n\n在本公司合理认为有必要时，本公司无需事先通知即可终止提供本服务，并暂停、关闭或删除您的登陆账号及相关账号中所有相关资料及档案。\n\n三、用户承诺，非本公司同意，用户不得以泄露、公布、发布、出版、传授、转让、出售或其他任何方式使任何第三方知悉或使用属于本公司的任何技术秘密或其他商业秘密（包括但不限于本公司客户信息资料等），也不得在本公司指定业务之外而使用这些保密信息。用户因违反保密义务而给本公司造成损失的，用户必须赔偿本公司因此造成的全部损失。\n\n四、上海证大大拇指财富管理有限公司具有对以上各项条款内容的最终解释权和修改权。如用户对上海证大大拇指财富管理有限公司的解释或修改有异议，应当立即停止使用本软件产品。用户继续使用本软件产品的行为将被视为对上海证大大拇指财富管理有限公司的解释或修改的接受。\n\n    五、因本协议所发生的纠纷，双方同意按照中华人民共和国法律，由上海证大大拇指财富管理有限公司所在地的有管辖权的法院管辖。\n\n\n上海证大大拇指财富管理有限公司\n       2014年 9 月 16 日 \n"; ObjectID = "6Q8-Mr-Rfz"; */
+"6Q8-Mr-Rfz.text" = "CRM APP软件许可使用协议（以下称“本协议”）是由上海证大大拇指财富管理有限公司（以下简称“本公司”）向本公司理财规划师（以下简称“您”或“用户”）提供的“CRM APP”软件系统（以下简称“本系统”）相关服务的约定。本协议由您和本公司签订。\n一、声明与承诺\n(一)  本协议已对与您的权益有或可能具有重大关系的条款，及对本公司具有或可能具有免责或限制责任的条款用粗体字予以标注，请您注意。您确认，在您使用CRM APP之前，您已充分阅读、理解并接受本协议的全部内容，一旦您使用本服务，即表示您同意遵循本协议之所有约定。\n(二)  您同意，本公司有权随时对本协议内容进行单方面的变更，并以在本网站公告的方式予以公布，无需另行单独通知您；若您在本协议内容公告变更后继续使用本服务的，表示您已充分阅读、理解并接受修改后的协议内容，也将遵循修改后的协议内容使用本服务；若您不同意修改后的协议内容，您应停止使用本服务。\n\n二、服务使用限制\n（一） 您在使用本服务时应遵守中华人民共和国相关法律法规、您所在国家或地区之法令及相关国际惯例，不将本服务用于任何非法目的（包括用于禁止或限制交易物品的交易），也不以任何非法方式使用本服务。\n（二） 您在使用本服务时应对本公司客户信息真实性负责，并配合本公司对交易真实合法性的调查工作。若您将本服务用于虚假交易或外泄本公司客户相关信息，因此导致本公司或本公司客户受损的，您应承担赔偿责任。\n（三）  您不得利用本服务从事侵害他人合法权益之行为，否则本公司有权拒绝提供本服务，且您应承担所有相关法律责任，因此导致本公司或本公司客户或其他方受损的，您应承担赔偿责任。上述行为包括但不限于：\n1.向其他第三方泄露本公司客户信息，包括但不限于客户姓名、身份证号、理财金额、期限及联系方式、沟通记录等；侵害他人名誉权、隐私权、商业秘密、商标权、著作权、专利权等合法权益；\n2.违反依法定或约定之保密义务；\n3.冒用他人名义使用本服务；\n4.从事不法交易行为，如洗钱、恐怖融资、贩卖枪支、毒品、禁药、盗版软件、黄色淫秽物品、其他本公司认为不得使用本服务进行交易的物品等；\n5.提供赌博资讯或以任何方式引诱他人参与赌博；\n6.非法使用他人银行账户（包括信用卡账户）或无效银行账号（包括信用卡账户）交易；\n7.进行与您或交易对方宣称的交易内容不符的交易，或不真实的交易；\n8.从事任何可能含有电脑病毒或是可能侵害本服务系统、资料之行为；\n9.其他本公司有正当理由认为不适当之行为。\n本条规定适用于您使用CRM APP软件期间及终止使用该软件后2年内。\n（四） 您理解并同意，存在如下情形时，本公司有权限制您所使用的软件产品或服务的部分或全部功能，并通过邮件或站内信或者客户端通知等方式通知您，您应及时予以关注：\n1) 根据本协议的约定；\n2) 根据法律法规及法律文书的规定；\n3) 根据有权机关的要求；\n4) 您使用CRM APP服务的行为涉嫌违反国家法律法规及行政规定的；\n5) 本公司基于单方面合理判断认为账户操作、资金进出等存在异常时；\n6) 本公司依据自行合理判断认为可能产生风险的；\n7) 他人或因系统错误、操作失误及自身原因等向外泄露客户相关信息资料的；\n8) 您遭到他人投诉，且对方已经提供了一定证据的；\n如您申请解除上述限制，您应按本公司要求如实提供相关资料及您的身份证明以及本公司要求的其他信息或文件，以便本公司进行核实，且本公司有权依照自行判断来决定是否同意您的申请。您应充分理解您的申请并不必然被允许。\n\n（五）在本公司认为该等异常已经得到合理解释或有效证据支持或未违反国家相关法律法规及部门规章的情况下，最晚将于限制之日起的30个日历天内解除限制。但本公司有进一步理由相信该等异常仍可能对本公司及本公司客户造成损失的情形除外，包括但不限于：\n     1)收到针对该等异常的投诉；\n2）您已经实质性违反了本协议或另行签署的协议，且我们基于保护各方利益的需要必须继续限制；\n\n在本公司合理认为有必要时，本公司无需事先通知即可终止提供本服务，并暂停、关闭或删除您的登陆账号及相关账号中所有相关资料及档案。\n\n三、用户承诺，非本公司同意，用户不得以泄露、公布、发布、出版、传授、转让、出售或其他任何方式使任何第三方知悉或使用属于本公司的任何技术秘密或其他商业秘密（包括但不限于本公司客户信息资料等），也不得在本公司指定业务之外而使用这些保密信息。用户因违反保密义务而给本公司造成损失的，用户必须赔偿本公司因此造成的全部损失。\n\n四、上海证大大拇指财富管理有限公司具有对以上各项条款内容的最终解释权和修改权。如用户对上海证大大拇指财富管理有限公司的解释或修改有异议，应当立即停止使用本软件产品。用户继续使用本软件产品的行为将被视为对上海证大大拇指财富管理有限公司的解释或修改的接受。\n\n    五、因本协议所发生的纠纷，双方同意按照中华人民共和国法律，由上海证大大拇指财富管理有限公司所在地的有管辖权的法院管辖。\n\n\n上海证大大拇指财富管理有限公司\n       2014年 9 月 16 日 \n";
+
+/* Class = "IBUILabel"; text = "预期年收益率"; ObjectID = "6UP-eV-bMv"; */
+"6UP-eV-bMv.text" = "预期年收益率";
+
+/* Class = "IBUITextView"; text = "3.规划\n对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫。"; ObjectID = "6XL-Sb-dd7"; */
+"6XL-Sb-dd7.text" = "3.规划\n对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫。";
+
+/* Class = "IBUILabel"; text = "适用人群"; ObjectID = "7Ib-pE-osp"; */
+"7Ib-pE-osp.text" = "适用人群";
+
+/* Class = "IBUILabel"; text = "即将在电脑上登录CRM系统，请确认是否是本人操作"; ObjectID = "7LJ-WG-p9u"; */
+"7LJ-WG-p9u.text" = "即将在电脑上登录CRM系统，请确认是否是本人操作";
+
+/* Class = "IBUITextView"; text = "2.业务\n展示归属当前登录账号的客户经理所有签约客户信息。了解客户的多次理财情况，提醒定期维护客户关系，并可记录管理历次联系情况。"; ObjectID = "81O-4e-fPW"; */
+"81O-4e-fPW.text" = "2.业务\n展示归属当前登录账号的客户经理所有签约客户信息。了解客户的多次理财情况，提醒定期维护客户关系，并可记录管理历次联系情况。";
+
+/* Class = "IBUILabel"; text = "10%－12%        "; ObjectID = "8LN-rY-5a4"; */
+"8LN-rY-5a4.text" = "10%－12%        ";
+
+/* Class = "IBUILabel"; text = "手机号码"; ObjectID = "8RB-Vj-FF8"; */
+"8RB-Vj-FF8.text" = "手机号码";
+
+/* Class = "IBUILabel"; text = "3.规划"; ObjectID = "8xp-P7-ZYO"; */
+"8xp-P7-ZYO.text" = "3.规划";
+
+/* Class = "IBUILabel"; text = "Q:如何查询我的客户信息"; ObjectID = "9xh-Ep-xaY"; */
+"9xh-Ep-xaY.text" = "Q:如何查询我的客户信息";
+
+/* Class = "IBUITabBarItem"; title = "设置"; ObjectID = "A55-7F-3vl"; */
+"A55-7F-3vl.title" = "设置";
+
+/* Class = "IBUIButton"; normalTitle = "感兴趣"; ObjectID = "AUc-kt-An4"; */
+"AUc-kt-An4.normalTitle" = "感兴趣";
+
+/* Class = "IBUITextView"; text = "4.扫一扫\n支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。"; ObjectID = "CC6-bR-tmH"; */
+"CC6-bR-tmH.text" = "4.扫一扫\n支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。";
+
+/* Class = "IBUILabel"; text = "证大岁悦"; ObjectID = "CT3-my-isw"; */
+"CT3-my-isw.text" = "证大岁悦";
+
+/* Class = "IBUITextField"; placeholder = "请输入密码"; ObjectID = "Chv-zl-FDi"; */
+"Chv-zl-FDi.placeholder" = "请输入密码";
+
+/* Class = "IBUILabel"; text = "姓名"; ObjectID = "CpU-pJ-3VG"; */
+"CpU-pJ-3VG.text" = "姓名";
+
+/* Class = "IBUINavigationItem"; title = "软件许可使用协议"; ObjectID = "Cqu-cA-rz9"; */
+"Cqu-cA-rz9.title" = "软件许可使用协议";
+
+/* Class = "IBUILabel"; text = "5.设置"; ObjectID = "D7G-96-I7Y"; */
+"D7G-96-I7Y.text" = "5.设置";
+
+/* Class = "IBUILabel"; text = "手机号码"; ObjectID = "Dk0-ip-k5r"; */
+"Dk0-ip-k5r.text" = "手机号码";
+
+/* Class = "IBUILabel"; text = "检查更新"; ObjectID = "EFF-yP-cy1"; */
+"EFF-yP-cy1.text" = "检查更新";
+
+/* Class = "IBUILabel"; text = "性别"; ObjectID = "FCb-WZ-ObH"; */
+"FCb-WZ-ObH.text" = "性别";
+
+/* Class = "IBUILabel"; text = "功能介绍"; ObjectID = "FR5-Un-gGY"; */
+"FR5-Un-gGY.text" = "功能介绍";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "FUu-Cg-yhn"; */
+"FUu-Cg-yhn.text" = "Label";
+
+/* Class = "IBUIButton"; normalTitle = "确认本人登录"; ObjectID = "Fs6-1z-P8l"; */
+"Fs6-1z-P8l.normalTitle" = "确认本人登录";
+
+/* Class = "IBUITabBarItem"; title = "规划"; ObjectID = "H6b-ez-dui"; */
+"H6b-ez-dui.title" = "规划";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "HFq-Nh-4Zo"; */
+"HFq-Nh-4Zo.text" = "Label";
+
+/* Class = "IBUILabel"; text = "意见反馈"; ObjectID = "HIg-5v-ien"; */
+"HIg-5v-ien.text" = "意见反馈";
+
+/* Class = "IBUILabel"; text = "可手工添加或通讯录导入潜在的客户资源，按意愿有序分类，并可记录整理历次客户理财意愿，一键联系客户。"; ObjectID = "HZB-Oh-URd"; */
+"HZB-Oh-URd.text" = "可手工添加或通讯录导入潜在的客户资源，按意愿有序分类，并可记录整理历次客户理财意愿，一键联系客户。";
+
+/* Class = "IBUILabel"; text = "请输入联系记录"; ObjectID = "HhE-nk-avG"; */
+"HhE-nk-avG.text" = "请输入联系记录";
+
+/* Class = "IBUIButton"; normalTitle = "忘记手势密码"; ObjectID = "I5k-WZ-chA"; */
+"I5k-WZ-chA.normalTitle" = "忘记手势密码";
+
+/* Class = "IBUINavigationItem"; title = "联系记录"; ObjectID = "Iv2-cd-n25"; */
+"Iv2-cd-n25.title" = "联系记录";
+
+/* Class = "IBUILabel"; text = "alert"; ObjectID = "JFb-o2-2OC"; */
+"JFb-o2-2OC.text" = "alert";
+
+/* Class = "IBUILabel"; text = "正大年丰"; ObjectID = "Jad-Xs-yvf"; */
+"Jad-Xs-yvf.text" = "正大年丰";
+
+/* Class = "IBUITabBarItem"; title = "客户"; ObjectID = "K4n-N4-lnj"; */
+"K4n-N4-lnj.title" = "客户";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "L1B-Ut-FYv"; */
+"L1B-Ut-FYv.text" = "Label";
+
+/* Class = "IBUILabel"; text = "将二维码放入框中,即可扫描"; ObjectID = "LJe-8U-mDc"; */
+"LJe-8U-mDc.text" = "将二维码放入框中,即可扫描";
+
+/* Class = "IBUIButton"; normalTitle = "返回"; ObjectID = "LcY-Fw-dLu"; */
+"LcY-Fw-dLu.normalTitle" = "返回";
+
+/* Class = "IBUINavigationItem"; title = "功能介绍"; ObjectID = "LzR-cl-w8v"; */
+"LzR-cl-w8v.title" = "功能介绍";
+
+/* Class = "IBUITextField"; placeholder = "请输入手机号码"; ObjectID = "M4g-9Q-0r3"; */
+"M4g-9Q-0r3.placeholder" = "请输入手机号码";
+
+/* Class = "IBUINavigationItem"; title = "手势密码设置"; ObjectID = "MR6-BV-2Yf"; */
+"MR6-BV-2Yf.title" = "手势密码设置";
+
+/* Class = "IBUISearchBar"; placeholder = "搜索"; ObjectID = "N1U-vX-4JX"; */
+"N1U-vX-4JX.placeholder" = "搜索";
+
+/* Class = "IBUILabel"; text = "对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫。"; ObjectID = "NgX-U2-hjT"; */
+"NgX-U2-hjT.text" = "对目前主要理财规划服务的介绍展示，包括证大年丰，证大岁悦，证大季喜，证大月收，证大双鑫。";
+
+/* Class = "IBUITextField"; placeholder = "请输入姓名"; ObjectID = "ORu-T9-QEL"; */
+"ORu-T9-QEL.placeholder" = "请输入姓名";
+
+/* Class = "IBUITextField"; placeholder = "请输入姓名"; ObjectID = "OxY-99-pz2"; */
+"OxY-99-pz2.placeholder" = "请输入姓名";
+
+/* Class = "IBUILabel"; text = "00000000000000"; ObjectID = "POW-Lq-EtO"; */
+"POW-Lq-EtO.text" = "00000000000000";
+
+/* Class = "IBUIButton"; normalTitle = "取消"; ObjectID = "Pcf-Oy-Pti"; */
+"Pcf-Oy-Pti.normalTitle" = "取消";
+
+/* Class = "IBUILabel"; text = "2.业务"; ObjectID = "Q7y-nA-js9"; */
+"Q7y-nA-js9.text" = "2.业务";
+
+/* Class = "IBUILabel"; text = "alert label"; ObjectID = "Q8o-T6-ccf"; */
+"Q8o-T6-ccf.text" = "alert label";
+
+/* Class = "IBUIButton"; normalTitle = "男"; ObjectID = "QdN-an-U0Y"; */
+"QdN-an-U0Y.normalTitle" = "男";
+
+/* Class = "IBUILabel"; text = "封闭期"; ObjectID = "Quh-vJ-y0G"; */
+"Quh-vJ-y0G.text" = "封闭期";
+
+/* Class = "IBUILabel"; text = "到期转让"; ObjectID = "R4Z-TX-Gu9"; */
+"R4Z-TX-Gu9.text" = "到期转让";
+
+/* Class = "IBUILabel"; text = "姓名"; ObjectID = "RCV-TH-v1m"; */
+"RCV-TH-v1m.text" = "姓名";
+
+/* Class = "IBUILabel"; text = "认购金额（元）"; ObjectID = "SUw-tr-FJS"; */
+"SUw-tr-FJS.text" = "认购金额（元）";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "Sjc-ie-aPn"; */
+"Sjc-ie-aPn.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "今天"; ObjectID = "TTQ-c6-ah9"; */
+"TTQ-c6-ah9.text" = "今天";
+
+/* Class = "IBUINavigationItem"; title = "理财规划服务"; ObjectID = "TWV-9c-p0k"; */
+"TWV-9c-p0k.title" = "理财规划服务";
+
+/* Class = "IBUIBarButtonItem"; title = "完成"; ObjectID = "Tju-PO-cLH"; */
+"Tju-PO-cLH.title" = "完成";
+
+/* Class = "IBUINavigationItem"; title = "请选择地区"; ObjectID = "UJg-Sm-Ara"; */
+"UJg-Sm-Ara.title" = "请选择地区";
+
+/* Class = "IBUILabel"; text = "投资到期日:"; ObjectID = "UTx-ai-bK4"; */
+"UTx-ai-bK4.text" = "投资到期日:";
+
+/* Class = "IBUIButton"; normalTitle = "男"; ObjectID = "UZu-t7-cFs"; */
+"UZu-t7-cFs.normalTitle" = "男";
+
+/* Class = "IBUINavigationItem"; title = "扫描二维码"; ObjectID = "VkU-Um-uy3"; */
+"VkU-Um-uy3.title" = "扫描二维码";
+
+/* Class = "IBUIButton"; normalTitle = "添加"; ObjectID = "Vud-Io-NmM"; */
+"Vud-Io-NmM.normalTitle" = "添加";
+
+/* Class = "IBUINavigationItem"; title = "理财记录"; ObjectID = "Vzx-yO-z6d"; */
+"Vzx-yO-z6d.title" = "理财记录";
+
+/* Class = "IBUILabel"; text = "可到期转让"; ObjectID = "Wa9-kr-goj"; */
+"Wa9-kr-goj.text" = "可到期转让";
+
+/* Class = "IBUIBarButtonItem"; title = "完成"; ObjectID = "Whk-5j-IIA"; */
+"Whk-5j-IIA.title" = "完成";
+
+/* Class = "IBUIButton"; normalTitle = "登陆"; ObjectID = "Wkq-o4-1HQ"; */
+"Wkq-o4-1HQ.normalTitle" = "登陆";
+
+/* Class = "IBUILabel"; text = "支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。"; ObjectID = "XBi-jw-P34"; */
+"XBi-jw-P34.text" = "支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。";
+
+/* Class = "IBUINavigationItem"; title = "证大岁悦"; ObjectID = "XKM-HL-ojz"; */
+"XKM-HL-ojz.title" = "证大岁悦";
+
+/* Class = "IBUITextField"; placeholder = "请输入crm帐号"; ObjectID = "XTo-jY-JvK"; */
+"XTo-jY-JvK.placeholder" = "请输入crm帐号";
+
+/* Class = "IBUILabel"; text = "2014-3-4"; ObjectID = "Xkn-O3-pqR"; */
+"Xkn-O3-pqR.text" = "2014-3-4";
+
+/* Class = "IBUILabel"; text = "密码"; ObjectID = "YjL-TD-3Cp"; */
+"YjL-TD-3Cp.text" = "密码";
+
+/* Class = "IBUILabel"; text = "修改手势密码"; ObjectID = "Zzi-rt-VyM"; */
+"Zzi-rt-VyM.text" = "修改手势密码";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "aaN-P2-iso"; */
+"aaN-P2-iso.text" = "Label";
+
+/* Class = "IBUILabel"; text = "V2.0.1"; ObjectID = "alf-V0-h6z"; */
+"alf-V0-h6z.text" = "V2.0.1";
+
+/* Class = "IBUILabel"; text = "Copyright @ 2014.All Rights Reselved"; ObjectID = "bE6-qG-Ali"; */
+"bE6-qG-Ali.text" = "Copyright @ 2014.All Rights Reselved";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "bRz-JQ-Fsf"; */
+"bRz-JQ-Fsf.text" = "Label";
+
+/* Class = "IBUILabel"; text = "4.扫一扫"; ObjectID = "bdy-XW-aa6"; */
+"bdy-XW-aa6.text" = "4.扫一扫";
+
+/* Class = "IBUILabel"; text = "账号"; ObjectID = "cJI-Cf-3e9"; */
+"cJI-Cf-3e9.text" = "账号";
+
+/* Class = "IBUILabel"; text = "通过"; ObjectID = "ckw-iM-yOw"; */
+"ckw-iM-yOw.text" = "通过";
+
+/* Class = "IBUILabel"; text = "意愿"; ObjectID = "csI-1p-MuA"; */
+"csI-1p-MuA.text" = "意愿";
+
+/* Class = "IBUINavigationItem"; title = "扫描结果"; ObjectID = "dZQ-Z8-Ajb"; */
+"dZQ-Z8-Ajb.title" = "扫描结果";
+
+/* Class = "IBUILabel"; text = "提供手势密码，常见问题解读，意见反馈收集等功能。"; ObjectID = "dsK-gW-tFE"; */
+"dsK-gW-tFE.text" = "提供手势密码，常见问题解读，意见反馈收集等功能。";
+
+/* Class = "IBUINavigationItem"; title = "关于"; ObjectID = "e1Q-d2-Xod"; */
+"e1Q-d2-Xod.title" = "关于";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "fFy-5F-Gdh"; */
+"fFy-5F-Gdh.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "fYs-dy-xnx"; */
+"fYs-dy-xnx.text" = "Title";
+
+/* Class = "IBUILabel"; text = "投资金额:"; ObjectID = "fbY-G2-8tV"; */
+"fbY-G2-8tV.text" = "投资金额:";
+
+/* Class = "IBUINavigationItem"; title = "设置"; ObjectID = "fgv-lQ-c8Z"; */
+"fgv-lQ-c8Z.title" = "设置";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "gte-7J-YvH"; */
+"gte-7J-YvH.text" = "Label";
+
+/* Class = "IBUITextView"; text = "5.设置\n提供手势密码，常见问题解读，意见反馈收集等功能。"; ObjectID = "h1c-h4-zOo"; */
+"h1c-h4-zOo.text" = "5.设置\n提供手势密码，常见问题解读，意见反馈收集等功能。";
+
+/* Class = "IBUILabel"; text = "投资状态:"; ObjectID = "hH0-YO-eCx"; */
+"hH0-YO-eCx.text" = "投资状态:";
+
+/* Class = "IBUINavigationItem"; title = "客户"; ObjectID = "hrR-QG-5ed"; */
+"hrR-QG-5ed.title" = "客户";
+
+/* Class = "IBUILabel"; text = "Title"; ObjectID = "iYR-FF-Ima"; */
+"iYR-FF-Ima.text" = "Title";
+
+/* Class = "IBUINavigationItem"; title = "常见问题"; ObjectID = "js3-ke-yPT"; */
+"js3-ke-yPT.title" = "常见问题";
+
+/* Class = "IBUILabel"; text = "Q:如何查询我的客户信息"; ObjectID = "kFa-yY-ZLX"; */
+"kFa-yY-ZLX.text" = "Q:如何查询我的客户信息";
+
+/* Class = "IBUITextField"; placeholder = "请输入手机号码"; ObjectID = "kKQ-Ht-6bt"; */
+"kKQ-Ht-6bt.placeholder" = "请输入手机号码";
+
+/* Class = "IBUILabel"; text = "修改地区"; ObjectID = "kMR-io-ral"; */
+"kMR-io-ral.text" = "修改地区";
+
+/* Class = "IBUILabel"; text = "常见问题"; ObjectID = "klA-PU-9ra"; */
+"klA-PU-9ra.text" = "常见问题";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "mQ8-Wp-q3Q"; */
+"mQ8-Wp-q3Q.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Q:如何查询我的客户信息"; ObjectID = "nKD-b3-ia0"; */
+"nKD-b3-ia0.text" = "Q:如何查询我的客户信息";
+
+/* Class = "IBUILabel"; text = "详细信息"; ObjectID = "nM1-8M-oxA"; */
+"nM1-8M-oxA.text" = "详细信息";
+
+/* Class = "IBUISearchBar"; placeholder = "搜索"; ObjectID = "nO9-x4-AIP"; */
+"nO9-x4-AIP.placeholder" = "搜索";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "pLQ-c6-Fx0"; */
+"pLQ-c6-Fx0.text" = "Label";
+
+/* Class = "IBUILabel"; text = "关于我们"; ObjectID = "pf3-00-uEA"; */
+"pf3-00-uEA.text" = "关于我们";
+
+/* Class = "IBUILabel"; text = "性别"; ObjectID = "pxE-HO-rGg"; */
+"pxE-HO-rGg.text" = "性别";
+
+/* Class = "IBUINavigationItem"; title = "通讯录客户"; ObjectID = "qGK-Jc-S5v"; */
+"qGK-Jc-S5v.title" = "通讯录客户";
+
+/* Class = "IBUILabel"; text = "证大财富 版权所有"; ObjectID = "qZs-2z-okz"; */
+"qZs-2z-okz.text" = "证大财富 版权所有";
+
+/* Class = "IBUILabel"; text = "备注"; ObjectID = "qtF-6E-pmO"; */
+"qtF-6E-pmO.text" = "备注";
+
+/* Class = "IBUILabel"; text = "100,000"; ObjectID = "rPd-ks-Ld0"; */
+"rPd-ks-Ld0.text" = "100,000";
+
+/* Class = "IBUIBarButtonItem"; title = "提交"; ObjectID = "s9R-e3-J6M"; */
+"s9R-e3-J6M.title" = "提交";
+
+/* Class = "IBUITabBarItem"; title = "机会"; ObjectID = "sJu-GM-64R"; */
+"sJu-GM-64R.title" = "机会";
+
+/* Class = "IBUILabel"; text = "软件许可使用协议"; ObjectID = "sxK-j8-PRw"; */
+"sxK-j8-PRw.text" = "软件许可使用协议";
+
+/* Class = "IBUILabel"; text = "证大岁悦"; ObjectID = "uNA-JZ-fpO"; */
+"uNA-JZ-fpO.text" = "证大岁悦";
+
+/* Class = "IBUITextView"; text = "1.机会\n可手工添加或通讯录导入潜在的客户资源，按意愿有序分类，并可记录整理历次客户理财意愿，一键联系客户。"; ObjectID = "ufM-5V-ygL"; */
+"ufM-5V-ygL.text" = "1.机会\n可手工添加或通讯录导入潜在的客户资源，按意愿有序分类，并可记录整理历次客户理财意愿，一键联系客户。";
+
+/* Class = "IBUILabel"; text = "Detail"; ObjectID = "vNB-WB-ODe"; */
+"vNB-WB-ODe.text" = "Detail";
+
+/* Class = "IBUILabel"; text = "展示归属当前登录账号的客户经理所有签约客户信息。了解客户的多次理财情况，提醒定期维护客户关系，并可记录管理历次联系情况。"; ObjectID = "wAD-7Q-Neh"; */
+"wAD-7Q-Neh.text" = "展示归属当前登录账号的客户经理所有签约客户信息。了解客户的多次理财情况，提醒定期维护客户关系，并可记录管理历次联系情况。";
+
+/* Class = "IBUINavigationItem"; title = "功能介绍"; ObjectID = "x8G-5t-7WE"; */
+"x8G-5t-7WE.title" = "功能介绍";
+
+/* Class = "IBUILabel"; text = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投"; ObjectID = "xVe-0v-dGi"; */
+"xVe-0v-dGi.text" = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投";
+
+/* Class = "IBUILabel"; text = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投"; ObjectID = "z6H-ph-tgp"; */
+"z6H-ph-tgp.text" = "A:该产品的理财收益一般为每月还款日发放，到期可选择赎回或续投";
+
+/* Class = "IBUISearchBar"; placeholder = "搜索"; ObjectID = "zNW-vb-5gT"; */
+"zNW-vb-5gT.placeholder" = "搜索";
