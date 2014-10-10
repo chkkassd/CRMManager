@@ -147,10 +147,13 @@
     
     NSString * mobile = [self fetchMobileWithPersonAtIndex:index.row withSearchText:@""];
     
-    self.infoDic = @{@"name": [NSString stringWithFormat:@"%@%@",lastName.length ? lastName : @"",firstName.length ? firstName : @""],
-                     @"mobile": mobile};
-    
-    [self performSegueWithIdentifier:@"addressBook To AddAndEdite" sender:self];
+    if (mobile.length) {
+        self.infoDic = @{@"name": [NSString stringWithFormat:@"%@%@",lastName.length ? lastName : @"",firstName.length ? firstName : @""],
+                         @"mobile": mobile};
+        [self performSegueWithIdentifier:@"addressBook To AddAndEdite" sender:self];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:nil message:@"此用户没有联系电话,无法添加为储备客户" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    }
 }
 
 //获取手机，为多值属性获取
