@@ -27,11 +27,30 @@
 {
     if (self.editedReocrd) {
         self.title = @"编辑记录";
-        self.textView.text = self.editedReocrd.content;
+        self.textView.text = [self contentStringFromJsonString:self.editedReocrd.content];
     } else {
         self.title = @"新增记录";
     }
     [self shouldHideLabel];
+}
+
+#pragma mark - methods
+
+- (NSString *)contentStringFromJsonString:(NSString *)jsonString
+{
+    if (!jsonString.length) return @"";
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"< br>" withString:@"\n"];
+    return jsonString;
+}
+
+- (NSString *)jsonStringFromContentString:(NSString *)contentString
+{
+    if (!contentString.length) return @"";
+    contentString = [contentString stringByReplacingOccurrencesOfString:@"&" withString:@""];
+    contentString = [contentString stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    contentString = [contentString stringByReplacingOccurrencesOfString:@"%" withString:@""];
+    contentString = [contentString stringByReplacingOccurrencesOfString:@"\n" withString:@"< br>"];
+    return contentString;
 }
 
 #pragma mark - properties
@@ -47,6 +66,8 @@
 - (IBAction)finishButtonPressed:(id)sender
 {
     [self.view endEditing:YES];
+    NSString * contentString = [self jsonStringFromContentString:self.textView.text];
+   
     NSDictionary * infoDic = @{
                            @"managerId": [ZDModeClient sharedModeClient].zdManagerUser.userid,
                            @"customerId": self.selectedCustomer.customerId,
@@ -54,7 +75,7 @@
                            @"contactNum": self.selectedCustomer.mobile,
                            @"memo": @"",
                            @"hope": self.selectedCustomer.cdHope.length? self.selectedCustomer.cdHope :@"3",//意愿若不存在，默认为3
-                           @"content": self.textView.text,
+                           @"content": contentString,
                            @"contactTime": [NSString stringTranslatedFromDate:[NSDate date]],
                            @"inputDate": [NSString stringTranslatedFromDate:[NSDate date]],
                            @"inputId": [ZDModeClient sharedModeClient].zdManagerUser.userid,

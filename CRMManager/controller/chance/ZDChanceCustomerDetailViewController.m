@@ -66,6 +66,13 @@
     self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
 }
 
+- (NSString *)contentStringFromJsonString:(NSString *)jsonString
+{
+    if (!jsonString.length) return @"";
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"< br>" withString:@"\n"];
+    return jsonString;
+}
+
 #pragma mark - properties
 
 - (void)setAllRecords:(NSMutableArray *)allRecords
@@ -96,7 +103,8 @@
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"customerDetail Cell" forIndexPath:indexPath];
     ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
-    cell.textLabel.text = zdContactRecord.content;
+    
+    cell.textLabel.text = [self contentStringFromJsonString:zdContactRecord.content];
     NSString * time1 = [zdContactRecord.contactTime substringToIndex:10];
     NSString * time2 = [zdContactRecord.contactTime substringWithRange:NSMakeRange(11, 5)];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@    %@",time1,time2];

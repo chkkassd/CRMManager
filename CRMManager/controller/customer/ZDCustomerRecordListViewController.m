@@ -63,6 +63,13 @@
     self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
 }
 
+- (NSString *)contentStringFromJsonString:(NSString *)jsonString
+{
+    if (!jsonString.length) return @"";
+    jsonString = [jsonString stringByReplacingOccurrencesOfString:@"< br>" withString:@"\n"];
+    return jsonString;
+}
+
 #pragma makr - segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -102,7 +109,7 @@
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"record Cell" forIndexPath:indexPath];
     ZDContactRecord * zdContactRecord = self.allRecords[indexPath.row];
-    cell.textLabel.text = zdContactRecord.content;
+    cell.textLabel.text = [self contentStringFromJsonString:zdContactRecord.content];
     
     if (zdContactRecord.contactTime.length) {
         NSString * time1 = [zdContactRecord.contactTime substringToIndex:10];

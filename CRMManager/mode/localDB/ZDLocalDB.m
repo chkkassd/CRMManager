@@ -402,9 +402,6 @@
 {
     managerUser.userid = zdManagerUser.userid;
     managerUser.password = zdManagerUser.password;
-    managerUser.director = zdManagerUser.director;
-    managerUser.area = zdManagerUser.area;
-    managerUser.areaid = zdManagerUser.areaid;
 }
 
 #pragma mark - modify and save

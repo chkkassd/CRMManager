@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *pointButtons;
 @property (strong, nonatomic) NSMutableArray *unselectedButtons;
 @property (strong, nonatomic) SSFPathLineLayer *pathLayer;
+@property (nonatomic) NSInteger inputCount;
 
 @end
 
@@ -30,6 +31,7 @@
         self.pathLayer.passwordGestureView = self;
         self.pathLayer.frame = self.bounds;
         [self.layer addSublayer:self.pathLayer];
+        self.inputCount = 5;
     }
     return self;
 }
@@ -145,8 +147,9 @@
             }
             case SSFPasswordGestureViewStateCheckWrong:
                 //check手势密码失败
-                if ([self.delegate respondsToSelector:@selector(passwordGestureViewCheckPasswordWrong:)]) {
-                    [self.delegate passwordGestureViewCheckPasswordWrong:self];
+                if ([self.delegate respondsToSelector:@selector(passwordGestureViewCheckPasswordWrong:andInputCount:)]) {
+                    --self.inputCount;
+                    [self.delegate passwordGestureViewCheckPasswordWrong:self andInputCount:self.inputCount];
                 }
                 break;
             default:

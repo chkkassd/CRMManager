@@ -97,15 +97,30 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != alertView.cancelButtonIndex) {
-        //将手势密码置空
-        self.zdManagerUser.gesturePassword = @"";
-        [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
-        //置空，忘记密码默认为安全推出
-        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        [self.delegate gesturePasswordViewControllerDidForgetGesturePassword:self];
+    if ([alertView.title isEqualToString:@"输入错误"]) {
+        //输入5次错误
+        if (buttonIndex == alertView.cancelButtonIndex) {
+            //将手势密码置空
+            self.zdManagerUser.gesturePassword = @"";
+            [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
+            //置空，忘记密码默认为安全推出
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self.delegate gesturePasswordViewControllerDidForgetGesturePassword:self];
+        }
+    } else {
+        //忘记手势密码
+        if (buttonIndex != alertView.cancelButtonIndex) {
+            //将手势密码置空
+            self.zdManagerUser.gesturePassword = @"";
+            [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
+            //置空，忘记密码默认为安全推出
+            [[NSUserDefaults standardUserDefaults] setObject:nil forKey:DefaultCurrentUserId];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            [self.delegate gesturePasswordViewControllerDidForgetGesturePassword:self];
+        }
     }
 }
 
@@ -125,13 +140,21 @@
     self.zdManagerUser.gesturePassword = password;
     [[ZDModeClient sharedModeClient] saveZDManagerUser:self.zdManagerUser];
     
-    [self presentToSelectAreaView];
+    if (!self.zdManagerUser.areaid.length) {
+        [self presentToSelectAreaView];
+    }
 }
 
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView
 {
     self.alertLabel.text = @"两次密码不同,请重设密码";
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
+    
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+        self.alertLabel.transform = CGAffineTransformMakeRotation(0.1);
+    } completion:^(BOOL finished) {
+        self.alertLabel.transform = CGAffineTransformMakeRotation(0);
+    }];
 }
 
 - (void)passwordGestureViewFinishCheckPassword:(SSFPasswordGestureView *)passwordView
@@ -139,10 +162,22 @@
     [self.delegate gesturePasswordViewControllerDidFinish:self];
 }
 
-- (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView
+- (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView andInputCount:(NSInteger)count
 {
-    self.alertLabel.text = @"手势密码错误,请重试";
+    if (count > 0) {
+        self.alertLabel.text = [NSString stringWithFormat:@"手势密码错误,还剩%d次机会",count];
+    } else {
+        self.alertLabel.text = @"手势密码错误";
+        [[[UIAlertView alloc] initWithTitle:@"输入错误" message:@"手势密码错误过多,已解除,请重新登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    }
+    
     self.alertLabel.textColor = [UIColor colorWithRed:239/255.0 green:97/255.0 blue:97/255.0 alpha:1.0];
+    
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+        self.alertLabel.transform = CGAffineTransformMakeRotation(0.1);
+    } completion:^(BOOL finished) {
+        self.alertLabel.transform = CGAffineTransformMakeRotation(0);
+    }];
 }
 
 #pragma mark - Select area view delegate

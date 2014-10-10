@@ -91,7 +91,7 @@
     NSString * fortuneState = zdBusinessList.fortuneState;
     if (fortuneState.length == 0) {
         return self.CRMStateDictionary[crmState];
-    } else if (([crmState isEqualToString:@"4"] || [crmState isEqualToString:@"7"] || [crmState isEqualToString:@"8"]) && ([fortuneState isEqualToString:@"02000009"] || [fortuneState isEqualToString:@"02000010"] || [fortuneState isEqualToString:@"02000014"] || [fortuneState isEqualToString:@"02000013"])) {
+    } else if (([crmState isEqualToString:@"4"] || [crmState isEqualToString:@"7"] || [crmState isEqualToString:@"8"] || [crmState isEqualToString:@"9"]) && ([fortuneState isEqualToString:@"02000009"] || [fortuneState isEqualToString:@"02000010"] || [fortuneState isEqualToString:@"02000014"] || [fortuneState isEqualToString:@"02000013"])) {
         return @"投资生效";
     } else {
         return self.fortuneStateDictionary[fortuneState];

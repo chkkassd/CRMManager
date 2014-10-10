@@ -42,6 +42,6 @@ typedef enum {
 - (void)passwordGestureViewFinishSecondTimePassword:(SSFPasswordGestureView *)passwordView andPassword:(NSString *)password;
 - (void)passwordGestureViewFinishWrongPassword:(SSFPasswordGestureView *)passwordView;
 - (void)passwordGestureViewFinishCheckPassword:(SSFPasswordGestureView *)passwordView;
-- (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView;
+- (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView andInputCount:(NSInteger)count;
 
 @end
