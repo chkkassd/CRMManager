@@ -142,6 +142,8 @@
     
     if (!self.zdManagerUser.areaid.length) {
         [self presentToSelectAreaView];
+    } else {
+        [self.delegate gesturePasswordViewControllerDidFinish:self];
     }
 }
 
