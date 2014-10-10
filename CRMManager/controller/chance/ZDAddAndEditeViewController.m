@@ -34,8 +34,8 @@
 {
     if (self.mode == ZDAddAndEditeViewControllerModeEdit && self.editedCustomer) {
         self.title = self.editedCustomer.customerName;
-        self.mobileTextField.text = self.editedCustomer.mobile;
-        self.nameTextField.text = self.editedCustomer.customerName;
+        self.mobileTextField.text = [self stringForHiddenMobile:self.editedCustomer.mobile];
+        self.nameTextField.text = self.editedCustomer.customerName.length ? self.editedCustomer.customerName : @"未设置";
         
         if ([self.editedCustomer.sex isEqualToString:@"1"]) {
             self.sexNum = 1;
@@ -79,6 +79,15 @@
 {
     [super viewDidLayoutSubviews];
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height + 150);
+}
+
+- (NSString *)stringForHiddenMobile:(NSString *)mobilestring
+{
+    if (!mobilestring.length) {
+        return @"未设置";
+    } else if (mobilestring.length < 8) return mobilestring;
+    
+    return [mobilestring stringByReplacingCharactersInRange:NSMakeRange(3, 5) withString:@"*****"];
 }
 
 #pragma mark - Action

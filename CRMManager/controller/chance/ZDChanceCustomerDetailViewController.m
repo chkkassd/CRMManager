@@ -55,11 +55,20 @@
 - (void)configureView
 {
     self.nameLabel.text = self.zdCustomer.customerName;
-    self.mobileLabel.text = self.zdCustomer.mobile ? self.zdCustomer.mobile : @"未设置";
+    self.mobileLabel.text = [self stringForHiddenMobile:self.zdCustomer.mobile];
     self.allRecords = [[[ZDModeClient sharedModeClient] zdContactRecordsWithCustomerId:self.zdCustomer.customerId] mutableCopy];
 }
 
 #pragma mark - methods
+
+- (NSString *)stringForHiddenMobile:(NSString *)mobilestring
+{
+    if (!mobilestring.length) {
+        return @"未设置";
+    } else if (mobilestring.length < 8) return mobilestring;
+
+    return [mobilestring stringByReplacingCharactersInRange:NSMakeRange(3, 5) withString:@"*****"];
+}
 
 - (void)upadteContactRecords:(NSNotification *)noti
 {

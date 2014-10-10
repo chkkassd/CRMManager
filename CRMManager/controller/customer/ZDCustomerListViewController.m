@@ -67,13 +67,22 @@
 {
     self.headImageView.image = [UIImage headImageForZDCustomer:self.customer andIsBig:YES];
     self.nameLabel.text = self.customer.customerName ? self.customer.customerName : @"未设置";
-    self.mobileLabel.text = self.customer.mobile ? self.customer.mobile :@"未设置";
+    self.mobileLabel.text = [self stringForHiddenMobile:self.customer.mobile];
     self.listItem = @[@{@"image": @"ico_currentClient_detail",
                         @"labelName": @"详细信息"},
                       @{@"image": @"ico_currentClient_invest",
                         @"labelName": @"理财记录"},
                       @{@"image": @"ico_currentClient_contact",
                         @"labelName": @"联系记录"}];
+}
+
+- (NSString *)stringForHiddenMobile:(NSString *)mobilestring
+{
+    if (!mobilestring.length) {
+        return @"未设置";
+    } else if (mobilestring.length < 8) return mobilestring;
+    
+    return [mobilestring stringByReplacingCharactersInRange:NSMakeRange(3, 5) withString:@"*****"];
 }
 
 #pragma mark - Action
