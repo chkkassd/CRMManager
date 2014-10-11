@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSArray * sortedChanceCustomers;
 @property (strong, nonatomic) NSArray * filteredChanceCustomers;
 @property (strong, nonatomic) ZDCustomer * selectedZDCustomer;
+@property (nonatomic) BOOL isSearch;
 
 @end
 
@@ -266,15 +267,25 @@
 
 - (void)leftRightSwipeTableViewCellEditeButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {
-    NSIndexPath * index = [self.tableView indexPathForCell:cell];
-    self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
+    if (!self.isSearch) {
+        NSIndexPath * index = [self.tableView indexPathForCell:cell];
+        self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
+    } else {
+        NSIndexPath * index = [self.searchDisplayController.searchResultsTableView indexPathForCell:cell];
+        self.selectedZDCustomer = self.filteredChanceCustomers[index.row];
+    }
     [self performSegueWithIdentifier:@"addAndEdit Display" sender:self];
 }
 
 - (void)leftRightSwipeTableViewCellTelephoneButtonPressed:(SSFLeftRightSwipeTableViewCell *)cell
 {
-    NSIndexPath * index = [self.tableView indexPathForCell:cell];
-    self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
+    if (!self.isSearch) {
+        NSIndexPath * index = [self.tableView indexPathForCell:cell];
+        self.selectedZDCustomer = self.sortedChanceCustomers[index.row];
+    } else {
+        NSIndexPath * index = [self.searchDisplayController.searchResultsTableView indexPathForCell:cell];
+        self.selectedZDCustomer = self.filteredChanceCustomers[index.row];
+    }
     UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"拨号" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"电话呼叫", nil];
     [sheet showFromTabBar:self.tabBarController.tabBar];
 }
@@ -293,6 +304,16 @@
     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"customerName contains[cd] %@",searchString];
     self.filteredChanceCustomers = [self.allChanceCustomers filteredArrayUsingPredicate:predicate];
     return YES;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didShowSearchResultsTableView:(UITableView *)tableView
+{
+    self.isSearch = YES;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView
+{
+    self.isSearch = NO;
 }
 
 #pragma mark - scrollView delegate

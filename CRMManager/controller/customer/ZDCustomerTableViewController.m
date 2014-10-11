@@ -141,7 +141,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.selectedZDCustomer = self.allCurrentCustomers[indexPath.row];
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        self.selectedZDCustomer = self.filterdCurrentCustomers[indexPath.row];
+    } else {
+        self.selectedZDCustomer = self.allCurrentCustomers[indexPath.row];
+    }
     [self performSegueWithIdentifier:@"Show List" sender:self];
 }
 
