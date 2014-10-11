@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIView * gestureContainView;
 @property (weak, nonatomic) IBOutlet UIImageView * headImageView;
 @property (weak, nonatomic) IBOutlet UILabel * alertLabel;
+@property (weak, nonatomic) IBOutlet UIButton * forgetButton;
 @property (strong, nonatomic) ZDManagerUser * zdManagerUser;
 @property (strong, nonatomic) SSFPasswordGestureView * passwordGestureView;
 @end
@@ -41,9 +42,11 @@
     if (!self.zdManagerUser.gesturePassword.length) {
         self.passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
         self.alertLabel.text = @"请设置手势密码";
+        self.forgetButton.hidden = YES;
     } else {
         self.passwordGestureView.state = SSFPasswordGestureViewStateCheck;
         self.alertLabel.text = @"请输入手势密码";
+        self.forgetButton.hidden = NO;
     }
     [self.gestureContainView addSubview:self.passwordGestureView];
 }
