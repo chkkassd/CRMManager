@@ -176,7 +176,7 @@
     NSArray * phoneNumberArray = CFBridgingRelease(ABMultiValueCopyArrayOfAllValues(phoneNumberProperty));
     for (int i = 0;i <phoneNumberArray.count; i++) {
         NSString * phoneLabel = CFBridgingRelease(ABMultiValueCopyLabelAtIndex(phoneNumberProperty, i));
-        if ([phoneLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel]) {
+        if ([phoneLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel] || [phoneLabel isEqualToString:(NSString *)kABPersonPhoneIPhoneLabel] || [phoneLabel isEqualToString:(NSString *)kABPersonPhoneMainLabel]  || [phoneLabel isEqualToString:(NSString *)kABPersonPhoneHomeFAXLabel] || [phoneLabel isEqualToString:(NSString *)kABPersonPhoneWorkFAXLabel] || [phoneLabel isEqualToString:(NSString *)kABPersonPhoneOtherFAXLabel] || [phoneLabel isEqualToString:(NSString *)kABPersonPhonePagerLabel] || [phoneLabel isEqualToString:(NSString *)kABWorkLabel] || [phoneLabel isEqualToString:(NSString *)kABHomeLabel]) {
             CFRelease(friend);
             CFRelease(addressBookRef);
             CFRelease(phoneNumberProperty);
@@ -202,9 +202,13 @@
     
     NSString * mobile = [self fetchMobileWithPersonAtIndex:index.row withSearchText:self.searchBar.text];
     
-    self.infoDic = @{@"name": [NSString stringWithFormat:@"%@%@",lastName.length ? lastName : @"",firstName.length ? firstName : @""],
-                     @"mobile": mobile};
-    [self performSegueWithIdentifier:@"addressBook To AddAndEdite" sender:self];
+    if (mobile.length) {
+        self.infoDic = @{@"name": [NSString stringWithFormat:@"%@%@",lastName.length ? lastName : @"",firstName.length ? firstName : @""],
+                         @"mobile": mobile};
+        [self performSegueWithIdentifier:@"addressBook To AddAndEdite" sender:self];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:nil message:@"此用户没有联系电话,无法添加为储备客户" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    }
 }
 
 #pragma mark - add and edite view delegate

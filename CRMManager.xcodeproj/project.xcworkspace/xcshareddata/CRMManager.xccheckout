@@ -14,7 +14,7 @@
 		<string>https://github.com/chkkassd/CRMManager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CRMManager.xcodeproj</string>
+	<string>CRMManager.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>432B31F2633D4DE37541C9C76146065A99F404AE</key>
