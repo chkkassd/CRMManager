@@ -28,7 +28,7 @@
     SSFPasswordGestureView * passwordGestureView = [SSFPasswordGestureView instancePasswordView];
     passwordGestureView.delegate = self;
     passwordGestureView.state = SSFPasswordGestureViewStateWillFirstDraw;
-    passwordGestureView.center = CGPointMake(self.view.center.x, self.view.center.y + 20);
+    passwordGestureView.center = CGPointMake(self.view.center.x, self.view.center.y + 50);
     [self.view addSubview:passwordGestureView];
     self.alertLabel.text = @"绘制解锁图案";
 }
