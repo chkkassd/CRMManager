@@ -201,7 +201,36 @@
 
 - (void)setAllCurrentCustomers:(NSArray *)allCurrentCustomers
 {
-    _allCurrentCustomers = allCurrentCustomers;
+    _allCurrentCustomers = [allCurrentCustomers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        ZDCustomer * customer1 = (ZDCustomer *)obj1;
+        ZDCustomer * customer2 = (ZDCustomer *)obj2;
+        NSInteger count1;
+        NSInteger count2;
+        if ([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer1.customerId].length && [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer1.customerId].count) {
+            count1 = 2;
+        } else if([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer1.customerId].length || [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer1.customerId].count) {
+            count1 = 1;
+        } else {
+            count1 = 0;
+        }
+        
+        if ([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer2.customerId].length && [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer2.customerId].count) {
+            count2 = 2;
+        } else if([[ZDModeClient sharedModeClient] birthRemindWithCustomerId:customer2.customerId].length || [[ZDModeClient sharedModeClient] investmentRemindWithCustomerId:customer2.customerId].count) {
+            count2 = 1;
+        } else {
+            count2 = 0;
+        }
+        
+        if (count1 > count2) {
+            return NSOrderedAscending;
+        } else if (count1 == count2) {
+            return NSOrderedSame;
+        } else {
+            return NSOrderedDescending;
+        }
+    }];
+    
     [self.tableView reloadData];
 }
 
