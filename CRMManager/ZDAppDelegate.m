@@ -131,8 +131,8 @@
     localNotification.repeatInterval = NSCalendarUnitDay;
     localNotification.alertBody = @"投资,生日,理财记录更新";
     localNotification.alertAction = @"打开";
-    localNotification.userInfo = @{@"key" : @"remindAndBusiness"};
     localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.userInfo = @{@"key" : @"remindAndBusiness"};
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }

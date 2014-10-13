@@ -170,7 +170,7 @@
 - (void)passwordGestureViewCheckPasswordWrong:(SSFPasswordGestureView *)passwordView andInputCount:(NSInteger)count
 {
     if (count > 0) {
-        self.alertLabel.text = [NSString stringWithFormat:@"手势密码错误,还剩%d次机会",count];
+        self.alertLabel.text = [NSString stringWithFormat:@"手势密码错误,还剩%ld次机会",(long)count];
     } else {
         self.alertLabel.text = @"手势密码错误";
         [[[UIAlertView alloc] initWithTitle:@"输入错误" message:@"手势密码错误过多,已解除,请重新登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil] show];

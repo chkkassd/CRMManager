@@ -26,9 +26,9 @@
             //5.获取并保存所有客户的business
             [self fetchAndSaveAllBusinessListsWithManagerId:self.zdManagerUser.userid];
             //6.获取生日提醒信息
-            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"20" pageNo:@"1"];
+            [self fetchAndSaveBirthRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"200" pageNo:@"1"];
             //7.获取投资提醒信息
-            [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"50" pageNo:@"1"];
+            [self fetchAndSaveInvestmentRemindInfoWithManagerId:self.zdManagerUser.userid pageSize:@"500" pageNo:@"1"];
             //8.获取CRMstate和fortuneState
             [self fetchAndSaveCRMState];
             [self fetchAndSaveFortuneState];
@@ -356,7 +356,6 @@
         zdBirthRemind.dateOfBirth = dic[@"dataOfBirth"];
         zdBirthRemind.customerId = dic[@"custId"];
         [birthReminds addObject:zdBirthRemind];
-        NSLog(@"pp%@,%@",dic[@"customerId"],dic[@"customerName"]);
     }
     return birthReminds;
 }
@@ -672,6 +671,18 @@
         }
     }];
 }
+
+//删除investmentRemind
+- (BOOL)deleteInvestmentRemindWithZDInvestmentRemind:(ZDInvestmentRemind *)zdInvestmentRemind
+{
+    return [[ZDLocalDB sharedLocalDB] deleteOneInvestmentRemindWithCustomerId:zdInvestmentRemind.customerId feLendNo:zdInvestmentRemind.feLendNo error:NULL];
+}
+
+//删除birthRemind
+//- (BOOL)deleteBirthRemindWithCustomerId:(NSString *)customerid
+//{
+//    return [[ZDLocalDB sharedLocalDB] deleteOneBirthRemindWithCustomerId:customerid error:NULL];
+//}
 
 #pragma mark - 二维码扫描登录相关
 

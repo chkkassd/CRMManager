@@ -96,7 +96,7 @@
     NSDictionary * dic = @{
                            @"managerId": userid,
                            @"pageNum": @"1",
-                           @"pageSize": @"70",
+                           @"pageSize": @"400",
                            @"type": type
                            };
     NSURL * url = [self URLForGetAllChanceCustomers];

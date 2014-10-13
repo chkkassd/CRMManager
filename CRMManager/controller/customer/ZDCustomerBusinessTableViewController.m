@@ -121,13 +121,13 @@
     NSInteger day = [dateComponents day];
         if (month > 0) {
             if (day > 0) {
-                return [NSString stringWithFormat:@"倒数%d月%d天",month,day];
+                return [NSString stringWithFormat:@"倒数%ld月%ld天",(long)month,(long)day];
             } else {
-                return [NSString stringWithFormat:@"倒数%d月",month];
+                return [NSString stringWithFormat:@"倒数%ld月",(long)month];
             }
         } else {
             if (day > 0) {
-                return [NSString stringWithFormat:@"倒数%d天",day];
+                return [NSString stringWithFormat:@"倒数%ld天",(long)day];
             } else return @"";
         }
 }
@@ -232,6 +232,8 @@
                 cell.reciprocalDateLabel.text = reciprocalString;
             } else {
                 cell.reciprocalDateLabel.hidden = YES;
+                //已到期的投资提醒,在本地数据库中删除
+                [[ZDModeClient sharedModeClient] deleteInvestmentRemindWithZDInvestmentRemind:zdInvestmentRemind];
             }
         } else {
             cell.reciprocalDateLabel.hidden = YES;

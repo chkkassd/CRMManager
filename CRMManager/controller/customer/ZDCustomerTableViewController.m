@@ -201,7 +201,7 @@
 
 - (void)setAllCurrentCustomers:(NSArray *)allCurrentCustomers
 {
-    _allCurrentCustomers = [allCurrentCustomers sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSSortDescriptor * sortDescriptor1 = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES comparator:^NSComparisonResult(id obj1, id obj2) {
         ZDCustomer * customer1 = (ZDCustomer *)obj1;
         ZDCustomer * customer2 = (ZDCustomer *)obj2;
         NSInteger count1;
@@ -229,8 +229,28 @@
         } else {
             return NSOrderedDescending;
         }
+
     }];
     
+    NSSortDescriptor * sortDescriptor2 = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES comparator:^NSComparisonResult(id obj1, id obj2) {
+        ZDCustomer * customer1 = (ZDCustomer *)obj1;
+        ZDCustomer * customer2 = (ZDCustomer *)obj2;
+        NSInteger count1;
+        NSInteger count2;
+        NSArray * businessLists1 = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:customer1.customerId];
+        count1 = businessLists1.count ? businessLists1.count :0;
+        NSArray * businessLists2 = [[ZDModeClient sharedModeClient] zdBusinessListsWithCustomerId:customer2.customerId];
+        count2 = businessLists2.count ? businessLists2.count :0;
+        if (count1 > count2) {
+            return NSOrderedAscending;
+        } else if (count1 == count2) {
+            return NSOrderedSame;
+        } else {
+            return NSOrderedDescending;
+        }
+    }];
+    
+    _allCurrentCustomers = [allCurrentCustomers sortedArrayUsingDescriptors:@[sortDescriptor1,sortDescriptor2]];
     [self.tableView reloadData];
 }
 

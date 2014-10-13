@@ -672,6 +672,33 @@
     return YES;
 }
 
+//delete one investmentRemind
+
+- (BOOL)deleteOneInvestmentRemindWithCustomerId:(NSString *)customerid
+                                       feLendNo:(NSString *)feLendNo
+                                          error:(NSError *__autoreleasing *)error
+{
+    InvestmentRemind * investmentRemind = [self queryInvestmentRemindWithCustomerId:customerid andFeLendNo:feLendNo];
+    if (investmentRemind) {
+        [self.managedObjectContext deleteObject:investmentRemind];
+        return [self.managedObjectContext save:error];
+    }
+    return YES;
+}
+
+//delete one birthRemind
+
+//- (BOOL)deleteOneBirthRemindWithCustomerId:(NSString *)customerid
+//                                     error:(NSError *__autoreleasing *)error
+//{
+//    BirthRemind * birthRemind = [self queryBirthRemindWithCustomerId:customerid];
+//    if (birthRemind) {
+//        [self.managedObjectContext deleteObject:birthRemind];
+//        return [self.managedObjectContext save:error];
+//    }
+//    return YES;
+//}
+
 #pragma mark - coreData properties
 
 - (NSString *)defaultCurrentUserId

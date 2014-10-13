@@ -82,6 +82,13 @@
 //意见反馈
 - (void)commitFeedbackWithContext:(NSString *)context
                 completionHandler:(void(^)(NSError * error))handler;
+
+//删除投资提醒
+- (BOOL)deleteInvestmentRemindWithZDInvestmentRemind:(ZDInvestmentRemind *)zdInvestmentRemind;
+
+//删除生日提醒
+//- (BOOL)deleteBirthRemindWithCustomerId:(NSString *)customerid;
+
 //刷新customer数据
 - (void)refreshCustomersCompletionHandler:(void(^)(NSError * error))handler;
 
