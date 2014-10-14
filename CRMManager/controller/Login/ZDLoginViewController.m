@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView * passwordView;
 @property (weak, nonatomic) IBOutlet UIButton * loginButton;
 @property (strong, nonatomic) ZDManagerUser *zdManagerUser;
+@property (nonatomic) BOOL isMoveUp;//只在ipohone4上用到
 
 @property (nonatomic) BOOL isQuickLogin;
 
@@ -112,6 +113,17 @@
 - (IBAction)hideKeyboard:(id)sender
 {
     [self.view endEditing:YES];
+    
+    if ([self checkIphoneType] == checkResultIphone4) {
+        if (self.isMoveUp) {
+            [UIView animateWithDuration:0.5 animations:^{
+                self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y + DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
+                self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y +DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
+            } completion:^(BOOL finished) {
+                self.isMoveUp = NO;
+            }];
+        }
+    }
 }
 
 #pragma mark - methods
@@ -153,24 +165,14 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     if ([self checkIphoneType] == checkResultIphone4) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y - DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
-            self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y - DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
-        } completion:^(BOOL finished) {
-            
-        }];
-    }
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    if ([self checkIphoneType] == checkResultIphone4) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y + DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
-            self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y +DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
-        } completion:^(BOOL finished) {
-            
-        }];
+        if (!self.isMoveUp) {
+            [UIView animateWithDuration:0.5 animations:^{
+                self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y - DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
+                self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y - DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
+            } completion:^(BOOL finished) {
+                self.isMoveUp = YES;
+            }];
+        }
     }
 }
 
