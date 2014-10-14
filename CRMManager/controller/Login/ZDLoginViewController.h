@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#define DefaultMoveUpDistance 50
+
+typedef enum {
+    checkResultIphone4,
+    checkResultIphone5,
+    checkResultIphone6,
+    checkResultIphone6p
+}IphoneType;
+
 @interface ZDLoginViewController : UIViewController
 
 @end

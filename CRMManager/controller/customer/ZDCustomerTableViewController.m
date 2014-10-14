@@ -127,7 +127,7 @@
     NSUInteger count = businessLists.count ? businessLists.count :0;
     cell.interestLabel.hidden = NO;
     cell.interestLabel.text = [NSString stringWithFormat:@"共%d笔业务",(int)count];
-    cell.headImageView.image = [UIImage headImageForZDCustomer:customer andIsBig:NO];
+    cell.headImageView.image = [UIImage headImageForZDCustomer:customer andIsBig:NO andIsEdite:NO];
     
     return cell;
 }

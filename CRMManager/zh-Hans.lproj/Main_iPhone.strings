@@ -224,8 +224,8 @@
 /* Class = "IBUIBarButtonItem"; title = "完成"; ObjectID = "Whk-5j-IIA"; */
 "Whk-5j-IIA.title" = "完成";
 
-/* Class = "IBUIButton"; normalTitle = "登陆"; ObjectID = "Wkq-o4-1HQ"; */
-"Wkq-o4-1HQ.normalTitle" = "登陆";
+/* Class = "IBUIButton"; normalTitle = "登录"; ObjectID = "Wkq-o4-1HQ"; */
+"Wkq-o4-1HQ.normalTitle" = "登录";
 
 /* Class = "IBUILabel"; text = "支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。"; ObjectID = "XBi-jw-P34"; */
 "XBi-jw-P34.text" = "支持客户经理扫码登录CRM系统，或扫码绑定自己的客户。";

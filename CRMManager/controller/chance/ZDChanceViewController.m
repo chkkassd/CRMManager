@@ -175,11 +175,11 @@
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         ZDCustomer * zdFilterCustomer = self.filteredChanceCustomers[indexPath.row];
         cell.label.text = [zdFilterCustomer customerName];
-        cell.headImageView.image = [UIImage headImageForZDCustomer:zdFilterCustomer andIsBig:NO];
+        cell.headImageView.image = [UIImage headImageForZDCustomer:zdFilterCustomer andIsBig:NO andIsEdite:NO];
     } else {
         ZDCustomer * zdCustomer = self.sortedChanceCustomers[indexPath.row];
        cell.label.text = [zdCustomer customerName];
-        cell.headImageView.image = [UIImage headImageForZDCustomer:zdCustomer andIsBig:NO];
+        cell.headImageView.image = [UIImage headImageForZDCustomer:zdCustomer andIsBig:NO andIsEdite:NO];
     }
     
     cell.interestLabel.hidden = YES;

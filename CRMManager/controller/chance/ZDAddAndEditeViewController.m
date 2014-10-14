@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton * sexButton;
 @property (weak, nonatomic) IBOutlet UIButton * hopeButton;
 @property (weak, nonatomic) IBOutlet UITextView * textView;
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray * lineViews;
+
 @property (nonatomic) NSInteger sexNum;
 @property (nonatomic) NSInteger hopeNum;
 
@@ -73,6 +75,8 @@
         self.sexNum = 1;
         self.hopeNum = 2;
     }
+    
+    [UIView configureSeparatorLinesFromOutletCollections:self.lineViews withBorderWidth:0.3 withBorderColor:[UIColor colorWithWhite:220/255.0 alpha:1.0]];
 }
 
 - (void)viewDidLayoutSubviews

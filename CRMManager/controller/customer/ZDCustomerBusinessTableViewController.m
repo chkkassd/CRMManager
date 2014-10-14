@@ -61,10 +61,10 @@
 
 - (UIColor *)backgroundColorForNormalCellWithIndex:(NSInteger)index
 {
-    NSArray * colors = @[[UIColor colorWithRed:42/255.0 green:135/255.0 blue:194/255.0 alpha:1.0],
-                         [UIColor colorWithRed:68/255.0 green:182/255.0 blue:229/255.0 alpha:1.0],
-                         [UIColor colorWithRed:57/255.0 green:203/255.0 blue:208/255.0 alpha:1.0],
-                         [UIColor colorWithRed:60/255.0 green:230/255.0 blue:186/255.0 alpha:1.0]];
+    NSArray * colors = @[[UIColor colorWithRed:33/255.0 green:133/255.0 blue:196/255.0 alpha:1.0],
+                         [UIColor colorWithRed:53/255.0 green:162/255.0 blue:211/255.0 alpha:1.0],
+                         [UIColor colorWithRed:237/255.0 green:157/255.0 blue:63/255.0 alpha:1.0],
+                         [UIColor colorWithRed:41/255.0 green:205/255.0 blue:157/255.0 alpha:1.0]];
     NSInteger a = (index + 1) % 4;
     switch (a) {
         case 1:

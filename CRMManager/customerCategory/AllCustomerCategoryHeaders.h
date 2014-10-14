@@ -16,5 +16,6 @@
 #import "MBProgressHUD.h"
 #import "UIImage+Tab.h"
 #import "Reachability.h"
+#import "UIView+CCPlus.h"
 
 #endif

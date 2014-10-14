@@ -13,5 +13,6 @@
 @interface UIImage (Tab)
 
 + (UIImage *)headImageForZDCustomer:(ZDCustomer *)zdCustomer
-                           andIsBig:(BOOL)isBig;
+                           andIsBig:(BOOL)isBig
+                         andIsEdite:(BOOL)isEdite;
 @end

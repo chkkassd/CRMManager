@@ -65,7 +65,7 @@
 
 - (void)configureView
 {
-    self.headImageView.image = [UIImage headImageForZDCustomer:self.customer andIsBig:YES];
+    self.headImageView.image = [UIImage headImageForZDCustomer:self.customer andIsBig:YES andIsEdite:NO];
     self.nameLabel.text = self.customer.customerName ? self.customer.customerName : @"未设置";
     self.mobileLabel.text = [self stringForHiddenMobile:self.customer.mobile];
     self.listItem = @[@{@"image": @"ico_currentClient_detail",

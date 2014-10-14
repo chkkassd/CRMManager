@@ -20,5 +20,4 @@
                    withBorderWidth:(CGFloat)borderWidth
                    withBorderColor:(UIColor *)color
                   withCornerRadius:(CGFloat)cornerRadius;
-
 @end

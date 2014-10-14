@@ -93,7 +93,7 @@
 - (void)setHeadImageView:(UIImageView *)headImageView
 {
     _headImageView = headImageView;
-    _headImageView.image = [UIImage headImageForZDCustomer:self.zdCustomer andIsBig:YES];
+    _headImageView.image = [UIImage headImageForZDCustomer:self.zdCustomer andIsBig:YES andIsEdite:YES];
 }
 
 #pragma mark - table view datasource

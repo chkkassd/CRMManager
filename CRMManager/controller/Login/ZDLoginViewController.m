@@ -11,7 +11,7 @@
 #import "ZDGesturePasswordViewController.h"
 #import "ZDTabBarViewController.h"
 
-@interface ZDLoginViewController ()<ZDGesturePasswordViewControllerDelegate,ZDTabBarViewControllerDelegate>
+@interface ZDLoginViewController ()<ZDGesturePasswordViewControllerDelegate,ZDTabBarViewControllerDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -67,7 +67,7 @@
 - (void)setPasswordView:(UIView *)passwordView
 {
     _passwordView = passwordView;
-    _passwordView.layer.borderColor = [UIColor colorWithWhite:229/255.0 alpha:1.0].CGColor;
+    _passwordView.layer.borderColor = [UIColor colorWithWhite:218/255.0 alpha:1.0].CGColor;
 }
 
 - (void)setLoginButton:(UIButton *)loginButton
@@ -135,6 +135,45 @@
     [self presentViewController:tabBarViewController animated:YES completion:NULL];
 }
 
+- (IphoneType)checkIphoneType
+{
+    if (self.view.frame.size.height >= 736) {
+        return checkResultIphone6p;
+    } else if (self.view.frame.size.height >= 667) {
+        return checkResultIphone6;
+    } else if (self.view.frame.size.height >= 568) {
+        return checkResultIphone5;
+    } else {
+        return checkResultIphone4;
+    }
+}
+
+#pragma mark - UITextField delegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if ([self checkIphoneType] == checkResultIphone4) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y - DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
+            self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y - DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if ([self checkIphoneType] == checkResultIphone4) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.nameView.frame = CGRectMake(self.nameView.frame.origin.x, self.nameView.frame.origin.y + DefaultMoveUpDistance, self.nameView.frame.size.width, self.nameView.frame.size.height);
+            self.passwordView.frame = CGRectMake(self.passwordView.frame.origin.x, self.passwordView.frame.origin.y +DefaultMoveUpDistance, self.passwordView.frame.size.width, self.passwordView.frame.size.height);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
 #pragma mark - ZDGesturePasswordViewControllerDelegate
 
 - (void)gesturePasswordViewControllerDidFinish:(ZDGesturePasswordViewController *)controller
@@ -172,13 +211,5 @@
     self.nameTextField.text = defaultClientName;
     self.passwordTextField.text = @"";
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
-- (IBAction)test:(id)sender
-{
-
-    [[ZDWebService sharedWebViewService] fetchParamsWithParams:@"FortuneState" completionHandler:^(NSError *error, NSDictionary *resultDic) {
-        
-    }];
 }
 @end
