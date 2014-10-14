@@ -74,7 +74,7 @@ didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
     {
         // we only trust our own domain
         NSLog(@"%@",challenge.protectionSpace.host);
-        if ([API_HTTPS rangeOfString:challenge.protectionSpace.host].length)
+        if ([API_Test rangeOfString:challenge.protectionSpace.host].length)
         {
             NSURLCredential *credential =
             [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];

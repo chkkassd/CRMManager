@@ -9,16 +9,9 @@
 
 #import "ZDWebService.h"
 
-
-
-#define API_Base @"https://api.ezendai.com/hera/manageraccount/"
-//#define API_Chance @"http://172.16.230.190:7070/hera/manageraccount/" //测试环境
-
-#define API_HTTPS @"https://180.166.169.132:8444" //公网
-#define API_Chance [NSString stringWithFormat:@"%@/hera/manageraccount/", API_HTTPS]
-
-
-
+#define API_Official @"https://api.ezendai.com"//公网正式
+#define API_Test @"https://180.166.169.132:8444" //公网测试
+#define API_Chance [NSString stringWithFormat:@"%@/hera/manageraccount/", API_Test]
 
 @interface ZDWebService (URL)
 
