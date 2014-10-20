@@ -32,6 +32,16 @@
 
 #pragma mark - NSURLConnection Delegate
 
+//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+//{
+//    // 注意这里将NSURLResponse对象转换成NSHTTPURLResponse对象才能去
+//    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+//    if ([response respondsToSelector:@selector(allHeaderFields)]) {
+//        NSDictionary *dictionary = [httpResponse allHeaderFields];
+//        NSLog(@"%@",dictionary);
+//    }
+//}
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
     [receiveData appendData:data];

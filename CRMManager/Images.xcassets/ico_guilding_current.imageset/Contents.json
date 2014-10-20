@@ -3,16 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "new_feature_finish_button.png"
+      "filename" : "ico_guilding_current.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "new_feature_finish_button@2x.png"
+      "filename" : "ico_guilding_current@2x.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "ico_guilding_current@3x.png"
     }
   ],
   "info" : {

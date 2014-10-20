@@ -367,9 +367,9 @@
     [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
     [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
-    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
+    [req addValue:[self currentAppVersion] forHTTPHeaderField:@"version"];//手机端应用版本号
     [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
-    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
+//    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
     [req setHTTPMethod:@"POST"];
     [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -407,9 +407,9 @@
     [req addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
     [req addValue:@"" forHTTPHeaderField:@"netmac"];//客户端网卡mac值
-    [req addValue:@"" forHTTPHeaderField:@"version"];//手机端应用版本号
-    [req addValue:@"" forHTTPHeaderField:@"token"];//ios提交
-    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
+    [req addValue:[self currentAppVersion] forHTTPHeaderField:@"version"];//手机端应用版本号
+    [req addValue:@"" forHTTPHeaderField:@"token"];//ios push
+//    [req addValue:@"" forHTTPHeaderField:@"User-Agent"];//1.系统的名称如： iPhone OS，Android 2.设备系统的版本号；如： 5.1、6.0、7.0 3.设备的型号 如：iPad、iphone、ipod touch
     [req setHTTPMethod:@"POST"];
     [req setHTTPBody: [jsonString dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -436,6 +436,12 @@
      */
     ZDWebConnection * connection = [[ZDWebConnection alloc] initWithRequest:req completionHandler:handler];
     [connection startConnection];
+}
+
+- (NSString *)currentAppVersion
+{
+    NSDictionary * info = [[NSBundle mainBundle] infoDictionary];
+    return info[@"CFBundleShortVersionString"];
 }
 
 #pragma mark - translateToJsonString

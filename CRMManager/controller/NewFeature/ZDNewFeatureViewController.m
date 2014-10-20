@@ -69,9 +69,9 @@
         if (i == kCount - 1) { // 最后一页，添加2个按钮
             // 3.立即体验（开始）
             UIButton *start = [UIButton buttonWithType:UIButtonTypeCustom];
-            UIImage *startNormal = [UIImage imageNamed:@"new_feature_finish_button.png"];
+            UIImage *startNormal = [UIImage imageNamed:@"btn_guilding.png"];
             [start setBackgroundImage:startNormal forState:UIControlStateNormal];
-            [start setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button_highlighted.png"] forState:UIControlStateHighlighted];
+//            [start setBackgroundImage:[UIImage imageNamed:@"new_feature_finish_button_highlighted.png"] forState:UIControlStateHighlighted];
             start.center = CGPointMake(size.width * 0.5, size.height * 0.8);
             //            start.bounds = CGRectMake(0, 0, startNormal.size.width, startNormal.size.height);
             start.bounds = (CGRect){CGPointZero, startNormal.size};
@@ -94,8 +94,8 @@
     UIPageControl *page = [[UIPageControl alloc] init];
     page.center = CGPointMake(size.width * 0.5, size.height * 0.95);
     page.numberOfPages = kCount;
-    page.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"new_feature_pagecontrol_checked_point.png"]];
-    page.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"new_feature_pagecontrol_point.png"]];
+    page.currentPageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ico_guilding_current.png"]];
+    page.pageIndicatorTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"ico_guilding.png"]];
     page.bounds = CGRectMake(0, 0, 150, 0);
     [self.view addSubview:page];
     _page = page;

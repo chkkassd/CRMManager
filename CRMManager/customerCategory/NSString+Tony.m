@@ -129,9 +129,9 @@ static char base64EncodingTable[64] = {
     
     if (time < 60) {
         if (time < 10) {
-            timeString = [NSString stringWithFormat:@"00 : 0%d", time];
+            timeString = [NSString stringWithFormat:@"00 : 0%lu", (unsigned long)time];
         } else {
-            timeString = [NSString stringWithFormat:@"00 : %d", time];
+            timeString = [NSString stringWithFormat:@"00 : %lu", (unsigned long)time];
         }
     } else if (time >= 60) {
         int minute = time / 60;

@@ -238,25 +238,6 @@
             </objects>
             <point key="canvasLocation" x="-658" y="640"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NI9-Fe-BfG">
-            <objects>
-                <viewController id="6gH-77-U7i" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I4H-z0-ME3"/>
-                        <viewControllerLayoutGuide type="bottom" id="gU2-sj-mgW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hyI-eJ-1eu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rRt-VO-iVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-882" y="1364"/>
-        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="lTs-FL-2fc">
             <objects>
@@ -1095,12 +1076,6 @@
                                 <rect key="frame" x="45" y="142" width="230" height="2"/>
                                 <color key="backgroundColor" red="0.32156863810000003" green="0.84313732389999996" blue="0.40784317260000003" alpha="1" colorSpace="deviceRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="将二维码放入框中,即可扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJe-8U-mDc">
-                                <rect key="frame" x="16" y="432" width="288" height="47"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyr-5c-Rxi">
                                 <rect key="frame" x="53" y="152" width="215" height="215"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1109,11 +1084,23 @@
                                     <constraint firstAttribute="height" constant="215" id="Mxz-FH-HZP"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码放入框中,即可扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJe-8U-mDc">
+                                <rect key="frame" x="16" y="422" width="288" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="Afn-n2-gMR"/>
+                                    <constraint firstAttribute="width" constant="288" id="U2N-Eg-rVj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dh3-fD-7jR" firstAttribute="leading" secondItem="bcK-9o-3kQ" secondAttribute="leading" id="6fe-wr-h2b"/>
                             <constraint firstItem="kyr-5c-Rxi" firstAttribute="top" secondItem="Xyf-JO-vQK" secondAttribute="bottom" constant="88" id="6mz-7b-z7v"/>
+                            <constraint firstAttribute="centerX" secondItem="LJe-8U-mDc" secondAttribute="centerX" id="JMY-x8-kwm"/>
+                            <constraint firstItem="LJe-8U-mDc" firstAttribute="top" secondItem="7W7-B7-UyG" secondAttribute="bottom" constant="53" id="NkG-RJ-Taq"/>
                             <constraint firstItem="7W7-B7-UyG" firstAttribute="top" secondItem="Xyf-JO-vQK" secondAttribute="bottom" constant="86" id="P1w-fX-Qlw"/>
                             <constraint firstAttribute="trailing" secondItem="dh3-fD-7jR" secondAttribute="trailing" id="T1w-IW-YUf"/>
                             <constraint firstAttribute="centerX" secondItem="7W7-B7-UyG" secondAttribute="centerX" id="bX3-wq-MBa"/>
@@ -1378,7 +1365,7 @@
         <!--关于-->
         <scene sceneID="GWF-kW-82r">
             <objects>
-                <tableViewController id="dlL-SE-RGw" customClass="ZDAboutUsTableViewController" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="dlL-SE-RGw" customClass="ZDAboutUsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="tt3-iV-8oA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3193,7 +3180,7 @@
         <!--请选择地区-->
         <scene sceneID="bOb-Ks-f1h">
             <objects>
-                <tableViewController storyboardIdentifier="ZDSelectAreaTableViewController" id="I9Q-PW-CeD" customClass="ZDSelectAreaTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ZDSelectAreaTableViewController" hidesBottomBarWhenPushed="YES" id="I9Q-PW-CeD" customClass="ZDSelectAreaTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="w7a-NO-E59">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
